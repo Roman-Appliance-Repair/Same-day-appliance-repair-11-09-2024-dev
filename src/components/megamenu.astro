@@ -56,8 +56,15 @@
     left: 0;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    padding: 0 50px 0 50px;
+    padding: 0 100px 0 100px;
+    opacity: 0; /* Start invisible */
+    visibility: hidden; /* Hide it for interaction */
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* Smooth transition */
   }
+  .dropdown:hover .dropdown-content {
+    opacity: 1; /* Make visible */
+    visibility: visible; /* Allow interaction */
+}
   @media screen and (max-width: 768px) {
     .dropdown-content {
         padding: 0; /* Remove padding for mobile */
