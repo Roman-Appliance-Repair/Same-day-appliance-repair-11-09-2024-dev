@@ -1,21 +1,19 @@
----
-import Contactbtn from "@components/contactbtn.astro";
----
 <style>
   * {
     box-sizing: border-box;
   }
-  
+
   body {
     margin: 0;
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
   }
-  
+
   .navbar {
     overflow: hidden;
     background-color: #333;
     font-family: Arial, Helvetica, sans-serif;
   }
-  
+
   .navbar a {
     float: left;
     font-size: 16px;
@@ -24,14 +22,14 @@ import Contactbtn from "@components/contactbtn.astro";
     padding: 14px 16px;
     text-decoration: none;
   }
-  
+
   .dropdown {
     float: left;
     overflow: hidden;
   }
-  
+
   .dropdown .dropbtn {
-    font-size: 16px;  
+    font-size: 16px;
     border: none;
     outline: none;
     color: white;
@@ -40,32 +38,40 @@ import Contactbtn from "@components/contactbtn.astro";
     font: inherit;
     margin: 0;
   }
-  
-  .navbar a:hover, .dropdown:hover .dropbtn {
+
+  .navbar a:hover,
+  .dropdown:hover .dropbtn {
     background-color: red;
   }
-  
+
   .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
     width: 100%;
     left: 0;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
   }
-  
+
   .dropdown-content .header {
     background: red;
     padding: 16px;
     color: white;
   }
-  
+
   .dropdown:hover .dropdown-content {
     display: block;
   }
-  
-  /* Create three equal columns that floats next to each other */
+
+  /* Mobile-specific margin for the first row */
+  @media screen and (max-width: 768px) {
+    .first-row .dropdown-content {
+      margin-top: 50px;
+    }
+  }
+
+  /* Create three equal columns */
   .column {
     float: left;
     width: 33.33%;
@@ -73,7 +79,7 @@ import Contactbtn from "@components/contactbtn.astro";
     background-color: #ccc;
     height: 100%;
   }
-  
+
   .column a {
     float: none;
     color: black;
@@ -82,30 +88,32 @@ import Contactbtn from "@components/contactbtn.astro";
     display: block;
     text-align: left;
   }
-  
+
   .column a:hover {
     background-color: #ddd;
   }
-  
-  /* Clear floats after the columns */
+
+  /* Clear floats */
   .row:after {
     content: "";
     display: table;
     clear: both;
   }
-  </style>
+
+  /* Arrow Up Button */
   
-  <body style="background-color:white;">
-  
-  <div class="navbar">
+</style>
+
+<div class="navbar">
+  <!-- First Row -->
+  <div class="first-row">
     <a href="#home">H</a>
-    <a href="#news">Home</a>
-  
-    <!-- Business Dropdown -->
+
+    <!-- Appliances Dropdown -->
     <div class="dropdown">
-      <button class="dropbtn">Business</button>
+      <button class="dropbtn">Appliances</button>
       <div class="dropdown-content">
-        <div class="header"><h2>Commercial Appliance Repair</h2></div>
+        <div class="header"><h2>Appliance Categories </h2></div>
         <div class="row">
           <div class="column">
             <a href="#">Refrigerator</a>
@@ -115,22 +123,22 @@ import Contactbtn from "@components/contactbtn.astro";
             <a href="#">Oven</a>
           </div>
           <div class="column">
-            <a href="#">Showcase Refrigerator</a>
-            <a href="#">Walk-in Cooler</a>
-            <a href="#">Walk-in Freezer</a>
+            <a href="#">Microwave</a>
+            <a href="#">Cooktop</a>
+            <a href="#">Range Hood</a>
             <a href="#">Ice Machine</a>
             <a href="#">Slushie Machine</a>
           </div>
           <div class="column">
-            <h3>Category 3</h3>
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+            <h3>Special Categories</h3>
+            <a href="#">Walk-in Cooler</a>
+            <a href="#">Walk-in Freezer</a>
+            <a href="#">Showcase Refrigerator</a>
           </div>
         </div>
       </div>
-    </div> 
-  
+    </div>
+
     <!-- Areas Dropdown -->
     <div class="dropdown">
       <button class="dropbtn">Areas</button>
@@ -160,8 +168,8 @@ import Contactbtn from "@components/contactbtn.astro";
           </div>
         </div>
       </div>
-    </div> 
-  
+    </div>
+
     <!-- Brands Dropdown -->
     <div class="dropdown">
       <button class="dropbtn">Brands</button>
@@ -191,36 +199,38 @@ import Contactbtn from "@components/contactbtn.astro";
           </div>
         </div>
       </div>
-    </div> 
-  
-    <!-- Prices Dropdown -->
-    <div class="dropdown">
-      <button class="dropbtn">Prices</button>
-      <div class="dropdown-content">
-        <div class="header"><h2>Repair Prices</h2></div>
-        <div class="row">
-          <div class="column">
-            <a href="#">Refrigerator Repair</a>
-            <a href="#">Oven Repair</a>
-            <a href="#">Dishwasher Repair</a>
-            <a href="#">Dryer Repair</a>
-          </div>
-          <div class="column">
-            <a href="#">Washer Repair</a>
-            <a href="#">Microwave Repair</a>
-            <a href="#">Cooktop Repair</a>
-            <a href="#">Range Hood Repair</a>
-          </div>
-          <div class="column">
-            <h3>Estimates</h3>
-            <a href="#">Get a Quote</a>
-            <a href="#">Same Day Pricing</a>
-            <a href="#">Custom Requests</a>
-          </div>
-        </div>
-      </div>
-      <Contactbtn />
-    </div> 
+    </div>
   </div>
 
-  
+  <!-- Prices Dropdown -->
+  <div class="dropdown">
+    <button class="dropbtn">Prices</button>
+    <div class="dropdown-content">
+      <div class="header"><h2>Repair Prices</h2></div>
+      <div class="row">
+        <div class="column">
+          <a href="#">Refrigerator Repair</a>
+          <a href="#">Oven Repair</a>
+          <a href="#">Dishwasher Repair</a>
+          <a href="#">Dryer Repair</a>
+        </div>
+        <div class="column">
+          <a href="#">Washer Repair</a>
+          <a href="#">Microwave Repair</a>
+          <a href="#">Cooktop Repair</a>
+          <a href="#">Range Hood Repair</a>
+        </div>
+        <div class="column">
+          <h3>Custom Pricing</h3>
+          <a href="#">Get a Quote</a>
+          <a href="#">Same Day Pricing</a>
+          <a href="#">Custom Requests</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="#top">&#x2191;</a>
+
+</div>
+
+<!-- Arrow Up Button -->
