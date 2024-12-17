@@ -107,7 +107,7 @@
  .phone-number{background-color: red;}
   
 </style>
-
+<div id="header" class="sticky">
 <div class="navbar">
   <!-- First Row -->
   <div class="first-row">
@@ -249,20 +249,36 @@
   </div>
   <a href="#top" class="phone-number">(323) 870-4790</a>
 
-</div>
+</div></div>
 
 <!-- Arrow Up Button -->
 
-
 <style>
-  .container {
-    height: 300px;
-    overflow: auto;
-    border: 1px solid black;
-  }
+  .sticky {
+    position: relative;
 
-  .content {
-    height: 300px;
+    color: white;
+  }
+  .fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  
+    z-index: 1000;
   }
 </style>
+
+<script>
+  const header = document.getElementById('header');
+  const stickyOffset = header.offsetTop;
+
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > stickyOffset) {
+      header.classList.add('fixed');
+    } else {
+      header.classList.remove('fixed');
+    }
+  });
+</script>
+
 
