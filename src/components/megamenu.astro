@@ -21,7 +21,7 @@
     font-size: 16px;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 10px;
     text-decoration: none;
   }
 
@@ -95,7 +95,7 @@
   }
 
   .column a:hover {
-    background-color: #ddd;
+    background-color: red;
   }
 
   /* Clear floats */
@@ -106,13 +106,25 @@
   }
 
  .phone-number{background-color: red;}
-  
+   /* Logo Transition */
+   .logo {
+    width: 150px; /* Default Width */
+    transition: width 0.3s ease; /* Smooth resizing */
+  }
+
+  .shrink .logo {
+    width: 90px; /* Width when scrolled */
+    
+  }
+  a.logo {
+  padding: 0 !important;
+}
 </style>
 <div id="header" class="sticky">
 <div class="navbar">
   <!-- First Row -->
   <div class="first-row">
-    <a href="#home">H</a>
+    <a class="logo"  href="#home"><img alt="Logo" src="/images/same-day-appalince-repair-logo-2.webp"></a>
 
     <!-- Appliances Dropdown -->
     <div class="dropdown">
@@ -270,13 +282,14 @@
 
 <script>
   const header = document.getElementById('header');
+  const logo = document.querySelector('.logo');
   const stickyOffset = header.offsetTop;
 
   window.addEventListener('scroll', () => {
     if (window.pageYOffset > stickyOffset) {
-      header.classList.add('fixed');
+      header.classList.add('fixed', 'shrink');
     } else {
-      header.classList.remove('fixed');
+      header.classList.remove('fixed', 'shrink');
     }
   });
 </script>
