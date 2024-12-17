@@ -21,7 +21,7 @@
     font-size: 16px;
     color: white;
     text-align: center;
-    padding: 14px 10px;
+    padding: 14px 15px;
     text-decoration: none;
   }
 
@@ -117,8 +117,17 @@
     
   }
   a.logo {
+  margin: 5px 50px 0 20px !important;
+}
+  a.logo {
   padding: 0 !important;
 }
+ /* Hide the logo image on mobile screens */
+ @media screen and (max-width: 768px) {
+    a.logo{
+      display: none;
+    }
+  }
 </style>
 <div id="header" class="sticky">
 <div class="navbar">
