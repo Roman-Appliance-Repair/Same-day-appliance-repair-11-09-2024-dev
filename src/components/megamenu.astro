@@ -12,6 +12,8 @@
     overflow: hidden;
     background-color: #000;
     font-family: Arial, Helvetica, sans-serif;
+ 
+  
   }
 
   .navbar a {
@@ -26,6 +28,7 @@
   .dropdown {
     float: left;
     overflow: hidden;
+    
   }
 
   .dropdown .dropbtn {
@@ -131,7 +134,7 @@
             <a href="#">Slushie Machine</a>
           </div>
           <div class="column">
-            <h3>Special Categories</h3>
+          
             <a href="#">Walk-in Cooler</a>
             <a href="#">Walk-in Freezer</a>
             <a href="#">Showcase Refrigerator</a>
@@ -162,7 +165,7 @@
             <a href="#">Sherman Oaks</a>
           </div>
           <div class="column">
-            <h3>Nearby Cities</h3>
+           
             <a href="#">Burbank</a>
             <a href="#">Encino</a>
             <a href="#">Culver City</a>
@@ -193,7 +196,6 @@
             <a href="#">Kenmore</a>
           </div>
           <div class="column">
-            <h3>High-End Brands</h3>
             <a href="#">Miele</a>
             <a href="#">Dacor</a>
             <a href="#">Fisher & Paykel</a>
@@ -203,7 +205,20 @@
       </div>
     </div>
   </div>
-  <button style="color:#fff">&times;</button>
+  <!-- Close Button -->
+<button class="absolute top-4 right-4 z-50 flex h-8 w-8 items-center justify-center bg-red-500 text-white rounded-full focus:outline-none focus:ring-2 focus:ring-red-300 md:hidden">
+  <!-- Icon for Close -->
+  <span class="relative block h-5 w-5">
+    <span
+      class="absolute block h-[2px] w-5 bg-white rotate-45"
+      style="top: 50%; transform-origin: center; transform: rotate(45deg) translateY(-50%);"
+    ></span>
+    <span
+      class="absolute block h-[2px] w-5 bg-white -rotate-45"
+      style="top: 50%; transform-origin: center; transform: rotate(-45deg) translateY(-50%);"
+    ></span>
+  </span>
+</button>
 
   <!-- Prices Dropdown -->
   <div class="dropdown">
@@ -237,3 +252,17 @@
 </div>
 
 <!-- Arrow Up Button -->
+
+
+<style>
+  .container {
+    height: 300px;
+    overflow: auto;
+    border: 1px solid black;
+  }
+
+  .content {
+    height: 300px;
+  }
+</style>
+
