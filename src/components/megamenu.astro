@@ -61,7 +61,23 @@
     transition: opacity 0.4s ease, visibility 0.4s ease;
     backdrop-filter: blur(6px); /* Blur effect behind the menu */
   }
+/* Style for dropdown links with icons */
+.dropdown-content a {
+    display: flex;
+    align-items: center; /* Center icon and text vertically */
+    text-decoration: none;
+    color: white; /* Text color */
+    font-size: 16px;
+    padding: 8px 0; /* Space between items */
+  }
 
+  /* Style for the SVG icon */
+  .dropdown-content a img {
+   
+    width: 50px; /* Set icon width */
+    height: 50px; /* Set icon height */
+    display: inline-block; /* Ensure inline layout */
+  }
  .dropdown:hover .dropdown-content {
     opacity: 1;
     visibility: visible;
@@ -156,11 +172,12 @@
         <div class="transparent"></div>
         <div class="row">
           <div class="column">
-            <a href="#">Refrigerator</a>
-            <a href="#">Freezer</a>
-            <a href="#">Dishwasher</a>
-            <a href="#">Dryer</a>
-            <a href="#">Oven</a>
+            
+           <a> <img src="/svg/fridge.svg"> &nbsp; Refrigerator</a>
+            <a href="#"><img src="/svg/freezer.svg"> Freezer</a>
+            <a href="#"><img src="/svg/dishwasher.svg"> Dishwasher</a>
+            <a href="#"><img src="/svg/dryer.svg"> Dryer</a>
+            <a href="#"><img src="/svg/oven.svg"> Oven</a>
           </div>
           <div class="column">
             <a href="#">Microwave</a>
@@ -316,5 +333,7 @@
     }
   });
 </script>
+
+
 
 
