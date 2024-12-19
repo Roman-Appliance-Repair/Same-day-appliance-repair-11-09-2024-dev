@@ -47,7 +47,7 @@ import Layout from "../layouts/Layout.astro";
           color: white;
         }
     
-        /* Правая колонка с фото */
+        /* Правая колонка с текстом */
         .content-container {
           width: 66.67%;
           background-color: #e6e6e6;
@@ -55,24 +55,23 @@ import Layout from "../layouts/Layout.astro";
           justify-content: center;
           align-items: center;
           text-align: center;
+          padding: 2rem;
+          box-sizing: border-box;
         }
     
         .content {
           display: none;
+          font-size: 1.2rem;
+          color: #333;
         }
     
-        .content img {
-          max-width: 100%;
-          height: auto;
-        }
-    
-        /* Отображение фото при выборе опции */
+        /* Отображение текста при выборе опции */
         #option1:checked ~ .content-container .content1,
         #option2:checked ~ .content-container .content2 {
           display: block;
         }
       </style>
-     
+   
       <div class="container">
         <!-- Левая колонка с опциями -->
         <div class="options">
@@ -83,13 +82,13 @@ import Layout from "../layouts/Layout.astro";
           <label for="option2">Option 2</label>
         </div>
     
-        <!-- Правая колонка с фото -->
+        <!-- Правая колонка с текстом -->
         <div class="content-container">
           <div class="content content1">
-            <img src="https://via.placeholder.com/600x400" alt="Image 1">
+            This is the content for Option 1.
           </div>
           <div class="content content2">
-            <img src="https://via.placeholder.com/600x400" alt="Image 2">
+            This is the content for Option 2.
           </div>
         </div>
       </div>
