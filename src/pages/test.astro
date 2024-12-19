@@ -3,71 +3,101 @@ import Layout from "../layouts/Layout.astro";
 ---
 <Layout title="Same Day Appliance Repair - (323) 870-4790 - Best in LA" description="Need Same Day appliance repair? We provide fast and reliable service. We are licensed and warrantied. Don't wait! Call: (323) 870-4790">
     <style>
-        .tab input, .tab-content { display: none; }
+        body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+          display: flex;
+          height: 100vh;
+        }
+    
         .tab {
-         font: 0.8rem/1.2 Arial, sans-serif; /* Параметры шрифта */
-         border: 1px solid #e9eaec; /* Параметры рамки */
-         border-radius: 3px; /* Скругляем уголки */
-         color: #848994; /* Цвет текста */
-         margin-bottom: 10px; /* Расстояние между пунктами */
+          display: flex;
+          flex-direction: row;
+          width: 100%;
         }
-        .tab-title {
-         padding: 10px; /* Поля вокруг текста */
-         display: block; /* Блочный элемент */
-         text-transform: uppercase; /* Все буквы заглавные */
-         font-weight: bold; /* Жирное начертание */
-         cursor: pointer; /* Вид курсора */
+    
+        /* Левая колонка с вкладками */
+        .tab-menu {
+          width: 30%;
+          background-color: #003366;
+          color: white;
+          display: flex;
+          flex-direction: column;
+          padding: 1rem;
+          box-sizing: border-box;
         }
-        .tab-title::after {
-         content: '+'; /* Выводим плюс */
-         float: right; /* Размещаем по правому краю */
+    
+        .tab-menu input[type="radio"] {
+          display: none;
         }
+    
+        .tab-menu label {
+          font-size: 1.2rem;
+          padding: 0.8rem;
+          margin: 0.5rem 0;
+          cursor: pointer;
+          text-align: center;
+          display: block;
+          background-color: transparent;
+          border-radius: 5px;
+          transition: background-color 0.3s, color 0.3s;
+        }
+    
+        .tab-menu input[type="radio"]:checked + label {
+          background-color: #1e90ff;
+          color: white;
+        }
+    
+        /* Правая колонка с содержимым */
+        .tab-content-container {
+          width: 70%;
+          padding: 2rem;
+          background-color: white;
+          box-sizing: border-box;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+    
         .tab-content {
-         padding: 10px 20px; /* Поля вокруг текста */
+          display: none;
+          font-size: 1.5rem;
+          color: black;
         }
-        .tab :checked + .tab-title {
-         background-color: #50a2de; /* Цвет фона */
-         border-radius: 3px 3px 0 0; /* Скругляем уголки */
-         color: #fff; /* Цвет текста */
+    
+        /* Отображение активного содержимого */
+        #tab-btn-1:checked ~ .tab-content-container #content-1,
+        #tab-btn-2:checked ~ .tab-content-container #content-2,
+        #tab-btn-3:checked ~ .tab-content-container #content-3 {
+          display: block;
         }
-        .tab :checked + .tab-title::after {
-         content: '−'; /* Выводим минус */
-        }
-        .tab :checked ~ .tab-content {
-         display: block; /* Показываем содержимое */
-        }
-       </style>
-      </head>
-      <body>
-       <div class="accordion"> 
-        <div class="tab">
-         <input type="checkbox" id="tab1" name="tab-group">
-         <label for="tab1" class="tab-title">Что такое HTML5?</label> 
-         <section class="tab-content"> 
-          <p>Под HTML5 обычно подразумевают два разных понятия:</p>
-          <ul>
-           <li>Это язык разметки документа, пришедший на смену HTML4 и XHTML.</li>
-           <li>Это набор веб-технологий, позволяющий делать на сайте 
-            всякие интересные штуки.</li>
-          </ul>
-         </section> 
-        </div> 
-        <div class="tab">
-         <input type="checkbox" id="tab2" name="tab-group">
-         <label for="tab2" class="tab-title">Можно ли программировать на HTML5?</label> 
-         <section class="tab-content"> 
-          Нет, на HTML5 по прежнему нельзя программировать, основным языком является JavaScript. 
-          Так что в разговоре лучше не упоминать, что умеешь программировать на HTML5, засмеют.
-         </section> 
-        </div> 
-        <div class="tab">
-         <input type="checkbox" id="tab3" name="tab-group">
-         <label for="tab3" class="tab-title">Чем HTML5 отличается от HTML4?</label>
-         <section class="tab-content">
-          В HTML5 добавлены новые элементы, вроде &lt;header&gt;, &lt;footer&gt;, 
-          &lt;aside&gt;, &lt;article&gt;, появилась долгожданная поддержка аудио, 
-          видео и многое другое.
-         </section>
+      </style>
+    </head>
+    
+    <body>
+      <div class="tab">
+        <!-- Левая колонка с вкладками -->
+        <div class="tab-menu">
+          <input checked id="tab-btn-1" name="tab-btn" type="radio">
+          <label for="tab-btn-1">Вкладка 1</label>
+          <input id="tab-btn-2" name="tab-btn" type="radio">
+          <label for="tab-btn-2">Вкладка 2</label>
+          <input id="tab-btn-3" name="tab-btn" type="radio">
+          <label for="tab-btn-3">Вкладка 3</label>
         </div>
-       </div>
+    
+        <!-- Правая колонка с содержимым -->
+        <div class="tab-content-container">
+          <div class="tab-content" id="content-1">
+            Содержимое 1...
+          </div>
+          <div class="tab-content" id="content-2">
+            Содержимое 2...
+          </div>
+          <div class="tab-content" id="content-3">
+            Содержимое 3...
+          </div>
+        </div>
+      </div>
 </Layout>
