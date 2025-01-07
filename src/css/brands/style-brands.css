@@ -262,7 +262,7 @@ p {
 
 
 
-.page-header {
+/* .page-header {
     display: block;
     margin-top: 1%;
 }
@@ -271,11 +271,48 @@ p {
     margin-bottom: 20px;
 }
 
+
+
+
+
+
 .header-a {
     float: left;
     margin: 0 20px 0px 0;
     max-width: 500px;
-}
+} */
+
+
+
+
+.page-header {
+    display: flex;
+    flex-direction: column; /* Default layout for smaller screens */
+    gap: 20px;
+  }
+  
+  .header-content {
+    display: flex;
+    flex-wrap: wrap; /* Ensures content adapts on smaller screens */
+    align-items: center;
+    justify-content: space-between; /* Adds space between text and image */
+  }
+  
+  .header-content p {
+    flex: 1; /* Makes the paragraph take up available space */
+    margin-right: 20px; /* Adds spacing between text and image */
+  }
+  
+  .header-a {
+    flex-shrink: 0; /* Prevents the image container from shrinking */
+  }
+  
+  .header-a img {
+    max-width: 100%; /* Ensures the image is responsive */
+    height: auto; /* Maintains aspect ratio */
+  }
+
+
 
 .page-container {
     display: block;
