@@ -20,9 +20,87 @@ import "css/service/style_services.css";
 <Reviews />
  
 <Container>
+  <main>
   
+      <div class="page-header-d-full">
+       
           <h1><span class="animate-charcter">Same-Day Range Hood Repair Services in Los Angeles and Nearby Areas</span></h1>
-     
+        
+      </div>
+      
+     <style>
+  /* Container with left and right margins */
+  .image-text-container {
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the block */
+    padding: 0 5%;
+  }
+
+  /* Image wrapper with float */
+  .image-wrapper {
+    float: left; /* Floats image to the left */
+    width: 40%; /* Ensures it takes up 40% width on large screens */
+    max-width: 500px;
+    margin-right: 20px; /* Adds spacing between image and text */
+  }
+  @media (max-width: 768px) {
+  .image-wrapper img {
+    width: 100%; /* Allows image to shrink on mobile */
+    height: auto; /* Keeps aspect ratio */
+    max-width: 300px; /* Prevents it from getting too big */
+  }
+}
+
+  .image-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+
+  /* Hover effect */
+  .image-wrapper img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 3px 5px 2px rgb(0 0 0 / 20%), 3px 2px 3px 0px rgb(0 0 0 / 14%), 3px 3px 14px 0px rgb(0 0 0 / 12%);
+    border-radius: 10px;
+  }
+
+  /* Caption styling */
+  .image-wrapper figcaption {
+    font-size: 16px;
+    color: #555;
+    font-style: italic;
+    text-align: center;
+    margin-top: 5px;
+  }
+
+  /* Text content */
+  .text-content {
+    overflow: hidden; /* Ensures text flows correctly next to floating image */
+  }
+
+  /* Responsive Design: Stacks Image on Top on Mobile */
+  @media (max-width: 768px) {
+    .image-wrapper {
+      float: none; /* Removes float so image stacks above text */
+      width: 100%; /* Makes image full width */
+      max-width: 100%;
+      margin-right: 0; /* Removes right margin */
+      text-align: center;
+    }
+
+    .image-wrapper img {
+      display: block;
+      margin: 0 auto; /* Centers image */
+    }
+
+    .text-content {
+      text-align: center; /* Centers text */
+    }
+  }
+</style>
+
 <div class="image-text-container">
   <figure class="image-wrapper">
     <img
@@ -34,10 +112,13 @@ import "css/service/style_services.css";
     />
     <figcaption>Same Day Range Hood Repair Service</figcaption>
   </figure>
+
   <div class="text-content">
           <p style="text-align: start">At <strong>Same Day Appliance Repair</strong>, we specialize in <strong>range hood repair services</strong>, ensuring your kitchen stays fresh and free of <strong>smoke</strong>, <strong>steam</strong>, and <strong>airborne grease</strong>. Whether your <strong>range hood</strong> has a faulty <strong>fan motor</strong>, a defective <strong>control board</strong>, or clogged ductwork, our experienced <strong>service technicians</strong> are here to provide reliable solutions.</p><p style="text-align: start">We repair all types of <strong>range hoods</strong>, including <strong>vent hoods</strong>, <strong>kitchen exhaust fans</strong>, and <strong>blower wheel housings</strong>, from major brands such as Whirlpool, GE, Samsung, LG, KitchenAid, and Bosch. Using top-quality replacement parts, we resolve issues like noisy <strong>fan blades</strong>, malfunctioning <strong>lights</strong>, and clogged filters. Don’t let a broken <strong>range hood</strong> disrupt your cooking routine—schedule a same-day <strong>range hood repair</strong> with our team today!</p>
         </div>
       </div>
+    
+  </main>
 
   <div class="page213">
     <div class="open-full_left">
@@ -77,11 +158,11 @@ import "css/service/style_services.css";
               <img
                 src="/range-hood-repair/same-day-kitchen-hood-repair.webp"
                 loading="lazy"
-                width="400px"
+                width="500px"
                 height="500px"
-                alt="Same-Day Kitchen Hood Repair"
+                alt="Same-day kitchen hood repair"
               />
-              <figcaption>Same-Day Kitchen Hood Repair</figcaption>
+              <figcaption>Same-day Kitchen Hood Repair</figcaption>
             </div>
             <p>When it comes to <strong>range hood repair</strong>, we combine expertise, the right tools, and high-quality replacement parts to deliver exceptional results. Here’s why homeowners in Los Angeles trust us:</p><h3><strong>Same-Day Service</strong></h3><p style="text-align: start">A malfunctioning <strong>range hood</strong> can quickly turn your <strong>cooking area</strong> into an uncomfortable space filled with <strong>smoke</strong> and <strong>steam</strong>. Our same-day service ensures your <strong>vent hood</strong> is fixed promptly so you can return to a clean, comfortable kitchen.</p><h3><strong>Professional Technicians</strong></h3><p style="text-align: start">Our certified <strong>repairmen</strong> are trained to handle a variety of issues, including faulty <strong>fan motors</strong>, damaged <strong>fan blades</strong>, and defective <strong>control boards</strong>. They bring years of experience and professionalism to every job, ensuring your <strong>range hood</strong> is repaired correctly the first time.</p><h4 style="text-align: start"><strong>Top-Quality Replacement Parts</strong></h4><p style="text-align: start">We use only original parts, such as <strong>motor bearings</strong>, switches, and filters, to guarantee lasting results. From replacing a <strong>blower wheel housing</strong> to fixing a defective <strong>control board</strong>, we ensure your appliance operates like new.</p><h3><strong>Transparent Pricing</strong></h3><p style="text-align: start">We provide upfront quotes for all labor and parts, so you’ll know the exact <strong>pricing</strong> before any work begins. No surprises—just honest, reliable service.</p>
           </div>
@@ -96,10 +177,10 @@ import "css/service/style_services.css";
             <div class="content__page-desc-phot">
               <img
                 src="/range-hood-repair/licensed-hood-repair-technician.webp"
-                loading="lazy"
-                width="400px"
+                width="500px"
                 height="500px"
                 alt="Licensed Hood Repair Technician"
+                loading="lazy"
               />
               <figcaption>Licensed Hood Repair Technician</figcaption>
             </div>
@@ -116,7 +197,7 @@ import "css/service/style_services.css";
             <div class="content__page-desc-phot">
               <img
                 src="/range-hood-repair/residential-hood-repair.webp"
-                width="400px"
+                width="500px"
                 height="500px"
                 alt="Residential hood repair"
                 loading="lazy"
@@ -136,9 +217,9 @@ import "css/service/style_services.css";
             <div class="content__page-desc-phot">
               <img
               src="/range-hood-repair/range-hood-repair-near-me.webp"
-              width="400px"
+              width="500px"
               height="500px"
-              alt="Range hood repair service near me"
+              alt="Range Hood Repair Service Near Me"
               loading="lazy"
             />
             <figcaption>Range Hood Repair Service Near Me</figcaption>
@@ -157,12 +238,12 @@ import "css/service/style_services.css";
             <div class="content__page-desc-phot">
               <img
                 src="/range-hood-repair/range-hood-repair.webp"
-                width="400px"
+                width="500px"
                 height="500px"
-                alt="Range Hood Repair Today"
+                alt="Range Hood Repair"
                 loading="lazy"
               />
-              <figcaption>Range Hood Repair Today</figcaption>
+              <figcaption>Range Hood Repair</figcaption>
             </div>
             <p style="text-align: start">We provide comprehensive <strong>range hood repair services</strong> to address all issues efficiently and effectively. Here’s what we offer:</p><h3><strong>Wall-Mounted Range Hood Repair</strong></h3><p style="text-align: start">Our technicians repair wall-mounted hoods, tackling problems like noisy <strong>fans</strong>, clogged ducts, and faulty electrical systems.</p><h3><strong>Under-Cabinet Range Hood Repair</strong></h3><p style="text-align: start">We specialize in under-cabinet range hood repairs, including fixing weak ventilation, damaged switches, and <strong>motor replacements</strong>.</p><h3><strong>Island Range Hood Repair</strong></h3><p style="text-align: start">Island range hoods require precise attention due to their unique placement. Our team handles <strong>motor repairs</strong>, duct inspections, and <strong>fan blade replacements</strong> with care and expertise.</p>
           </div>
@@ -176,15 +257,14 @@ import "css/service/style_services.css";
           <div class="content__page-full-desc">
             <div class="content__page-desc-phot">
               <img
-                src="/range-hood-repair/range-hood-repair-today.webp"
+                src="/range-hood-repair/kitchen-exhaust-repair-near-me.webp"
                 width="500px"
                 height="500px"
-                alt="Range Hood Repair Today"
+                alt="Kitchen Exhaust repair Near Me"
                 loading="lazy"
               />
-              <figcaption>Range Hood Repair Today</figcaption>
+              <figcaption>Kitchen Exhaust repair Near Me</figcaption>
             </div>
- 
           <div class="content__page-full-desc">
             <p style="text-align: start">Regular maintenance is essential for keeping your <strong>range hood</strong> in top condition. Here’s what our services include:</p><ul><li><p><strong>Filter Cleaning or Replacement:</strong> Prevent clogs and improve ventilation with routine filter maintenance.</p></li><li><p><strong>Ductwork Inspection:</strong> Identify and resolve blockages in your vent system for optimal airflow.</p></li><li><p><strong>Fan Motor Testing:</strong> Ensure the <strong>motor bearings</strong> and fan are operating efficiently to avoid noisy operation.</p></li><li><p><strong>Grease Removal:</strong> Clean internal components to prevent grease build-up and fire hazards.</p></li></ul>
           </div>
@@ -194,19 +274,19 @@ import "css/service/style_services.css";
 
       <div class="page213-content" id="repair-replace">
         <div class="content__page-full-hed">
-          <div class="content__page-hed-h"><h2><strong>Deciding Between Microwave Repair and Replacement</strong></h2>
-          </div>
+          <div class="content__page-hed-h"><h2><strong>Deciding Between Microwave Repair and Replacement</strong></h2></div>
           <div class="content__page-full-desc">
             <div class="content__page-desc-phot">
               <img
-                src="/range-hood-repair/under-cabinet-range-hood-repair.webp"
-                width="400px"
+                src="/range-hood-repair/range-hood-repair-today.webp"
+                width="500px"
                 height="500px"
-                alt="Under Cabinet Range Hood Repair"
+                alt="Range Hood Repair Today"
                 loading="lazy"
               />
-              <figcaption>Under Cabinet Range Hood Repair</figcaption>
+              <figcaption>Range Hood Repair Today</figcaption>
             </div>
+ 
           <div class="content__page-desc">
             <p style="text-align: start">If your <strong>range hood</strong> has frequent issues or the repair cost exceeds 50% of the price of a new unit, replacement may be the best option. We’ll help you decide based on:</p><ul><li><p><strong>Age of the Hood:</strong> Older models may lack efficiency and advanced features.</p></li><li><p><strong>Repair Frequency:</strong> Frequent breakdowns suggest it’s time for an upgrade.</p></li><li><p><strong>Energy Efficiency:</strong> Modern range hoods are quieter, more powerful, and energy-efficient.</p></li></ul>
           </div>
@@ -220,13 +300,13 @@ import "css/service/style_services.css";
           <div class="content__page-full-desc">
             <div class="content__page-desc-phot">
               <img
-                src="/range-hood-repair/kitchen-exhaust-repair-near-me.webp"
+                src="/range-hood-repair/under-cabinet-range-hood-repair.webp"
                 width="500px"
                 height="500px"
-                alt="Kitchen Exhaust Repair Near Me"
+                alt="Under Cabinet Hood Repair"
                 loading="lazy"
               />
-              <figcaption>Kitchen Exhaust Repair Near Me</figcaption>
+              <figcaption>Under Cabinet Hood Repair</figcaption>
             </div>
  
           <div class="content__page-full-desc">
@@ -491,8 +571,16 @@ import "css/service/style_services.css";
             <div class="desc-logo-brand logo-bran-d-16">
               <h3><a href="#">Broan</a></h3>
             </div>
+
+
+
+
+
           </div>
         </div>
+
+     
+
           <Btn />
         </div>
 
