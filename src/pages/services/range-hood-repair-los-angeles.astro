@@ -27,24 +27,90 @@ import "css/service/style_services.css";
           <h1><span class="animate-charcter">Same-Day Range Hood Repair Services in Los Angeles and Nearby Areas</span></h1>
         </div>
       </div>
-          <div class="page-header-f">
-            <div class="page-header-f-rel">
-              <img
-                  width="2000px"
-                  height="1000px"
-                  src="/images/range-hood-repair-los-angeles-and-surrounding-area.webp"
-                  alt="Range hood repair Los Angeles"
-                />
-            </div>
-            <div class="page-header-f-gradient"></div>
-          </div>
-
-      <div class="page-header-p-full">
-        <div class="page-header-p">
+      <style>
+        /* Container for image and text */
+        .image-text-container {
+          display: flex;
+          align-items: flex-start;
+          flex-wrap: wrap;
+          gap: 20px;
+          margin: 0 5%; /* Adds left and right margin */
+          max-width: 1200px;
+        }
+      
+        /* Image styling */
+        .image-wrapper {
+          flex: 1 1 40%; /* Ensures it takes up to 40% width on large screens */
+          max-width: 500px;
+        }
+      
+        .image-wrapper img {
+          width: 100%;
+          height: auto;
+          border-radius: 8px;
+          box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /* Stronger shadow effect */
+          transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+      
+        /* Hover effect */
+        .image-wrapper img:hover {
+          transform: translateY(-5px); /* Slight lift effect */
+          box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.4);
+        }
+      
+        /* Caption styling */
+        .image-wrapper figcaption {
+          margin-top: 8px;
+          font-size: 16px;
+          color: #555;
+          font-style: italic;
+          text-align: center;
+        }
+      
+        /* Text block styling */
+        .text-content {
+          flex: 1 1 55%;
+          min-width: 300px;
+        }
+      
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+          .image-text-container {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin: 0 2%; /* Reduce margins for smaller screens */
+          }
+      
+          .image-wrapper {
+            flex: 1 1 100%;
+            max-width: 100%;
+          }
+      
+          .text-content {
+            flex: 1 1 100%;
+          }
+        }
+      </style>
+      
+      <div class="image-text-container">
+        <figure class="image-wrapper">
+          <img
+            src="/range-hood-repair/same-day-range-hood-repair-service.webp"
+            loading="lazy"
+            alt="Same Day Range Hood Repair Service"
+            width="500"
+            height="500"
+          />
+          <figcaption>Same Day Range Hood Repair Service</figcaption>
+        </figure>
+      
+        <div class="text-content">
+          <p style="text-align: start">
           <p style="text-align: start">At <strong>Same Day Appliance Repair</strong>, we specialize in <strong>range hood repair services</strong>, ensuring your kitchen stays fresh and free of <strong>smoke</strong>, <strong>steam</strong>, and <strong>airborne grease</strong>. Whether your <strong>range hood</strong> has a faulty <strong>fan motor</strong>, a defective <strong>control board</strong>, or clogged ductwork, our experienced <strong>service technicians</strong> are here to provide reliable solutions.</p><p style="text-align: start">We repair all types of <strong>range hoods</strong>, including <strong>vent hoods</strong>, <strong>kitchen exhaust fans</strong>, and <strong>blower wheel housings</strong>, from major brands such as Whirlpool, GE, Samsung, LG, KitchenAid, and Bosch. Using top-quality replacement parts, we resolve issues like noisy <strong>fan blades</strong>, malfunctioning <strong>lights</strong>, and clogged filters. Don’t let a broken <strong>range hood</strong> disrupt your cooking routine—schedule a same-day <strong>range hood repair</strong> with our team today!</p>
         </div>
       </div>
-    </div>
+    
   </main>
 
   <div class="page213">
