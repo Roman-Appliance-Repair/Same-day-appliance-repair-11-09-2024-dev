@@ -969,8 +969,31 @@ button.hcp-button:hover {
         },
       }}
     />
-    <!-- 100% privacy-first analytics -->
-   
+    <!-- 100% privacy-first analytics 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-F5MBY27XES');
+    </script>-->
+    <script>
+        window.addEventListener("load", function() {
+          setTimeout(function() {
+            var script = document.createElement("script");
+            script.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX";
+            script.async = true;
+            document.head.appendChild(script);
+      
+            script.onload = function() {
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-F5MBY27XES');
+            };
+          }, 3000); // Delays GA by 3 seconds
+        });
+      </script>
   </head>
   <body>
     <slot />
