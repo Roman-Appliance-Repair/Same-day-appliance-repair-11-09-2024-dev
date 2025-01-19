@@ -12,6 +12,6 @@
         gtag('js', new Date());
         gtag('config', 'G-F5MBY27XES');
       };
-    }, 3000); // Delays GA by 3 seconds after the page loads
+    }, 3000) // Delays GA by 3 seconds after the page loads
   });
 </script>
