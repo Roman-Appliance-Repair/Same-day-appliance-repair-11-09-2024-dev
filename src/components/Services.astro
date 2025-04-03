@@ -1,47 +1,58 @@
 ---
 import "css/Offers.css";
+import Btn from "@components/btn1.astro";
 ---
 <div class="wrapper">
   <div class="cols">
 			<div class="col" ontouchstart="this.classList.toggle('hover');">
 				<div class="container">
-					<div class="front" style="background-image: url(https://unsplash.it/500/500/)">
+					<div class="front" style="background-image: url(/hvac/residential-air-duct-cleaning-services.webp)">
+						<div class="overlay"></div> <!-- Add this line -->
 						<div class="inner">
-							<p style="color:#ffffff; font-family:Tahoma;">Residential Air Duct Cleaning</p>
+							<h2 style="color:#ffffff; text-transform: uppercase;">Residential Air Duct Cleaning</h2><br>
+							<span> Learn More...</span>
 						</div>
 					</div>
 					<div class="back">
 						<div class="inner">
-						  <p>Breathe cleaner, healthier air—starting today. Our expert residential air duct cleaning removes dust, allergens, and hidden debris that circulate through your home. Enjoy fresher air, improved HVAC efficiency, and peace of mind knowing your family is breathing safe. Schedule your air duct cleaning now and feel the difference!</p>
+						  <p style="color:#ffffff;">Breathe cleaner, healthier air—starting today. Our expert residential air duct cleaning removes dust, allergens, and hidden debris that circulate through your home. </p>
+						  <Btn />
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col" ontouchstart="this.classList.toggle('hover');">
 				<div class="container">
-					<div class="front" style="url(https://unsplash.it/511/511/)">
+					<div class="front" style="background-image: url(/hvac/commercial-air-duct-cleaning-services.webp)">
+						<div class="overlay"></div> <!-- Add this line -->
 						<div class="inner">
-							<p>Commercial Air Duct Cleaning</p>
-              <span>Lorem ipsum</span>
+							<h2 style="color:#ffffff; text-transform: uppercase;">Commercial Air Duct Cleaning</h2>
+							<br>
+              <span>Learn More...</span>
 						</div>
 					</div>
 					<div class="back">
 						<div class="inner">
-							<p>Protect your team and your bottom line with professional commercial air duct cleaning. We help businesses improve indoor air quality, reduce energy costs, and maintain code compliance with fast, reliable service tailored to your facility. From offices to warehouses, our certified technicians keep your air systems clean and your business running smoothly. Book your commercial duct cleaning today and breathe easier tomorrow.</p>
+							<p style="color:#ffffff;">Protect your team with professional commercial air duct cleaning. We help businesses improve indoor air quality, reduce energy costs, and maintain code compliance with fast, reliable service tailored to your facility. </p>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col" ontouchstart="this.classList.toggle('hover');">
+				
 				<div class="container">
-					<div class="front" style="background-image: url(https://unsplash.it/502/502/)">
+					<div class="front" style="background-image: url(/hvac/dryer-duct-cleaning-services.webp)">
+						<div class="overlay"></div> <!-- Add this line -->
 						<div class="inner">
-							<p>Dryer Duct Cleaning</p>
+							<h2 style="color:#ffffff; text-transform: uppercase;">Dryer Duct Cleaning</h2>
+							<br>
+							<span> Learn More...</span>
 						</div>
 					</div>
+				
 					<div class="back">
 						<div class="inner">
-							<p>Prevent fire hazards and boost dryer performance with expert dryer duct cleaning. Lint buildup in dryer vents is a leading cause of household fires—and it also forces your dryer to work harder, wasting energy. Our thorough, professional cleaning keeps your home safe and your dryer running efficiently. Schedule your dryer vent cleaning today for peace of mind and lower utility bills.</p>
+							<p style="color:#ffffff;">Prevent fire hazards and boost dryer performance with expert dryer duct cleaning. Lint buildup in dryer vents is a leading cause of household fires—and it also forces your dryer to work harder, wasting energy. </p>
 						</div>
 					</div>
 				</div>

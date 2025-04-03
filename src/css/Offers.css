@@ -2,6 +2,7 @@
 
   .wrapper {
     padding: 0;
+    background-color:#000000;
   }
   .cols {
     display: flex;
@@ -19,6 +20,7 @@
   }
   .container {
     transform-style: preserve-3d;
+    
   }
   .front,
   .back {
@@ -76,7 +78,7 @@
   /* Responsive */
   @media screen and (max-width: 64rem) {
     .col {
-      width: calc(33.333% - 2rem);
+      width: calc(50.333% - 2rem);
     }
   }
   
@@ -114,5 +116,6 @@
   .front .inner {
     position: relative;
     z-index: 2;
+ 
   }
   
