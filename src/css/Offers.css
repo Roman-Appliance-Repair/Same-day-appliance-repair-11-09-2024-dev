@@ -15,7 +15,7 @@ h2 {
   
   }
   .col {
-    width: calc(35% - 2rem);
+    width: calc(30% - 2rem);
     margin: 1rem;
     cursor: pointer;
     perspective: 1000px;
