@@ -5,6 +5,7 @@ import ParallaxHeader from "@components/ParallaxHeader.astro";
 import Services from "@components/Services.astro";
 import Cta from "@components/cta.astro";
 import Navbar from "@components/navbar/navbar.astro";
+import Btn from "@components/btn1.astro";
 import Reviews from "@components/reviews.astro";
 import Arrow from "@components/js/arrow-phone.astro";
 import "css/service/style_services.css";
@@ -14,6 +15,25 @@ import "css/service/style_services.css";
 <Reviews />
 <ParallaxHeader />
 <Services/> 
+<section class="warning-section" style="background-color:black; padding:20px; color:#ffffff;  align-items: center;  text-align: center;">
+  <div class="warning-content">
+    <h2 style="color:#ffffff; align-items: center;  ">❓ Not Sure If Your Air Ducts Need Cleaning?</h2>
+    <p class="intro">Watch for these <strong>common warning signs</strong> — your air might be telling you something:</p>
+    <ul class="warning-list" style="font-size:2em;">
+      <li>❗️ Increased allergy or respiratory symptoms among family members</li>
+      <li>❗️ Visible dust or debris inside vent covers</li>
+      <li>❗️ Higher-than-normal energy bills without a clear reason</li>
+      <li>❗️ Weaker airflow or inconsistent temperature across rooms</li>
+      <li>❗️ Musty or unpleasant odors when the HVAC system runs</li>
+      <li>❗️ Excessive dust buildup in your home despite regular cleaning</li>
+      <li>❗️ Recent home renovations that may have spread dust and debris</li>
+      <li>❗️ It's been years since your last professional duct cleaning</li>
+    </ul>
+    <div class="cta-block">
+      <Btn />
+    </div>
+  </div>
+</section>
 <Cta />
 <Arrow />
 
