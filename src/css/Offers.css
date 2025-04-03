@@ -1,11 +1,7 @@
 
-h2 {
-  font-size: 2.1rem;
-  text-align: center;
-  padding: 50px 0 50px 0;
-}
+
   .wrapper {
-    padding: 20px;
+    padding: 0;
   }
   .cols {
     display: flex;
@@ -75,7 +71,7 @@ h2 {
   }
   .front .inner span {
     font-family: "Montserrat", sans-serif;
-    font-weight: 300;
+    font-weight: 600;
   }
   /* Responsive */
   @media screen and (max-width: 64rem) {
