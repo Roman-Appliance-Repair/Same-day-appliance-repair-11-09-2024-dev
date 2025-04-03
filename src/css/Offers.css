@@ -15,7 +15,7 @@ h2 {
   
   }
   .col {
-    width: calc(20% - 2rem);
+    width: calc(40% - 2rem);
     margin: 1rem;
     cursor: pointer;
     perspective: 1000px;
@@ -86,7 +86,8 @@ h2 {
   
   @media screen and (max-width: 48rem) {
     .col {
-      width: calc(50% - 2rem);
+      width: calc(70% - 2rem);
+     
     }
   }
   
@@ -94,6 +95,7 @@ h2 {
     .col {
       width: 100%;
       margin: 0 0 2rem 0;
+      
     }
   }
   
