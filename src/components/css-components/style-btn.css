@@ -8,6 +8,10 @@
   text-decoration: none;
   box-sizing: border-box;
 }
+.button-call-global a {
+  padding: 14px 6px;
+  font-size:0.8em;
+}
 .full-button-global {
   max-width: 400px;
   display: inline-flex;
@@ -31,6 +35,7 @@
   display: grid;
   color: #fff;
   text-align: center;
+  font-size: 0.8em;
 }
 
 .button-top-global svg {
@@ -38,7 +43,7 @@
 }
 
 .button-top-global p {
-  line-height: 20px ;
+  line-height: 1em ;
   margin: -5px 0 3px 0 !important;
   color: #fff !important;
 }
@@ -83,6 +88,7 @@
   white-space: nowrap;
   box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
   text-shadow: 1.2px 1.2px 2px black;
+  
 }
 
 .button-book-global:hover button {
@@ -137,13 +143,7 @@
 
   .button-book-global button {
     padding: 7px 6px;
-    font-size: 14px;
-  }
-
-  .button-call-global a {
-    padding: 14px 6px;
-    font-size: 15px;
-    font-size:0.9em;
+    font-size: 0.8em;
   }
 
 
