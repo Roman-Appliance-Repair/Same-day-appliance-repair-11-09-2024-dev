@@ -89,9 +89,6 @@
   background-color: black;
   transition: 0.25s;
 }
-
-
-
 .button-call-global {
   /* display: inline-block; */
   display: grid;
@@ -104,7 +101,6 @@
   margin:5px;
   justify-self: center;
 }
-
 .button-call-global a {
   padding: 13px 24px;
   width: auto;
