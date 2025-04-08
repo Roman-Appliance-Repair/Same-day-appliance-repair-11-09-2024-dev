@@ -736,21 +736,15 @@ button.hcp-button:hover {
     box-shadow: inset 0px 4px 6px 1px rgb(0 0 0 / 25%), 0px 6px 7px 0px rgb(0 0 0 / 11%), 0px 3px 11px 4px rgb(0 0 0 / 25%) !important;
 
 }
-
 @media (max-width:1440px) {
     .header-bootun {
         display: grid;
     }
-
-
 }
-
 @media (max-width:1180px) {
     body {
         margin-top: 112px;
     }
-
-
     .logo-header img {
         max-width: 214px;
     }
@@ -994,7 +988,7 @@ button.hcp-button:hover {
           }, 3000); // Delays GA by 3 seconds after the page loads
         });
       </script>
-
+      <slot name="head" />
   </head>
   <body>
     <slot />
