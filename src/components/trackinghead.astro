@@ -1,0 +1,15 @@
+---
+// TrackingHead.astro – reusable component for Google Ads tracking
+import { Fragment } from 'astro/jsx-runtime';
+---
+
+<Fragment slot="head">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16961527571"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){{dataLayer.push(arguments);}}
+    gtag('js', new Date());
+    gtag('config', 'AW-16961527571');
+  </script>
+</Fragment>
