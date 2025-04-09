@@ -1,18 +1,15 @@
 ---
-// GoogleAdsConversionTag.astro
-import { Fragment } from "astro/jsx-runtime";
+// GoogleAdsConversionTag.astro — No React/JSX
 ---
 
-<Fragment slot="head">
-  <!-- Google Ads Conversion Tag -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11414455325"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-11414455325');
-    gtag('event', 'conversion', {
-      'send_to': 'AW-11414455325' // ← Замените на ваш реальный label
-    });
-  </script>
-</Fragment>
+<!-- Google Ads Conversion Tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11414455325"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-11414455325');
+  gtag('event', 'conversion', {
+    'send_to': 'AW-11414455325/XXXXXXXXXXX' // ← Replace with your actual label
+  });
+</script>
