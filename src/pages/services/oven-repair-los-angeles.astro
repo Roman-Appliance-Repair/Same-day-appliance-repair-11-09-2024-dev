@@ -16,7 +16,21 @@ import Areas from "@components/areas.astro";
 import "css/service/style_services.css";
 ---
     <Layout title="Expert Oven Repair Los Angeles - Fast & Reliable" description="Fast & reliable oven repair. Serving Los Angeles and nearby areas with expert technicians and quality parts. Call now:  (323) 870-4790">
-  <Navbar />
+      <Fragment slot="head">
+        <!-- Google tag (gtag.js) -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16961527571">
+   </script>
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+   
+     gtag('config', 'AW-16961527571');
+   </script>
+         </Fragment>
+  
+  
+      <Navbar />
 <Reviews />
  
 <Container>
