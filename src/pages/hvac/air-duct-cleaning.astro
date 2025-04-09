@@ -13,7 +13,20 @@ import "css/service/style_services.css";
 import TrackingHead from "@components/TrackingHead.astro";
 ---
     <Layout title="Professional Air Duct Cleaning & Repair - Los Angeles" description="Los Angeles air duct cleaning and repair services. Cutting-edge technology to eliminate allergens, dust, and debris. Experience the difference! (323) 870-4790">
-      <TrackingHead />
+      
+      <Fragment slot="head">
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11414455325">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-11414455325');
+</script>
+          </Fragment>
+
       <Navbar />
 <Reviews />
 <ParallaxHeader />
