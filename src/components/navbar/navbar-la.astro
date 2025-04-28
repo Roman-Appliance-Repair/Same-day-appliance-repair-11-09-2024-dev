@@ -1,0 +1,366 @@
+---
+import Container from "@components/container.astro";
+import Link from "@components/ui/link.astro";
+import Dropdown from "./dropdown.astro";
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import Layout from "@layouts/Layout.astro";
+
+const menuitems = [
+  {
+    title: "Home Appliance Services",
+    path: "/services/commercial-and-household/",
+    children: [
+      { title: "Refrigerator Repair", path: "/services/refrigerator-repair-los-angeles/" },
+      { title: "Freezer Repair", path: "/services/freezer-repair-los-angeles/" },
+      { title: "Washing Machine Repair", path: "/services/washing-machine-repair-los-angeles/"},
+      { title: "Dryer Repair", path: "/services/dryer-repair-los-angeles/" },
+      { title: "Stove Repair", path: "/services/stove-repair-los-angeles/" },
+      { title: "Range Repair", path: "/services/range-repair-los-angeles/" },
+      { title: "Dishwasher Repair", path: "/services/dishwasher-repair-los-angeles/" },
+      { title: "Oven Repair", path: "/services/oven-repair-los-angeles/" },
+      { title: "Cooktop Repair", path: "/services/cooktop-repair-los-angeles/" },
+      { title: "Microwave Repair", path: "/services/microwave-repair-los-angeles/" },
+      { title: "Range Hood Repair", path: "/services/range-hood-repair-los-angeles/" },
+      { title: "Fireplace Repair", path: "/services/fireplace-repair-los-angeles/" },
+      { title: "BBQ Grill Repair", path: "/services/bbq-grill-repair-los-angeles/" },
+      { title: "Wine Cooler Repair", path: "/services/wine-cooler-repair-los-angeles/" },
+      { title: "Wine Cellar Repair", path: "/services/wine-cellar-repair-los-angeles/" },
+      { title: "Induction Cooktop Repair", path: "/services/induction-cooktop-repair-los-angeles/" },
+      /*{ title: "Test", path: "/test/" }*/
+    ],
+  },
+  {
+    title: "Commercial Appliance Services",
+    path: "/services/commercial-and-household/",
+    children: [
+      {title: "Commercial Refrigerator Repair",path: "/services/commercial-refrigerator-repair-los-angeles/"},
+      {title: "Commercial Freezer Repair", path: "/services/commercial-freezer-repair-los-angeles/"},
+      {title: "Commercial Dishwasher Repair", path: "/services/commercial-dishwasher-repair-los-angeles/"},
+      {title: "Commercial Dryer Repair", path: "/services/commercial-dryer-repair-los-angeles/"},
+      {title: "Commercial Oven Repair", path: "/services/commercial-oven-repair-los-angeles/"},
+      {title: "Commercial Showcase Refrigerator Repair", path: "/services/commercial-showcase-refrigerator-repair-los-angeles/"},
+      {title: "Commercial Walk in Cooler Repair", path: "/services/commercial-walk-in-cooler-repair-los-angeles/"},
+      {title: "Commercial Walk in Freezer  Repair", path: "/services/commercial-walk-in-freezer-repair-los-angeles/"},
+      {title: "Commercial Ice Machine Repair", path: "/services/commercial-ice-machine-repair-los-angeles/"},
+      {title: "Commercial Slushie Machine Repair", path: "/services/commercial-slushie-machine-repair-los-angeles/"},
+      {title: "Commercial Fryer Machine Repair", path: "/services/commercial-fryer-machine-repair-los-angeles/"},
+      {title: "Commercial Bar Refrigerator Repair", path: "/services/bar-refrigerator-repair-los-angeles/" },
+      {title: "Commercial Washing Machine Repair", path: "/services/commercial-washing-machine-repair-los-angeles/" },
+      {title: "Commercial Stove Repair", path: "/services/commercial-stove-repair-los-angeles/" },
+      {title: "Commercial Laundry Repair", path: "/services/commercial-laundry-machine-repair-los-angeles/"},
+    ],
+  },
+
+  {
+    title: "HVAC Services",
+    path: "/services/hvac-repair-los-angeles/",
+    children: [
+    { title: "HVAC Services", path: "/services/hvac-repair-los-angeles/" },
+    { title: "Furnace Repair", path: "/services/furnace-repair-los-angeles/" },
+    { title: "Heat Pump Repair", path: "/services/heat-pump-repair-los-angeles/" },
+    { title: "Water Heater Repair", path: "/services/water-heater-repair-los-angeles/" },
+    { title: "Wall Heater Repair", path: "/services/wall-heater-repair-los-angeles/" },
+    { title: "Air Conditioner Repair", path: "/services/air-conditioner-repair-los-angeles/" },
+    { title: "Air Duct Cleaning", path: "/hvac/air-duct-cleaning/" },
+    ],
+  },
+
+  {
+    title: "Service Areas",
+    path: "/areas/los-angeles-and-surrounding-areas/",
+    children: [
+    
+    { title: "Alhambra", path: "/areas/alhambra/"},
+    { title: "Anaheim", path: "/areas/appliance-repair-anaheim/"},
+    { title: "Beverly Hills", path: "/areas/beverly-hills/"},
+    { title: "Brentwood", path: "/areas/brentwood/" },
+    { title: "Burbank", path: "/areas/burbank/"},
+    { title: "Culver City", path: "/areas/culver-city/" },
+    { title: "Downtown Los Angeles", path: "/areas/downtown-los-angeles/"},
+    { title: "East Hollywood", path: "/areas/east-hollywood/"},
+    { title: "Glendale", path: "/areas/glendale/"},
+    { title: "Glessell Park", path: "/areas/glessell-park/"},
+    { title: "Hollywood", path: "/areas/hollywood/"},
+    { title: "Hollywood Hills", path: "/areas/hollywood-hills/"},
+    { title: "Ladera Heights", path: "/areas/ladera-heights/"},
+      { title: "Los Angeles", path: "/los-angeles/" },
+      { title: "Los Feliz", path: "/areas/los-feliz/" },
+      { title: "Los Angeles County", path: "/areas/los-angeles-and-surrounding-areas/"},
+      { title: "Malibu", path: "/areas/malibu/" },
+      { title: "Marina Del Rey", path: "/areas/marina-del-rey/" },
+      { title: "Monterey Park", path: "/areas/monterey-park/"},
+      { title: "North Hollywood", path: "/areas/north-hollywood/"},
+      { title: "Pacific Palisades", path: "/areas/pacific-palisades/"},
+      { title: "Pasadena", path: "/pasadena/" },
+      { title: "Playa Del Rey", path: "/areas/playa-del-rey/"},
+      { title: "San Marino", path: "/areas/san-marino/"},
+      { title: "Santa Monica", path: "/areas/santa-monica/" },
+      { title: "Silver Lake", path: "/areas/silver-lake/" },
+      { title: "South Pasadena", path: "/areas/south-pasadena/"},
+      { title: "Thousand Oaks", path: "/areas/thousand-oaks/"},
+      { title: "West Hollywood", path: "/west-hollywood/"},  
+    ],
+  },
+
+  {
+    title: "Brands",
+    path: "/brands/commercial-and-household/",
+    children: [
+      { title: "Home Brands", path: "/brands/commercial-and-household/" },
+      { title: "Maytag", path: "/brands/maytag/" },
+      { title: "Viking", path: "/brands/viking-repair/" },
+      { title: "Bosch", path: "/brands/bosch/" },
+      { title: "LG", path: "/brands/lg/" },
+      { title: "Samsung", path: "/brands/samsung-repair/" },
+      { title: "Whirlpool", path: "/brands/whirlpool-repair/" },
+      { title: "GE", path: "/brands/ge-repair/" },
+      { title: "Frigidaire", path: "/brands/frigidaire-repair/" },
+      { title: "Kenmore", path: "/brands/kenmore-repair/" },
+      { title: "KitchenAid", path: "/brand-kitchenaid-appliance-repair/" },
+      { title: "Sub-Zero", path: "/brand-subzero-appliance-repair/" },
+      { title: "Haier", path: "/brand-haier-appliance-repair/" },
+      { title: "Amana", path: "/brand-amana-appliance-repair/" },
+      { title: "Electrolux", path: "/brands/electrolux-repair/" },
+      { title: "Thermador", path: "/brand-thermador-appliance-repair/" },
+      { title: "Fisher-Paykel", path: "/brand-fisher-paykel-appliance-repair/" },
+      { title: "JannAir", path: "/brand-jannair-appliance-repair/" },
+      { title: "Hotpoint", path: "/brand-hotpoint-appliance-repair/" },
+      { title: "Magic Chef", path: "/brand-magic-chef-appliance-repair/" },
+      { title: "Dacor", path: "/brand-dacor-appliance-repair/" },
+      { title: "Miele", path: "/brand-miele-appliance-repair/" },
+      { title: "Speed-Queen", path: "/brand-speed-queen-appliance-repair/" },
+      { title: "Roper", path: "/brand-roper-appliance-repair/" },
+      { title: "Asko", path: "/brand-asko-appliance-repair/" },
+      { title: "Gaggenau", path: "/brand-gaggenau-appliance-repair/" },
+      
+    ],
+  },
+  
+  {
+    title: "Prices / Oline Estimates",
+    path: "/price-list/appliance-reapir-cost/",
+    children: [
+      { title: "Dryer Repair Cost",
+        path: "/price-list/dryer-repair-cost/" },
+      {
+        title: "Dishwasher Repair Cost",
+        path: "/price-list/dishwasher-repair-cost/",
+      },
+      { title: "Oven Repair Cost",
+        path: "/price-list/oven-repair-cost/" },
+      {
+        title: "Refrigerator Repair Cost",
+        path: "/price-list/refrigerator-repair-cost/",
+      },
+      {
+        title: "Freezer Repair Cost",
+        path: "/price-list/freezer-repair-cost/",
+      },
+      {
+        title: "Range Repair Cost",
+        path: "/price-list/range-repair-cost/",
+      },
+      {
+        title: "Stove Repair Cost",
+        path: "/price-list/stove-repair-cost/",
+      },
+      {
+        title: "Cooktop Repair Cost",
+        path: "/price-list/cooktop-repair-cost/",
+      },
+      {
+        title: "Microwave Repair Cost",
+        path: "/price-list/microwave-repair-cost/",
+      },
+      {
+        title: "Range Hood Repair Cost",
+        path: "/price-list/range-hood-repair-cost/",
+      },
+      {
+        title: "Fireplace Repair Cost",
+        path: "/price-list/fireplace-repair-cost/",
+      },
+      {
+        title: "BBQ Grill Repair Cost",
+        path: "/price-list/bbq-grill-repair-cost/",
+      },
+      {
+        title: "Furnace Repair Cost",
+        path: "/price-list/furnace-repair-cost/",
+      },
+      {
+        title: "Water Heater Repair Cost",
+        path: "/price-list/water-heater-repair-cost/",
+      },
+      {
+        title: "Air Conditioner Repair Cost",
+        path: "/price-list/air-conditioner-repair-cost/",
+      },
+      {
+        title: "Air Duct Cleaning Cost",
+        path: "/price-list/air-duct-cleaning-cost/",
+      },
+      {
+        title: "Heat Pump Repair Cost",
+        path: "/price-list/heat-pump-repair-cost/",
+      },
+
+      {
+        title: "Commercial Refrigerator Repair Cost",
+        path: "/price-list/commercial-refrigerator-repair-cost/",
+      },
+      {
+        title: "Commercial Freezer Repair Cost",
+        path: "/price-list/commercial-freezer-repair-cost/",
+      },
+      {
+        title: "Commercial Ice Machine Repair Cost",
+        path: "/price-list/commercial-ice-machine-repair-cost/",
+      },
+      {
+        title: "Commercial Dishwasher Repair Cost",
+        path: "/price-list/commercial-dishwasher-repair-cost/",
+      },
+      {
+        title: "Commercial Dryer Repair Cost",
+        path: "/price-list/commercial-dryer-repair-cost/",
+      },
+      {
+        title: "Commercial Slushie Machine Repair Cost",
+        path: "/price-list/commercial-slushie-machine-repair-cost/",
+      },
+      {
+        title: "Commercial Walk-in Freezer Repair Cost",
+        path: "/price-list/commercial-walk-in-freezer-repair-cost/",
+      },
+      {
+        title: "Commercial Walk-in Cooler Repair Cost",
+        path: "/price-list/commercial-walk-in-cooler-repair-cost/",
+      },
+      {
+        title: "Commercial Oven Repair Cost",
+        path: "/price-list/commercial-oven-repair-cost/",
+      },
+      {
+        title: "Commercial Stove Repair Cost",
+        path: "/price-list/commercial-stove-repair-cost/",
+      },
+      {
+        title: "Commercial Wine Cooler Repair Cost",
+        path: "/price-list/commercial-wine-cooler-repair-cost/",
+      },
+      {
+        title: "Commercial Showcase Refrigerator Repair Cost",
+        path: "/price-list/commercial-showcase-refrigerator-repair-cost/",
+      },
+      {
+        title: "directories",
+        path: "/directories/",
+      },
+    ],
+  },
+];
+---
+  <Container>
+    <header class="flex flex-col lg:flex-row justify-between items-center my-5 header-full">
+      <div class="inside-reviews_header-full">
+        <div class="inside_header-full">
+          <Astronav>
+            <div class="flex w-full lg:w-auto items-center justify-between">
+              <!-- картинка лого -->
+              <div class="header-logo-main">
+                <a href="/" class="text-lg"
+                  ><span
+                    class="font-bold text-slate-800 logo-header"
+                    style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"
+                    ><img
+                      src="/images/same-day-appalince-repair-logo-2.webp"
+                      title="Same Day Appliance Repair Services"
+                      width="238"
+                      height="106" alt=" Same Day Appliance Repair Services homepage"
+                    /></span
+                  ><span class="text-slate-500"></span>
+                </a>
+              </div>
+
+              <div class="hidden lg:flex items-center gap-4">
+                <div class="header-bootun">
+                  <div class="call-header">
+                    <a onclick="return gtag_report_conversion('tel:323-870-4790');" 
+                     href="tel:+13238704790">(323) 870-4790</a>
+                  </div>
+
+                  
+                </div>
+              </div>
+
+              <!-- кнопка меню -->
+              <div class="block lg:hidden">
+                <div class="header-bootun-1024">
+                  <div class="call-header-1024">
+                    <a onclick="return gtag_report_conversion('tel:323-870-4790');" href="tel:+13238704790">(323) 870-4790</a>
+                  </div>
+                </div>
+                <MenuIcon class="w-4 h-4 text-gray-800" />
+              </div>
+            </div>
+            <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
+              <ul
+                class="flex flex-col lg:flex-row lg:gap-3 header-menu-content">
+                {
+                  menuitems.map((item, index) => (
+                    <>
+                      {item.children && (
+                        <Dropdown
+                          title={item.title}
+                          children={item.children}
+                          lastItem={index === menuitems.length - 1}
+                        />
+                      )}
+
+                      {!item.children && (
+                        <li>
+                          <a
+                            href={item.path}
+                            class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900">
+                            <span> {item.title}</span>
+                            {item.badge && (
+                              <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full">
+                                New
+                              </span>
+                            )}
+                          </a>
+                        </li>
+                      )}
+                    </>
+                  ))
+                }
+              </ul>
+              <!--Red Buttons In the black header on Mobile-->
+              <div class="lg:hidden flex items-center mt-3 gap-4">
+                <Link onclick="return gtag_report_conversion('tel:323-870-4790');" 
+                 href="tel:+14243250520" style="muted" block size="md"
+                  >CALL: (323) 870-4790</Link
+                >
+
+                <!--Start of Housecallpro Online booking button-->
+                <button
+                  data-token="9e68ce292ba246dbba0fe928b98791f7"
+                  data-orgname="Same-Day-Appliance-Repair"
+                  class="hcp-button"
+                  onclick="HCPWidget.openModal()">
+                  Book!
+                </button>
+             <!-- <script
+                  async
+                  src="https://online-booking.housecallpro.com/script.js?token=9e68ce292ba246dbba0fe928b98791f7&orgName=Same-Day-Appliance-Repair"
+                ></script>-->
+                <!--End of Housecallpro Online booking button-->
+              </div>
+              <!--End Red Buttons In the black header on Mobile-->
+            </MenuItems>
+          </Astronav>
+        </div>
+      </div>
+    </header>
+  </Container>
