@@ -8,18 +8,43 @@ import Contactbtn from "@components/contactbtn.astro";
 import Btn from "@components/btn.astro";
 
 import "css/brands/style-brands.css";
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Marsal Pizza Oven Repair",
+  "provider": {
+    "@type": "Organization",
+    "name": "Same Day Appliance Repair",
+    "url": "https://samedayappliance.repair/",
+    "logo": "https://samedayappliance.repair/images/same-day-appalince-repair-logo.webp",
+    "telephone": "+13238704790",
+    "email": "info@samedayappliance.repair",
+    "areaServed": [
+      { "@type": "Place", "name": "Los Angeles County" },
+      { "@type": "Place", "name": "Orange County" },
+      { "@type": "Place", "name": "Ventura County" }
+    ]
+  },
+  "description": "Same Day Appliance Repair offers expert Marsal pizza oven repair services across Southern California. Same-day diagnostics and repairs for Marsal gas and electric pizza ovens.",
+  "mainEntityOfPage": "https://samedayappliance.repair/marsal-pizza-oven-repair/"
+};
 ---
+
 <Layout 
-  title="Middleby Marshall Conveyor Oven Repair | Same Day Appliance Repair" 
-  description="Fast & reliable Middleby Marshall conveyor oven repair. Expert technicians and quality parts. Call: (323) 870-4790"
+  title="Marsal Pizza Oven Repair | Same Day Appliance Repair" 
+  description="Fast & reliable Marsal pizza oven repair. Expert technicians and quality parts. Call: (323) 870-4790"
 >
+  <head>
+    <script type="application/ld+json" is:raw>
+      {JSON.stringify(schemaData)}
+    </script>
+  </head>
 
+  <Navbar />
+  <Reviews />
 
-<Navbar />
-<Reviews />
- 
-<Container>
-  <h1><strong>Middleby Marshalls conveyer ovens Repair by Technicians at Same Day Appliance Repair</strong></h1>
+  <Container>
+    <h1><strong>Middleby Marshalls conveyer ovens Repair by Technicians at Same Day Appliance Repair</strong></h1>
 
   <p><strong>Marsal pizza ovens</strong> are widely used in <strong>pizzerias, bakeries, and restaurants</strong> for their superior   heat retention, high-performance baking capabilities, and innovative stone deck designs  . These ovens deliver   even cooking, crispy crusts, and fast recovery times  , making them an industry favorite for high-volume pizza production.</p>
     
@@ -94,5 +119,7 @@ import "css/brands/style-brands.css";
         <Btn />
 
   </Container>
- 
-<Cta />
+
+  <Cta />
+</Layout>
+
