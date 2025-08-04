@@ -1,0 +1,344 @@
+---
+import Container from "@components/container.astro";
+import Cta from "@components/cta.astro";
+import Layout from "@layouts/Layout.astro";
+import Navbar from "@components/navbar/navbar.astro";
+import Reviews from "@components/reviews.astro";
+import Contactbtn from "@components/contactbtn.astro";
+import Btn from "@components/btn.astro";
+import { Accordion, AccordionItem,Icon } from 'free-astro-components'
+
+import "css/brands/style-brands.css";
+
+const description = "Need Frigidaire freezer repair in Los Angeles? We offer fast, same-day service with factory-trained techs and genuine OEM parts. Book before 3 PM today!";
+const title ="Frigidaire Freezer Repair Los Angeles – Same Day Service | Factory-Trained & Guaranteed";
+---
+<Layout title={title} description={description}>
+<Navbar />
+<Reviews />
+ 
+  <Container>
+    <div class="full-page">
+      <div class="page-header">
+        <span class="animate-charcter">
+          <h1 style="color: #fff !important;">Frigidaire Freezer Repair Los Angeles – Same Day Service | Factory-Trained & Guaranteed</h1>
+          </span>
+        <!-- <div class="relative mt-10">
+          <img
+            loading="lazy"
+            src="/freezer/whirlpool-freezer-repair-los-angeles-technician.jpeg"
+            alt="Whirlpool Freezer Repair"
+            class="w-full h-auto"
+          />
+          <div class="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-r from-white to-transparent opacity-50"></div>
+          <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center">
+            
+          </div>
+        </div> -->
+        <h2>Factory Trained • Fast Service • OEM Parts Guaranteed</h2>
+
+        <h3>Expert Frigidaire Freezer Repair Services in Los Angeles</h3>
+        
+        <p>If your Frigidaire freezer stops freezing, leaks water, makes buzzing noises, or shows a temperature warning—don't wait. Same Day Appliance Repair specializes in Frigidaire freezer repair, using original OEM parts, factory service manuals, and years of experience with this brand's quirks. High-quality Frigidaire appliances still require expert attention and regular upkeep.</p>
+        
+        <p>We offer same‑day service across Los Angeles, Orange County, and Ventura County with techs who know how to fix them right—fast.</p>
+        
+        <p><strong>Related Service:</strong> For matching Whirlpool fridge repairs, visit our <a href="/services/refrigerator-repair-los-angeles/" 
+                  class="underline font-bold" 
+                  style="color: #dc2626 !important;">
+                  Refrigerator Repair Los Angeles
+               </a> page.</p>
+      </div>
+      
+      <!-- <div class="page-container" id="anchor-1">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Why Southern California Homeowners Choose Same Day Appliance Repair</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="left-content">
+            <ul class="space-y-4">
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913]">
+                Same-day arrival for calls placed before 3 PM
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913]">
+                Factory-level training on all Whirlpool freezer models
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913]">
+                OEM inventory in every van: thermostats, control boards, gaskets & more
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913]">
+                Flat diagnostic fee credited toward the repair
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913]">
+                EPA-certified sealed-system handling
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913]">
+                Written 90-day warranty
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="page-container" id="anchor-2">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Types of Frigidaire Freezers We Service</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="right-content">
+            <p>We repair every major residential Frigidaire freezer type, backed by detailed manufacturer knowledge:</p>
+            <ul>
+              <li class="flex items-center gap-2" ><Icon icon="check" class="icon-class" /><strong>Upright frost-free series</strong> – such as the FFFU16F2VW and FFFU20F2VW</li>
+              <li class="flex items-center gap-2" ><Icon icon="check" class="icon-class" /><strong>Manual-Defrost Chest Freezers</strong> – like FFFC15M4TW and FFFC22M6QW</li>
+              <li class="flex items-center gap-2" ><Icon icon="check" class="icon-class" /><strong>Garage-ready upright/chest models</strong> – such as FFFU16F2VV</li>
+              <li class="flex items-center gap-2" ><Icon icon="check" class="icon-class" /><strong>Compact or under-counter freezers</strong> – like EFRF696-AMZ</li>
+              <li class="flex items-center gap-2" ><Icon icon="check" class="icon-class" /><strong>High-volume horizontal chest units</strong> – commonly used in garages or basements</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-3">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Common Frigidaire Freezer Problems We Fix</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>Our experts handle the most frequent issues with precision:</p>
+            <ul>
+              <li class="flex items-center gap-2" ><Icon icon="check" class="icon-class" /><strong>Warm interior or thawing food</strong> – (dirty coils, thermostat failure)</li>
+              <li class="flex items-center gap-2" ><Icon icon="check" class="icon-class" /><strong>Freezer running nonstop without cooling</strong> – (control issues or relay failure)</li>
+              <li class="flex items-center gap-2" ><Icon icon="check" class="icon-class" /><strong>Frost buildup</strong> – (defrost system or door gasket failure)</li>
+              <li class="flex items-center gap-2" ><Icon icon="check" class="icon-class" /><strong>Clicking or buzzing noises</strong> – (relay or compressor malfunctions)</li>
+              <li class="flex items-center gap-2" ><Icon icon="check" class="icon-class" /><strong>Ice‑maker overflow</strong> – (valve leaks, frozen fill tubes)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-4">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>OEM Parts We Stock for Frigidaire Repairs</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>Our vans are stocked with the following genuine Frigidaire parts for first-visit repairs:</p>
+            <ul class="space-y-4">
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2">
+                <span><strong>Control board (5304518661)</strong></span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2">
+                <span><strong>Start relay kit (5304512984)</strong></span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2">
+                <span><strong>Evaporator fan motor (5304514392)</strong></span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2">
+                <span><strong>Thermostat assembly (5304513033)</strong></span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2">
+                <span><strong>Door gasket (5304507201)</strong></span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2">
+                <span><strong>Defrost heater assembly (5303918255)</strong></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-4">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Should You Repair or Replace Your Freezer?</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>Generally, for Frigidaire units under 10 years with no sealed‑system damage, repair is the smart choice. We provide an honest assessment based on the age of the unit, cost of parts, and overall condition—no pressure, just clear recommendations.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-5">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Typical Repair Costs</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <ul class="space-y-4">
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913]">
+                Flat-rate diagnostic fee (credited toward repairs if approved)
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913]">
+                OEM parts and labor
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913]">
+                EPA-certified technician dispatch
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913]">
+                Insurance and office administration
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913]">
+                A 90-day warranty on parts and labor
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p>For more insight, visit our <a href="/price-list/freezer-repair-cost/" 
+          class="underline font-bold" 
+          style="color: #dc2626 !important;">
+          Freezer Repair Cost Guide
+       </a> to compare typical repair costs across brands.</p>
+      </div>
+
+      <div class="page-container" id="anchor-6">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>How Our Service Works</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>Our process ensures transparency and satisfaction:</p>
+            <ul class="space-y-4">
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913]">
+                Book online or by phone before 3 PM for same-day arrival
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913]">
+                Get ETA and technician profile
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913]">
+                On-site diagnosis with clear explanation
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913]">
+                Customer approves repair and pays deposit
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913]">
+                Parts ordered if needed, then installed
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913]">
+                Job completed and tested, with 90-day warranty
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913]">
+                Digital invoice and care tips delivered
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913]">
+                10% discount offered for return customers
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-7">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Other Brands We Service</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p class="text-center text-lg mb-6">
+              
+            </p>
+            <p style="margin-top: 20px;">In addition to Frigidaire, we repair appliances from Whirlpool, GE, Samsung, LG, Maytag, Sub-Zero, Thermador, Viking, and more. For help with your freezer or fridge, check our dedicated<a href="/services/refrigerator-repair-los-angeles/" class="underline font-bold " style="color: #dc2626 !important;"> Refrigerator Repair service </a></p>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="page-container" id="anchor-8">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Frequently Asked Questions (FAQ) – Frigidaire Freezer Repair</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+            <div class="full-width-content">
+            <Accordion variant='splitted' title="Frequently Asked Questions (FAQ) – Frigidaire Freezer Repair">
+              <AccordionItem title="Why is my Frigidaire freezer not freezing even though it's powered on?">
+                <p>A drop in freezing performance usually stems from blocked or dirty condenser coils, a faulty thermostat/temperature control, or a malfunctioning evaporator fan. Start by cleaning coils and checking airflow—if temps remain warm, it's likely time for a professional diagnosis.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="My freezer has heavy frost buildup—what's likely wrong?">
+                <p>Excess frost is often caused by a worn-out door gasket or a failed defrost heater/timer. If warm, moist air slips in or the defrost system stops working, moisture freezes on evaporator plates and interior walls.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="Why does my Frigidaire freezer click loudly and refuse to run?">
+                <p>Clicking or buzzing generally indicates a bad start relay or a failing compressor. If the freezer cycles on and off rapidly without cooling, a component is struggling to start and needs professional replacement.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="What causes a Frigidaire freezer to leak or overflow around the ice maker?">
+                <p>Leaks or overflows usually trace back to a stuck fill valve or a blocked/frozen fill tube in upright models. A frozen inlet or improper water pressure can flood the ice basket and waste water.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="What should I do if my freezer has zero power or no lights?">
+                <p>Check basic issues first: ensure the control knob isn't set to OFF, verify there's power at the outlet, and reset any tripped circuit breakers. If all electrical systems are good and there's still no power, it could indicate a failed main control board.</p>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-7">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Call Now for Frigidaire Freezer Repair</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p class="text-center text-lg mb-6">
+              
+            </p>
+            <p style="margin-top: 20px;">Same Day Appliance Repair serves neighborhoods across <strong>Los Angeles, Pasadena, Glendale, Santa Monica, Burbank, Irvine, Anaheim, Long Beach, and Thousand Oaks</strong>. Whether indoors or in a garage, we restore your Frigidaire freezer to 0 °F fast.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-9">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>About Same Day Appliance Repair</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>Same Day Appliance Repair is Southern California's BBB-accredited, A+ rated appliance repair service for homes and businesses. Our licensed, insured, and factory-trained technicians repair all major brands using OEM parts and detailed manuals. We offer same-day repair and transparent pricing backed by a 90-day guarantee. Book at <a href="/services/refrigerator-repair-los-angeles/" class="underline font-bold " style="color: #dc2626 !important;"> samedayappliance.repair </a> or call <strong>(323) 870‑4790</strong> today—schedule made simple, repairs done right.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-section">
+        <Contactbtn />
+      </div>
+    </div>
+  </Container>
+</Layout>
+ 
+<Cta /> 

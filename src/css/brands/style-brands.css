@@ -359,6 +359,12 @@ p {
     position: relative;
   
   }
+
+  .icon-class {
+    width: 2rem;
+    height: 2rem;
+    color: #ca0913;
+  }
   
   
 
