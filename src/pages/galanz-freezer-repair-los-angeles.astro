@@ -1,0 +1,284 @@
+---
+import Container from "@components/container.astro";
+import Cta from "@components/cta.astro";
+import Layout from "@layouts/Layout.astro";
+import Navbar from "@components/navbar/navbar.astro";
+import Reviews from "@components/reviews.astro";
+import Contactbtn from "@components/contactbtn.astro";
+import Btn from "@components/btn.astro";
+import { Accordion, AccordionItem,Icon } from 'free-astro-components'
+
+import "css/brands/style-brands.css";
+
+const description = "Fast, professional Galanz freezer repair in Los Angeles. We service upright, chest, and compact freezers using OEM parts. Same-day appointments available when you book before 3 PM.";
+const title ="Same Day Galanz Freezer Repair in Los Angeles – OEM Parts & Certified Techs";
+---
+<Layout title={title} description={description}>
+<Navbar />
+<Reviews />
+ 
+  <Container>
+    <div class="full-page">
+      <div class="page-header">
+        <span class="animate-charcter">
+          <h1 style="color: #fff !important;">Same Day Galanz Freezer Repair in Los Angeles</h1>
+          </span>
+        <h2>High-End Appliance Specialists • OEM Parts • Fast Local Service</h2>
+        
+        <p>If your <strong>Galanz freezer is making strange noises, leaking water, or not freezing properly</strong>, you need expert help. At <strong>Same Day Appliance Repair</strong>, we specialize in Galanz freezer repair using original parts and manufacturer guidelines. Our technicians are trained to handle compact, retro, and convertible Galanz models with precision and care. We serve homeowners across <strong>Los Angeles, Ventura County, and Orange County</strong> with same-day service when you call before 3 PM.</p>
+        
+        <p><strong>Related Service:</strong><br>
+        For matching fridge repairs, visit our <a href="/services/refrigerator-repair-los-angeles/" 
+                  class="underline font-bold" 
+                  style="color: #dc2626 !important;">
+                  Refrigerator Repair Los Angeles
+               </a> page.</p>
+      </div>
+
+      <div class="page-container" id="anchor-2">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Types of Galanz Freezers We Service</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="right-content">
+            <ul>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" />Retro-style upright freezers (e.g., <strong>GLR10TRDEFR</strong>, <strong>GLF11URDG16</strong>)</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" />Compact and countertop freezers (e.g., <strong>GLF70CWED01</strong>)</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" />Convertible freezer/refrigerator models (e.g., <strong>GLF11CWED01</strong>)</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" />Garage-ready upright and chest freezers</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" />Slim upright designs used in apartments or small kitchens</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-3">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Common Galanz Freezer Problems We Fix</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>We frequently solve issues such as:</p>
+            <ul>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Freezer not freezing or maintaining temperature</strong> (control board or thermostat failure)</li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Excessive frost buildup</strong> (defrost timer or gasket issue)</li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Leaking water</strong> (clogged drain tube or cracked liner)</li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Clicking or buzzing noises</strong> (start relay or compressor issues)</li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Freezer constantly running</strong> (sensor or temperature control malfunction)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-4">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>OEM Parts We Stock for Galanz Freezer Repairs</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>To support fast repair turnaround, we carry key Galanz OEM parts in our service vans:</p>
+            <ul class="space-y-4">
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span>Thermostats and temperature sensors</span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span>Main control boards</span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span>Door seals and magnetic gaskets</span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span>Defrost timers and heaters</span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span>Compressor start relays</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-5">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Should You Repair or Replace Your Galanz Freezer?</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>Galanz freezers under 8–10 years old are generally worth repairing. We consider unit condition, part availability, and your budget before making a recommendation. Our goal is always to provide long-lasting, cost-effective solutions.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-6">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Typical Repair Costs</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>Our pricing includes:</p>
+            <ul class="space-y-4">
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Flat-rate diagnostic visit (applied toward repair if approved)</li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Labor by trained, insured technicians</li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">OEM Galanz parts</li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1"><strong>90-day warranty on all parts and labor</strong></li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Transparent estimates with no hidden charges</li>
+            </ul>
+            <p style="margin-top: 20px;">For more insight, visit our <a href="/price-list/freezer-repair-cost/" class="underline font-bold" style="color: #dc2626 !important;">Freezer Repair Cost Guide</a> to compare typical repair costs across brands.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-7">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>How Our Service Works</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <ul class="space-y-4">
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Call or book online before 3 PM for same-day scheduling
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Receive a tech ETA and profile via text
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Get a clear diagnosis and repair estimate
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Approve estimate and pay deposit
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Technician completes repair or orders part
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                System tested, care tips provided
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                90-day warranty included + 10% return customer discount
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-8">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Other Brands We Service</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>We also repair <strong>Whirlpool, GE, Samsung, LG, Maytag, Danby, Magic Chef, and Frigidaire appliances</strong>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-9">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Service Areas</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>Same Day Appliance Repair serves:</p>
+            <ul>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Los Angeles</strong> <a href="/" class="underline font-bold" style="color: #dc2626 !important;">(see LA Service Hub)</a></li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Orange County</strong></li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Ventura County</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-10">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Frequently Asked Questions (FAQ)</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+            <div class="full-width-content">
+            <Accordion variant='splitted' title="Frequently Asked Questions (FAQ)">
+              <AccordionItem title="Why is my Galanz freezer warm but the light is on?">
+                <p>This could be a thermostat, control board, or compressor issue. A technician can check each component and restore cooling quickly.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="Why does my Galanz freezer keep building up frost?">
+                <p>Frost buildup often results from worn gaskets or a faulty defrost system. Sealing leaks and restoring defrost function usually solves the issue.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="What do I do if my Galanz freezer leaks water?">
+                <p>Check for ice blocking the drain tube. If the drain is clear and the leak continues, schedule a service to inspect the liner and seals.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="Is it worth fixing an older Galanz freezer?">
+                <p>In most cases, yes. As long as parts are available and the sealed system is intact, repairs are usually more cost-effective than replacement.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="Do you offer same-day repair in my city?">
+                <p>Yes—if you call before 3 PM, we can usually provide same-day service in most areas of Los Angeles, Orange County, and Ventura County.</p>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-11">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Call Now for Galanz Freezer Repair</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>We service all of <strong>Los Angeles, Glendale, Santa Monica, Pasadena, Burbank, Irvine, Anaheim, and Long Beach</strong>. Call <strong>(323) 870-4790</strong> or visit <a href="/services/refrigerator-repair-los-angeles/" class="underline font-bold" style="color: #dc2626 !important;">samedayappliance.repair</a> to schedule your freezer repair.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-12">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>About Us</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>Same Day Appliance Repair is a trusted repair service for Southern California households. We specialize in major appliance brands, offer fast diagnostics, and stand behind every repair with a 90-day warranty. Our licensed, insured technicians use genuine parts and bring deep brand knowledge to every home. Book your repair today.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-section">
+        <Contactbtn />
+      </div>
+    </div>
+  </Container>
+</Layout>
+ 
+<Cta /> 

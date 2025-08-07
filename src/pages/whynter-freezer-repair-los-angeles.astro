@@ -1,0 +1,285 @@
+---
+import Container from "@components/container.astro";
+import Cta from "@components/cta.astro";
+import Layout from "@layouts/Layout.astro";
+import Navbar from "@components/navbar/navbar.astro";
+import Reviews from "@components/reviews.astro";
+import Contactbtn from "@components/contactbtn.astro";
+import Btn from "@components/btn.astro";
+import { Accordion, AccordionItem,Icon } from 'free-astro-components'
+
+import "css/brands/style-brands.css";
+
+const description = "Fast, reliable Whynter freezer repair in Los Angeles. We fix upright, chest, and portable Whynter freezers using OEM parts. Book before 3 PM for same-day service.";
+const title ="Same Day Whynter Freezer Repair in Los Angeles – OEM Parts & Certified Techs";
+---
+<Layout title={title} description={description}>
+<Navbar />
+<Reviews />
+ 
+  <Container>
+    <div class="full-page">
+      <div class="page-header">
+        <span class="animate-charcter">
+          <h1 style="color: #fff !important;">Same Day Whynter Freezer Repair in Los Angeles</h1>
+          </span>
+        <h2>High-End Appliance Specialists • OEM Parts • Fast Local Service</h2>
+        
+        <p>If your <strong>Whynter freezer has stopped freezing, is making unusual noises, or showing temperature errors</strong>, don't wait. <strong>Same Day Appliance Repair</strong> provides expert Whynter freezer repair backed by OEM parts and years of experience with this energy-efficient, specialty brand. Whether you use your Whynter unit for home food storage, garage backup, or wine preservation, we know how to keep it running at optimal performance. We offer same-day appointments across <strong>Los Angeles, Orange County, and Ventura County</strong> when you book before 3 PM.</p>
+        
+        <p><strong>Related Service:</strong><br>
+        For matching fridge repairs, visit our <a href="/services/refrigerator-repair-los-angeles/" 
+                  class="underline font-bold" 
+                  style="color: #dc2626 !important;">
+                  Refrigerator Repair Los Angeles
+               </a> page.</p>
+      </div>
+
+      <div class="page-container" id="anchor-2">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Types of Whynter Freezers We Service</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="right-content">
+            <p>We repair all major Whynter residential and specialty freezer models:</p>
+            <ul>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" />Upright frost-free freezers (e.g., <strong>UDF-139SS</strong>, <strong>CUF-210SS</strong>)</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" />Portable compact units and travel freezers (e.g., <strong>FM-45G</strong>, <strong>FM-85G</strong>)</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" />Chest freezers with lock and key features</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" />Dual-zone fridge/freezer combos</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" />Wine freezer and beverage preservation units</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" />Garage-ready upright or chest configurations</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-3">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Common Whynter Freezer Issues We Fix</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>We handle frequent problems like:</p>
+            <ul>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Freezer not freezing</strong> (failed thermostat, control board, or fan)</li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Temperature fluctuations in dual-zone units</strong></li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Frost buildup</strong> from gasket failure or defrost system malfunction</li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Compressor clicking or relay buzzing</strong></li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Water leaks</strong> from clogged defrost drains</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-4">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>OEM Parts We Stock for Whynter Repairs</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>Our vans are stocked with original Whynter parts to complete most jobs in one visit:</p>
+            <ul class="space-y-4">
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span>Control boards and relays</span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span>Digital temperature controllers</span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span>Evaporator and condenser fan motors</span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span>Door gaskets and seals</span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span>Thermostats and sensors</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-5">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Should You Repair or Replace Your Whynter Freezer?</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>Most Whynter units under 10 years old are worth repairing. These models are built for energy-efficiency and portability, and can often be restored with a single part. We give honest recommendations based on condition, age, and cost.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-6">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Typical Repair Costs</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>Our pricing includes:</p>
+            <ul class="space-y-4">
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Flat diagnostic fee (waived if repair approved)</li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Cost of OEM parts and professional labor</li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1"><strong>90-day parts & labor warranty</strong></li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Licensed and insured technician dispatch</li>
+            </ul>
+            <p style="margin-top: 20px;">For more insight, visit our <a href="/price-list/freezer-repair-cost/" class="underline font-bold" style="color: #dc2626 !important;">Freezer Repair Cost Guide</a> to compare typical repair costs across brands.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-7">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>How Our Service Works</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <ul class="space-y-4">
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Call or book online before 3 PM for same-day availability
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Receive ETA and technician profile
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                On-site diagnosis and estimate
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Approve job and pay deposit
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Repair completed or OEM parts ordered
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Final repair, test, and 90-day warranty issued
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                10% return customer discount included
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-8">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Other Brands We Service</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>In addition to Whynter, we repair <strong>Sub-Zero, LG, GE, Samsung, Frigidaire, Magic Chef, and Danby appliances</strong>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-9">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Service Areas</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>Same Day Appliance Repair serves:</p>
+            <ul>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Los Angeles</strong> <a href="/" class="underline font-bold" style="color: #dc2626 !important;">(see LA Service Hub)</a></li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Orange County</strong></li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Ventura County</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-10">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Frequently Asked Questions (FAQ)</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+            <div class="full-width-content">
+            <Accordion variant='splitted' title="Frequently Asked Questions (FAQ)">
+              <AccordionItem title="Why is my Whynter freezer not cooling properly?">
+                <p>It could be due to a failed thermostat, broken fan, or control board malfunction. If the compressor is running but the temp stays high, schedule a diagnosis.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="My Whynter freezer keeps frosting up – what's the issue?">
+                <p>Excess frost usually points to a damaged door gasket or failed defrost cycle. We can identify the cause and restore efficiency.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="Are Whynter travel freezers repairable?">
+                <p>Yes. Our team services compact and portable units, replacing controllers, fans, and compressors as needed.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="Can I fix a Whynter freezer myself?">
+                <p>Minor issues like dust on coils are DIY-friendly, but most repairs require technical tools and OEM parts. For reliable results, we recommend professional service.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="Do you offer same-day repairs for Whynter freezers?">
+                <p>Yes! If you book before 3 PM, we aim to arrive the same day throughout LA, Orange, and Ventura Counties.</p>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-11">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Call Now for Whynter Freezer Repair</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>From <strong>Santa Monica to Long Beach, Pasadena to Irvine</strong>, Same Day Appliance Repair is your go-to source for Whynter freezer service. Call <strong>(323) 870-4790</strong> or book at <a href="/services/refrigerator-repair-los-angeles/" class="underline font-bold" style="color: #dc2626 !important;">samedayappliance.repair</a> and we'll be there fast.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-12">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>About Us</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>Same Day Appliance Repair is Southern California's trusted team for fast, professional freezer repairs. Our EPA-certified, factory-trained techs carry OEM parts and repair manuals for every major brand. We back our service with a 90-day warranty and offer transparent pricing you can count on.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-section">
+        <Contactbtn />
+      </div>
+    </div>
+  </Container>
+</Layout>
+ 
+<Cta /> 

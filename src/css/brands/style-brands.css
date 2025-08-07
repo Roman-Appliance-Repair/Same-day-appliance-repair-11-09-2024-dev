@@ -98,6 +98,25 @@ p {
     top: -11px;
 }
 
+.pl-1{
+    padding-left: 10px !important;
+}
+
+.pl-0{
+    padding-left: 0 !important;
+}
+
+.no-bullet::before {
+    content: none !important;
+    font-size: inherit !important;
+    color: inherit !important;
+    filter: none !important;
+    position: inherit !important;
+    left: inherit !important;
+    top: inherit !important;
+    padding: 0 !important;
+}
+
 .full-page  ol {
     counter-reset: item;
 }

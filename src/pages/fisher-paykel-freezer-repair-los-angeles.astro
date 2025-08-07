@@ -1,0 +1,287 @@
+---
+import Container from "@components/container.astro";
+import Cta from "@components/cta.astro";
+import Layout from "@layouts/Layout.astro";
+import Navbar from "@components/navbar/navbar.astro";
+import Reviews from "@components/reviews.astro";
+import Contactbtn from "@components/contactbtn.astro";
+import Btn from "@components/btn.astro";
+import { Accordion, AccordionItem,Icon } from 'free-astro-components'
+
+import "css/brands/style-brands.css";
+
+const description = "Fast, professional Fisher & Paykel freezer repair in Los Angeles. Same-day service with factory-trained technicians and OEM parts. Call (323) 870‑4790 today!";
+const title ="Fisher & Paykel Freezer Repair Los Angeles – Same Day OEM Service";
+---
+<Layout title={title} description={description}>
+<Navbar />
+<Reviews />
+ 
+  <Container>
+    <div class="full-page">
+      <div class="page-header">
+        <span class="animate-charcter">
+          <h1 style="color: #fff !important;">Same Day Fisher & Paykel Freezer Repair in Los Angeles</h1>
+          </span>
+        <h2>Certified Technicians • OEM Parts • Fast, Local Service</h2>
+        
+        <p>If your <strong>Fisher & Paykel freezer is not cooling, leaking water, or showing an error code</strong>, it's time to call a specialist. At <strong>Same Day Appliance Repair</strong>, we have years of experience with Fisher & Paykel appliances and follow manufacturer repair protocols using OEM parts and service manuals. These premium appliances require precision care, and we're trained to deliver just that. Our same-day repair services cover <strong>Los Angeles, Ventura, and Orange County</strong>.</p>
+        
+        <p><strong>Related Service:</strong><br>
+        For matching fridge repairs, visit our <a href="/services/refrigerator-repair-los-angeles/" 
+                  class="underline font-bold" 
+                  style="color: #dc2626 !important;">
+                  Refrigerator Repair Los Angeles
+               </a> page.</p>
+      </div>
+
+      <div class="page-container" id="anchor-2">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Types of Fisher & Paykel Freezers We Service</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="right-content">
+            <p>We repair all major residential Fisher & Paykel freezer models:</p>
+            <ul>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" />Built-in column freezers (e.g., <strong>RS3084F</strong>, <strong>RS2484F</strong>)</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" />Integrated freezer drawers (e.g., <strong>RS36W80RU1</strong>, <strong>RS2484WR</strong>)</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" />Upright and bottom-mounted freezer units</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" />Panel-ready models designed to blend with custom kitchen cabinetry</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" />Compact and apartment-sized Fisher & Paykel units</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-3">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Common Fisher & Paykel Freezer Issues We Fix</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <ul>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Freezer not cooling</strong> (failed compressor, sealed system leak, or control board issue)</li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Frost buildup or ice around drawers</strong> (gasket failure or defrost system issue)</li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Loud noises</strong> from fan or compressor</li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Error codes</strong> displayed on digital interface</li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Leaking water</strong> or clogged drain tubes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-4">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>OEM Parts We Stock for Fisher & Paykel Repairs</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>Our vans are stocked with genuine OEM parts to allow same-day repairs:</p>
+            <ul class="space-y-4">
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span>Inverter control boards (part <strong>#821843</strong>)</span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span>Temperature sensors (part <strong>#847200</strong>)</span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span>Evaporator fan motors (part <strong>#841450</strong>)</span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span>Door gaskets and seals (part <strong>#882528</strong>)</span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span>Defrost heaters and timers</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-5">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Should You Repair or Replace Your Fisher & Paykel Freezer?</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>If your unit is under 12 years old and doesn't have sealed system failure, we typically recommend repair. We provide honest, brand-specific advice based on part availability, condition, and cost. Premium models from Fisher & Paykel are designed for long-term performance when properly maintained.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-6">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Typical Repair Costs</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>Our pricing includes:</p>
+            <ul class="space-y-4">
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Diagnostic fee (credited if repair is approved)</li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Cost of genuine Fisher & Paykel parts</li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Professional labor and service call</li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1"><strong>90-day warranty on all parts and labor</strong></li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Certified technician dispatch</li>
+            </ul>
+            <p style="margin-top: 20px;">For more insight, visit our <a href="/price-list/freezer-repair-cost/" class="underline font-bold" style="color: #dc2626 !important;">Freezer Repair Cost Guide</a> to compare typical repair costs across brands.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-7">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>How Our Service Works</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <ul class="space-y-4">
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Call or book online before 3 PM for same-day scheduling
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Get a technician ETA and name
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Diagnosis, quote, and part confirmation
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Approve estimate and pay deposit
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                On-site repair or part order
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Final installation and testing
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Digital invoice, 90-day warranty, and care tips
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                10% discount for return customers
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-8">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Other Brands We Service</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>We also service <strong>Sub-Zero, Thermador, LG, Samsung, Whirlpool, Maytag, and GE appliances</strong>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-9">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Frequently Asked Questions (FAQ)</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+            <div class="full-width-content">
+            <Accordion variant='splitted' title="Frequently Asked Questions (FAQ)">
+              <AccordionItem title="Why is my Fisher & Paykel freezer not reaching 0°F?">
+                <p>A common reason is a faulty temperature sensor or evaporator fan. If the display shows the correct temp but food remains soft, airflow may be restricted.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="My freezer is making loud humming or clicking sounds. What should I do?">
+                <p>These noises usually indicate compressor start failure or a worn-out fan motor. Schedule service before the component fully fails.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="How do I reset the error code on my Fisher & Paykel freezer?">
+                <p>Error codes typically need a manual reset after the root issue is fixed. A technician can clear the error using diagnostic mode.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="Is it worth repairing a 10-year-old Fisher & Paykel freezer?">
+                <p>Most models in good shape are repair-worthy, especially if there's no sealed-system damage. We assess on-site and explain your best options.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="What's covered under your 90-day warranty?">
+                <p>Our warranty covers all labor and OEM parts installed by our technicians. If the same issue reappears within 90 days, we return at no cost.</p>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-10">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Service Areas</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>Same Day Appliance Repair serves:</p>
+            <ul>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Los Angeles</strong> <a href="/" class="underline font-bold" style="color: #dc2626 !important;">(see LA Service Hub)</a></li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Orange County</strong></li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Ventura County</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-11">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Call Now for Fisher & Paykel Freezer Repair</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>Serving neighborhoods across <strong>Los Angeles, Santa Monica, Pasadena, Glendale, Burbank, Irvine, Anaheim, and Long Beach</strong>, we're your local experts for premium appliance repair.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-12">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>About Us</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>Same Day Appliance Repair is Southern California's trusted team for high-end appliance service. Our <strong>factory-trained, licensed, and insured technicians</strong> use OEM parts and brand-specific manuals to restore performance. We back every job with a 90-day warranty and provide service that's prompt, professional, and guaranteed. Visit <a href="/services/refrigerator-repair-los-angeles/" class="underline font-bold" style="color: #dc2626 !important;">samedayappliance.repair</a> or call today.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-section">
+        <Contactbtn />
+      </div>
+    </div>
+  </Container>
+</Layout>
+ 
+<Cta /> 
