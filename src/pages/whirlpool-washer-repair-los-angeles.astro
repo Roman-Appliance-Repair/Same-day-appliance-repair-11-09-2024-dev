@@ -1,0 +1,336 @@
+---
+import Container from "@components/container.astro";
+import Cta from "@components/cta.astro";
+import Layout from "@layouts/Layout.astro";
+import Navbar from "@components/navbar/navbar.astro";
+import Reviews from "@components/reviews.astro";
+import Contactbtn from "@components/contactbtn.astro";
+import Btn from "@components/btn.astro";
+import { Accordion, AccordionItem,Icon } from 'free-astro-components'
+
+import "css/brands/style-brands.css";
+
+const description = "Get fast, expert Whirlpool washer repair in Los Angeles, Orange County, and Ventura. We use OEM parts and factory manuals for all Whirlpool top-load, front-load, and compact washers. Call (323) 870-4790 today.";
+const title ="Whirlpool Washer Repair Los Angeles – Same Day Service | OEM Parts";
+---
+<Layout title={title} description={description}>
+  <head>
+    <script type="application/ld+json" is:raw>
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Whirlpool Washer Repair",
+        "provider": {
+          "@type": "Organization",
+          "name": "Same Day Appliance Repair",
+          "url": "https://samedayappliance.repair/",
+          "logo": "https://samedayappliance.repair/images/same-day-appliance-repair-logo.webp",
+          "telephone": "+13238704790",
+          "email": "info@samedayappliance.repair",
+          "areaServed": [
+            { "@type": "Place", "name": "Los Angeles County" },
+            { "@type": "Place", "name": "Orange County" },
+            { "@type": "Place", "name": "Ventura County" }
+          ]
+        },
+        "description": "Same Day Appliance Repair provides expert Whirlpool washer repair services with OEM parts and same-day availability across Los Angeles, Orange County, and Ventura County.",
+        "mainEntityOfPage": "https://samedayappliance.repair/whirlpool-washer-repair-los-angeles/",
+        "offers": {
+          "@type": "Offer",
+          "description": "Professional Whirlpool washer repair services",
+          "priceRange": "$$",
+          "availability": "https://schema.org/InStock"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Whirlpool Washer Repair Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Top-Load Washer Repair"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service", 
+                "name": "Front-Load Washer Repair"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "High-Efficiency Washer Repair"
+              }
+            }
+          ]
+        }
+      }
+    </script>
+  </head>
+<Navbar />
+<Reviews />
+ 
+  <Container>
+    <div class="full-page">
+      <div class="page-header">
+        <span class="animate-charcter">
+          <h1 style="color: #fff !important;">Same Day Whirlpool Washer Repair in Los Angeles</h1>
+          </span>
+        <h2>Factory Trained • Fast Service • OEM Parts Guaranteed</h2>
+
+        <h3>Expert Whirlpool Washer Repair</h3>
+        
+        <p>Whirlpool washers are among the most popular and reliable home appliances, but even the best machines need professional attention over time. At <strong>Same Day Appliance Repair</strong>, we specialize in <strong>Whirlpool washer repair</strong>, offering same-day service across <strong>Los Angeles, Ventura, and Orange County</strong>. Our factory-trained technicians use only <strong>genuine OEM Whirlpool parts</strong> and follow official service manuals to ensure lasting performance. With deep experience handling Whirlpool's specific electronic systems, drive assemblies, and control boards, we deliver fast and precise repairs that extend your unit's life.</p>
+        
+        <p><strong>Related Service:</strong> For matching repairs, visit our <a href="/services/dryer-repair-los-angeles/" 
+                  class="underline font-bold" 
+                  style="color: #dc2626 !important;">
+                  Dryer Repair Los Angeles
+               </a> page.</p>
+      </div>
+
+      <div class="page-container" id="anchor-2">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Types of Whirlpool Washers We Service</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="right-content">
+            <p>We repair every major Whirlpool residential washer type, including:</p>
+            <ul>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" /><strong>Top-load washers</strong> (e.g., WTW5000DW, WTW8127LW)</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" /><strong>Front-load washers</strong> (e.g., WFW6620HW, WFW9620HC)</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" /><strong>High-efficiency (HE) washers</strong> with impeller systems</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" /><strong>Smart washers</strong> with Load & Go™ dispenser technology</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" /><strong>Compact and stackable</strong> washer-dryer units</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-3">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Common Whirlpool Washer Problems We Fix</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>Our technicians handle all common Whirlpool washer issues:</p>
+            <ul>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Washer not spinning or draining:</strong> clogged pump, faulty lid switch</li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Leaking water:</strong> from door or hoses</li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Loud banging or shaking:</strong> damaged suspension rods or drum bearings</li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Washer won't start or stuck in cycle:</strong> control board failure</li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Error codes on digital display:</strong> F0E1, F9E1, etc.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-4">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>OEM Parts We Stock for Whirlpool Repairs</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>We carry OEM Whirlpool parts to complete most repairs in a single visit:</p>
+            <ul class="space-y-4">
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2  no-bullet pl-1">
+                <span><strong>W11354541</strong> – Drive motors</span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>W11419171</strong> – Control boards</span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>W11307244</strong> – Lid lock assemblies</span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>W11399437</strong> – Drain pumps</span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>W11130362</strong> – Shock absorbers and suspension rods</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-5">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Should You Repair or Replace Your Whirlpool Washer?</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>If your Whirlpool washer is less than 10–12 years old and doesn't have major structural or sealed-system issues, repairs are usually the best option. Our techs provide honest recommendations based on age, condition, and cost of parts. With Whirlpool's long-lasting design, a targeted repair can often add years of reliable service.</p>
+
+            <h3>Typical Repair Costs</h3>
+            <p>Our pricing includes everything that ensures a high-quality repair:</p>
+
+            <ul class="space-y-4">
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Flat-rate diagnostic fee (credited toward repair)</li>
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Genuine Whirlpool OEM parts</li>
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Factory-trained technician labor</li>
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Insurance, office support, and EPA compliance</li>
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1"><strong>90-day warranty on all repairs</strong></li>
+              </ul>
+          </div>
+          <p style="margin-top: 20px;">For average washer repair pricing, visit our <a href="/price-list/washer-repair-cost/" class="underline font-bold" style="color: #dc2626 !important;">Washer Repair Cost Guide</a>.</p>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-6">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>How Our Service Works</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <ul class="space-y-4">
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Call or book online before 3 PM for same-day service
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Receive technician ETA and name via text
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                On-site diagnosis and estimate provided
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                You approve and pay deposit
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Repair completed or parts ordered
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Final installation and testing
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Digital invoice and maintenance tips
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                90-day warranty and 10% return customer discount
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-7">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Other Brands We Service</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>In addition to Whirlpool, we repair washers from <strong>LG, Samsung, Maytag, GE, Amana, Bosch, Kenmore, Electrolux</strong>, and more.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-8">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Frequently Asked Questions (FAQ)</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+            <div class="full-width-content">
+            <Accordion variant='splitted' title="Frequently Asked Questions (FAQ) – Whirlpool Washer Repair">
+              <AccordionItem title="Why won't my Whirlpool washer spin?">
+                <p>This could be due to a worn drive belt, a faulty lid switch, or a control board issue. Our techs can quickly diagnose the root cause.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="My washer is leaking water—what's the issue?">
+                <p>Leaks may come from damaged door gaskets, worn tub seals, or loose hoses. We inspect all components for a precise repair.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="How do I know if it's time to replace my Whirlpool washer?">
+                <p>If your washer is over 12 years old and needs a costly part like a drum or control board, replacement might be worth considering. We'll give you honest advice.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="What's the typical lifespan of a Whirlpool washer?">
+                <p>With proper care, Whirlpool washers can last 10–14 years. Regular maintenance and timely repairs help extend this lifespan.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="Do you carry parts for same-day repairs?">
+                <p>Yes! Our trucks are stocked with the most common Whirlpool washer parts so we can often complete repairs in one visit.</p>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-9">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Service Areas</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p style="margin-top: 10px;">Same Day Appliance Repair serves:</p>
+            <ul >
+              <li><strong>Los Angeles</strong> <a href="/" class="underline font-bold" style="color: #dc2626 !important;">(see LA Service Hub)</a></li>
+              <li><strong>Orange County</strong></li>
+              <li><strong>Ventura County</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-10">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Call Now for Whirlpool Washer Repair</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>Same Day Appliance Repair serves homes in Los Angeles, Pasadena, Santa Monica, Glendale, Irvine, Anaheim, and surrounding areas. Book service now by calling <strong>(323) 870-4790</strong> or visiting <a href="/" class="underline font-bold" style="color: #dc2626 !important;">samedayappliance.repair</a>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-11">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>About Us</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p style="margin-top: 5px;">Same Day Appliance Repair is Southern California's trusted provider for washer and home appliance repair. Our team is licensed, insured, and trained by top brands to deliver expert service using only genuine parts. We offer fast scheduling, clear communication, and a 90-day warranty. Book your Whirlpool washer repair online or give us a call today.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-section">
+        <Contactbtn />
+      </div>
+    </div>
+  </Container>
+</Layout>
+ 
+<Cta /> 

@@ -1,0 +1,346 @@
+---
+import Container from "@components/container.astro";
+import Cta from "@components/cta.astro";
+import Layout from "@layouts/Layout.astro";
+import Navbar from "@components/navbar/navbar.astro";
+import Reviews from "@components/reviews.astro";
+import Contactbtn from "@components/contactbtn.astro";
+import Btn from "@components/btn.astro";
+import { Accordion, AccordionItem,Icon } from 'free-astro-components'
+
+import "css/brands/style-brands.css";
+
+const description = "Fast, expert LG washer repair in Los Angeles. We service top-load, front-load, and compact LG washers using OEM parts. Same-day booking available.";
+const title ="LG Washer Repair Los Angeles – Same Day Service | OEM Parts";
+---
+<Layout title={title} description={description}>
+  <head>
+    <script type="application/ld+json" is:raw>
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "LG Washer Repair",
+        "provider": {
+          "@type": "Organization",
+          "name": "Same Day Appliance Repair",
+          "url": "https://samedayappliance.repair/",
+          "logo": "https://samedayappliance.repair/images/same-day-appliance-repair-logo.webp",
+          "telephone": "+13238704790",
+          "email": "info@samedayappliance.repair",
+          "areaServed": [
+            { "@type": "Place", "name": "Los Angeles County" },
+            { "@type": "Place", "name": "Orange County" },
+            { "@type": "Place", "name": "Ventura County" }
+          ]
+        },
+        "description": "Same Day Appliance Repair provides expert LG washer repair services with OEM parts and same-day availability across Los Angeles, Orange County, and Ventura County.",
+        "mainEntityOfPage": "https://samedayappliance.repair/lg-washer-repair-los-angeles/",
+        "offers": {
+          "@type": "Offer",
+          "description": "Professional LG washer repair services",
+          "priceRange": "$$",
+          "availability": "https://schema.org/InStock"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "LG Washer Repair Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Front-Load LG Washer Repair"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service", 
+                "name": "Top-Load LG Washer Repair"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Smart Wi-Fi LG Washer Repair"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Stackable LG Washer Repair"
+              }
+            }
+          ]
+        },
+        "keywords": "LG washing machine repair, LG front-load washer repair, LG top-load washer service, Los Angeles appliance repair, OEM washer parts, LG washer not spinning, LG washer leaking, LG washer won't spin, LG washer maintenance service, licensed LG washer technician, affordable LG appliance repair"
+      }
+    </script>
+  </head>
+<Navbar />
+<Reviews />
+ 
+  <Container>
+    <div class="full-page">
+      <div class="page-header">
+        <span class="animate-charcter">
+          <h1 style="color: #fff !important;">Same Day LG Washer Repair in Los Angeles</h1>
+          </span>
+        <h2>Factory Trained • Fast Service • OEM Parts Guaranteed</h2>
+
+        <h3>Expert LG Washer Repair</h3>
+        
+        <p>If your <strong>LG washing machine</strong> won't spin, is leaking water, or displays error codes, it's time for professional help. At <strong>Same Day Appliance Repair</strong>, we specialize in <strong>LG washer repair</strong> using <strong>genuine OEM parts</strong> and factory manuals to ensure precision. LG washers are known for their energy efficiency and smart features, but their advanced technology requires expert service to maintain performance. Whether it's a top-load, front-load, or stackable washer, we handle repairs the right way—the same day you call.</p>
+        
+        <p><strong>Related Service:</strong> For matching repairs, visit our <a href="/services/dryer-repair-los-angeles/" 
+                  class="underline font-bold" 
+                  style="color: #dc2626 !important;">
+                  Dryer Repair Los Angeles
+               </a> page.</p>
+      </div>
+
+      <div class="page-container" id="anchor-2">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Types of LG Washers We Service</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="right-content">
+            <p>We service all residential LG washing machines, including:</p>
+            <ul>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" /><strong>Front-load washers</strong> like WM4000HWA, WM3400CW, and WM4200HWA</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" /><strong>Top-load washers</strong> such as WT7400CV, WT7150CW, and WT7800CW</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" /><strong>Smart Wi-Fi-enabled LG washers</strong> with ThinQ technology</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" /><strong>Stackable washer/dryer combos</strong> (e.g., WM3555HWA)</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" /><strong>Compact and apartment-size</strong> models</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-3">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Common LG Washer Problems We Fix</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>Our experienced techs are ready to handle these frequent issues:</p>
+            <ul>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Washer not spinning or agitating:</strong> faulty motor or clutch</li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Leaking water:</strong> torn door boot seal or cracked inlet valve</li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Error codes like OE, DE, UE:</strong> drain pump failure, door issues, imbalance</li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Loud noises during cycle:</strong> shock absorber or bearing failure</li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Control panel not responding:</strong> main PCB or UI board failure</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-4">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>OEM Parts We Stock for LG Repairs</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>To deliver fast repairs, we keep the following LG washer parts on hand:</p>
+            <ul class="space-y-4">
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2  no-bullet pl-1">
+                <span><strong>4681EA2001T</strong> – Drain pumps</span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>EBF61315802</strong> – Door lock/switch assemblies</span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>Washer tubs and shock absorbers</strong></span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>Control boards and display panels</strong></span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>Water inlet valves and hoses</strong></span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>Motor rotor and stator kits</strong></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-5">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Should You Repair or Replace Your LG Washer?</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>We offer honest guidance. If your washer is under 10 years old and hasn't suffered major tub or motor failure, repair is often the smarter and more affordable route. LG washers are built for long-term performance with the right maintenance.</p>
+
+            <h3>Typical Repair Costs</h3>
+            <p>Your repair estimate includes:</p>
+
+            <ul class="space-y-4">
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Flat diagnostic fee (applied to repair cost if approved)</li>
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">OEM parts sourced directly from LG suppliers</li>
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Labor by factory-trained technicians</li>
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Office support, insurance, and warranty coverage</li>
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1"><strong>90-day parts and labor guarantee</strong></li>
+              </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-6">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>How Our Service Works</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <ul class="space-y-4">
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Call or book online before 3 PM for same-day service
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Get ETA and technician profile via text
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                On-site inspection and diagnosis
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                You approve the estimate and pay a deposit
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                We repair or order parts
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Final installation and system check
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                90-day warranty and care instructions provided
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                10% off your next service as a returning customer
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-7">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Other Brands We Service</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>We also repair <strong>Samsung, Whirlpool, Maytag, GE, Electrolux, Frigidaire</strong>, and more.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-8">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Frequently Asked Questions (FAQ)</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+            <div class="full-width-content">
+            <Accordion variant='splitted' title="Frequently Asked Questions (FAQ) – LG Washer Repair">
+              <AccordionItem title="Why does my LG washer stop mid-cycle?">
+                <p>It could be due to a faulty door switch, control board issue, or imbalance. Our technician can pinpoint the problem and fix it fast.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="What does the 'UE' error code mean?">
+                <p>The UE code indicates an unbalanced load. If this happens frequently, it may be due to worn shock absorbers or sensor malfunction.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="Is it worth repairing an LG washer over 10 years old?">
+                <p>If the unit has no major structural or motor damage, it can often be repaired for far less than the cost of a new machine.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="Can you fix my LG washer the same day?">
+                <p>Yes, if you call before 3 PM, we strive to diagnose and complete repairs the same day, especially when the part is stocked in our truck.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="Do you use real LG parts?">
+                <p>Always. We only use genuine OEM parts approved by LG to ensure lasting performance.</p>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-9">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Service Areas</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p style="margin-top: 10px;">Same Day Appliance Repair serves:</p>
+            <ul >
+              <li><strong>Los Angeles</strong> <a href="/" class="underline font-bold" style="color: #dc2626 !important;">(see LA Service Hub)</a></li>
+              <li><strong>Orange County</strong></li>
+              <li><strong>Ventura County</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-10">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Call Now for LG Washer Repair</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>Same Day Appliance Repair proudly serves all of <strong>Los Angeles, Glendale, Burbank, Pasadena, Santa Monica, Long Beach, Anaheim, and Irvine</strong>. Book service today at <a href="/" class="underline font-bold" style="color: #dc2626 !important;">samedayappliance.repair</a> or call <strong>(323) 870-4790</strong>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-11">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>About Us</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p style="margin-top: 5px;">Same Day Appliance Repair is Southern California's <strong>A+ rated, BBB-accredited</strong> home appliance repair team. With factory-trained professionals, insured service, and a 90-day warranty, we deliver dependable results for all major appliance brands. Visit our website to schedule fast, expert repair for your LG washer or other home appliance.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-section">
+        <Contactbtn />
+      </div>
+    </div>
+  </Container>
+</Layout>
+ 
+<Cta />

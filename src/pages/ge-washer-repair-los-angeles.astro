@@ -1,0 +1,344 @@
+---
+import Container from "@components/container.astro";
+import Cta from "@components/cta.astro";
+import Layout from "@layouts/Layout.astro";
+import Navbar from "@components/navbar/navbar.astro";
+import Reviews from "@components/reviews.astro";
+import Contactbtn from "@components/contactbtn.astro";
+import Btn from "@components/btn.astro";
+import { Accordion, AccordionItem,Icon } from 'free-astro-components'
+
+import "css/brands/style-brands.css";
+
+const description = "Get fast, reliable GE washer repair in Los Angeles from certified experts. We use genuine GE parts, offer same-day service, and back repairs with a 90-day warranty. Book now at samedayappliance.repair.";
+const title ="Same Day GE Washer Repair in Los Angeles | OEM Parts & Certified Techs";
+---
+<Layout title={title} description={description}>
+  <head>
+    <script type="application/ld+json" is:raw>
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "GE Washer Repair",
+        "provider": {
+          "@type": "Organization",
+          "name": "Same Day Appliance Repair",
+          "url": "https://samedayappliance.repair/",
+          "logo": "https://samedayappliance.repair/images/same-day-appliance-repair-logo.webp",
+          "telephone": "+13238704790",
+          "email": "info@samedayappliance.repair",
+          "areaServed": [
+            { "@type": "Place", "name": "Los Angeles County" },
+            { "@type": "Place", "name": "Orange County" },
+            { "@type": "Place", "name": "Ventura County" }
+          ]
+        },
+        "description": "Same Day Appliance Repair provides expert GE washer repair services with OEM parts and same-day availability across Los Angeles, Orange County, and Ventura County.",
+        "mainEntityOfPage": "https://samedayappliance.repair/ge-washer-repair-los-angeles/",
+        "offers": {
+          "@type": "Offer",
+          "description": "Professional GE washer repair services",
+          "priceRange": "$$",
+          "availability": "https://schema.org/InStock"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "GE Washer Repair Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Top-Load GE Washer Repair"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service", 
+                "name": "Front-Load GE Washer Repair"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "GE Profile Series Washer Repair"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "GE Smart Washer Repair"
+              }
+            }
+          ]
+        },
+        "keywords": "GE washing machine repair Los Angeles, GE top-load washer repair, GE front-load washer service, GE appliance repair near me, same day GE repair, GE washer leaking, GE washer won't spin, GE washer maintenance service, licensed GE washer technician, affordable GE appliance repair"
+      }
+    </script>
+  </head>
+<Navbar />
+<Reviews />
+ 
+  <Container>
+    <div class="full-page">
+      <div class="page-header">
+        <span class="animate-charcter">
+          <h1 style="color: #fff !important;">Same Day General Electric Washer Repair in Los Angeles</h1>
+          </span>
+        <h2>Factory Trained • Fast Service • OEM Parts Guaranteed</h2>
+
+        <h3>Expert GE Washer Repair</h3>
+        
+        <p>When your <strong>General Electric (GE) washer</strong> starts leaking, shaking, or refuses to spin, don't wait. <strong>Same Day Appliance Repair</strong> specializes in <strong>GE washer repair</strong>, offering expert service backed by factory manuals, <strong>genuine OEM parts</strong>, and years of experience with GE's unique design features. While GE is known for its dependable laundry technology, even high-performance washers need regular maintenance and occasional repairs to keep running efficiently. We provide same-day repair appointments across <strong>Los Angeles, Orange County, and Ventura County</strong>.</p>
+        
+        <p><strong>Related Service:</strong> For matching repairs, visit our <a href="/services/dryer-repair-los-angeles/" 
+                  class="underline font-bold" 
+                  style="color: #dc2626 !important;">
+                  Dryer Repair Los Angeles
+               </a> page.</p>
+      </div>
+
+      <div class="page-container" id="anchor-2">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Types of GE Washers We Service</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="right-content">
+            <p>Our certified technicians service every major GE residential washer model, including:</p>
+            <ul>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" /><strong>Top-load washers</strong> (e.g., GTW465ASNWW, GTW720BSNWS)</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" /><strong>Front-load washers</strong> (e.g., GFW850SPNRS, GFW550SSNWW)</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" /><strong>GE Profile series and GE Smart washers</strong></li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" /><strong>Stackable and space-saving</strong> washer-dryer combos</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" /><strong>Portable and compact</strong> GE washing machines</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-3">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Common GE Washer Problems We Fix</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>We frequently address the following issues:</p>
+            <ul>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Washer not spinning or draining:</strong> worn-out lid switch, faulty pump</li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Excessive vibration or movement:</strong> unbalanced loads, damaged suspension rods</li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Water leaking during or after cycles:</strong> torn door boot seal or hose issues</li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>No power or error codes on control panel:</strong> control board or wiring failure</li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Bad odor or mold buildup:</strong> dirty tub, improper detergent usage</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-4">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>OEM Parts We Stock for GE Washer Repairs</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>To complete repairs on the first visit, our vans are stocked with:</p>
+            <ul class="space-y-4">
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2  no-bullet pl-1">
+                <span><strong>WH23X10030</strong> – Drain pumps</span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>WH01X27954</strong> – Lid locks and switches</span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>WH22X29556</strong> – Control boards</span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>WH08X32657</strong> – Door boot seals</span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>WH16X10158</strong> – Suspension rods and shock absorbers</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-5">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Should You Repair or Replace Your GE Washer?</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>We offer honest guidance based on the model's age, cost of repair, and overall condition. If your GE washer is under 10 years old and doesn't have a motor or transmission failure, repair is typically the better option. GE appliances are built for long-term use when maintained properly.</p>
+
+            <h3>Typical Repair Costs</h3>
+            <p>Every repair includes:</p>
+
+            <ul class="space-y-4">
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Flat diagnostic fee (applied to final cost if you proceed)</li>
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">OEM parts and professional labor</li>
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Technician dispatch and testing</li>
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Office and insurance overhead</li>
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1"><strong>90-day warranty on all parts and labor</strong></li>
+              </ul>
+          </div>
+          <p style="margin-top: 20px;">See our <a href="/price-list/washer-repair-cost/" class="underline font-bold" style="color: #dc2626 !important;">Washer Repair Cost Guide</a> for a breakdown of repair pricing.</p>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-6">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>How Our Service Works</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <ul class="space-y-4">
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Book online or call before 3 PM for same-day availability
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Receive technician name and ETA by text
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                On-site diagnosis and clear explanation
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Approve quote and pay deposit
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                OEM parts ordered (if needed)
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Final repair and performance testing
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Digital invoice and warranty registration
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                10% discount for return customers
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-7">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Other Brands We Service</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>In addition to GE, we service <strong>Whirlpool, Samsung, LG, Maytag, Frigidaire, Bosch, and Electrolux</strong> washers and dryers.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-8">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Frequently Asked Questions (FAQ)</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+            <div class="full-width-content">
+            <Accordion variant='splitted' title="Frequently Asked Questions (FAQ) – GE Washer Repair">
+              <AccordionItem title="Why isn't my GE washer draining properly?">
+                <p>A clogged drain pump or filter is the most common cause. Our tech will inspect, clean, or replace the faulty part.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="My washer shakes violently during spin cycles. Can you fix it?">
+                <p>Yes. This is often due to worn-out suspension rods or an unbalanced drum. We can stabilize the washer and replace any damaged components.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="How do I stop mold smells in my front-load GE washer?">
+                <p>Clean the door boot and run cleaning cycles monthly. If the issue persists, we can replace the boot seal and recommend maintenance habits.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="Is it worth repairing an older GE washer?">
+                <p>If it's under 10 years old and the repair cost is reasonable, yes. Our techs will advise you based on parts, labor, and unit condition.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="Can I get same-day repair in my neighborhood?">
+                <p>Yes—if you book before 3 PM, we offer same-day GE washer repair across LA, Orange County, and Ventura.</p>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-9">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Service Areas</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p style="margin-top: 10px;">Same Day Appliance Repair serves:</p>
+            <ul >
+              <li><strong>Los Angeles</strong> <a href="/" class="underline font-bold" style="color: #dc2626 !important;">(see LA Service Hub)</a></li>
+              <li><strong>Orange County</strong></li>
+              <li><strong>Ventura County</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-10">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Call Now for GE Washer Repair</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>We proudly serve <strong>Los Angeles, Burbank, Santa Monica, Irvine, Anaheim, Pasadena</strong>, and surrounding areas. Schedule your appointment now at <a href="/" class="underline font-bold" style="color: #dc2626 !important;">samedayappliance.repair</a> or call <strong>(323) 870-4790</strong>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-11">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>About Us</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p style="margin-top: 5px;">Same Day Appliance Repair is Southern California's trusted name in washer and dryer repair. Our <strong>EPA-certified, factory-trained technicians</strong> use only OEM parts and brand-specific manuals to ensure precise and lasting repairs. Backed by a <strong>90-day guarantee</strong>, we offer transparent pricing, professional service, and fast results. Book online or call us today for GE washer repair you can count on.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-section">
+        <Contactbtn />
+      </div>
+    </div>
+  </Container>
+</Layout>
+ 
+<Cta />

@@ -1,0 +1,357 @@
+---
+import Container from "@components/container.astro";
+import Cta from "@components/cta.astro";
+import Layout from "@layouts/Layout.astro";
+import Navbar from "@components/navbar/navbar.astro";
+import Reviews from "@components/reviews.astro";
+import Contactbtn from "@components/contactbtn.astro";
+import Btn from "@components/btn.astro";
+import { Accordion, AccordionItem,Icon } from 'free-astro-components'
+
+import "css/brands/style-brands.css";
+
+const description = "Same Day Appliance Repair offers expert Electrolux washer repair in Los Angeles, Pasadena, Santa Monica, Glendale, Burbank, Irvine, Anaheim, and beyond. Factory-trained technicians, OEM parts, 90-day warranty, and same-day service for front-load, compact, and washer/dryer combo units. Call today!";
+const title ="Same Day Electrolux Washer Repair in Los Angeles | Factory-Trained Techs & OEM Parts";
+---
+<Layout title={title} description={description}>
+  <head>
+    <script type="application/ld+json" is:raw>
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Electrolux Washer Repair",
+        "provider": {
+          "@type": "Organization",
+          "name": "Same Day Appliance Repair",
+          "url": "https://samedayappliance.repair/",
+          "logo": "https://samedayappliance.repair/images/same-day-appliance-repair-logo.webp",
+          "telephone": "+13238704790",
+          "email": "info@samedayappliance.repair",
+          "areaServed": [
+            { "@type": "Place", "name": "Los Angeles County" },
+            { "@type": "Place", "name": "Orange County" },
+            { "@type": "Place", "name": "Ventura County" }
+          ]
+        },
+        "description": "Same Day Appliance Repair provides expert Electrolux washer repair services with OEM parts and same-day availability across Los Angeles, Orange County, and Ventura County.",
+        "mainEntityOfPage": "https://samedayappliance.repair/electrolux-washer-repair-los-angeles/",
+        "offers": {
+          "@type": "Offer",
+          "description": "Professional Electrolux washer repair services",
+          "priceRange": "$$",
+          "availability": "https://schema.org/InStock"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Electrolux Washer Repair Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Front-Load Electrolux Washer Repair"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service", 
+                "name": "Compact Electrolux Washer Repair"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Electrolux Washer/Dryer Combo Repair"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Stackable Electrolux Washer Repair"
+              }
+            }
+          ]
+        },
+        "keywords": "Electrolux washing machine repair, Electrolux appliance repair Los Angeles, Electrolux front-load washer repair, Electrolux compact washer repair, Electrolux washer/dryer combo repair, OEM Electrolux parts, Electrolux service near me, same day Electrolux repair"
+      }
+    </script>
+  </head>
+<Navbar />
+<Reviews />
+ 
+  <Container>
+    <div class="full-page">
+      <div class="page-header">
+        <span class="animate-charcter">
+          <h1 style="color: #fff !important;">Same Day Electrolux Repair in Los Angeles</h1>
+          </span>
+        <h2>Factory Trained • Fast Service • OEM Parts Guaranteed</h2>
+
+        <h3>Expert Electrolux Washer Repair</h3>
+        
+        <p>When your <strong>Electrolux washer</strong> isn't performing at its best, you need a repair service that knows the brand inside and out. <strong>Same Day Appliance Repair</strong> specializes in <strong>Electrolux washer repair</strong>, using only <strong>original manufacturer parts</strong>, official Electrolux service manuals, and years of hands-on experience with the brand's unique engineering. Known for their sleek designs, energy efficiency, and advanced cleaning technology, Electrolux washers still require regular maintenance and professional repairs to maintain peak performance.</p>
+        
+        <p><strong>Related Service:</strong> For matching repairs, visit our <a href="/services/dryer-repair-los-angeles/" 
+                  class="underline font-bold" 
+                  style="color: #dc2626 !important;">
+                  Dryer Repair Los Angeles
+               </a> page.</p>
+      </div>
+
+      <div class="page-container" id="anchor-2">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Types of Electrolux Washers We Service</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="right-content">
+            <p>Our factory-trained technicians work on every major Electrolux washer model, including:</p>
+            <ul>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" /><strong>Front-Load Washers</strong> – Premium designs with smart features and steam cleaning (e.g., EFLS627UTT, ELFW7637AT)</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" /><strong>Compact Washers</strong> – 24-inch space-saving models ideal for small laundry areas (e.g., EFLS210TIW)</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" /><strong>Stackable Washer/Dryer Sets</strong> – Flexible, space-efficient laundry solutions</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" /><strong>Washer/Dryer Combos</strong> – All-in-one convenience for apartments and condos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-3">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Common Issues with Electrolux Washers</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>Even the best-built washers can run into issues over time. We frequently repair:</p>
+            <ul>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Washer not draining or spinning</strong></li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Door not locking or unlocking</strong></li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Water leaks</strong> from the door gasket or hoses</li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Error codes</strong> like E11, E13, E21, or E23</li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Unusual banging or vibration during spin</strong></li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Detergent not dispensing properly</strong></li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Machine not starting or stopping mid-cycle</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-4">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Parts We Frequently Use for Repairs</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>We stock our service vehicles with the most common OEM Electrolux parts for same-day repairs, including:</p>
+            <ul class="space-y-4">
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2  no-bullet pl-1">
+                <span><strong>Door locks and latches</strong></span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>Drain pumps and filters</strong></span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>Water inlet valves</strong></span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>Drive belts and motor assemblies</strong></span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>Electronic control boards</strong></span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>Pressure switches</strong></span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>Shock absorbers and dampers</strong></span>
+              </li>
+            </ul>
+            <p style="margin-top: 20px;">Every part we install is <strong>factory-certified</strong> for performance, safety, and longevity.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-5">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Should You Repair or Replace Your Electrolux Washer?</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>We'll help you decide based on your washer's condition and age:</p>
+            <ul style="margin-bottom: 20px;">
+              <li><strong>Repair</strong> – If your Electrolux washer is less than 10 years old, in generally good condition, and the repair cost is under half the price of a new unit.</li>
+              <li><strong>Replace</strong> – If it's older than 12 years, has multiple major issues, or requires high-cost repairs such as both the motor and control board.</li>
+            </ul>
+            <p>We always give honest, brand-specific recommendations.</p>
+
+            <h3>Typical Repair Costs</h3>
+            <p>Our repair costs reflect everything that goes into getting your washer back to working order, including:</p>
+
+            <ul class="space-y-4">
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Licensed, factory-trained technicians</li>
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Full insurance and liability coverage</li>
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">OEM Electrolux replacement parts</li>
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Professional diagnostics and repair</li>
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1"><strong>90-day parts and labor warranty</strong></li>
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Scheduling, dispatching, and customer support</li>
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Lifetime client support and a 10% returning customer discount</li>
+              </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-6">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>How Our Service Works</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <ul class="space-y-4">
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Call or book online
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Receive technician profile and ETA
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                On-site diagnosis with clear explanation
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                You approve the estimate and pay deposit
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Parts ordered if needed
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Repair and full testing
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                90-day warranty
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Lifetime client support
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                10% discount for returning customers
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-7">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Other Brands We Service</h2>
+          </div>
+        </div>
+
+                  <div class="content-container">
+          <div class="full-width-content">
+            <p>In addition to Electrolux, we also repair <strong>Frigidaire, Samsung, LG, Whirlpool, GE, Maytag, Bosch, and Kenmore</strong> washers.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-8">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>FAQ</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+            <div class="full-width-content">
+            <Accordion variant='splitted' title="Frequently Asked Questions (FAQ) – Bosch Washer Repair">
+              <AccordionItem title="How long do Bosch washers typically last?">
+                <p>With proper care, Bosch washers can last 12–15 years or more.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="Why is my Bosch washer showing an E17 error code?">
+                <p>This usually indicates a water inlet problem — often caused by a clogged filter or faulty inlet valve.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="Can I clean a Bosch washer's drain pump myself?">
+                <p>Yes, Bosch provides access to the filter for basic cleaning, but if the pump itself is faulty, it's best to have a technician replace it.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="Is Bosch washer repair more expensive than other brands?">
+                <p>Bosch parts can be slightly more costly due to their precision engineering, but repairs are often worth it given the brand's quality.</p>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-9">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Service Areas</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p style="margin-top: 10px;">Same Day Appliance Repair serves:</p>
+            <ul >
+              <li><strong>Los Angeles</strong> <a href="/" class="underline font-bold" style="color: #dc2626 !important;">(see LA Service Hub)</a></li>
+              <li><strong>Orange County</strong></li>
+              <li><strong>Ventura County</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-10">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Call Now for Bosch Washer Repair</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>We service <strong>Los Angeles, Pasadena, Santa Monica, Glendale, Burbank, Irvine, Anaheim, Long Beach</strong>, and nearby cities. Schedule your appointment at <a href="/" class="underline font-bold" style="color: #dc2626 !important;">samedayappliance.repair</a> or call <strong>(323) 870‑4790</strong> now.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-11">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>About Us</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p style="margin-top: 5px;">Same Day Appliance Repair is Southern California's <strong>A+ rated, BBB-accredited</strong> team for residential and commercial washer service. Our licensed, factory-trained technicians work with OEM parts and follow brand-specific manuals to ensure accurate repairs. With same-day service and a 90-day warranty, we're your trusted partner for Bosch appliance repair in the Los Angeles area.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-section">
+        <Contactbtn />
+      </div>
+    </div>
+  </Container>
+</Layout>
+ 
+<Cta />

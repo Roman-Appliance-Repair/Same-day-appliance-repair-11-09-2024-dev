@@ -1,0 +1,358 @@
+---
+import Container from "@components/container.astro";
+import Cta from "@components/cta.astro";
+import Layout from "@layouts/Layout.astro";
+import Navbar from "@components/navbar/navbar.astro";
+import Reviews from "@components/reviews.astro";
+import Contactbtn from "@components/contactbtn.astro";
+import Btn from "@components/btn.astro";
+import { Accordion, AccordionItem,Icon } from 'free-astro-components'
+
+import "css/brands/style-brands.css";
+
+const description = "Same Day Appliance Repair provides expert Speed Queen washer repair in Los Angeles, Pasadena, Santa Monica, Glendale, Burbank, Irvine, Anaheim, and nearby areas. Factory-trained technicians, OEM Speed Queen parts, 90-day warranty, and same-day service for residential and commercial units. Call today!";
+const title ="Same Day Speed Queen Washer Repair in Los Angeles | Factory-Trained Techs & OEM Parts";
+---
+<Layout title={title} description={description}>
+  <head>
+    <script type="application/ld+json" is:raw>
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Speed Queen Washer Repair",
+        "provider": {
+          "@type": "Organization",
+          "name": "Same Day Appliance Repair",
+          "url": "https://samedayappliance.repair/",
+          "logo": "https://samedayappliance.repair/images/same-day-appliance-repair-logo.webp",
+          "telephone": "+13238704790",
+          "email": "info@samedayappliance.repair",
+          "areaServed": [
+            { "@type": "Place", "name": "Los Angeles County" },
+            { "@type": "Place", "name": "Orange County" },
+            { "@type": "Place", "name": "Ventura County" }
+          ]
+        },
+        "description": "Same Day Appliance Repair provides expert Speed Queen washer repair services with OEM parts and same-day availability across Los Angeles, Orange County, and Ventura County.",
+        "mainEntityOfPage": "https://samedayappliance.repair/speed-queen-washer-repair-los-angeles/",
+        "offers": {
+          "@type": "Offer",
+          "description": "Professional Speed Queen washer repair services",
+          "priceRange": "$$",
+          "availability": "https://schema.org/InStock"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Speed Queen Washer Repair Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Top-Load Speed Queen Washer Repair"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service", 
+                "name": "Front-Load Speed Queen Washer Repair"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Commercial-Grade Speed Queen Washer Repair"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Coin-Operated Speed Queen Washer Repair"
+              }
+            }
+          ]
+        },
+        "keywords": "Speed Queen washing machine repair, Speed Queen appliance repair Los Angeles, Speed Queen commercial washer repair, Speed Queen front-load washer repair, Speed Queen top-load washer repair, OEM Speed Queen parts, Speed Queen service near me, same day Speed Queen repair"
+      }
+    </script>
+  </head>
+<Navbar />
+<Reviews />
+ 
+  <Container>
+    <div class="full-page">
+      <div class="page-header">
+        <span class="animate-charcter">
+          <h1 style="color: #fff !important;">Same Day Speed Queen Repair in Los Angeles</h1>
+          </span>
+        <h2>Factory Trained • Fast Service • OEM Parts Guaranteed</h2>
+
+        <h3>Expert Speed Queen Washer Repair</h3>
+        
+        <p>When you own a <strong>Speed Queen washer</strong>, you expect unmatched durability and commercial-grade performance. At <strong>Same Day Appliance Repair</strong>, we specialize in <strong>Speed Queen washer repair</strong>, using <strong>original manufacturer parts</strong>, official service manuals, and years of experience with this brand's heavy-duty engineering. While Speed Queen washers are built to last for decades, even the most reliable machines require occasional maintenance and expert service to keep them operating at peak performance.</p>
+        
+        <p><strong>Related Service:</strong> For matching repairs, visit our <a href="/services/dryer-repair-los-angeles/" 
+                  class="underline font-bold" 
+                  style="color: #dc2626 !important;">
+                  Dryer Repair Los Angeles
+               </a> page.</p>
+      </div>
+
+      <div class="page-container" id="anchor-2">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Types of Speed Queen Washers We Service</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="right-content">
+            <p>Our factory-trained technicians repair every type of Speed Queen washer, including:</p>
+            <ul>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" /><strong>Top-Load Washers</strong> – Classic and commercial-grade models (e.g., TR5003WN, TR7003WN)</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" /><strong>Front-Load Washers</strong> – High-efficiency, industrial-quality units (e.g., FF7005WN, AFNE9BSP116TW01)</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" /><strong>Commercial-Grade Residential Washers</strong> – Built for frequent, heavy-duty use in homes</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" /><strong>Stackable Washer/Dryer Units</strong> – Space-saving commercial systems</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" /><strong>Coin-Operated & Multi-Housing Washers</strong> – For apartments, laundromats, and shared laundry rooms</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-3">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Common Issues with Speed Queen Washers</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>Even heavy-duty washers can run into issues over time. We frequently repair:</p>
+            <ul>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Washer not spinning or agitating</strong></li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Water leaks</strong> from hoses or seals</li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Loud knocking or vibration during spin</strong></li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Unit not starting or stopping mid-cycle</strong></li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Drainage problems or slow water removal</strong></li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Door or lid not locking</strong></li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Error codes</strong> specific to Speed Queen models</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-4">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Parts We Frequently Use for Repairs</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>We keep our service trucks stocked with the most common OEM Speed Queen parts to complete repairs quickly, including:</p>
+            <ul class="space-y-4">
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2  no-bullet pl-1">
+                <span><strong>Drain pumps and hoses</strong></span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>Water inlet valves</strong></span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>Drive belts and pulleys</strong></span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>Motor assemblies and couplers</strong></span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>Door locks and lid switches</strong></span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>Electronic control boards</strong></span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>Suspension springs and dampers</strong></span>
+              </li>
+            </ul>
+            <p style="margin-top: 20px;">All parts are <strong>factory-certified</strong> for proper fit, safety, and long-lasting performance.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-5">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Should You Repair or Replace Your Speed Queen Washer?</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>We'll give you honest advice based on your washer's condition:</p>
+            <ul style="margin-bottom: 20px;">
+              <li><strong>Repair</strong> – If your Speed Queen washer is under 15 years old, well-maintained, and the repair cost is under half the price of a replacement.</li>
+              <li><strong>Replace</strong> – If the unit is older, has multiple major issues, or needs costly parts like a transmission and motor at the same time.</li>
+            </ul>
+            <p>Because Speed Queen washers are built for longevity, repair is often the most cost-effective choice.</p>
+
+            <h3>Typical Repair Costs</h3>
+            <p>Our pricing is transparent and includes:</p>
+
+            <ul class="space-y-4">
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Licensed, factory-trained technicians</li>
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Full insurance coverage</li>
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">OEM Speed Queen replacement parts</li>
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Professional diagnostics and repair</li>
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1"><strong>90-day warranty on parts and labor</strong></li>
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Scheduling, dispatching, and customer support</li>
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Lifetime client support and 10% discount for returning customers</li>
+              </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-6">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>How Our Service Works</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <ul class="space-y-4">
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Call or book online
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Receive technician profile and ETA
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                On-site diagnosis with clear explanation
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                You approve the estimate and pay deposit
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Parts ordered if needed
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Repair and full testing
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                90-day warranty
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Lifetime client support
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                10% discount for returning customers
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-7">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Other Brands We Service</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>We also repair <strong>Maytag, Whirlpool, LG, Samsung, GE, Frigidaire, Kenmore, Bosch, and Electrolux</strong> washers.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-8">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>FAQ</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+            <div class="full-width-content">
+            <Accordion variant='splitted' title="Frequently Asked Questions (FAQ) – Speed Queen Washer Repair">
+              <AccordionItem title="How long do Speed Queen washers last?">
+                <p>With proper maintenance, Speed Queen washers can last 20 years or more.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="Why is my Speed Queen washer shaking during spin?">
+                <p>This can be caused by worn suspension springs, unbalanced loads, or uneven flooring.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="Do you service commercial Speed Queen washers?">
+                <p>Yes, we service both residential and commercial-grade units.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="Is Speed Queen washer repair worth it?">
+                <p>Absolutely — these machines are built to last, and most repairs extend their lifespan significantly.</p>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-9">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Service Areas</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p style="margin-top: 10px;">Same Day Appliance Repair serves:</p>
+            <ul >
+              <li><strong>Los Angeles</strong> <a href="/" class="underline font-bold" style="color: #dc2626 !important;">(see LA Service Hub)</a></li>
+              <li><strong>Orange County</strong></li>
+              <li><strong>Ventura County</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-10">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Call Now for Speed Queen Repair</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>We service <strong>Los Angeles, Pasadena, Santa Monica, Glendale, Burbank, Irvine, Anaheim, Long Beach</strong>, and nearby cities. Schedule your appointment at <a href="/" class="underline font-bold" style="color: #dc2626 !important;">samedayappliance.repair</a> or call <strong>(323) 870-4790</strong> now.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-11">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>About Us</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p style="margin-top: 5px;">Same Day Appliance Repair is Southern California's <strong>A+ rated, BBB-accredited</strong> team for residential and commercial washer service. Our licensed, factory-trained technicians work with OEM parts and follow brand-specific manuals to ensure accurate repairs. With same-day service and a 90-day warranty, we're your trusted partner for Speed Queen appliance repair in the Los Angeles area.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-section">
+        <Contactbtn />
+      </div>
+    </div>
+  </Container>
+</Layout>
+ 
+<Cta />

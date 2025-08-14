@@ -1,0 +1,346 @@
+---
+import Container from "@components/container.astro";
+import Cta from "@components/cta.astro";
+import Layout from "@layouts/Layout.astro";
+import Navbar from "@components/navbar/navbar.astro";
+import Reviews from "@components/reviews.astro";
+import Contactbtn from "@components/contactbtn.astro";
+import Btn from "@components/btn.astro";
+import { Accordion, AccordionItem,Icon } from 'free-astro-components'
+
+import "css/brands/style-brands.css";
+
+const description = "Need fast and reliable Samsung washer repair in Los Angeles? Our factory-trained techs fix top-load, front-load, and smart washers using OEM parts. Book now for same-day service!";
+const title ="Samsung Washer Repair Los Angeles - Same Day Service by Certified Techs";
+---
+<Layout title={title} description={description}>
+  <head>
+    <script type="application/ld+json" is:raw>
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Samsung Washer Repair",
+        "provider": {
+          "@type": "Organization",
+          "name": "Same Day Appliance Repair",
+          "url": "https://samedayappliance.repair/",
+          "logo": "https://samedayappliance.repair/images/same-day-appliance-repair-logo.webp",
+          "telephone": "+13238704790",
+          "email": "info@samedayappliance.repair",
+          "areaServed": [
+            { "@type": "Place", "name": "Los Angeles County" },
+            { "@type": "Place", "name": "Orange County" },
+            { "@type": "Place", "name": "Ventura County" }
+          ]
+        },
+        "description": "Same Day Appliance Repair provides expert Samsung washer repair services with OEM parts and same-day availability across Los Angeles, Orange County, and Ventura County.",
+        "mainEntityOfPage": "https://samedayappliance.repair/samsung-washer-repair-los-angeles/",
+        "offers": {
+          "@type": "Offer",
+          "description": "Professional Samsung washer repair services",
+          "priceRange": "$$",
+          "availability": "https://schema.org/InStock"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Samsung Washer Repair Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Top-Load Samsung Washer Repair"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service", 
+                "name": "Front-Load Samsung Washer Repair"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Smart Wi-Fi Samsung Washer Repair"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Stackable Samsung Washer Repair"
+              }
+            }
+          ]
+        },
+        "keywords": "Samsung washing machine repair, Samsung front load washer repair, Samsung top load washer not spinning, Samsung washer troubleshooting, same day appliance repair LA, Samsung washer parts replacement, washer repair near me"
+      }
+    </script>
+  </head>
+<Navbar />
+<Reviews />
+ 
+  <Container>
+    <div class="full-page">
+      <div class="page-header">
+        <span class="animate-charcter">
+          <h1 style="color: #fff !important;">Same Day Samsung Washer Repair in Los Angeles</h1>
+          </span>
+        <h2>Factory Trained • Fast Service • OEM Parts Guaranteed</h2>
+
+        <h3>Expert Samsung Washer Repair</h3>
+        
+        <p>When your <strong>Samsung washer</strong> stops spinning, leaks water, or shows error codes, it can disrupt your entire day. At <strong>Same Day Appliance Repair</strong>, we specialize in <strong>Samsung washer repair</strong> and understand the brand's advanced features and smart diagnostic systems. Our factory-trained technicians follow Samsung service protocols and use <strong>original OEM parts</strong> to ensure lasting results. We proudly serve <strong>Los Angeles, Ventura County, and Orange County</strong> with same-day service options when you book before 3 PM.</p>
+        
+        <p><strong>Related Service:</strong> For matching repairs, visit our <a href="/services/dryer-repair-los-angeles/" 
+                  class="underline font-bold" 
+                  style="color: #dc2626 !important;">
+                  Dryer Repair Los Angeles
+               </a> page.</p>
+      </div>
+
+      <div class="page-container" id="anchor-2">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Types of Samsung Washers We Service</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="right-content">
+            <p>We repair all major Samsung washer models, including:</p>
+            <ul>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" /><strong>Top-load washers with ActiveWave Agitator</strong> (e.g., WA50R5200AW)</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" /><strong>Front-load washers with VRT Plus Technology</strong> (e.g., WF45T6000AW)</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" /><strong>Smart Wi-Fi-enabled washers</strong> (e.g., WV60A9900AV)</li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" /><strong>Stackable washer-dryer units</strong></li>
+              <li class="flex items-center gap-2 no-bullet" style="padding-left: 0 !important;" ><Icon icon="check" class="icon-class" /><strong>Compact and space-saving models</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-3">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Common Samsung Washer Problems We Fix</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>Our technicians regularly fix these Samsung washer issues:</p>
+            <ul>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Washer not spinning or agitating:</strong> drive motor or control board failure</li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Leaking water during wash cycle:</strong> worn door seal or inlet valve</li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Loud noises during spin:</strong> bearing or suspension issues</li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Washer not draining:</strong> clogged filter or drain pump malfunction</li>
+              <li class="flex items-center gap-2 no-bullet pl-0" ><Icon icon="check" class="icon-class" /><strong>Error codes:</strong> such as "4E," "5E," or "UE"</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-4">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>OEM Parts We Stock for Samsung Repairs</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>We keep our service vans stocked with original Samsung parts to complete most repairs in one visit:</p>
+            <ul class="space-y-4">
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2  no-bullet pl-1">
+                <span><strong>DC31-00054A</strong> – Drain pumps</span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>DC34-00025D</strong> – Door locks</span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>DC62-30314K</strong> – Water inlet valves</span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>DC92-01803J</strong> – Control boards</span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>DC97-16350C</strong> – Suspension rods</span>
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">
+                <span><strong>Drive belts and sensors</strong></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-5">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Should You Repair or Replace Your Samsung Washer?</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>If your washer is less than 10 years old and doesn't have severe drum or sealed system issues, repair is usually the best choice. Samsung units are designed with smart features and high-performance parts that often make repairs more cost-effective than replacing the appliance.</p>
+
+            <h3>Typical Repair Costs</h3>
+            <p>Our service fees include:</p>
+
+            <ul class="space-y-4">
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Flat-rate diagnostic visit (credited toward your repair)</li>
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Genuine Samsung OEM parts</li>
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Professional labor and insured dispatch</li>
+                <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] flex items-center gap-2 no-bullet pl-1">Office support and 90-day warranty coverage</li>
+              </ul>
+          </div>
+          <p style="margin-top: 20px;">We believe in pricing transparency. For comparison, visit our <a href="/price-list/washer-repair-cost/" class="underline font-bold" style="color: #dc2626 !important;">Washer Repair Cost Guide</a>.</p>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-6">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>How Our Service Works</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <ul class="space-y-4">
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Call or book online before 3 PM for same-day availability
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Receive your technician's name and ETA by text
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                On-site diagnosis and quote provided
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                You approve and pay the deposit
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Repair completed on the spot or parts ordered
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Final installation and performance test
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                Digital invoice, care tips, and 90-day warranty included
+              </li>
+              <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#ca0913] no-bullet pl-1">
+                10% discount for return clients
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-7">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Other Brands We Service</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>In addition to Samsung, we service <strong>LG, GE, Whirlpool, Maytag, Frigidaire, Electrolux, Bosch</strong>, and more.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-8">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Frequently Asked Questions (FAQ)</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+            <div class="full-width-content">
+            <Accordion variant='splitted' title="Frequently Asked Questions (FAQ) – Samsung Washer Repair">
+              <AccordionItem title="Why is my Samsung washer stuck on a cycle?">
+                <p>This is usually caused by a faulty control board or sensor not detecting the cycle's end. A quick diagnostic can pinpoint the issue.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="My Samsung washer is shaking excessively—what's wrong?">
+                <p>This can result from unbalanced loads, worn suspension rods, or damaged shock absorbers. We'll inspect the drum and leveling system.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="What do Samsung washer error codes mean?">
+                <p>Codes like 4E (water supply issue), 5E (drain error), or UE (unbalanced load) indicate specific component malfunctions.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="Is it worth repairing a Samsung washer with an error code?">
+                <p>Yes—most error codes are fixable with parts like sensors, valves, or circuit boards. We can restore your unit without the need for a new one.</p>
+              </AccordionItem>
+              
+              <AccordionItem title="Can I get same-day Samsung washer repair in LA?">
+                <p>Absolutely. Call before 3 PM, and we'll dispatch a tech to any LA, Orange County, or Ventura location.</p>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-9">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Service Areas</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p style="margin-top: 10px;">Same Day Appliance Repair serves:</p>
+            <ul >
+              <li><strong>Los Angeles</strong> <a href="/" class="underline font-bold" style="color: #dc2626 !important;">(see LA Service Hub)</a></li>
+              <li><strong>Orange County</strong></li>
+              <li><strong>Ventura County</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-10">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>Call Now for Samsung Washer Repair</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p>We service <strong>Los Angeles, Pasadena, Santa Monica, Glendale, Burbank, Irvine, Anaheim, Long Beach</strong>, and nearby cities. Schedule your appointment at <a href="/" class="underline font-bold" style="color: #dc2626 !important;">samedayappliance.repair</a> or call <strong>(323) 870‑4790</strong> now.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container" id="anchor-11">
+        <div class="header-container">
+          <div class="head-content-h">
+            <h2>About Us</h2>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="full-width-content">
+            <p style="margin-top: 5px;">Same Day Appliance Repair is Southern California's <strong>A+ rated, BBB-accredited</strong> team for residential and commercial washer service. Our licensed, factory-trained technicians work with OEM parts and follow brand-specific manuals to ensure accurate repairs. With same-day service and a 90-day warranty, we're your trusted partner for Samsung appliance repair in the Los Angeles area.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-section">
+        <Contactbtn />
+      </div>
+    </div>
+  </Container>
+</Layout>
+ 
+<Cta />
