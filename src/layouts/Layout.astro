@@ -59,6 +59,7 @@ const pageDescription = description ?? defaultDescription;
     />
 
     <style is:global>
+      /* фикс опечатки Im → !important */
       .H9lube img {
         width: 100% !important;
       }
@@ -83,12 +84,13 @@ const pageDescription = description ?? defaultDescription;
         color: #000;
       }
 
+      /* объединённый h1 + animate-charcter (убраны дубли) */
       h1 {
         display: inline-block;
-        font-size: 60px;
-        line-height: 66px;
+        font-size: clamp(35px, 7vw, 60px);
+        line-height: clamp(46px, 8vh, 66px);
         font-weight: 600;
-        margin: 20px auto 20px auto;
+        margin: 20px auto;
         text-shadow: 2.3px 2.3px 3.7px rgb(21 21 21);
       }
 
@@ -110,7 +112,7 @@ const pageDescription = description ?? defaultDescription;
         animation: textclip 4s linear infinite;
         display: inline-block;
         font-size: clamp(35px, 7vw, 60px);
-        line-height: clamp(56px, 8vh, 60px);
+        line-height: clamp(46px, 8vh, 66px);
         font-weight: 900;
         text-shadow: 2.3px 2.3px 3.7px rgb(21 21 21);
       }
@@ -248,7 +250,7 @@ const pageDescription = description ?? defaultDescription;
         background: linear-gradient(
           0deg,
           rgba(255, 255, 255, 1) 53%,
-          rgba(255, 255, 255, 0.9) 68%,
+          rgba(255, 255, 255, 0.8991) 68%,
           rgba(255, 255, 255, 0) 89%
         );
         margin-top: -15%;
@@ -507,8 +509,10 @@ const pageDescription = description ?? defaultDescription;
         overflow-y: auto;
       }
 
+      /* оставляем только один вариант w-3: для размеров (цвет убран) */
       .w-3 {
-        color: #fff;
+        width: 15px;
+        height: 20px;
       }
 
       .text-slate-800 {
@@ -666,11 +670,6 @@ const pageDescription = description ?? defaultDescription;
         width: 100%;
         min-width: 15px;
         max-width: 15px;
-      }
-
-      .w-3 {
-        width: 15px;
-        height: 20px;
       }
 
       .header-bootun-1024 {
@@ -896,19 +895,6 @@ const pageDescription = description ?? defaultDescription;
   </head>
 
   <body>
-    <Navbar />
-    <main>
-      <slot />
-    </main>
-    <Footer />
-
-    <noscript>
-      <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-P4QTNXQT"
-        height="0"
-        width="0"
-        style="display:none;visibility:hidden"
-      ></iframe>
-    </noscript>
+    <slot />
   </body>
 </html>
