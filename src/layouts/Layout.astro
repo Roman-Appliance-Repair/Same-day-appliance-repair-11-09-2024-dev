@@ -11,17 +11,10 @@ const resolvedImageWithDomain = new URL(
   Astro.site,
 ).toString();
 
-// SEO Title & Description with defaults
-const defaultTitle =
-  "Same Day Appliance Repair | Los Angeles, Pasadena, Orange & Ventura County";
-
-const defaultDescription =
-  "Same Day Appliance Repair provides residential and commercial appliance repair in Los Angeles, Pasadena, Orange County, and Ventura County. Call (323) 870-4790 for same-day service.";
-
 const { title, description } = Astro.props;
-
-const pageTitle = title ?? defaultTitle;
-const pageDescription = description ?? defaultDescription;
+const pageTitle = title;
+const pageDescription = description;
+// const { title } = Astro.props; // const makeTitle = title // ? title + " | " + "(424) 325-0520" // : "Same Day Appliance Repair Services";
 ---
 
 <!DOCTYPE html>
@@ -32,10 +25,7 @@ const pageDescription = description ?? defaultDescription;
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- SEO -->
-    <title>{pageTitle}</title>
-    <meta name="description" content={pageDescription} />
-
+    <!-- ОСТАВЛЯЕМ ТОЛЬКО SEO-КОМПОНЕНТ, БЕЗ ДОПОЛНИТЕЛЬНЫХ <title> И <meta name="description"> -->
     <SEO
       title={pageTitle}
       description={pageDescription}
