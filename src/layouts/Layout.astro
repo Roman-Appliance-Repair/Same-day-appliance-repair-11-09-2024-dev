@@ -11,10 +11,9 @@ const resolvedImageWithDomain = new URL(
   Astro.site,
 ).toString();
 
+// title и description приходят из страницы:
+// <Layout title="..." description="...">
 const { title, description } = Astro.props;
-const pageTitle = title;
-const pageDescription = description;
-// const { title } = Astro.props; // const makeTitle = title // ? title + " | " + "(424) 325-0520" // : "Same Day Appliance Repair Services";
 ---
 
 <!DOCTYPE html>
@@ -25,10 +24,10 @@ const pageDescription = description;
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- ОСТАВЛЯЕМ ТОЛЬКО SEO-КОМПОНЕНТ, БЕЗ ДОПОЛНИТЕЛЬНЫХ <title> И <meta name="description"> -->
+    <!-- SEO: используем только компонент, без дополнительных <title> и <meta name="description"> -->
     <SEO
-      title={pageTitle}
-      description={pageDescription}
+      title={title}
+      description={description}
       canonical={canonicalURL}
       twitter={{
         creator: "@surjithctly",
@@ -39,7 +38,7 @@ const pageDescription = description;
         basic: {
           url: canonicalURL,
           type: "website",
-          title: pageTitle,
+          title: title,
           image: resolvedImageWithDomain,
         },
         image: {
