@@ -1,4 +1,5 @@
 ---
+import { SEO } from "astro-seo";
 import Footer from "../components/footer.astro";
 import Navbar from "../components/navbar/navbar.astro";
 import Btn from "../components/btn.astro";
@@ -6,16 +7,18 @@ import Btn from "../components/btn.astro";
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 const resolvedImageWithDomain = new URL(
   "/images/same-day-appliance-repair-experts.webp",
-  Astro.site
+  Astro.site,
 ).toString();
 
 const { title, description } = Astro.props;
 
-// дефолтные значения на случай, если страница не передаст свои
 const defaultTitle =
-  "Same Day Appliance Repair | Appliance & HVAC Repair in Los Angeles & Nearby Cities";
+  title ??
+  "Same Day Appliance Repair in Los Angeles, Pasadena, Thousand Oaks & Irvine | (323) 870-4790";
+
 const defaultDescription =
-  "Same Day Appliance Repair provides residential and commercial appliance & HVAC repair in Los Angeles, Pasadena, Thousand Oaks, Irvine and nearby cities. Same-day service by licensed and background-checked technicians.";
+  description ??
+  "Same Day Appliance Repair provides residential and commercial appliance repair services in Los Angeles, Pasadena, Thousand Oaks, Irvine and nearby cities.";
 ---
 
 <!DOCTYPE html>
@@ -26,35 +29,33 @@ const defaultDescription =
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- БАЗОВЫЙ SEO -->
-    <title>{title ?? defaultTitle}</title>
-    <meta name="description" content={description ?? defaultDescription} />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href={canonicalURL} />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content={title ?? defaultTitle} />
-    <meta
-      property="og:description"
-      content={description ?? defaultDescription}
+    <!-- ЕДИНЫЙ SEO-блок, без дублей -->
+    <SEO
+      title={defaultTitle}
+      description={defaultDescription}
+      canonical={canonicalURL}
+      openGraph={{
+        basic: {
+          title: defaultTitle,
+          type: "website",
+          url: canonicalURL,
+          image: resolvedImageWithDomain,
+        },
+        image: {
+          url: resolvedImageWithDomain,
+          alt: "Same Day Appliance Repair",
+        },
+      }}
+      twitter={{
+        card: "summary_large_image",
+        site: "@web3templates",
+        creator: "@surjithctly",
+        image: {
+          url: resolvedImageWithDomain,
+          alt: "Same Day Appliance Repair",
+        },
+      }}
     />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonicalURL} />
-    <meta property="og:image" content={resolvedImageWithDomain} />
-    <meta
-      property="og:image:alt"
-      content="Same Day Appliance Repair technicians"
-    />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title ?? defaultTitle} />
-    <meta
-      name="twitter:description"
-      content={description ?? defaultDescription}
-    />
-    <meta name="twitter:image" content={resolvedImageWithDomain} />
-
     <style is:global>
       /* ВСЁ, ЧТО НИЖЕ — ПРОСТО ТВОЙ CSS 1:1 */
 
