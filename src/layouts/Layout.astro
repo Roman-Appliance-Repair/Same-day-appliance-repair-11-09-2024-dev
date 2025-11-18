@@ -3,22 +3,20 @@ import { SEO } from "astro-seo";
 import Footer from "../components/footer.astro";
 import Navbar from "../components/navbar/navbar.astro";
 import Btn from "../components/btn.astro";
-
+// export interface Props {
+//    title: string;
+// }
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
 const resolvedImageWithDomain = new URL(
   "/images/same-day-appliance-repair-experts.webp",
   Astro.site,
 ).toString();
-
 const { title, description } = Astro.props;
-
-const defaultTitle =
-  title ??
-  "Same Day Appliance Repair in Los Angeles, Pasadena, Thousand Oaks & Irvine | (323) 870-4790";
-
-const defaultDescription =
-  description ??
-  "Same Day Appliance Repair provides residential and commercial appliance repair services in Los Angeles, Pasadena, Thousand Oaks, Irvine and nearby cities.";
+// const { title } = Astro.props;
+// const makeTitle = title
+//   ? title + " | " + "(424) 325-0520"
+//   : "Same Day Appliance Repair Services";
 ---
 
 <!DOCTYPE html>
@@ -28,34 +26,15 @@ const defaultDescription =
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
+    <!--Bing Webmaster Tools -->
+    <meta name="msvalidate.01" content="F2723BD576AB7FA778D3F53898576D0B" />
+    <title>{title}</title>
+  <meta name="description" content={description} />
 
-    <!-- ЕДИНЫЙ SEO-блок, без дублей -->
-    <SEO
-      title={defaultTitle}
-      description={defaultDescription}
-      canonical={canonicalURL}
-      openGraph={{
-        basic: {
-          title: defaultTitle,
-          type: "website",
-          url: canonicalURL,
-          image: resolvedImageWithDomain,
-        },
-        image: {
-          url: resolvedImageWithDomain,
-          alt: "Same Day Appliance Repair",
-        },
-      }}
-      twitter={{
-        card: "summary_large_image",
-        site: "@web3templates",
-        creator: "@surjithctly",
-        image: {
-          url: resolvedImageWithDomain,
-          alt: "Same Day Appliance Repair",
-        },
-      }}
-    />
+
+
+ Shcema json /*<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Same Day Appliance Repair","image":"https://samedayappliance.repair/images/same-day-appliance-repair-experts.webp","url":"https://samedayappliance.repair/","telephone":"+13238704790","priceRange":"$$","hasMap":"https://maps.app.goo.gl/o1PTfsdJeiBPjdu38","address":{"@type":"PostalAddress","streetAddress":"8746 Rangely Ave","addressLocality":"West Hollywood","addressRegion":"CA","postalCode":"90048","addressCountry":"US"},"areaServed":[{"@type":"City","name":"Los Angeles","sameAs":"https://en.wikipedia.org/wiki/Los_Angeles"},{"@type":"City","name":"Burbank","sameAs":"https://en.wikipedia.org/wiki/Burbank,_California"},{"@type":"City","name":"Alhambra","sameAs":"https://en.wikipedia.org/wiki/Alhambra,_California"},{"@type":"City","name":"Glendale","sameAs":"https://en.wikipedia.org/wiki/Glendale,_California"},{"@type":"City","name":"Pasadena","sameAs":"https://en.wikipedia.org/wiki/Pasadena,_California"},{"@type":"City","name":"South Pasadena","sameAs":"https://en.wikipedia.org/wiki/South_Pasadena,_California"},{"@type":"City","name":"Santa Monica","sameAs":"https://en.wikipedia.org/wiki/Santa_Monica,_California"},{"@type":"City","name":"Beverly Hills","sameAs":"https://en.wikipedia.org/wiki/Beverly_Hills,_California"},{"@type":"City","name":"Monterey Park","sameAs":"https://en.wikipedia.org/wiki/Monterey_Park,_California"},{"@type":"City","name":"Thousand Oaks","sameAs":"https://en.wikipedia.org/wiki/Thousand_Oaks,_California"},{"@type":"City","name":"Universal City","sameAs":"https://en.wikipedia.org/wiki/Universal_City,_California"},{"@type":"City","name":"West Hollywood","sameAs":"https://en.wikipedia.org/wiki/West_Hollywood,_California"},{"@type":"City","name":"San Marino","sameAs":"https://en.wikipedia.org/wiki/San_Marino,_California"},{"@type":"City","name":"Malibu","sameAs":"https://en.wikipedia.org/wiki/Malibu,_California"}],"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"08:00","closes":"20:00"},"sameAs":["https://maps.app.goo.gl/o1PTfsdJeiBPjdu38"]}</script>*
+ 
     <style is:global>
       /* ВСЁ, ЧТО НИЖЕ — ПРОСТО ТВОЙ CSS 1:1 */
 
