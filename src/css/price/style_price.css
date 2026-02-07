@@ -1329,7 +1329,7 @@ main {
   }
 
   .money_job-prices p {
-    white-space: wrap;
+    white-space: normal;
   }
 
   .pros_job-prices {

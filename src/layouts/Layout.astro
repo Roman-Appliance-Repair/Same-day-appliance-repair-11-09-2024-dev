@@ -1,8 +1,4 @@
 ---
-import { SEO } from "astro-seo";
-import Footer from "../components/footer.astro";
-import Navbar from "../components/navbar/navbar.astro";
-import Btn from "../components/btn.astro";
 // export interface Props {
 //    title: string;
 // }
@@ -24,8 +20,31 @@ const { title, description } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11414455325"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-11414455325');
+
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+          'send_to': 'AW-11414455325/conversion',
+          'event_callback': callback
+        });
+        return false;
+      }
+    </script>
+
     <!--Bing Webmaster Tools -->
     <meta name="msvalidate.01" content="F2723BD576AB7FA778D3F53898576D0B" />
     <title>{title}</title>
@@ -341,7 +360,7 @@ const { title, description } = Astro.props;
         }
 
         .animate-charcter {
-          white-space: wrap;
+          white-space: normal;
         }
       }
 
@@ -779,7 +798,7 @@ const { title, description } = Astro.props;
         .call-header-1024 a {
           width: 100%;
           max-width: 300px;
-          white-space: wrap;
+          white-space: normal;
           padding: 2% 2%;
           font-size: 16px;
           justify-self: center;
@@ -802,7 +821,7 @@ const { title, description } = Astro.props;
         }
 
         .lg\:bg-white {
-          white-space: wrap;
+          white-space: normal;
         }
       }
 

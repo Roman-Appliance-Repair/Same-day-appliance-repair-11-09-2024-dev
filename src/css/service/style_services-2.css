@@ -1608,7 +1608,7 @@ main {
     }
 
     .commercial-dishwasher-page-header-d-full .animate-charcter{
-        white-space: wrap;
+        white-space: normal;
     }
 
     .commercial-dishwasher-page-header-d-full {
@@ -1711,7 +1711,7 @@ main {
     }
 
     .animate-charcter {
-        white-space: wrap;
+        white-space: normal;
     }
 
     .page-header-f img {
@@ -1780,7 +1780,7 @@ main {
     }
 
     .money_job-prices p {
-        white-space: wrap;
+        white-space: normal;
     }
 
 
