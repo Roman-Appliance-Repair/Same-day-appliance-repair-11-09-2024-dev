@@ -3,3 +3,15 @@
 /areas/silver-lake   /silver-lake   301
 /areas/brentwood     /brentwood     301
 /areas/santa-monica  /santa-monica  301
+
+# Removed test pages — 410 Gone
+/services/tamplete/            /services/  410
+/services/test/                /services/  410
+/services/ww-cooktop/          /services/  410
+/services/ww-fireplace/        /services/  410
+/services/ww-induction-cooktop/ /services/ 410
+/services/ww-microwave/        /services/  410
+/services/ww-range-hood/       /services/  410
+/services/ww-wine-cellar/      /services/  410
+/services/ww-wine-cooler/      /services/  410
+/services/www-bbq-grill/       /services/  410
