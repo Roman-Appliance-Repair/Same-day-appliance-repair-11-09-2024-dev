@@ -15,3 +15,6 @@
 /services/ww-wine-cellar/      /services/  410
 /services/ww-wine-cooler/      /services/  410
 /services/www-bbq-grill/       /services/  410
+
+# Missing price-list page redirect
+/price-list/washer-repair-cost/ /services/washing-machine-repair-los-angeles/ 301
