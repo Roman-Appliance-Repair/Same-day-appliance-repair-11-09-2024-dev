@@ -341,3 +341,43 @@ a {
     }
 
 }
+
+/* SMS consent disclosure */
+
+.sms-consent {
+    border-top: 1px solid #333;
+    padding: 1rem 1.25rem;
+    text-align: center;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.sms-consent-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #9ca3af;
+    margin-bottom: 0.4rem;
+}
+
+.sms-consent-text {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: #9ca3af;
+}
+
+.sms-consent-links {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin-top: 0.4rem;
+}
+
+.sms-consent-links a {
+    color: #9ca3af !important;
+    text-decoration: underline !important;
+    text-decoration-color: #6b7280 !important;
+    text-underline-offset: 2px;
+}
+
+.sms-consent-links a:hover {
+    color: #d1d5db !important;
+}
