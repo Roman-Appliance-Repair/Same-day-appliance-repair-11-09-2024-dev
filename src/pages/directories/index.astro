@@ -51,5 +51,56 @@ import Layout from "@layouts/Layout.astro";
     </div>
   </main>
 <Cta />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Same Day Appliance Repair Directories",
+  "description": "Same Day Appliance Repair is dedicated to the best service. Here is the list of the directories where you can find us.",
+  "url": "https://samedayappliance.repair/directories/",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Same Day Appliance Repair",
+    "telephone": "(323) 870-4790",
+    "url": "https://samedayappliance.repair",
+    "priceRange": "$"
+  },
+  "brand": {
+    "@type": "Brand",
+    "name": "Index"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Los Angeles"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://samedayappliance.repair/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Directories",
+      "item": "https://samedayappliance.repair/directories/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Same Day Appliance Repair Directories",
+      "item": "https://samedayappliance.repair/directories/"
+    }
+  ]
+}
+</script>
 <LogoBrands />
 </Layout>
