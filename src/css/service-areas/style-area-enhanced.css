@@ -293,105 +293,107 @@
     }
 }
 
-/* ===== Hero Flex Layout ===== */
-.hero-flex {
+/* ===== Hero Banner (full-width background) ===== */
+.hero-banner {
+    position: relative;
+    width: 100%;
+    min-height: 420px;
+    overflow: hidden;
+}
+
+.hero-banner__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-banner__overlay {
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.55);
     display: flex;
-    gap: 30px;
+    flex-direction: column;
     align-items: center;
-    margin: 20px 0;
-}
-
-.hero-flex__image {
-    flex: 0 0 55%;
-    max-width: 55%;
-}
-
-.hero-flex__image img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.hero-flex__content {
-    flex: 1;
-}
-
-/* ===== Content Row Layouts ===== */
-.content-row {
-    display: flex;
-    gap: 30px;
-    align-items: flex-start;
-    margin: 15px 0;
-}
-
-.content-row__text {
-    flex: 1;
-}
-
-.content-row__image {
-    flex-shrink: 0;
-}
-
-.content-row__image img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-/* Text left, image right (Kitchen) */
-.content-row--img-right .content-row__image {
-    flex: 0 0 40%;
-    max-width: 40%;
-}
-
-/* Image left, text right (Laundry) */
-.content-row--img-left .content-row__image {
-    max-width: 300px;
-}
-
-/* ===== Centered Section Image ===== */
-.section-image-center {
+    justify-content: center;
     text-align: center;
-    margin: 20px 0;
+    padding: 80px 20px;
+    min-height: 420px;
 }
 
-.section-image-center img {
-    max-width: 65%;
+.hero-banner__overlay h1 {
+    color: #fff;
+    font-size: clamp(32px, 6vw, 52px);
+    font-weight: 900;
+    margin: 0 0 12px 0;
+    text-transform: uppercase;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    line-height: 1.15;
+}
+
+.hero-banner__subtitle {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: clamp(16px, 3vw, 22px);
+    font-weight: 500;
+    margin: 0 0 28px 0;
+    letter-spacing: 0.5px;
+}
+
+.hero-banner__cta {
+    display: inline-block;
+    background: #ca0913;
+    color: #fff;
+    padding: 16px 44px;
+    font-size: clamp(20px, 4vw, 26px);
+    font-weight: 700;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hero-banner__cta:hover {
+    background: #a00710;
+    transform: translateY(-2px);
+}
+
+/* ===== Section Photo (centered between sections) ===== */
+.section-photo {
+    text-align: center;
+    margin: 30px auto;
+    max-width: 700px;
+}
+
+.section-photo img {
+    width: 100%;
     height: auto;
     border-radius: 10px;
 }
 
-.section-image-center--narrow img {
-    max-width: 55%;
+/* ===== Content Sections Spacing ===== */
+.content-section {
+    padding: 40px 0;
 }
 
-/* ===== Layout Responsive ===== */
-@media (max-width: 1024px) {
-    .hero-flex {
-        flex-direction: column;
+.content-section + .content-section {
+    border-top: 1px solid #e8e8e8;
+}
+
+/* ===== Hero Banner Responsive ===== */
+@media (max-width: 768px) {
+    .hero-banner {
+        min-height: 350px;
     }
 
-    .hero-flex__image {
-        flex: none;
-        max-width: 100%;
+    .hero-banner__overlay {
+        padding: 50px 15px;
+        min-height: 350px;
     }
 
-    .content-row {
-        flex-direction: column;
-    }
-
-    .content-row--img-right .content-row__image,
-    .content-row--img-left .content-row__image {
-        flex: none;
-        max-width: 100%;
-    }
-
-    .content-row--img-left .content-row__image {
-        order: -1;
-    }
-
-    .section-image-center img,
-    .section-image-center--narrow img {
-        max-width: 100%;
+    .hero-banner__cta {
+        padding: 14px 32px;
     }
 }

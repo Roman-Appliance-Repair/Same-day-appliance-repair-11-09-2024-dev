@@ -4,7 +4,6 @@ import Cta from "@components/cta.astro";
 import Layout from "@layouts/Layout.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import Reviews from "@components/reviews.astro";
-import Contactbtn from "@components/contactbtn.astro";
 import Btn from "@components/btn.astro";
 import Anchor from "@components/anchor/anchor-areas-enhanced.astro";
 import FaqSection from "@components/faq-section.astro";
@@ -80,166 +79,159 @@ const pricingRows = [
   <Navbar />
   <Reviews />
 
+  <!-- 1. HERO BANNER — full width background image -->
+  <div class="hero-banner">
+    <img
+      class="hero-banner__bg"
+      src="/images/burbank/sub-zero-refrigerator-repair-burbank.webp"
+      alt="Same Day Appliance Repair technician servicing Sub-Zero refrigerator in Burbank home"
+      width="1200"
+      height="800"
+      loading="eager"
+    />
+    <div class="hero-banner__overlay">
+      <h1>Appliance Repair Burbank CA</h1>
+      <p class="hero-banner__subtitle">Same Day Service &bull; Certified Technicians &bull; All Brands</p>
+      <a href="tel:+13238704790" class="hero-banner__cta">(323) 870-4790</a>
+    </div>
+  </div>
+
   <Container>
     <div class="full-page">
-      <!-- 1. HERO -->
-      <div class="page-header">
-        <div class="hero-flex">
-          <div class="hero-flex__image">
-            <img
-              width="600"
-              height="600"
-              loading="eager"
-              alt="Same Day Appliance Repair technician servicing Sub-Zero refrigerator in Burbank home"
-              src="/images/burbank/sub-zero-refrigerator-repair-burbank.webp"
-            />
-          </div>
-          <div class="hero-flex__content">
-            <span class="animate-charcter">
-              <h1>Appliance Repair Burbank CA</h1>
-            </span>
-            <Contactbtn />
-          </div>
+
+      <!-- Facts bar -->
+      <div class="hero-facts-bar">
+        <div class="hero-fact">
+          <p class="fact-value">60–90 min</p>
+          <p class="fact-label">Avg. Response Time</p>
         </div>
-
-        <div class="hero-facts-bar">
-          <div class="hero-fact">
-            <p class="fact-value">60–90 min</p>
-            <p class="fact-label">Avg. Response Time</p>
-          </div>
-          <div class="hero-fact">
-            <p class="fact-value">85%</p>
-            <p class="fact-label">First-Visit Fix Rate</p>
-          </div>
-          <div class="hero-fact">
-            <p class="fact-value">$65</p>
-            <p class="fact-label">Diagnostic Fee</p>
-          </div>
-          <div class="hero-fact">
-            <p class="fact-value">4.9 &#9733;</p>
-            <p class="fact-label">Google Rating</p>
-          </div>
+        <div class="hero-fact">
+          <p class="fact-value">85%</p>
+          <p class="fact-label">First-Visit Fix Rate</p>
         </div>
-
-        <Anchor />
-
-        <p><b>Need appliance repair in Burbank, CA?</b> Same Day Appliance Repair is a family-owned, licensed company
-          serving Burbank homeowners and businesses since 2022. Our certified technicians arrive the same day, diagnose
-          accurately and fix the problem — usually on the first visit. We repair all major residential and commercial
-          appliances from everyday brands to high-end European manufacturers.</p>
-        <p>We are BBB-accredited, EPA-certified and OSHA-trained. Every repair comes with transparent pricing,
-          no hidden fees and a written warranty. Whether it's a leaking dishwasher on a Tuesday afternoon or a
-          commercial walk-in cooler emergency on a Saturday, we're here for Burbank.</p>
+        <div class="hero-fact">
+          <p class="fact-value">$65</p>
+          <p class="fact-label">Diagnostic Fee</p>
+        </div>
+        <div class="hero-fact">
+          <p class="fact-value">4.9 &#9733;</p>
+          <p class="fact-label">Google Rating</p>
+        </div>
       </div>
+
+      <Anchor />
+
+      <p><b>Need appliance repair in Burbank, CA?</b> Same Day Appliance Repair is a family-owned, licensed company
+        serving Burbank homeowners and businesses since 2022. Our certified technicians arrive the same day, diagnose
+        accurately and fix the problem — usually on the first visit. We repair all major residential and commercial
+        appliances from everyday brands to high-end European manufacturers.</p>
+      <p>We are BBB-accredited, EPA-certified and OSHA-trained. Every repair comes with transparent pricing,
+        no hidden fees and a written warranty. Whether it's a leaking dishwasher on a Tuesday afternoon or a
+        commercial walk-in cooler emergency on a Saturday, we're here for Burbank.</p>
 
 
       <!-- 2. WHY BURBANK -->
-      <h2>Why Burbank Trusts Same Day Appliance Repair</h2>
-      <div class="why-choose-grid">
-        <div class="why-choose-card">
-          <h3>Same Day Service, Every Day</h3>
-          <p>We schedule appointments Monday through Saturday, 8 AM – 8 PM. Call before noon and we'll typically be at your door by the afternoon — no extra charge for same day visits.</p>
-        </div>
-        <div class="why-choose-card">
-          <h3>Honest $65 Diagnostics</h3>
-          <p>No guesswork, no inflated quotes. Our diagnostic fee covers a thorough inspection and a written estimate. Approve the repair and the $65 is waived completely. If we can't diagnose the issue, we refund your diagnostic fee — guaranteed.</p>
-        </div>
-        <div class="why-choose-card">
-          <h3>High-End Brand Expertise</h3>
-          <p>Burbank homes feature Sub-Zero, Viking, Wolf and Thermador. Our techs are factory-trained on these brands and carry OEM-approved parts so your premium appliances stay in top condition.</p>
-        </div>
-        <div class="why-choose-card">
-          <h3>Weekends & Flexible Scheduling</h3>
-          <p>Saturday appointments at no extra cost. We also offer 2-hour arrival windows so you aren't stuck waiting all day. Our dispatchers send text updates with your tech's ETA.</p>
+      <div class="content-section">
+        <h2>Why Burbank Trusts Same Day Appliance Repair</h2>
+        <div class="why-choose-grid">
+          <div class="why-choose-card">
+            <h3>Same Day Service, Every Day</h3>
+            <p>We schedule appointments Monday through Saturday, 8 AM – 8 PM. Call before noon and we'll typically be at your door by the afternoon — no extra charge for same day visits.</p>
+          </div>
+          <div class="why-choose-card">
+            <h3>Honest $65 Diagnostics</h3>
+            <p>No guesswork, no inflated quotes. Our diagnostic fee covers a thorough inspection and a written estimate. Approve the repair and the $65 is waived completely. If we can't diagnose the issue, we refund your diagnostic fee — guaranteed.</p>
+          </div>
+          <div class="why-choose-card">
+            <h3>High-End Brand Expertise</h3>
+            <p>Burbank homes feature Sub-Zero, Viking, Wolf and Thermador. Our techs are factory-trained on these brands and carry OEM-approved parts so your premium appliances stay in top condition.</p>
+          </div>
+          <div class="why-choose-card">
+            <h3>Weekends & Flexible Scheduling</h3>
+            <p>Saturday appointments at no extra cost. We also offer 2-hour arrival windows so you aren't stuck waiting all day. Our dispatchers send text updates with your tech's ETA.</p>
+          </div>
         </div>
       </div>
 
 
       <!-- 3. RESIDENTIAL REPAIRS -->
-      <div id="home-anchor">
+      <div id="home-anchor" class="content-section">
         <h2>Home Appliance Repair Burbank CA</h2>
         <p>From kitchen appliances to laundry room units, our Burbank technicians handle every residential repair —
           refrigerators, washers, dryers, dishwashers, ovens, cooktops, microwaves, range hoods, fireplaces and
           barbecue grills. We carry 200+ parts in our service vans for fast on-site repairs.</p>
 
-        <div class="content-row content-row--img-right">
-          <div class="content-row__text">
-            <h2>Kitchen Appliance Repair Burbank CA</h2>
-
-            <h3>Refrigerator Repair Burbank CA</h3>
-            <p>Burbank's warm climate pushes cooling systems hard. If your fridge has temperature swings, ice buildup,
-              a noisy compressor or a water leak, our techs can diagnose and fix it — often within an hour. We carry
-              compressors, thermostats, fan motors, defrost timers and control boards in our vans.</p>
-            <p>We service Samsung, LG, Whirlpool, Frigidaire, GE, Maytag, KitchenAid, Amana and high-end brands
-              like <a href="/brands/sub-zero-repair/">Sub-Zero</a>, <a href="/brands/viking-repair/">Viking</a>,
-              Bosch and Thermador. Less common brands — Kenmore, Haier, Electrolux, Jenn-Air, Miele, Dacor,
-              Fisher &amp; Paykel and Liebherr — are also in our wheelhouse.</p>
-            <p><b>Important note for Samsung and LG owners:</b> Samsung and LG refrigerators manufactured in the last
-              five years tend to develop sealed-system failures earlier than expected. If your Samsung fridge is making
-              clicking sounds or running constantly, call us before the compressor fails completely — early diagnosis
-              saves hundreds.</p>
-
-            <h3>Dishwasher Repair Burbank CA</h3>
-            <p>Leaking water, poor drainage, dishes coming out dirty or error codes on the display — we handle all
-              dishwasher problems. Our technicians work with Bosch, Whirlpool, KitchenAid, Samsung, GE, LG, Miele,
-              Thermador and Fisher &amp; Paykel. We also offer maintenance to prevent mineral buildup and flooding.</p>
-
-            <h3>Oven, Range &amp; Cooktop Repair Burbank CA</h3>
-            <p>Gas or electric, freestanding or built-in — our techs repair heating elements, thermostats, igniters,
-              gas valves, control panels and convection fans. Safety is our priority: we test for gas leaks and verify
-              proper grounding on every job. Brands include Wolf, Thermador, Viking, Bertazzoni, GE, Samsung and more.</p>
-          </div>
-          <div class="content-row__image">
-            <img
-              src="/images/burbank/refrigerator-compressor-repair-burbank.webp"
-              alt="Certified technician diagnosing refrigerator compressor with multimeter in Burbank CA kitchen"
-              width="450"
-              height="450"
-              loading="lazy"
-            />
-          </div>
+        <h2>Kitchen Appliance Repair Burbank CA</h2>
+        <div class="section-photo">
+          <img
+            src="/images/burbank/refrigerator-compressor-repair-burbank.webp"
+            alt="Certified technician diagnosing refrigerator compressor with multimeter in Burbank CA kitchen"
+            width="700"
+            height="700"
+            loading="lazy"
+          />
         </div>
 
-        <div class="content-row content-row--img-left">
-          <div class="content-row__image">
-            <img
-              src="/images/same-day-washing-machine-repair-service-loa-angeles-and-surrounding-areas.webp"
-              alt="Professional washer and dryer repair service in Burbank CA residential laundry room"
-              width="450"
-              height="450"
-              loading="lazy"
-            />
-          </div>
-          <div class="content-row__text">
-            <h2>Laundry Appliance Repair Burbank CA</h2>
+        <h3>Refrigerator Repair Burbank CA</h3>
+        <p>Burbank's warm climate pushes cooling systems hard. If your fridge has temperature swings, ice buildup,
+          a noisy compressor or a water leak, our techs can diagnose and fix it — often within an hour. We carry
+          compressors, thermostats, fan motors, defrost timers and control boards in our vans.</p>
+        <p>We service Samsung, LG, Whirlpool, Frigidaire, GE, Maytag, KitchenAid, Amana and high-end brands
+          like <a href="/brands/sub-zero-repair/">Sub-Zero</a>, <a href="/brands/viking-repair/">Viking</a>,
+          Bosch and Thermador. Less common brands — Kenmore, Haier, Electrolux, Jenn-Air, Miele, Dacor,
+          Fisher &amp; Paykel and Liebherr — are also in our wheelhouse.</p>
+        <p><b>Important note for Samsung and LG owners:</b> Samsung and LG refrigerators manufactured in the last
+          five years tend to develop sealed-system failures earlier than expected. If your Samsung fridge is making
+          clicking sounds or running constantly, call us before the compressor fails completely — early diagnosis
+          saves hundreds.</p>
 
-            <h3>Washer Repair Burbank CA</h3>
-            <p>Water leaks, spin cycle failures, mold in the rubber seal or error codes — our techs handle it all.
-              Burbank's humid days can accelerate mold growth in front-loaders; we bring specialized cleaners to remove
-              mold and advise on ventilation. We replace drum bearings, drive motors, control boards, pumps and door locks.</p>
-            <p>Brands: Samsung, LG, Whirlpool, Maytag, GE, KitchenAid, Miele, Bosch, Electrolux, Speed Queen and more.</p>
+        <h3>Dishwasher Repair Burbank CA</h3>
+        <p>Leaking water, poor drainage, dishes coming out dirty or error codes on the display — we handle all
+          dishwasher problems. Our technicians work with Bosch, Whirlpool, KitchenAid, Samsung, GE, LG, Miele,
+          Thermador and Fisher &amp; Paykel. We also offer maintenance to prevent mineral buildup and flooding.</p>
 
-            <h3>Dryer Repair Burbank CA</h3>
-            <p>Overheating, long drying times, unusual noises or a drum that won't spin — these are the most common
-              dryer calls we get in Burbank. Every dryer repair includes a complimentary lint-path cleaning to reduce fire
-              risk and improve efficiency. We service gas and electric models from Samsung, LG, Whirlpool, Maytag, GE,
-              Miele, Bosch, Electrolux and Speed Queen.</p>
-          </div>
+        <h3>Oven, Range &amp; Cooktop Repair Burbank CA</h3>
+        <p>Gas or electric, freestanding or built-in — our techs repair heating elements, thermostats, igniters,
+          gas valves, control panels and convection fans. Safety is our priority: we test for gas leaks and verify
+          proper grounding on every job. Brands include Wolf, Thermador, Viking, Bertazzoni, GE, Samsung and more.</p>
+
+        <h2>Laundry Appliance Repair Burbank CA</h2>
+        <div class="section-photo">
+          <img
+            src="/images/same-day-washing-machine-repair-service-loa-angeles-and-surrounding-areas.webp"
+            alt="Professional washer and dryer repair service in Burbank CA residential laundry room"
+            width="700"
+            height="700"
+            loading="lazy"
+          />
         </div>
+
+        <h3>Washer Repair Burbank CA</h3>
+        <p>Water leaks, spin cycle failures, mold in the rubber seal or error codes — our techs handle it all.
+          Burbank's humid days can accelerate mold growth in front-loaders; we bring specialized cleaners to remove
+          mold and advise on ventilation. We replace drum bearings, drive motors, control boards, pumps and door locks.</p>
+        <p>Brands: Samsung, LG, Whirlpool, Maytag, GE, KitchenAid, Miele, Bosch, Electrolux, Speed Queen and more.</p>
+
+        <h3>Dryer Repair Burbank CA</h3>
+        <p>Overheating, long drying times, unusual noises or a drum that won't spin — these are the most common
+          dryer calls we get in Burbank. Every dryer repair includes a complimentary lint-path cleaning to reduce fire
+          risk and improve efficiency. We service gas and electric models from Samsung, LG, Whirlpool, Maytag, GE,
+          Miele, Bosch, Electrolux and Speed Queen.</p>
+
         <Btn />
       </div>
 
 
       <!-- 4. HIGH-END BRANDS -->
-      <div id="high-end-anchor">
+      <div id="high-end-anchor" class="content-section">
         <h2>High-End Appliance Repair Burbank CA</h2>
         <p>Burbank homes in the hillside neighborhoods and Magnolia Park area feature luxury appliances that require specialized knowledge. Our technicians are factory-trained, use OEM-approved parts, and follow manufacturer repair protocols. <a href="/brands/">View all brands we service</a>.</p>
-        <div class="section-image-center">
+        <div class="section-photo">
           <img
             src="/images/burbank/wolf-range-repair-burbank.webp"
             alt="Same Day Appliance Repair technician servicing Wolf dual-fuel range in upscale Burbank kitchen"
-            width="450"
-            height="450"
+            width="700"
+            height="700"
             loading="lazy"
           />
         </div>
@@ -251,50 +243,44 @@ const pricingRows = [
 
 
       <!-- 5. COMMERCIAL -->
-      <div id="commercial-anchor">
+      <div id="commercial-anchor" class="content-section">
         <h2>Commercial Appliance Repair Burbank CA</h2>
         <p>Burbank's restaurants, studios, hotels and laundromats rely on commercial-grade equipment.
           When a walk-in cooler goes down at a restaurant on Magnolia Blvd or a commercial dryer fails at a
           laundromat on Victory, downtime costs real money. We offer same day commercial service to minimize
           losses and get your business running again.</p>
 
-        <div class="page-container">
-          <div class="header-container">
-            <div class="head-content-h">
-              <h2 style="text-align: center"><strong>Commercial Kitchen &amp; Laundry Equipment</strong></h2>
-            </div>
-            <div class="head-content-f">
-              <img
-                src="/images/burbank/commercial-refrigerator-repair-burbank.webp"
-                alt="Commercial refrigerator compressor repair in Burbank restaurant kitchen by certified technician"
-                width="450"
-                height="450"
-                loading="lazy"
-              />
-            </div>
-          </div>
-          <p>We repair commercial refrigerators, freezers, dishwashers, ovens, stoves, ice machines, walk-in coolers,
-            walk-in freezers, showcase refrigerators, bar refrigerators, slushie machines, fryers and commercial laundry
-            equipment. Brands include True, Turbo Air, Hoshizaki, Traulsen, Hobart, Vulcan, Speed Queen and many more.</p>
-          <p><b>Real story from a Burbank restaurant client:</b> One of our Burbank restaurant clients called for a
-            single refrigerator issue. Our technician inspected all kitchen equipment on his own initiative — found
-            every condenser clogged with dust and two motors weeks from failure. We performed preventive maintenance
-            on everything in a second visit, saving the restaurant thousands in emergency replacements. The restaurant
-            never missed a day of service.</p>
+        <h2>Commercial Kitchen &amp; Laundry Equipment</h2>
+        <div class="section-photo">
+          <img
+            src="/images/burbank/commercial-refrigerator-repair-burbank.webp"
+            alt="Commercial refrigerator compressor repair in Burbank restaurant kitchen by certified technician"
+            width="700"
+            height="700"
+            loading="lazy"
+          />
         </div>
+        <p>We repair commercial refrigerators, freezers, dishwashers, ovens, stoves, ice machines, walk-in coolers,
+          walk-in freezers, showcase refrigerators, bar refrigerators, slushie machines, fryers and commercial laundry
+          equipment. Brands include True, Turbo Air, Hoshizaki, Traulsen, Hobart, Vulcan, Speed Queen and many more.</p>
+        <p><b>Real story from a Burbank restaurant client:</b> One of our Burbank restaurant clients called for a
+          single refrigerator issue. Our technician inspected all kitchen equipment on his own initiative — found
+          every condenser clogged with dust and two motors weeks from failure. We performed preventive maintenance
+          on everything in a second visit, saving the restaurant thousands in emergency replacements. The restaurant
+          never missed a day of service.</p>
 
         <Btn />
       </div>
 
 
       <!-- 6. HOW IT WORKS -->
-      <div id="how-it-works-anchor">
-        <div class="section-image-center section-image-center--narrow">
+      <div id="how-it-works-anchor" class="content-section">
+        <div class="section-photo">
           <img
             src="/images/burbank/same-day-appliance-repair-service-van-burbank.webp"
             alt="Same Day Appliance Repair branded service van arriving at Burbank CA residential neighborhood"
-            width="600"
-            height="400"
+            width="700"
+            height="467"
             loading="lazy"
           />
         </div>
@@ -303,16 +289,18 @@ const pricingRows = [
 
 
       <!-- 7. TECHNICIAN TIPS -->
-      <TechTips
-        tips={techTips}
-        heading="Technician Tips: Keep Your Appliances Running Longer"
-        image="/images/burbank/condenser-coils-before-after-burbank.webp"
-        imageAlt="Refrigerator condenser coils before and after professional cleaning in Burbank CA — dust removal improves efficiency"
-      />
+      <div class="content-section">
+        <TechTips
+          tips={techTips}
+          heading="Technician Tips: Keep Your Appliances Running Longer"
+          image="/images/burbank/condenser-coils-before-after-burbank.webp"
+          imageAlt="Refrigerator condenser coils before and after professional cleaning in Burbank CA — dust removal improves efficiency"
+        />
+      </div>
 
 
       <!-- 8. PRICING TABLE -->
-      <div id="pricing-anchor">
+      <div id="pricing-anchor" class="content-section">
         <PricingTable
           rows={pricingRows}
           heading="Appliance Repair Pricing Burbank CA"
@@ -323,7 +311,7 @@ const pricingRows = [
 
 
       <!-- 9. SERVICE AREA COVERAGE -->
-      <div class="service-coverage">
+      <div class="service-coverage content-section">
         <h2>Neighborhoods We Serve in Burbank</h2>
         <p style="text-align: center;">Our technicians cover every Burbank neighborhood and the surrounding areas.</p>
         <div class="neighborhoods-grid">
@@ -347,7 +335,7 @@ const pricingRows = [
 
 
       <!-- 10. FAQ -->
-      <div id="faq-anchor">
+      <div id="faq-anchor" class="content-section">
         <FaqSection faqs={faqItems} heading="Frequently Asked Questions — Burbank Appliance Repair" />
       </div>
 
