@@ -8,9 +8,10 @@ interface Props {
   tips: Tip[];
   heading?: string;
   image?: string;
+  imageAlt?: string;
 }
 
-const { tips, heading = "Technician Tips", image } = Astro.props;
+const { tips, heading = "Technician Tips", image, imageAlt } = Astro.props;
 ---
 
 <div class="tech-tips">
@@ -19,7 +20,7 @@ const { tips, heading = "Technician Tips", image } = Astro.props;
     <div style="text-align: center; margin-bottom: 20px;">
       <img
         src={image}
-        alt={heading}
+        alt={imageAlt || heading}
         width="600"
         height="400"
         loading="lazy"

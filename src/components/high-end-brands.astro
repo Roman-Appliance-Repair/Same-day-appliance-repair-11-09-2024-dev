@@ -14,7 +14,7 @@ const { brands, heading = "High-End Appliance Brands We Service", introHtml } = 
 ---
 
 <div class="high-end-brands">
-  <h2>{heading}</h2>
+  {heading && <h2>{heading}</h2>}
   {introHtml && <p set:html={introHtml} />}
   <div class="brands-grid">
     {brands.map((brand) => (
