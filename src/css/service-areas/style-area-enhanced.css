@@ -292,3 +292,106 @@
         padding: 25px 15px;
     }
 }
+
+/* ===== Hero Flex Layout ===== */
+.hero-flex {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.hero-flex__image {
+    flex: 0 0 55%;
+    max-width: 55%;
+}
+
+.hero-flex__image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.hero-flex__content {
+    flex: 1;
+}
+
+/* ===== Content Row Layouts ===== */
+.content-row {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin: 15px 0;
+}
+
+.content-row__text {
+    flex: 1;
+}
+
+.content-row__image {
+    flex-shrink: 0;
+}
+
+.content-row__image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Text left, image right (Kitchen) */
+.content-row--img-right .content-row__image {
+    flex: 0 0 40%;
+    max-width: 40%;
+}
+
+/* Image left, text right (Laundry) */
+.content-row--img-left .content-row__image {
+    max-width: 300px;
+}
+
+/* ===== Centered Section Image ===== */
+.section-image-center {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.section-image-center img {
+    max-width: 65%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.section-image-center--narrow img {
+    max-width: 55%;
+}
+
+/* ===== Layout Responsive ===== */
+@media (max-width: 1024px) {
+    .hero-flex {
+        flex-direction: column;
+    }
+
+    .hero-flex__image {
+        flex: none;
+        max-width: 100%;
+    }
+
+    .content-row {
+        flex-direction: column;
+    }
+
+    .content-row--img-right .content-row__image,
+    .content-row--img-left .content-row__image {
+        flex: none;
+        max-width: 100%;
+    }
+
+    .content-row--img-left .content-row__image {
+        order: -1;
+    }
+
+    .section-image-center img,
+    .section-image-center--narrow img {
+        max-width: 100%;
+    }
+}
