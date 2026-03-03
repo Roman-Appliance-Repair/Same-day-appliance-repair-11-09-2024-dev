@@ -1,0 +1,27 @@
+---
+interface Brand {
+  name: string;
+  description: string;
+}
+
+interface Props {
+  brands: Brand[];
+  heading?: string;
+  introHtml?: string;
+}
+
+const { brands, heading = "High-End Appliance Brands We Service", introHtml } = Astro.props;
+---
+
+<div class="high-end-brands">
+  <h2>{heading}</h2>
+  {introHtml && <p set:html={introHtml} />}
+  <div class="brands-grid">
+    {brands.map((brand) => (
+      <div class="brand-card">
+        <h3>{brand.name}</h3>
+        <p>{brand.description}</p>
+      </div>
+    ))}
+  </div>
+</div>

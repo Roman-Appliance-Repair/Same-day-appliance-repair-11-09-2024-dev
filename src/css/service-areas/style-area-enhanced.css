@@ -1,0 +1,294 @@
+/* ===== Hero Facts Bar ===== */
+.hero-facts-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin: 25px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8f8f8 0%, #fff 100%);
+    border-radius: 10px;
+    border: 1px solid #e8e8e8;
+}
+
+.hero-fact {
+    text-align: center;
+    padding: 12px 8px;
+}
+
+.hero-fact .fact-value {
+    font-size: clamp(22px, 4vw, 28px);
+    font-weight: 800;
+    color: #ca0913;
+    margin: 0 0 4px 0;
+    line-height: 1.2;
+}
+
+.hero-fact .fact-label {
+    font-size: clamp(13px, 2.5vw, 15px);
+    color: #262626;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* ===== High-End Brands ===== */
+.high-end-brands {
+    padding: 2% 0;
+}
+
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.brand-card {
+    padding: 20px 24px;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.brand-card:hover {
+    border-color: #ca0913;
+    box-shadow: 0 4px 12px rgba(202, 9, 19, 0.1);
+}
+
+.brand-card h3 {
+    margin: 0 0 8px 0;
+    font-size: clamp(18px, 3.5vw, 20px) !important;
+    color: #131313;
+}
+
+.brand-card p {
+    margin: 0;
+    font-size: clamp(15px, 2.8vw, 16px);
+    color: #262626;
+}
+
+/* ===== How It Works ===== */
+.how-it-works {
+    padding: 2% 0;
+}
+
+.steps-container {
+    max-width: 800px;
+    margin: 20px auto 0;
+    position: relative;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 18px 0;
+    position: relative;
+}
+
+.step:not(:last-child) {
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.step-number {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    background: #ca0913;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.step-content h3 {
+    margin: 0 0 6px 0;
+    font-size: clamp(18px, 3.5vw, 20px) !important;
+    text-shadow: none;
+    color: #131313;
+}
+
+.step-content p {
+    margin: 0;
+    font-size: clamp(15px, 2.8vw, 16px);
+    color: #262626;
+}
+
+/* ===== Tech Tips ===== */
+.tech-tips {
+    padding: 2% 0;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.tip-card {
+    padding: 20px 24px;
+    background: linear-gradient(135deg, #fafafa 0%, #fff 100%);
+    border: 1px solid #e8e8e8;
+    border-left: 4px solid #ca0913;
+    border-radius: 0 10px 10px 0;
+}
+
+.tip-card h3 {
+    margin: 0 0 8px 0;
+    font-size: clamp(17px, 3.2vw, 19px) !important;
+    text-shadow: none;
+    color: #131313;
+}
+
+.tip-card p {
+    margin: 0;
+    font-size: clamp(15px, 2.8vw, 16px);
+    color: #262626;
+}
+
+/* ===== Service Coverage / Neighborhoods ===== */
+.service-coverage {
+    padding: 2% 0;
+}
+
+.neighborhoods-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+    justify-content: center;
+}
+
+.neighborhoods-grid span {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #f4f4f4;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    font-size: clamp(14px, 2.5vw, 16px);
+    color: #262626;
+    font-weight: 500;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.neighborhoods-grid span:hover {
+    background: #fff;
+    border-color: #ca0913;
+}
+
+/* ===== CTA Schedule ===== */
+.cta-schedule {
+    margin: 3% 0;
+    padding: 30px;
+    background: linear-gradient(135deg, #ca0913 0%, #a00710 100%);
+    border-radius: 12px;
+    text-align: center;
+    color: #fff;
+}
+
+.cta-schedule h2 {
+    color: #fff !important;
+    text-shadow: none;
+    margin: 0 0 10px 0;
+    padding: 0;
+    font-size: clamp(24px, 5vw, 30px) !important;
+}
+
+.cta-schedule p {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: clamp(16px, 3vw, 18px);
+    margin: 0 0 8px 0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-schedule .cta-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 500px;
+    text-align: left;
+}
+
+.cta-schedule .cta-checklist li {
+    color: #fff;
+    font-size: clamp(15px, 2.8vw, 17px);
+    padding: 5px 0;
+    font-weight: 500;
+}
+
+.cta-schedule .cta-checklist li::before {
+    content: "\2713";
+    margin-right: 10px;
+    font-weight: 700;
+}
+
+/* ===== Why Choose Section ===== */
+.why-choose-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.why-choose-card {
+    padding: 20px 24px;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+}
+
+.why-choose-card h3 {
+    margin: 0 0 8px 0;
+    font-size: clamp(18px, 3.5vw, 20px) !important;
+    text-shadow: none;
+    color: #131313;
+}
+
+.why-choose-card p {
+    margin: 0;
+    color: #262626;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+    .hero-facts-bar {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .why-choose-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-facts-bar {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        padding: 12px;
+    }
+
+    .hero-fact {
+        padding: 10px 5px;
+    }
+
+    .brands-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-schedule {
+        padding: 25px 15px;
+    }
+}

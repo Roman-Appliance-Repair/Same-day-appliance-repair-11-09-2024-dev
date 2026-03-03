@@ -1,0 +1,39 @@
+---
+import Faqs from "@components/js/faqs.astro";
+
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  faqs: FAQ[];
+  heading?: string;
+}
+
+const { faqs, heading = "Frequently Asked Questions" } = Astro.props;
+---
+
+<div class="faq-section">
+  <h2>{heading}</h2>
+  {faqs.map((faq, index) => (
+    <div>
+      <div class={`FAQ ${index === faqs.length - 1 ? "FAQ_bottom" : ""}`}>
+        <div class="fa">
+          <h3>{faq.question}</h3>
+        </div>
+        <div class="fa_plus">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        </div>
+        <div class="fa_minus">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        </div>
+      </div>
+      <div class="questions">
+        <p>{faq.answer}</p>
+      </div>
+    </div>
+  ))}
+</div>
+
+<Faqs />

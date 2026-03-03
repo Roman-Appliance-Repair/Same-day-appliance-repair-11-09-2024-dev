@@ -1,0 +1,39 @@
+---
+interface PriceRow {
+  service: string;
+  price: string;
+  description?: string;
+}
+
+interface Props {
+  rows: PriceRow[];
+  heading?: string;
+  subheading?: string;
+  discounts?: string;
+}
+
+const { rows, heading = "Pricing", subheading, discounts } = Astro.props;
+---
+
+<div class="job-prices">
+  <div class="head-prices">
+    <h2>{heading}</h2>
+    {subheading && <p>{subheading}</p>}
+  </div>
+  {rows.map((row, index) => (
+    <div class={`content_job-prices ${index % 2 === 0 ? "" : ""}`} id={index % 2 !== 0 ? "col-prices" : undefined}>
+      <div class="desk_job-prices">
+        <p><b>{row.service}</b></p>
+        {row.description && <p>{row.description}</p>}
+      </div>
+      <div class="money_job-prices">
+        <p><b>{row.price}</b></p>
+      </div>
+    </div>
+  ))}
+  {discounts && (
+    <div class="pros_job-prices">
+      <p style="padding: 15px; text-align: center;" set:html={discounts} />
+    </div>
+  )}
+</div>

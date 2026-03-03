@@ -1,0 +1,38 @@
+---
+interface Tip {
+  title: string;
+  description: string;
+}
+
+interface Props {
+  tips: Tip[];
+  heading?: string;
+  image?: string;
+}
+
+const { tips, heading = "Technician Tips", image } = Astro.props;
+---
+
+<div class="tech-tips">
+  <h2>{heading}</h2>
+  {image && (
+    <div style="text-align: center; margin-bottom: 20px;">
+      <img
+        src={image}
+        alt={heading}
+        width="600"
+        height="400"
+        loading="lazy"
+        style="max-width: 100%; height: auto;"
+      />
+    </div>
+  )}
+  <div class="tips-grid">
+    {tips.map((tip) => (
+      <div class="tip-card">
+        <h3>{tip.title}</h3>
+        <p>{tip.description}</p>
+      </div>
+    ))}
+  </div>
+</div>

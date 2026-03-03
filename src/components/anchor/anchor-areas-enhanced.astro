@@ -1,0 +1,35 @@
+---
+import "components/css-components/style-anchor-areas.css";
+
+interface AnchorLink {
+  href: string;
+  label: string;
+}
+
+interface Props {
+  links?: AnchorLink[];
+}
+
+const defaultLinks: AnchorLink[] = [
+  { href: "#home-anchor", label: "Residential" },
+  { href: "#high-end-anchor", label: "High-End" },
+  { href: "#commercial-anchor", label: "Commercial" },
+  { href: "#how-it-works-anchor", label: "How It Works" },
+  { href: "#pricing-anchor", label: "Pricing" },
+  { href: "#faq-anchor", label: "FAQ" },
+  { href: "#feedbackReviews", label: "Reviews" },
+];
+
+const { links = defaultLinks } = Astro.props;
+---
+
+<div class="faq-price-list">
+  <p>
+    {links.map((link, index) => (
+      <>
+        {index > 0 && " | "}
+        <a class="anchor" href={link.href}>{link.label}</a>
+      </>
+    ))}
+  </p>
+</div>
