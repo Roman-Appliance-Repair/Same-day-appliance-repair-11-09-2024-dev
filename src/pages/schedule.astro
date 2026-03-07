@@ -1,0 +1,275 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Navbar from "@components/navbar/navbar.astro";
+import Container from "@components/container.astro";
+import Cta from "@components/cta.astro";
+---
+
+<Layout
+  title="Schedule Appliance Repair Service | Same Day Appliance Repair"
+  description="Schedule your appliance repair appointment online. Same day service available in Los Angeles, Pasadena, Orange County & Ventura County. Call (949) 989-4980.">
+  <Navbar />
+
+  <Container>
+    <div class="schedule-page">
+      <h1 class="schedule-title">Schedule Appliance Repair Service</h1>
+      <p class="schedule-subtitle">
+        Request an appointment and we'll call you to confirm. Same day service available Monday–Saturday, 8AM–8PM.
+      </p>
+
+      <div class="schedule-form-wrapper" id="formWrapper">
+        <form id="scheduleForm" novalidate>
+          <div class="form-group">
+            <label for="fullName">Full Name <span class="required">*</span></label>
+            <input type="text" id="fullName" name="fullName" required placeholder="Your full name" />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number <span class="required">*</span></label>
+            <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567" />
+          </div>
+
+          <div class="form-group">
+            <label for="prefDate">Preferred Date</label>
+            <input type="date" id="prefDate" name="prefDate" />
+          </div>
+
+          <div class="form-group">
+            <label for="issue">Issue Description</label>
+            <textarea id="issue" name="issue" rows="4" placeholder="Briefly describe your appliance issue..."></textarea>
+          </div>
+
+          <div class="sms-consent-box">
+            <label class="sms-consent-label">
+              <input type="checkbox" id="smsConsent" name="smsConsent" />
+              <span class="sms-consent-text">
+                I agree to receive service-related SMS text messages from Same Day Appliance Repair (operated by HVAC 777 LLC) at the phone number provided above. Messages may include appointment confirmations, technician dispatch and arrival notifications, and service reminders. Message frequency: 1–5 messages per appointment. Message and data rates may apply. Reply <strong>STOP</strong> to opt out at any time. Reply <strong>HELP</strong> for assistance. Consent is not required to purchase services. No mobile information will be shared with third parties for marketing purposes. View our <a href="/terms/">Terms of Service</a> and <a href="/privacy-policy/">Privacy Policy</a>.
+              </span>
+            </label>
+          </div>
+
+          <button type="submit" class="submit-btn">Request Appointment</button>
+        </form>
+      </div>
+
+      <div class="thank-you-message" id="thankYou" style="display:none;">
+        <div class="thank-you-icon">✓</div>
+        <p>Thank you! We will call you shortly to confirm your appointment.</p>
+        <p>If you need immediate assistance, call us at <a href="tel:+19499894980">(949) 989-4980</a>.</p>
+      </div>
+
+      <div class="contact-info">
+        <h2>Contact Us Directly</h2>
+        <p><strong>Phone:</strong> <a href="tel:+19499894980">(949) 989-4980</a></p>
+        <p><strong>Hours:</strong> Monday–Saturday, 8AM–8PM</p>
+        <p>You can also schedule by calling us directly. Our dispatcher will confirm your appointment and inform you about SMS service notifications.</p>
+      </div>
+    </div>
+  </Container>
+
+  <Cta />
+</Layout>
+
+<style is:global>
+  .schedule-page {
+    max-width: 640px;
+    margin: 2rem auto 3rem;
+    padding: 0 1rem;
+  }
+
+  .schedule-title {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 700;
+    color: #111;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .schedule-subtitle {
+    text-align: center;
+    color: #555;
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+  }
+
+  .schedule-form-wrapper {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 2rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #222;
+    margin-bottom: 0.35rem;
+  }
+
+  .form-group .required {
+    color: #ca0913;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="tel"],
+  .form-group input[type="date"],
+  .form-group textarea {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #222;
+    background: #fafafa;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #ca0913;
+    background: #fff;
+  }
+
+  .form-group textarea {
+    resize: vertical;
+  }
+
+  .sms-consent-box {
+    background: #f8f7f6;
+    border: 1px solid #d5d3d0;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .sms-consent-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    cursor: pointer;
+  }
+
+  .sms-consent-label input[type="checkbox"] {
+    margin-top: 3px;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    accent-color: #ca0913;
+  }
+
+  .sms-consent-text {
+    font-size: 0.85rem;
+    color: #444;
+    line-height: 1.55;
+  }
+
+  .sms-consent-text a {
+    color: #ca0913;
+    text-decoration: underline;
+  }
+
+  .sms-consent-text a:hover {
+    color: #a00710;
+  }
+
+  .submit-btn {
+    display: block;
+    width: 100%;
+    padding: 0.85rem;
+    background: #ca0913;
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-family: inherit;
+  }
+
+  .submit-btn:hover {
+    background: #a80710;
+  }
+
+  .thank-you-message {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    background: #f0faf0;
+    border: 1px solid #b6e2b6;
+    border-radius: 8px;
+  }
+
+  .thank-you-icon {
+    font-size: 3rem;
+    color: #2e7d32;
+    margin-bottom: 0.75rem;
+  }
+
+  .thank-you-message p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+    margin: 0.5rem 0;
+  }
+
+  .thank-you-message a {
+    color: #ca0913;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .thank-you-message a:hover {
+    text-decoration: underline;
+  }
+
+  .contact-info {
+    margin-top: 2.5rem;
+    text-align: center;
+    color: #555;
+    line-height: 1.7;
+  }
+
+  .contact-info h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 0.75rem;
+  }
+
+  .contact-info a {
+    color: #ca0913;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 480px) {
+    .schedule-form-wrapper {
+      padding: 1.25rem;
+    }
+
+    .schedule-page {
+      padding: 0 0.5rem;
+    }
+  }
+</style>
+
+<script>
+  document.getElementById('scheduleForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    document.getElementById('formWrapper').style.display = 'none';
+    document.getElementById('thankYou').style.display = 'block';
+  });
+</script>
