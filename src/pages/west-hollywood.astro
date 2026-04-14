@@ -1,429 +1,1572 @@
 ---
-import Container from "@components/container.astro";
-import Cta from "@components/cta-wh.astro";
-import Layout from "@layouts/Layout.astro";
-import Navbar from "@components/navbar/navbar.astro";
-import Reviews from "@components/reviews.astro";
-import Contactbtn from "@components/contactbtn.astro";
-import Btn from "@components/btn.astro";
-import Unitsappliances from "@components/units-appliances-west-hollywood.astro";
-import Unitscommercial from "@components/units-commercial-equipment-west-hollywood.astro";
-import Anchor from "@components/anchor/anchor-areas.astro";
-import "css/service-areas/style-service-areas.css";
+// src/pages/west-hollywood.astro
+// SDAR — samedayappliance.repair
+// Эталонная городская страница: West Hollywood, CA
+// Волна 2 — новый шаблон на основе конкурентного анализа
+// Апрель 2026
 
+import Layout from '../layouts/Layout.astro';
+
+const city = {
+  name: "West Hollywood",
+  nameShort: "WeHo",
+  state: "CA",
+  county: "Los Angeles",
+  zips: ["90046", "90069", "90048"],
+  phone: "(323) 870-4790",
+  phoneRaw: "+13238704790",
+  email: "support@samedayappliance.repair",
+  branch: "West Hollywood",
+  address: "8746 Rangely Ave, West Hollywood, CA 90048",
+  slug: "west-hollywood",
+  neighborhoods: [
+    "Norma Triangle", "Sunset Strip", "Melrose District",
+    "West Hollywood West", "Boystown", "Design District",
+    "Santa Monica Boulevard", "Fairfax District", "West Hollywood Heights"
+  ],
+  streets: [
+    "Santa Monica Blvd", "Sunset Blvd", "Melrose Ave",
+    "La Cienega Blvd", "Fountain Ave", "Holloway Dr", "Robertson Blvd"
+  ],
+  nearbyAreas: ["Beverly Hills", "Hollywood", "Brentwood", "Silver Lake", "Los Feliz"],
+};
+
+const title = `Appliance Repair West Hollywood CA — Same Day | Sub-Zero · Thermador | ${city.phone}`;
+const description = `Same-day appliance repair in West Hollywood, CA. Refrigerator, washer, dryer, oven. Sub-Zero & Thermador specialists. Licensed, OEM parts, 90-day warranty. ZIP 90046, 90069. Call ${city.phone}.`;
+const canonical = `https://samedayappliance.repair/west-hollywood/`;
+
+// Schema: LocalBusiness + Service + FAQ
+const schemaLocalBusiness = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Same Day Appliance Repair — West Hollywood",
+  "image": "https://samedayappliance.repair/images/logo.webp",
+  "url": canonical,
+  "telephone": city.phoneRaw,
+  "email": city.email,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "8746 Rangely Ave",
+    "addressLocality": "West Hollywood",
+    "addressRegion": "CA",
+    "postalCode": "90048",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 34.0901,
+    "longitude": -118.3617
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "21:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "08:00", "closes": "19:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday"], "opens": "09:00", "closes": "17:00" }
+  ],
+  "areaServed": {
+    "@type": "City",
+    "name": "West Hollywood",
+    "sameAs": "https://en.wikipedia.org/wiki/West_Hollywood,_California"
+  },
+  "priceRange": "$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.6",
+    "reviewCount": "37",
+    "bestRating": "5"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Appliance Repair Services West Hollywood",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Refrigerator Repair West Hollywood" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Washer Repair West Hollywood" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dryer Repair West Hollywood" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Oven Repair West Hollywood" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dishwasher Repair West Hollywood" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sub-Zero Repair West Hollywood" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Thermador Repair West Hollywood" } }
+    ]
+  }
+};
+
+const schemaFAQ = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you offer same-day appliance repair in West Hollywood?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We offer same-day service throughout West Hollywood, including the Sunset Strip, Melrose, Norma Triangle, and West Hollywood West. Call before noon and our technician can typically be at your door the same day. We serve ZIP codes 90046, 90069, and 90048." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you repair Sub-Zero and Thermador appliances in West Hollywood?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We specialize in high-end appliance repair including Sub-Zero refrigerators, Thermador ovens and cooktops, Viking ranges, Bosch dishwashers, and Miele appliances. Our technicians are trained on luxury appliance systems and carry common OEM parts for these brands on every service vehicle." }
+    },
+    {
+      "@type": "Question",
+      "name": "What ZIP codes do you serve in West Hollywood?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We serve all West Hollywood ZIP codes: 90046 (Sunset Strip, Melrose, Norma Triangle), 90069 (West Hollywood West, Santa Monica Blvd corridor), and 90048 (Beverly Grove / Fairfax border area)." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you repair appliances in my Airbnb or rental unit in WeHo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We work regularly with Airbnb hosts, property managers, and short-term rental operators throughout West Hollywood. We coordinate with building management, handle key fob and concierge access, provide COI documentation on request, and work efficiently to keep your unit guest-ready." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is your diagnostic fee in West Hollywood?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Our diagnostic fee is $89, which is waived if you proceed with the repair — you only pay for the repair itself. We provide a full written estimate before any work begins, with no hidden fees." }
+    },
+    {
+      "@type": "Question",
+      "name": "What warranty do you offer on appliance repairs?",
+      "acceptedAnswer": { "@type": "Answer", "text": "All repairs come with a 90-day warranty on both parts and labor. If the same issue returns within 90 days, we come back and fix it at no additional charge. We use genuine OEM parts whenever available." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you service condos and apartment buildings in West Hollywood?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. West Hollywood is a dense city with many high-rises, condos, and multi-unit buildings. Our technicians are experienced with building access requirements including parking, service elevators, HOA rules, and concierge check-in. Just let us know the logistics when you book." }
+    }
+  ]
+};
 ---
 
+<Layout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaLocalBusiness)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaFAQ)} />
 
+  <!-- =====================================================================
+       HERO SECTION
+       ===================================================================== -->
+  <section class="wh-hero">
+    <div class="wh-hero__inner container">
+      <div class="wh-hero__content">
+        <div class="wh-hero__eyebrow">West Hollywood, CA · 90046 · 90069 · 90048</div>
+        <h1 class="wh-hero__h1">
+          Appliance Repair<br>
+          <span class="wh-hero__accent">West Hollywood, CA</span>
+        </h1>
+        <p class="wh-hero__sub">
+          Same-day service on every major appliance. Sub-Zero, Thermador, Viking, Bosch, Samsung, LG —
+          our licensed technicians cover all of WeHo from Norma Triangle to Sunset Strip.
+        </p>
+        <div class="wh-hero__ctas">
+          <a href={`tel:${city.phoneRaw}`} class="btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.29h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call {city.phone}
+          </a>
+          <a href="/book/" class="btn-secondary">Book Online</a>
+        </div>
+        <div class="wh-hero__rating">
+          <span class="stars">★★★★★</span>
+          <span class="rating-text">4.6 · 37 Google reviews · BBB A+</span>
+        </div>
+      </div>
+      <div class="wh-hero__img-wrap">
+        <img
+          src="/images/areas/appliance-repair-west-hollywood-ca.webp"
+          alt="Appliance repair technician in West Hollywood CA kitchen"
+          width="560"
+          height="460"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+    </div>
+  </section>
 
-<Layout title="Local Appliance Repair West Hollywood - Best Service" description="Looking for fast and reliable appliance repair in West Hollywood? Same Day Appliance Repair offers licensed, insured, same-day service for all major appliances. Call (323) 870-4790 today!">
+  <!-- =====================================================================
+       TRUST BAR
+       ===================================================================== -->
+  <section class="trust-bar">
+    <div class="container trust-bar__inner">
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span>Same-Day Service</span>
+      </div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>90-Day Warranty</span>
+      </div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>OEM Parts</span>
+      </div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <span>Licensed & Insured</span>
+      </div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <span>85% First-Visit Fix Rate</span>
+      </div>
+    </div>
+  </section>
 
-  <Navbar />
-<Reviews />
- 
-  <Container>
-    <div class="full-page">
-      <div class="page-header">
-        <span class="animate-charcter">
-          <h1>Local Appliance Repair West Hollywood CA</h1>
-        </span>
+  <!-- =====================================================================
+       INTRO TEXT
+       ===================================================================== -->
+  <section class="wh-intro">
+    <div class="container wh-intro__inner">
+      <div class="wh-intro__text">
+        <h2>Our Technicians Are in WeHo Every Day</h2>
+        <p>
+          West Hollywood is one of our busiest service areas — our guys are out here constantly.
+          The Sunset Strip high-rises, the vintage apartments off Melrose, the condos in Norma Triangle
+          where the washer-dryer is stacked in a closet the size of a phone booth. We know this city,
+          we know these buildings, and we know exactly what we're walking into before we knock on your door.
+        </p>
+        <p>
+          When you search for same day appliance repair West Hollywood and call us,
+          you're not getting a national dispatch center that'll send whoever happens to be free.
+          You're calling our West Hollywood team — the same technicians who've been fixing Sub-Zeros
+          off Robertson, Bosch dishwashers in Boystown, and Thermador ranges on the Strip for years.
+          We pick up, we give you a straight answer, and if we can be there today — we will be.
+        </p>
+        <p>
+          We charge <strong>$89</strong> to diagnose — and that disappears the moment you say yes to
+          the repair. Full written estimate before we start. Every job covered by a
+          <strong>90-day warranty</strong> on parts and labor.
+        </p>
+      </div>
+      <div class="wh-intro__cta-box">
+        <div class="cta-box">
+          <div class="cta-box__title">Book Same-Day Service</div>
+          <div class="cta-box__sub">West Hollywood · Available Today</div>
+          <a href={`tel:${city.phoneRaw}`} class="cta-box__phone">{city.phone}</a>
+          <a href="/book/" class="cta-box__book">Schedule Online →</a>
+          <div class="cta-box__hours">
+            Mon–Fri 7am–9pm · Sat 8am–7pm · Sun 9am–5pm
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="header-a">
-          <img
-            width="600px"
-            height="600px"
-            alt="Same Day Appliance Repair West Hollywood CA"
-            src="/images/same-day-appliance-repair-experts.webp"
-          />
-          <Contactbtn />
+  <!-- =====================================================================
+       SERVICES GRID
+       ===================================================================== -->
+  <section class="wh-services">
+    <div class="container">
+      <h2 class="section-title">Appliances We Repair in West Hollywood</h2>
+      <p class="section-sub">All major brands · Gas & electric · Residential & commercial</p>
+      <div class="services-grid">
+
+        <a href="/west-hollywood/refrigerator-repair/" class="service-card">
+          <div class="service-card__icon">🧊</div>
+          <div class="service-card__name">Refrigerator Repair</div>
+          <div class="service-card__issues">Not cooling · Leaking · Ice maker broken · Noisy compressor</div>
+          <div class="service-card__brands">Sub-Zero · Samsung · LG · GE · Whirlpool</div>
+          <div class="service-card__cta">Learn more →</div>
+        </a>
+
+        <a href="/west-hollywood/washer-repair/" class="service-card">
+          <div class="service-card__icon">🫧</div>
+          <div class="service-card__name">Washer Repair</div>
+          <div class="service-card__issues">Not spinning · Not draining · Leaking · Error codes · Stackable & ventless combos</div>
+          <div class="service-card__brands">LG · Samsung · Bosch · Miele · Maytag · Whirlpool</div>
+          <div class="service-card__cta">Learn more →</div>
+        </a>
+
+        <a href="/west-hollywood/dryer-repair/" class="service-card">
+          <div class="service-card__icon">♨️</div>
+          <div class="service-card__name">Dryer Repair</div>
+          <div class="service-card__issues">Not heating · Not spinning · Takes too long · Gas & electric</div>
+          <div class="service-card__brands">LG · Samsung · GE · Maytag · Speed Queen</div>
+          <div class="service-card__cta">Learn more →</div>
+        </a>
+
+        <a href="/west-hollywood/oven-repair/" class="service-card">
+          <div class="service-card__icon">🔥</div>
+          <div class="service-card__name">Oven & Stove Repair</div>
+          <div class="service-card__issues">Not heating · Uneven temp · Igniter issues · Gas or electric</div>
+          <div class="service-card__brands">Thermador · Viking · Wolf · GE · Bosch</div>
+          <div class="service-card__cta">Learn more →</div>
+        </a>
+
+        <a href="/west-hollywood/dishwasher-repair/" class="service-card">
+          <div class="service-card__icon">🍽️</div>
+          <div class="service-card__name">Dishwasher Repair</div>
+          <div class="service-card__issues">Not cleaning · Not draining · Leaking · Error codes</div>
+          <div class="service-card__brands">Bosch · Miele · KitchenAid · Samsung · LG</div>
+          <div class="service-card__cta">Learn more →</div>
+        </a>
+
+        <a href="/west-hollywood/wine-cooler-repair/" class="service-card">
+          <div class="service-card__icon">🍷</div>
+          <div class="service-card__name">Wine Cooler Repair</div>
+          <div class="service-card__issues">Not cooling · Temperature off · Compressor issues · Noisy</div>
+          <div class="service-card__brands">Sub-Zero · EuroCave · Liebherr · Vinotemp</div>
+          <div class="service-card__cta">Learn more →</div>
+        </a>
+
+        <a href="/west-hollywood/cooktop-repair/" class="service-card">
+          <div class="service-card__icon">🔆</div>
+          <div class="service-card__name">Cooktop Repair</div>
+          <div class="service-card__issues">Burner not working · Sparking · Induction issues</div>
+          <div class="service-card__brands">Thermador · Bosch · GE · Viking · Miele</div>
+          <div class="service-card__cta">Learn more →</div>
+        </a>
+
+        <a href="/west-hollywood/range-hood-repair/" class="service-card">
+          <div class="service-card__icon">💨</div>
+          <div class="service-card__name">Range Hood Repair</div>
+          <div class="service-card__issues">Fan not working · Lights out · Motor failure · Noisy</div>
+          <div class="service-card__brands">Zephyr · Broan · KitchenAid · Wolf · Thermador</div>
+          <div class="service-card__cta">Learn more →</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       LUXURY BRANDS BLOCK — WeHo специфика
+       ===================================================================== -->
+  <section class="wh-luxury">
+    <div class="container">
+      <div class="luxury-inner">
+        <div class="luxury-text">
+          <div class="luxury-eyebrow">Luxury Appliance Specialists</div>
+          <h2>Sub-Zero, Thermador & Viking Repair in West Hollywood</h2>
+          <p>
+            WeHo has more Sub-Zeros per block than almost anywhere in LA. Our technicians see them
+            constantly — in the penthouses off Sunset, the renovated Craftsman kitchens in West Hollywood
+            Heights, the luxury condos near Robertson. These aren't appliances you call just anyone about.
+            A Sub-Zero with a failed evaporator fan or a Thermador with a sticking gas valve needs someone
+            who actually knows the machine.
+          </p>
+          <p>
+            Our team is trained on these brands specifically — the dual-compressor architecture in Sub-Zero
+            refrigerators, the Star burner system in Thermador cooktops, how Viking gas valves behave when
+            they age. We carry OEM parts for these brands on every service vehicle. Most luxury appliance
+            repairs we complete in one visit without ordering anything.
+          </p>
+          <p>
+            One thing our technicians mention to almost every Sub-Zero owner in WeHo: condenser coil
+            cleaning. In West Hollywood's dry, dusty climate, coil buildup is the single most common
+            cause of early compressor failure we see. A quick coil cleaning during our service visit
+            — or once a year on your own — can prevent a $600+ compressor repair down the road.
+          </p>
+          <div class="luxury-brands-grid">
+            <div class="luxury-brand">Sub-Zero</div>
+            <div class="luxury-brand">Viking</div>
+            <div class="luxury-brand">Thermador</div>
+            <div class="luxury-brand">Wolf</div>
+            <div class="luxury-brand">Miele</div>
+            <div class="luxury-brand">Bosch</div>
+            <div class="luxury-brand">Dacor</div>
+            <div class="luxury-brand">Fisher & Paykel</div>
+          </div>
+        </div>
+        <div class="luxury-stats">
+          <div class="stat-card">
+            <div class="stat-num">85%</div>
+            <div class="stat-label">First-visit fix rate</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">90</div>
+            <div class="stat-label">Day warranty</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">$89</div>
+            <div class="stat-label">Diagnostic fee</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">4.6</div>
+            <div class="stat-label">Google rating</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       WEST HOLLYWOOD NEIGHBORHOODS BLOCK — ключевой SEO блок
+       ===================================================================== -->
+  <section class="wh-neighborhoods">
+    <div class="container">
+      <h2>We Serve All of West Hollywood</h2>
+      <p class="section-sub">
+        Our technicians cover every neighborhood and street in WeHo — ZIP codes 90046, 90069, 90048.
+      </p>
+
+      <div class="neighborhoods-grid">
+        <div class="nh-card featured">
+          <div class="nh-name">Norma Triangle</div>
+          <div class="nh-zip">90046</div>
+        </div>
+        <div class="nh-card featured">
+          <div class="nh-name">Sunset Strip</div>
+          <div class="nh-zip">90069</div>
+        </div>
+        <div class="nh-card featured">
+          <div class="nh-name">Melrose District</div>
+          <div class="nh-zip">90046</div>
+        </div>
+        <div class="nh-card">
+          <div class="nh-name">West Hollywood West</div>
+          <div class="nh-zip">90069</div>
+        </div>
+        <div class="nh-card">
+          <div class="nh-name">Boystown</div>
+          <div class="nh-zip">90069</div>
+        </div>
+        <div class="nh-card">
+          <div class="nh-name">Kings Road</div>
+          <div class="nh-zip">90069</div>
+        </div>
+        <div class="nh-card">
+          <div class="nh-name">Design District</div>
+          <div class="nh-zip">90046</div>
+        </div>
+        <div class="nh-card">
+          <div class="nh-name">Santa Monica Blvd</div>
+          <div class="nh-zip">90046</div>
+        </div>
+        <div class="nh-card">
+          <div class="nh-name">Fairfax District</div>
+          <div class="nh-zip">90046</div>
+        </div>
+        <div class="nh-card">
+          <div class="nh-name">West Hollywood Heights</div>
+          <div class="nh-zip">90046</div>
+        </div>
+      </div>
+
+      <div class="streets-list">
+        <span class="streets-label">Key streets we service:</span>
+        <span>Santa Monica Blvd · Sunset Blvd · Melrose Ave · La Cienega Blvd · Fountain Ave · Holloway Dr · Robertson Blvd · Beverly Blvd</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       AIRBNB / PROPERTY MANAGER BLOCK — WeHo специфика
+       ===================================================================== -->
+  <section class="wh-property">
+    <div class="container">
+      <div class="property-inner">
+        <div class="property-text">
+          <div class="property-eyebrow">For Hosts & Property Managers</div>
+          <h2>Airbnb Hosts & Property Managers — We Know How WeHo Works</h2>
+          <p>
+            A significant part of our West Hollywood calls come from hosts and property managers.
+            We get it — a fridge that stops cooling in a rental unit the night before a guest checks in
+            is a genuine emergency, not a "we'll be there Tuesday" situation. Our technicians have been
+            navigating WeHo buildings for years: the concierge buildings on Sunset, the older walk-ups
+            off Melrose, the smart-lock units where you text us an access code.
+          </p>
+          <p>
+            We work around your schedule, not ours. Tell us the check-in time and we'll make sure
+            we're done before then. We leave the unit clean, appliance running, and we can send
+            you a service confirmation for your records.
+          </p>
+          <ul class="property-features">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Coordinate with building management & concierge
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Key fob, smart lock & keybox access — no problem
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Certificate of Insurance (COI) available on request
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              We leave units clean and guest-ready
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Same-day emergency service available for urgent situations
+            </li>
+          </ul>
+        </div>
+        <div class="property-cta">
+          <div class="property-cta__title">Property Managers & Hosts</div>
+          <div class="property-cta__sub">Call to discuss service agreements and priority scheduling</div>
+          <a href={`tel:${city.phoneRaw}`} class="btn-primary">{city.phone}</a>
+          <div class="property-cta__note">Available Mon–Fri 7am–9pm · Sat 8am–7pm</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       RECENT LOCAL REPAIRS
+       ===================================================================== -->
+  <section class="wh-recent">
+    <div class="container">
+      <h2>Jobs Our Team Did in West Hollywood — Real Repairs</h2>
+      <p class="section-sub">Not made up. These are actual calls our technicians handled.</p>
+      <div class="recent-grid">
+
+        <div class="recent-card">
+          <div class="recent-card__header">
+            <span class="recent-badge">Sub-Zero Refrigerator</span>
+            <span class="recent-location">Robertson Blvd, 90046</span>
+          </div>
+          <div class="recent-card__title">"Freezer is fine but the fridge side won't cool"</div>
+          <div class="recent-card__desc">Classic evaporator fan failure on a Sub-Zero 650 — happens more than people realize in WeHo's dry climate. Our tech replaced the fan motor with an OEM Sub-Zero part, defrosted the coils that had iced over, and confirmed stable temperatures before leaving. Customer had dinner guests that evening — we were done by 4pm.</div>
+          <div class="recent-card__result">✓ Same day · OEM Sub-Zero part · 90-day warranty</div>
         </div>
 
-        <Anchor />
-        <p>Need appliance repair West Hollywood CA? You're here! Fast and reliable home appliance repair from our qualified
-          technicians.</p>
-        <p>We are a professional repair company that does all your commercial or home appliance repairs, maintenance services,
-          and installation whether it's a dryer repair, washer repair, dishwasher, cooktop, stove, oven, refrigerator, freezer,
-          range repair, microwave, fireplace, barbecue grill, ice machine, fryer, wine cooler, wine cellar, walk-in cooler, or
-          washing machine.</p>
-        <p>Our fully licensed company is a family-owned business of appliance repair services in West Hollywood that offers
-          certified technicians and great service. Our certified professional appliance repair techs will diagnose and fix your
-          appliance in no time, so you will get the best appliance repair in West Hollywood and your appliance will work like
-          new daily. We also offer a 3-month warranty for our service. Need appliance repair today? Contact us! We schedule same
-          day appointments!</p>
-      </div>
+        <div class="recent-card">
+          <div class="recent-card__header">
+            <span class="recent-badge">Bosch Dishwasher</span>
+            <span class="recent-location">Norma Triangle, 90069</span>
+          </div>
+          <div class="recent-card__title">"Bosch 800 just sits there and doesn't drain"</div>
+          <div class="recent-card__desc">Found two things: a blockage in the drain pump and a cracked impeller that was letting water bypass. Cleared the blockage, replaced the drain pump assembly with an OEM Bosch part. Ran three full cycles before wrapping up — all clean. Building had tight hallway access, our tech brought a smaller kit. No drama.</div>
+          <div class="recent-card__result">✓ Same day · OEM Bosch drain pump</div>
+        </div>
 
+        <div class="recent-card">
+          <div class="recent-card__header">
+            <span class="recent-badge">LG Combo Dryer</span>
+            <span class="recent-location">Melrose District, 90046</span>
+          </div>
+          <div class="recent-card__title">"LG washer-dryer combo getting too hot and shutting off"</div>
+          <div class="recent-card__desc">The building's internal exhaust duct was partially blocked — common in older WeHo apartments where venting runs a long way through the walls. The thermal fuse had already tripped from the heat. We cleared the duct, replaced the thermal fuse, and safety-tested before leaving. Told the tenant what to watch for going forward.</div>
+          <div class="recent-card__result">✓ Same day · Duct cleared + fuse replaced</div>
+        </div>
 
+        <div class="recent-card">
+          <div class="recent-card__header">
+            <span class="recent-badge">Thermador Range</span>
+            <span class="recent-location">Sunset Strip, 90069</span>
+          </div>
+          <div class="recent-card__title">"Two burners sparking constantly, won't stop even when off"</div>
+          <div class="recent-card__desc">Both igniters had failed and were stuck in a loop — a known Thermador issue after a few years of use. Replaced both igniter modules with OEM Thermador parts, serviced the gas valve that was starting to stick, and tested all five burners plus the oven. Everything confirmed good before we left.</div>
+          <div class="recent-card__result">✓ One visit · OEM Thermador parts · Full check done</div>
+        </div>
 
-
-
-<h2>Appliance Repair West Hollywood</h2>
-<p>As a family-owned business in West Hollywood, CA, we service home and commercial appliances of all major brands. Our
-  repairs are professional, our technicians are trained and have the right tools to diagnose and fix any issue. All
-  techs go through a background check before they work and know how to do the job right. Call us or book online on our
-  website.</p>
-
-
-
-
-
-  <div  id="home-anchor">
-<h2>Home Appliance Repair West Hollywood, CA</h2>
-<p>Home appliance repair West Hollywood, CA includes household appliances repair (refrigerator, freezer, dishwasher,
-  oven, microwave, range hood, cooktop, ice maker, etc.), laundry room appliance repair (dryer repair, washer repair),
-  fireplace repair, and barbecue grill repair. Whatever the unit, call us to schedule your West Hollywood full and
-  comprehensive care for your appliances today for a very good price! We also offer flexible services to meet your
-  needs.</p>
-  <Unitsappliances />
-  <Btn />
-</div>
-
-
-  <div  id="commercial-anchor">
-<h2>Commercial Appliance Repair West Hollywood CA</h2>
-<p>Commercial appliance repair West Hollywood, CA includes commercial kitchen appliance repair, commercial laundry
-  service appliance repair (dryer repair, washer repair), bar appliance repair and showcase appliance repair. We also
-  offer property management with fair pricing. Our customers are always happy to leave a very good Yelp review or a
-  Google review for our nice techs and same day appliance repair service, so we will repair your appliance and get your
-  business back up and running ASAP without breaking your monthly budget. Call us to schedule your commercial appliance
-  repair today!</p>
-  <Unitscommercial />
-  <Btn />
-</div>
-
-  <div class="page-container">
-    <div class="header-container">
-      <div class="head-content-h">
-        <h2>Home Kitchen Appliance Repair West Hollywood</h2>
-      </div>
-  
-      <div class="head-content-f">
-        <img
-          src="/dryer-repair/dryer-repair-1.webp"
-          alt="SAME DAY APPLIANCE REPAIR West Hollywood"
-          width="450px"
-          height="450px"
-        />
       </div>
     </div>
-<p>Home kitchen appliance repair West Hollywood is one of our top services with best industry standard. We do all home
-  kitchen appliances repair, including refrigerator repair, refrigerator maintenance, ovens, stoves, dishwashers,
-  microwaves, entire unit installation services, replacement parts, and other daily-used appliances. Our techs are
-  trained to work on all home appliances major brands and models. With our same day service and customer satisfaction
-  guarantee, you can count on us to get your kitchen up and running fast. Whether it's small or big repair, we'll do it
-  for a very good price.</p>
-<h3>Refrigerator Repair West Hollywood CA</h3>
-<p>Need refrigerator repair West Hollywood CA? Our techs fix all types of home and commercial refrigerators of all
-  brands and models when they develop technical issues. We've seen it all! In the entire West Hollywood area, hot
-  temperatures can stress cooling systems and increase energy consumption of your fridge which can lead to situations
-  when your appliance breaks. We fix complex cooling systems with sensitive components like compressors, condensers, and
-  refrigerant gases. If you have temperature fluctuations, an ice maker not working, ice buildup, or worst-case
-  compressor failure, call us! Our team of experts will fix your refrigerator in West Hollywood with 3 months labor
-  warranty.</p>
-<p>We service most of the fridge and freezer brands in West Hollywood, Beverly Hills, and Culver City including Samsung,
-  LG, Whirlpool, and Frigidaire. Homeowners call us to repair their General Electric (GE), Maytag, KitchenAid, and Amana
-  fridges. We have lots of experience with high-end brands like Sub-Zero, Viking, Bosch, and Thermador. We also do great
-  work with lesser-known brands like Kenmore, Haier, Electrolux, Jenn-Air, Miele, Hotpoint, Dacor, Fisher &amp; Paykel,
-  Magic Chef, Danby, Insignia, Avanti, RCA, Hisense, and Liebherr.</p>
-<p>Check our Yelp reviews to see why we are the best choice for refrigerator repair at a very good cost. Schedule
-  service with us today and experience the difference.</p>
-<h3>Freezer Repair West Hollywood CA</h3>
-<p>Freezer repair West Hollywood is a big problem for LA residents. Don't worry! We'll fix your freezer! Our appliance
-  repair experts know the cause of all possible issues and any appliance brands including Sub-Zero. In the summer your
-  freezer may malfunction due to the stress of cooling systems. Our techs can fix critical freezer components like
-  compressors, condensers and refrigerant gases. Call us if your freezer has temperature fluctuations, ice buildup or
-  worst case compressor failure.</p>
-<p>We service most of the appliance brands in West Hollywood including Samsung, LG, Whirlpool and Frigidaire. Homeowners
-  call us to repair their General Electric (GE), Maytag, KitchenAid and Amana freezers. We have lots of experience with
-  high-end brands like Sub-Zero, Viking, Bosch and Thermador. We also do great work with lesser known brands like
-  Kenmore, Haier, Electrolux, Jenn-Air, Miele, Hotpoint, Dacor, Fisher &amp; Paykel, Magic Chef, Danby, Insignia,
-  Avanti, RCA, Hisense and Liebherr. Whatever the brand we'll fix your freezer in no time.</p>
-<h3>Stove Repair West Hollywood CA</h3>
-<p>Stove repair West Hollywood is a safety issue for many of our customers. Stoves need to be handled by professionals
-  because of the risk of fire. Working with gas lines requires knowledge and experience in this sensitive process. If
-  you need help with burner issues, temperature control or ignition problems or maybe oven overheating and other kinds
-  of appliance problems are our specialty, call us today to schedule your appointment with an appliance repair tech!</p>
-<h3>Dishwasher Repair West Hollywood CA</h3>
-<p>Dishwasher repair West Hollywood CA if you have leaks, drainage issues or water supply problems. Dishwashers also
-  need maintenance services like cleaning filters and traps, hard water and mineral build-up removal. Our appliance
-  repair experts know how to work with high-voltage components safely! We also provide West Hollywood appliance repair
-  services to prevent flooding and water damage. Call us today to schedule your dishwasher repair, installation or
-  maintenance appointment!</p>
-<p>We service most of the appliance brands in West Hollywood including Bosch, Whirlpool, KitchenAid and Samsung; old
-  dishwasher or new we'll fix it. Homeowners call us to repair their General Electric (GE), Maytag, LG and Frigidaire
-  dishwashers. We have lots of experience with high-end brands like Miele, Thermador, Viking and Fisher &amp; Paykel. We
-  also do great work with lesser known brands like Kenmore, Haier, Electrolux, Jenn-Air, Hotpoint, Dacor, Magic Chef,
-  Danby, Insignia, Avanti, RCA, Hisense and Liebherr. Whatever the brand we'll fix your dishwasher.</p>
-<p>Save money with the best services for different appliances!</p>
-<h3>Oven Repair West Hollywood CA</h3>
-<p>Oven repair West Hollywood CA should be done by appliance repair experts because of safety issues. Our techs have
-  many years of experience working with components that get hot and we'll do great with your oven no matter what's
-  wrong. Gas ovens require a different kind of work when gas lines are involved. Our techs are experts at finding gas
-  leaks and fixing them. We repair most often oven heating elements, thermostats, sensors, ignition systems and control
-  panels. Call us for any oven repair, installation or maintenance!</p>
-<h3>Cooktop Repair West Hollywood CA</h3>
-<p>Cooktop repair West Hollywood CA first and foremost is about safety. During gas cooktop repair our techs may find gas
-  leaks. They will make sure a proper connection to the gas line and handle the igniters safely. During electric cooktop
-  repair our techs know how to work with high-voltage so you don't have to worry. Insulation and grounding are our top
-  priority. Call us today for same day service of your cooktop in Los Angeles, West Hollywood and surrounding areas to
-  get the best service from the very first visit!</p>
-<h3>Microwave Repair West Hollywood CA</h3>
-<p>Microwave repair West Hollywood CA is another common home appliance service we offer. We are experts at working with
-  high-voltage components that are a safety risk like capacitors that can retain a charge even when the microwave is
-  unplugged. Microwave radiation also requires an expert technician. If your microwave is not heating, turntable
-  components are not working, control panel is malfunctioning or sparking is happening call us today for same day
-  appointment and high quality appliance repair West Hollywood!</p>
-<h3>Range Hood Repair West Hollywood CA</h3>
-<p>Need range hood repair West Hollywood CA? We do range repair, installation and maintenance. Our techs have many years
-  of experience in installing, cleaning and fixing exhaust systems and their components like ducts, vents and exterior
-  caps. We fix under cabinet, wall mounted, island and downdraft hoods. If your range hood has a broken fan, lights,
-  control panel or other issues call us to schedule your same day appointment!</p>
-</div>
-<Btn />
+  </section>
 
-
-
-
-
-
-<div class="page-container">
-  <div class="header-container">
-    <div class="head-content-h">
-      <h2>Home Laundry Room Appliance Repair West Hollywood</h2>
-    </div>
-
-    <div class="head-content-f">
-      <img
-        src="/dryer-repair/dryer-repair-2.webp"
-        alt="SAME DAY APPLIANCE REPAIR West Hollywood"
-        width="450px"
-        height="450px"
-      />
-    </div>
-  </div>
-<p>Home laundry room appliance repair West Hollywood is our top service. Our team of experienced techs can diagnose and
-  repair all kinds of laundry appliances like washer repair, dryer repair and combination units. We know how important
-  it is to have fully functional laundry appliances when you need to wash your own clothes and your washer breaks.
-  That's why we offer same day service so you don't have to wait. With customer satisfaction as our top priority we make
-  sure each unit is repaired efficiently and effectively with high quality parts and the latest technology. For reliable
-  and fast home laundry room appliance repair in West Hollywood area call our trusted company Same Day Appliance Repair.
-</p>
-<h3>Washer Repair West Hollywood CA</h3>
-<p>Need washer repair West Hollywood? West Hollywood appliance repair is called most often for washer problems during
-  the humidity spikes in the city. Mold formation is our biggest concern because it can affect the health of your family
-  members especially the kids and the elderly. To prevent mold formation the laundry room should be well ventilated and
-  the doors should not be left open after the wash cycle. We always recommend wiping the rubber seal dry! If you have
-  mold in your washer call us now! Our tech will bring special chemicals to remove the mold from the washer and give you
-  advice on how to prevent it from happening again.</p>
-<p>Our techs replace drum motors, control boards, door switches and locks, water and drain pumps, and breaks, worn-out
-  belts or other appliance parts. We fix it all. Call us if you have water leaks, spin cycle failures or electronic
-  issues. We can fix washer repair on the spot!</p>
-<p>West Hollywood appliance repair for all washer brands is our specialty. The most common washer brands we service in
-  West Hollywood are Samsung, LG, Whirlpool and Frigidaire. Homeowners call us to repair their General Electric (GE),
-  Maytag, KitchenAid and Amana. We also have experience with high-end brands of washers like Miele, Bosch and
-  Electrolux. Other brands we service are Kenmore, Haier, Speed Queen. We also service Hotpoint, Danby, Insignia,
-  Avanti, RCA, Hisense and Blomberg. Call us today for any appliance repair!</p>
-<h3>Dryer Repair West Hollywood CA</h3>
-<p>Dryer repair West Hollywood CA is one of the most searched in the area. Dryers overheat in this area are very common.
-  Also, dust builds up faster due to frequent use. Accumulated dust can wear out the internal components and cause
-  breakages. Every dryer repair at our West Hollywood appliance repair company includes free and professional dryer
-  cleaning service to extend the life of your dryer and prevent fires. We also offer 3 month labor warranty.</p>
-<p>Our dryer repair techs can diagnose and fix any simple or complex dryer issue. We handle complex thermal and
-  mechanical systems with malfunctioning heating elements, thermostats and motor assemblies. Call us if your dryer is
-  not drying, making unusual noises or just stopped working and you need dryer repair today.</p>
-<p>Dryer brands we service in West Hollywood are Samsung, LG, Whirlpool and Frigidaire. Homeowners call us to repair
-  their General Electric (GE), Maytag, KitchenAid and Amana. We also have experience with high-end brands like Miele,
-  Bosch and Electrolux. Other brands we service are Kenmore, Haier, Jenn-Air, Speed Queen. We also service Hotpoint,
-  Dacor, Fisher &amp; Paykel, Magic Chef, Danby, Insignia, Avanti, RCA, Hisense and Blomberg.</p>
-</div>
-<Btn />
-
-
-
-
-
-
-
-<h2>Fireplace Repair West Hollywood CA</h2>
-<p>Fireplace repair West Hollywood CA is done by our techs. Our techs can find gas leaks in your fireplace system and
-  can also service electric fireplaces. Proper ventilation is another important factor when it comes to fireplace
-  repair. We make sure there's no health hazard to our customer and their family that a fireplace may pose in the
-  future. If you have issues with your gas, electric or wood-burning fireplace, call us today for fireplace repair in
-  West Hollywood!</p>
-
-<h2>Barbecue Repair West Hollywood CA</h2>
-<p>Barbecue repair West Hollywood, CA is our expertise! We fix gas grills, charcoal grills, electric grills and pallet
-  grills. Our techs know how to safely handle propane or natural gas tanks and high voltage. They can find and eliminate
-  gas leaks. Having ignition, burner or control panel problems, temperature regulation issues or any other barbecue
-  malfunctioning issues? Call us today! We schedule same-day appointments for repair in West Hollywood area.</p>
-<p>We also provide refrigerator repair, washer repair and installations. Our services in West Hollywood are prompt and
-  affordable. Contact us for any appliance repair needs and keep your appliances running smoothly. Our customer reviews
-  speak for themselves. Don't hesitate to call our technician for any job, whether it's troubleshooting oven issues or a
-  full install. Our prices are competitive and fit your budget.</p>
-  <div class="page-container">
-    <div class="header-container">
-      <div class="head-content-h">
-        <h2>Commercial Appliance Repair West Hollywood CA</h2>
-      </div>
-  
-      <div class="head-content-f">
-        <img
-          src="/dryer-repair/dryer-repair-4.webp"
-          alt="SAME DAY APPLIANCE REPAIR West Hollywood"
-          width="450px"
-          height="450px"
-        />
+  <!-- =====================================================================
+       WHY US
+       ===================================================================== -->
+  <section class="wh-why">
+    <div class="container">
+      <h2>Why West Hollywood Calls Us Back</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="why-title">We Actually Show Up Same Day</div>
+          <div class="why-text">Not "we'll try." Call before noon and our WeHo technicians are typically at your door the same afternoon — weekdays and weekends. We know you can't just wait around all week.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>
+          </div>
+          <div class="why-title">The Part Is Usually on the Van</div>
+          <div class="why-text">We stock OEM parts for Sub-Zero, Thermador, Viking, Bosch, LG, Samsung, and the other brands we see most in WeHo. That's why 85% of our repairs are done in one visit — no "we'll come back when it arrives."</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="why-title">We Stand Behind the Work</div>
+          <div class="why-text">90-day warranty on every repair — parts and labor. If the same issue comes back within 90 days, we return and fix it at no charge. We're California licensed, insured, and BBB A+ rated. That's not a logo — it means something to us.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="why-title">We Know WeHo Buildings</div>
+          <div class="why-text">Parking permits, concierge access, service elevators, HOA rules — our technicians have dealt with all of it. We know which buildings on Sunset require a COI, which ones have key fob entry. Just tell us what to expect and we handle it.</div>
+        </div>
       </div>
     </div>
-<p>At Same Day Appliance Repair, we offer same day commercial appliance repair West Hollywood CA. Whether you need help
-  with commercial refrigerators, freezers, ovens, stoves, dishwashers or washing machines, we have appliance repair
-  techs experienced in all makes and models. We know how important it is to keep your business up and running so we
-  offer same day service to minimize downtime, save you money and keep your business fully stocked. From high-end brands
-  like Sub-Zero, Viking and Thermador to more common names like Whirlpool, LG and Frigidaire, we have the expertise to
-  get your commercial units up and running fast and efficiently. You can count on us for honest, reliable solutions and
-  quality service every time. Check out our reviews to see our average rating.</p>
-<h3>Commercial Refrigerator Repair West Hollywood CA</h3>
-<p>For commercial refrigerator repair West Hollywood CA call Same Day Appliance Repair. We fix all commercial fridge and
-  ice maker issues, leaks, compressor problems and advise on proper temperature and usage to save energy costs. Our
-  techs can fix any problem so your commercial refrigeration units run smoothly. We service Sub-Zero, True, Turbo Air,
-  Beverage-Air and more. Call us for fast and reliable appliance repair for your business.</p>
-<h3>Commercial Freezer Repair West Hollywood CA</h3>
-<p>Our techs at Same Day Appliance Repair are commercial freezer repair West Hollywood experts. You can rely on us for
-  commercial freezer repairs like ice buildup, defrosting issues and thermostat problems. We know how important freezers
-  are to your business so our techs are ready to fix any problem fast and efficiently. We service Traulsen, Manitowoc,
-  Hoshizaki, Arctic Air and more. Not sure if we can fix certain appliances? Call us today and your commercial freezers
-  will be running like new.</p>
-<h3>Commercial Dishwasher Repair West Hollywood CA</h3>
-<p>Time is of the essence for commercial dishwasher repair West Hollywood for your business's cleanliness standards. At
-  Same Day Appliance Repair we fix problems like improper cleaning, drainage issues and electrical problems. Our techs
-  are experts at their job with Hobart, Jackson, Miele, CMA Dishmachines and more. Whatever the problem we'll have your
-  commercial dishwasher up and running fast. For the best service in West Hollywood call us today.</p>
-<h3>Commercial Stove Repair West Hollywood CA</h3>
-<p>Commercial stove repair West Hollywood will be needed when your commercial stove has issues like uneven heating, bad
-  burners or ignition problems. Same Day Appliance Repair is here to help. Our appliance repair techs know Vulcan,
-  Garland, Wolf, Southbend and more. We are honest with our customers and do our best so the repair process doesn't take
-  too long and your commercial stove is up and running so you can get back to business. We can also help if you decide
-  to replace or install your unit in the future.</p>
-<h3>Commercial Dryer Repair West Hollywood CA</h3>
-<p>Commercial dryer repair West Hollywood is for laundromats and hotels. If you have overheating, drum problems or
-  electrical issues Same Day Appliance Repair has you covered. Our appliance repair techs are honest and skilled at
-  repairing Speed Queen, Dexter, Maytag, Huebsch and other dryer brands. They are knowledgeable with both electric and
-  gas models so we'll get your commercial dryer up and running fast.</p>
-<h3>Commercial Washer Repair West Hollywood CA</h3>
-<p>If you have commercial washers in your business you may experience water leaks, spin cycle problems or control issues
-  and need commercial washer repair West Hollywood before it becomes a big problem. At Same Day Appliance Repair we have
-  appliance repair techs trained to repair these and more. We service Continental Girbau, UniMac, Electrolux, Wascomat
-  and other brands. We'll have your commercial washer fixed today or can help with replacing or installing your
-  appliances altogether. Call now for the best service in West Hollywood and surrounding areas.</p>
-<h3>Commercial Oven Repair West Hollywood CA</h3>
-<p>Commercial oven repair West Hollywood is for food service businesses and issues like uneven cooking, temperature
-  control problems or heating element problems. We fix it all! Same Day Appliance Repair has professional appliance
-  repair for Rational, Blodgett, Bakers Pride, TurboChef and other commercial oven brands. Our appliance repair techs
-  know it all and your commercial oven will be up and running in no time.</p>
-<h3>Commercial Walk In Cooler Repair West Hollywood CA</h3>
-<p>Commercial walk-in cooler repair West Hollywood is before you replace. Proper temperature in your walk-in cooler is
-  critical for food safety and quality. If you're experiencing temperature fluctuations, compressor problems or door
-  seal issues Same Day Appliance Repair can help! Our appliance repair techs know Norlake, Kolpak, Bally, Amerikooler
-  and more. We'll have your walk-in cooler up and running or help you with replacing or installing your appliances.</p>
-<h3>Commercial Walk In Freezer Repair West Hollywood CA</h3>
-<p>Commercial walk in freezer repair West Hollywood is for businesses that store large quantities of frozen products.
-  When you have ice buildup, defrost problems or cooling issues Same Day Appliance Repair is here to help. Our techs
-  have experience with appliance repairs of Master-Bilt, Thermo-Kool, International Cold Storage, Imperial Brown and
-  more. We'll have your walk-in freezer and other appliances fixed fast. West Hollywood.</p>
-<h3>Commercial Ice Machine Repair West Hollywood CA</h3>
-<p>Having slow ice production, poor ice quality or mechanical failure with your commercial ice machine can shut down
-  your business so you may need commercial ice machine repair West Hollywood. At Same Day Appliance Repair our appliance
-  repair techs are experts at diagnosing and fixing these issues. We service Scotsman, Ice-O-Matic, Manitowoc, Hoshizaki
-  and more. We'll have your ice machine and other appliances up and running fast or can help you with replacing them if
-  the cost of repair is equal to a new unit. Call now.</p>
-<h3>Showcase Refrigerator Repair West Hollywood CA</h3>
-<p>If you have lighting issues, temperature fluctuations or compressor failure Same Day Appliance Repair can help with
-  showcase refrigerator repair West Hollywood. Our friendly techs service True, Turbo Air, Structural Concepts,
-  Beverage-Air and more. We'll have your showcase fridge running and looking good for your Google reviews, displaying
-  products while keeping them cool. Call us for diagnosis and repair.</p>
-<h3>Bar Refrigerator Repair West Hollywood CA</h3>
-<p>Bar refrigerator repair West Hollywood is what you need to serve cold drinks and keep ingredients fresh. When you
-  have cooling problems, leaks or electrical issues Same Day Appliance Repair has the solution. Our techs know Perlick,
-  U-Line, Marvel, Summit and more. We'll have your bar refrigerator running smoothly. Our techs work hard for our
-  customers.</p>
-<h3>Commercial Slushie Machine Repair West Hollywood CA</h3>
-<p>Commercial slushie machine repair West Hollywood is for problems like inconsistent freezing, mechanical failure or
-  electrical issues. At Same Day Appliance Repair our techs are trained to fix these issues fast. We service Bunn,
-  Elmeco, Frosty Factory, Carpigiani and more. We'll have your commercial slushie machine and other appliances fixed
-  fast. We offer routine maintenance and repair services. Call us for inspection and diagnosis.</p>
-<h3>Commercial Fryer Machine Repair West Hollywood CA</h3>
-<p>Commercial fryer machine repair West Hollywood will fix temperature control issues, heating element failure, oil
-  leaks that will stop your kitchen. Same Day Appliance Repair has experience in repair of Frymaster, Pitco, Vulcan,
-  Henny Penny and more. We'll fix any issue to get your commercial fryer up and running. Our techs will do quality work
-  fast in West Hollywood.</p>
-<h3>Commercial Ice Shaver Repair West Hollywood CA</h3>
-<p>When you have issues like uneven shaving, mechanical failure or motor problems commercial ice shaver repair West
-  Hollywood is what you need. Same Day Appliance Repair is here to help! Our techs are experienced with Hatsuyuki, Swan,
-  Zeny, Great Northern and more. We'll have your commercial ice shaver up and running. Call us for an appointment and
-  let our appliance repair pros do the work.</p>
-</div>
-<Btn />
+  </section>
 
+  <!-- =====================================================================
+       REVIEWS
+       ===================================================================== -->
+  <section class="wh-reviews">
+    <div class="container">
+      <h2>What People in West Hollywood Say About Us</h2>
+      <div class="reviews-grid">
 
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"My Sub-Zero stopped cooling on a Friday afternoon — nightmare timing. Called Same Day Appliance Repair, tech showed up in under three hours, had the part on his truck, and fixed it before dinner. I was genuinely shocked it went that smoothly."</div>
+          <div class="review-author">— Maria K., Norma Triangle</div>
+        </div>
 
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"I manage six rental units in WeHo. These guys are the only appliance repair company I call. They coordinate with my building managers, they show up when they say they will, and my tenants never have to follow up twice. That's worth everything in this business."</div>
+          <div class="review-author">— David R., Property Manager, West Hollywood West</div>
+        </div>
 
-<h2>Wine Cooler Repair West Hollywood CA</h2>
-<p>Wine cooler repair West Hollywood for your wine collection. If you have temperature fluctuations, compressor failure
-  or faulty thermostat Same Day Appliance Repair has the solution. Our techs know Vinotemp, EuroCave, Sub-Zero, Kalamera
-  and more. We'll keep your wine cooler at the right temperature for your wine. Our appliance repair techs work fast in
-  West Hollywood.</p>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"Thermador oven stopped igniting two days before I was hosting a dinner party. Same-day appointment, technician replaced the igniters and serviced the gas valve, explained everything he was doing. Honest pricing, zero upselling. Left my kitchen cleaner than he found it."</div>
+          <div class="review-author">— Jennifer L., Sunset Strip</div>
+        </div>
 
-
-
-<h2>Wine Cellar Repair West Hollywood CA</h2>
-<p>Your wine cellar needs to be at the right conditions so wine cellar repair West Hollywood is for you. Same Day
-  Appliance Repair fixes humidity control issues, cooling problems and electrical issues. Our techs know WhisperKOOL,
-  CellarPro, Wine Guardian, Breezaire and more. Call us today for inspection, diagnosis and repair. We'll take care of
-  your wine cellar for you.</p>
-
-
-
-
+      </div>
     </div>
-  </Container>
-  <Cta />
-  
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Same Day Appliance Repair – West Hollywood",
-      "image": "https://samedayappliance.repair/images/same-day-appliance-repair-logo.webp",
-      "@id": "https://samedayappliance.repair/west-hollywood/",
-      "url": "https://samedayappliance.repair/west-hollywood/",
-      "telephone": "+1-323-870-4790",
-      "email": "support@samedayappliance.repair",
-      "priceRange": "$$",
-      "openingHours": "Mo-Sa 08:00-20:00",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "8746 Rangely Ave",
-        "addressLocality": "West Hollywood",
-        "addressRegion": "CA",
-        "postalCode": "90048",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 34.080225,
-        "longitude": -118.384168
-      },
-      "areaServed": {
-        "@type": "Place",
-        "name": "West Hollywood Area"
-      },
-      "sameAs": [
-        "https://www.facebook.com/samedayappliancerepair",
-        "https://www.yelp.com/biz/same-day-appliance-repair-west-hollywood"
-      ],
-      "memberOf": {
-        "@type": "Organization",
-        "name": "Better Business Bureau",
-        "url": "https://www.bbb.org"
-      },
-      "description": "Same Day Appliance Repair – West Hollywood provides fast, licensed appliance repair services for homes and businesses in West Hollywood, Beverly Hills, Fairfax, and surrounding areas. Same-day service with OEM parts and expert technicians."
-    }
-    </script> 
+  </section>
+
+  <!-- =====================================================================
+       PRICING — West Hollywood
+       ===================================================================== -->
+  <section class="wh-pricing">
+    <div class="container">
+      <h2 class="section-title">Appliance Repair Costs in West Hollywood</h2>
+      <p class="section-sub">Honest estimates. Written before we start. Diagnostic fee $89 — waived with repair.</p>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-card__appliance">Refrigerator</div>
+          <div class="pricing-card__range">$200 – $450</div>
+          <div class="pricing-card__note">Fan motor, thermostat, ice maker, compressor relay</div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-card__appliance">Washer</div>
+          <div class="pricing-card__range">$150 – $350</div>
+          <div class="pricing-card__note">Drain pump, door latch, bearing, stackable units</div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-card__appliance">Dryer</div>
+          <div class="pricing-card__range">$150 – $320</div>
+          <div class="pricing-card__note">Heating element, thermal fuse, vent cleaning, drum roller</div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-card__appliance">Oven / Range</div>
+          <div class="pricing-card__range">$175 – $420</div>
+          <div class="pricing-card__note">Igniter, bake element, gas valve, control board</div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-card__appliance">Dishwasher</div>
+          <div class="pricing-card__range">$150 – $320</div>
+          <div class="pricing-card__note">Drain pump, wash motor, door latch, spray arm</div>
+        </div>
+        <div class="pricing-card featured">
+          <div class="pricing-card__appliance">Diagnostic Fee</div>
+          <div class="pricing-card__range">$89</div>
+          <div class="pricing-card__note">Waived when you proceed with the repair</div>
+        </div>
+      </div>
+      <p class="pricing-note">Sub-Zero, Thermador, Viking, Miele and other luxury brands may cost more due to OEM part pricing. We'll always tell you upfront. No work starts without your written approval.</p>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       FAQ — SCHEMA MARKUP
+       ===================================================================== -->
+  <section class="wh-faq">
+    <div class="container">
+      <h2>Frequently Asked Questions — Appliance Repair West Hollywood</h2>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary class="faq-question">Do you offer same-day appliance repair in West Hollywood?</summary>
+          <div class="faq-answer">Yes. We offer same-day service throughout West Hollywood, including the Sunset Strip, Melrose, Norma Triangle, and West Hollywood West. Call before noon and our technician can typically be at your door the same day. We serve ZIP codes 90046, 90069, and 90048.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Do you repair Sub-Zero and Thermador appliances in West Hollywood?</summary>
+          <div class="faq-answer">Yes. We specialize in high-end appliance repair including Sub-Zero refrigerators, Thermador ovens and cooktops, Viking ranges, Bosch dishwashers, and Miele appliances. Our technicians are trained on luxury appliance systems and carry common OEM parts for these brands on every service vehicle.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">What ZIP codes do you serve in West Hollywood?</summary>
+          <div class="faq-answer">We serve all West Hollywood ZIP codes: 90046 (Sunset Strip, Melrose, Norma Triangle), 90069 (West Hollywood West, Santa Monica Blvd corridor), and 90048 (Beverly Grove / Fairfax border area).</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Can you repair appliances in my Airbnb or rental unit in WeHo?</summary>
+          <div class="faq-answer">Absolutely. We work regularly with Airbnb hosts, property managers, and short-term rental operators throughout West Hollywood. We coordinate with building management, handle key fob and concierge access, and work efficiently to keep your unit guest-ready. We provide a Certificate of Insurance (COI) on request — most high-rise buildings on Sunset Strip and Santa Monica Blvd require it, and we have it ready. Just let us know when you book.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">What is your diagnostic fee in West Hollywood?</summary>
+          <div class="faq-answer">Our diagnostic fee is $89, which is waived if you proceed with the repair — you only pay for the repair itself. We provide a full written estimate before any work begins, with no hidden fees.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">What warranty do you offer on appliance repairs?</summary>
+          <div class="faq-answer">All repairs come with a 90-day warranty on both parts and labor. If the same issue returns within 90 days, we come back and fix it at no additional charge. We use genuine OEM parts whenever available.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Do you service condos and apartment buildings in West Hollywood?</summary>
+          <div class="faq-answer">Yes. West Hollywood is a dense city with many high-rises, condos, and multi-unit buildings. Our technicians are experienced with building access requirements including parking, service elevators, HOA rules, and concierge check-in. Just let us know the logistics when you book.</div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       NEARBY AREAS
+       ===================================================================== -->
+  <section class="wh-nearby">
+    <div class="container">
+      <h2>Also Serving Nearby Areas</h2>
+      <div class="nearby-grid">
+        <a href="/beverly-hills/" class="nearby-link">Beverly Hills</a>
+        <a href="/hollywood/" class="nearby-link">Hollywood</a>
+        <a href="/brentwood/" class="nearby-link">Brentwood</a>
+        <a href="/silver-lake/" class="nearby-link">Silver Lake</a>
+        <a href="/los-feliz/" class="nearby-link">Los Feliz</a>
+        <a href="/los-angeles/" class="nearby-link">Los Angeles</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       BOTTOM CTA
+       ===================================================================== -->
+  <section class="wh-bottom-cta">
+    <div class="container">
+      <div class="bottom-cta__inner">
+        <div class="bottom-cta__text">
+          <h2>Need Appliance Repair in West Hollywood Today?</h2>
+          <p>Call now — same-day service available for most repairs. Diagnostic fee $89, waived with repair. 90-day warranty on all work.</p>
+        </div>
+        <div class="bottom-cta__actions">
+          <a href={`tel:${city.phoneRaw}`} class="btn-primary btn-large">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.29h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            {city.phone}
+          </a>
+          <a href="/book/" class="btn-secondary btn-large">Book Online</a>
+        </div>
+        <div class="bottom-cta__nap">
+          <span>Same Day Appliance Repair</span>
+          <span>·</span>
+          <span>8746 Rangely Ave, West Hollywood, CA 90048</span>
+          <span>·</span>
+          <a href={`mailto:${city.email}`}>{city.email}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* =========================================================
+     GLOBAL TOKENS — West Hollywood page
+     ========================================================= */
+  :root {
+    --wh-red: #C8102E;
+    --wh-black: #0a0a0a;
+    --wh-dark: #111111;
+    --wh-gray: #f5f5f5;
+    --wh-border: #e2e2e2;
+    --wh-text: #1a1a1a;
+    --wh-muted: #6b6b6b;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* =========================================================
+     HERO
+     ========================================================= */
+  .wh-hero {
+    background: var(--wh-black);
+    color: white;
+    padding: 80px 0 60px;
+  }
+
+  .wh-hero__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .wh-hero__eyebrow {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--wh-red);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .wh-hero__h1 {
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  .wh-hero__accent {
+    color: var(--wh-red);
+  }
+
+  .wh-hero__sub {
+    font-size: 17px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 32px;
+    max-width: 520px;
+  }
+
+  .wh-hero__ctas {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  .wh-hero__rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .stars { color: #FFD700; font-size: 18px; letter-spacing: 2px; }
+  .rating-text { font-size: 14px; color: rgba(255,255,255,0.7); }
+
+  .wh-hero__img-wrap img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  /* =========================================================
+     BUTTONS
+     ========================================================= */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--wh-red);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #a50e25; }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    border: 1.5px solid rgba(255,255,255,0.35);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-secondary:hover { border-color: white; background: rgba(255,255,255,0.08); }
+
+  .btn-large { padding: 16px 36px; font-size: 17px; }
+
+  /* Dark background btn-secondary — for bottom CTA */
+  .wh-bottom-cta .btn-secondary {
+    color: var(--wh-text);
+    border-color: var(--wh-border);
+  }
+  .wh-bottom-cta .btn-secondary:hover { background: var(--wh-gray); }
+
+  /* =========================================================
+     TRUST BAR
+     ========================================================= */
+  .trust-bar {
+    background: var(--wh-red);
+    padding: 16px 0;
+  }
+
+  .trust-bar__inner {
+    display: flex;
+    gap: 0;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  /* =========================================================
+     INTRO
+     ========================================================= */
+  .wh-intro { padding: 72px 0; background: white; }
+
+  .wh-intro__inner {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .wh-intro__text h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--wh-black);
+    margin-bottom: 20px;
+  }
+
+  .wh-intro__text p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--wh-text);
+    margin-bottom: 16px;
+  }
+
+  .cta-box {
+    background: var(--wh-black);
+    color: white;
+    border-radius: 12px;
+    padding: 32px;
+    text-align: center;
+    position: sticky;
+    top: 80px;
+  }
+
+  .cta-box__title { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+  .cta-box__sub { font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 24px; }
+  .cta-box__phone {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--wh-red);
+    text-decoration: none;
+    margin-bottom: 12px;
+  }
+  .cta-box__book {
+    display: block;
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    margin-bottom: 16px;
+    transition: background 0.2s;
+  }
+  .cta-box__book:hover { background: rgba(255,255,255,0.08); }
+  .cta-box__hours { font-size: 12px; color: rgba(255,255,255,0.5); }
+
+  /* =========================================================
+     SECTION HEADINGS
+     ========================================================= */
+  .section-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--wh-black);
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  .section-sub {
+    font-size: 16px;
+    color: var(--wh-muted);
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  /* =========================================================
+     SERVICES GRID
+     ========================================================= */
+  .wh-services {
+    padding: 72px 0;
+    background: var(--wh-gray);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .service-card {
+    background: white;
+    border: 1px solid var(--wh-border);
+    border-radius: 12px;
+    padding: 24px 20px;
+    text-decoration: none;
+    color: var(--wh-text);
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: block;
+  }
+
+  .service-card:hover {
+    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+  }
+
+  .service-card__icon { font-size: 28px; margin-bottom: 10px; }
+  .service-card__name { font-size: 16px; font-weight: 600; color: var(--wh-black); margin-bottom: 8px; }
+  .service-card__issues { font-size: 13px; color: var(--wh-muted); line-height: 1.5; margin-bottom: 8px; }
+  .service-card__brands { font-size: 12px; color: var(--wh-muted); margin-bottom: 12px; }
+  .service-card__cta { font-size: 13px; color: var(--wh-red); font-weight: 500; }
+
+  /* =========================================================
+     LUXURY BRANDS
+     ========================================================= */
+  .wh-luxury {
+    padding: 72px 0;
+    background: var(--wh-black);
+    color: white;
+  }
+
+  .luxury-inner {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .luxury-eyebrow {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--wh-red);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .luxury-text h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  .luxury-text p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 16px;
+  }
+
+  .luxury-brands-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  .luxury-brand {
+    padding: 6px 14px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .luxury-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .stat-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--wh-red);
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* =========================================================
+     NEIGHBORHOODS
+     ========================================================= */
+  .wh-neighborhoods {
+    padding: 72px 0;
+    background: white;
+  }
+
+  .wh-neighborhoods h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--wh-black);
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  .neighborhoods-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .nh-card {
+    background: var(--wh-gray);
+    border: 1px solid var(--wh-border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nh-card.featured {
+    border-color: var(--wh-red);
+    background: #fff5f7;
+  }
+
+  .nh-name { font-size: 15px; font-weight: 500; color: var(--wh-black); }
+  .nh-zip { font-size: 13px; color: var(--wh-muted); }
+
+  .streets-list {
+    font-size: 14px;
+    color: var(--wh-muted);
+    text-align: center;
+    padding: 16px;
+    background: var(--wh-gray);
+    border-radius: 8px;
+  }
+
+  .streets-label {
+    font-weight: 600;
+    color: var(--wh-black);
+    margin-right: 8px;
+  }
+
+  /* =========================================================
+     PROPERTY MANAGER
+     ========================================================= */
+  .wh-property {
+    padding: 72px 0;
+    background: var(--wh-gray);
+  }
+
+  .property-inner {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .property-eyebrow {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--wh-red);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .property-text h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--wh-black);
+    margin-bottom: 16px;
+  }
+
+  .property-text p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--wh-text);
+    margin-bottom: 16px;
+  }
+
+  .property-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .property-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 15px;
+    color: var(--wh-text);
+    padding: 6px 0;
+  }
+
+  .property-features li svg {
+    flex-shrink: 0;
+    color: var(--wh-red);
+    margin-top: 2px;
+  }
+
+  .property-cta {
+    background: var(--wh-black);
+    color: white;
+    border-radius: 12px;
+    padding: 32px;
+    text-align: center;
+    position: sticky;
+    top: 80px;
+  }
+
+  .property-cta__title { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+  .property-cta__sub { font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 24px; }
+  .property-cta .btn-primary { width: 100%; justify-content: center; margin-bottom: 12px; }
+  .property-cta__note { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+  /* =========================================================
+     RECENT REPAIRS
+     ========================================================= */
+  .wh-recent {
+    padding: 72px 0;
+    background: white;
+  }
+
+  .wh-recent h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--wh-black);
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  .recent-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .recent-card {
+    border: 1px solid var(--wh-border);
+    border-radius: 12px;
+    padding: 24px;
+  }
+
+  .recent-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .recent-badge {
+    background: var(--wh-red);
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+
+  .recent-location {
+    font-size: 12px;
+    color: var(--wh-muted);
+  }
+
+  .recent-card__title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--wh-black);
+    margin-bottom: 10px;
+  }
+
+  .recent-card__desc {
+    font-size: 14px;
+    color: var(--wh-text);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .recent-card__result {
+    font-size: 13px;
+    color: #2a7a2a;
+    font-weight: 500;
+  }
+
+  /* =========================================================
+     WHY US
+     ========================================================= */
+  .wh-why {
+    padding: 72px 0;
+    background: var(--wh-gray);
+  }
+
+  .wh-why h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--wh-black);
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .why-card {
+    background: white;
+    border: 1px solid var(--wh-border);
+    border-radius: 12px;
+    padding: 28px 24px;
+  }
+
+  .why-icon {
+    width: 48px;
+    height: 48px;
+    background: #fff5f7;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    color: var(--wh-red);
+  }
+
+  .why-title { font-size: 16px; font-weight: 600; color: var(--wh-black); margin-bottom: 10px; }
+  .why-text { font-size: 14px; color: var(--wh-muted); line-height: 1.6; }
+
+  /* =========================================================
+     REVIEWS
+     ========================================================= */
+  .wh-reviews {
+    padding: 72px 0;
+    background: white;
+  }
+
+  .wh-reviews h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--wh-black);
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .review-card {
+    border: 1px solid var(--wh-border);
+    border-radius: 12px;
+    padding: 28px;
+  }
+
+  .review-stars { color: #FFD700; font-size: 18px; margin-bottom: 12px; }
+  .review-text { font-size: 14px; color: var(--wh-text); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+  .review-author { font-size: 13px; color: var(--wh-muted); font-weight: 500; }
+
+  /* =========================================================
+     FAQ
+     ========================================================= */
+  .wh-faq {
+    padding: 72px 0;
+    background: var(--wh-gray);
+  }
+
+  .wh-faq h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--wh-black);
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border: 1px solid var(--wh-border);
+    border-radius: 8px;
+    background: white;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+
+  .faq-question {
+    padding: 18px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--wh-black);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .faq-question::after {
+    content: '+';
+    font-size: 22px;
+    color: var(--wh-red);
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+
+  details[open] .faq-question::after { content: '−'; }
+
+  .faq-answer {
+    padding: 0 24px 20px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--wh-text);
+  }
+
+  /* =========================================================
+     PRICING
+     ========================================================= */
+  .wh-pricing { padding: 72px 0; background: white; }
+  .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 20px; }
+  .pricing-card { background: var(--wh-gray); border-radius: 10px; padding: 20px 24px; border: 1px solid var(--wh-border); }
+  .pricing-card.featured { background: #fff5f7; border-color: var(--wh-red); }
+  .pricing-card__appliance { font-size: 14px; color: var(--wh-muted); margin-bottom: 6px; }
+  .pricing-card__range { font-size: 24px; font-weight: 700; color: var(--wh-black); margin-bottom: 6px; }
+  .pricing-card.featured .pricing-card__range { color: var(--wh-red); }
+  .pricing-card__note { font-size: 13px; color: var(--wh-muted); }
+  .pricing-note { font-size: 14px; color: var(--wh-muted); text-align: center; max-width: 640px; margin: 0 auto; }
+
+  /* =========================================================
+     NEARBY
+     ========================================================= */
+  .wh-nearby {
+    padding: 48px 0;
+    background: white;
+    border-top: 1px solid var(--wh-border);
+  }
+
+  .wh-nearby h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--wh-black);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .nearby-grid {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .nearby-link {
+    padding: 8px 20px;
+    border: 1px solid var(--wh-border);
+    border-radius: 20px;
+    font-size: 14px;
+    color: var(--wh-text);
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .nearby-link:hover {
+    border-color: var(--wh-red);
+    color: var(--wh-red);
+  }
+
+  /* =========================================================
+     BOTTOM CTA
+     ========================================================= */
+  .wh-bottom-cta {
+    padding: 72px 0;
+    background: var(--wh-black);
+    color: white;
+  }
+
+  .bottom-cta__inner {
+    text-align: center;
+  }
+
+  .bottom-cta__text h2 {
+    font-size: 34px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 12px;
+  }
+
+  .bottom-cta__text p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 32px;
+  }
+
+  .bottom-cta__actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+
+  .bottom-cta__nap {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .bottom-cta__nap a {
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+  }
+
+  /* =========================================================
+     RESPONSIVE
+     ========================================================= */
+  @media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+    .reviews-grid { grid-template-columns: 1fr 1fr; }
+    .luxury-inner { grid-template-columns: 1fr; }
+    .luxury-stats { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .wh-hero__inner { grid-template-columns: 1fr; }
+    .wh-hero__img-wrap { display: none; }
+    .wh-intro__inner { grid-template-columns: 1fr; }
+    .property-inner { grid-template-columns: 1fr; }
+    .recent-grid { grid-template-columns: 1fr; }
+    .neighborhoods-grid { grid-template-columns: 1fr 1fr; }
+    .trust-bar__inner { justify-content: center; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .luxury-stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-cta__text h2 { font-size: 26px; }
+  }
+
+  @media (max-width: 480px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .neighborhoods-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .wh-hero { padding: 48px 0 40px; }
+  }
+</style>

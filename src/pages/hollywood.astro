@@ -1,160 +1,856 @@
 ---
-import Container from "@components/container.astro";
-import Cta from "@components/cta-wh.astro";
-import Layout from "@layouts/Layout.astro";
-import Navbar from "@components/navbar/navbar.astro";
-import Reviews from "@components/reviews.astro";
-import Contactbtn from "@components/contactbtn.astro";
-import Btn from "@components/btn.astro";
-import Unitsappliances from "@components/units-appliances-west-hollywood.astro";
-import Unitscommercial from "@components/units-commercial-equipment-west-hollywood.astro";
-import Anchor from "@components/anchor/anchor-areas.astro";
-import "css/service-areas/style-service-areas.css";
+// src/pages/hollywood.astro
+// SDAR — samedayappliance.repair
+// Hollywood, CA — Волна 2
+// Филиал: West Hollywood · (323) 870-4790
+// GSC: appliance repair hollywood ca — 165 показов · позиция 15.6
+//      appliance repair hollywood — 313 показов · позиция 29.3
+//      same day appliance repair hollywood — 32 показа · позиция 12
+//      commercial oven repair east hollywood — 26 показов · позиция 21
+// Апрель 2026
+
+import Layout from '../layouts/Layout.astro';
+
+const city = {
+  name: "Hollywood",
+  state: "CA",
+  county: "Los Angeles",
+  zips: ["90028", "90038", "90068", "90029", "90046"],
+  phone: "(323) 870-4790",
+  phoneRaw: "+13238704790",
+  email: "support@samedayappliance.repair",
+  branch: "West Hollywood",
+  slug: "hollywood",
+};
+
+const title = `Appliance Repair Hollywood CA — Same Day Service | (323) 870-4790`;
+const description = `Same-day appliance repair in Hollywood, CA. We serve Hollywood Hills, East Hollywood, Beachwood Canyon, Laurel Canyon, Franklin Village. Sub-Zero, Viking, Wolf specialists. Licensed, OEM parts, 90-day warranty. Call (323) 870-4790.`;
+const canonical = `https://samedayappliance.repair/hollywood/`;
+
+const schemaLocalBusiness = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Same Day Appliance Repair — Hollywood",
+  "image": "https://samedayappliance.repair/images/logo.webp",
+  "url": canonical,
+  "telephone": city.phoneRaw,
+  "email": city.email,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "8746 Rangely Ave",
+    "addressLocality": "West Hollywood",
+    "addressRegion": "CA",
+    "postalCode": "90048",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Hollywood" },
+    { "@type": "Neighborhood", "name": "Hollywood Hills" },
+    { "@type": "Neighborhood", "name": "East Hollywood" }
+  ],
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "21:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "08:00", "closes": "19:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday"], "opens": "09:00", "closes": "17:00" }
+  ],
+  "priceRange": "$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.6",
+    "reviewCount": "37",
+    "bestRating": "5"
+  }
+};
+
+const schemaFAQ = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you offer same-day appliance repair in Hollywood, CA?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our technicians cover all of Hollywood — Hollywood Hills, East Hollywood, Beachwood Canyon, Laurel Canyon, Franklin Village, Thai Town, Little Armenia, Hancock Park border area, and the Sunset Strip. Call before noon and we're typically there the same afternoon. We serve ZIP codes 90028, 90038, 90068, 90029, and 90046." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you repair Sub-Zero and Wolf appliances in Hollywood Hills?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Hollywood Hills homes — especially up in Beachwood Canyon, Laurel Canyon, and the hillside streets off Mulholland — often have Sub-Zero, Wolf, Viking, and Thermador appliances. Our technicians are trained on these brands and carry OEM parts for them on every service vehicle. Hollywood's warm climate also means we check cooling systems more thoroughly on every refrigerator call." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you service commercial appliances in Hollywood?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Hollywood Boulevard and East Hollywood have a dense restaurant corridor — Thai Town, Little Armenia, and the entertainment venue kitchens near Vine Street. We repair commercial refrigerators, commercial ovens, walk-in coolers, and restaurant equipment in this area. Commercial diagnostic fee is $120, waived with repair." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Hollywood's warm climate affect appliances?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It does. Hollywood Hills in particular — the warm, dry climate puts extra strain on refrigerator cooling systems and condenser coils. We also see more humidity-related issues in ground-floor and basement laundry areas, including mold growth in washer door gaskets. Our technicians check for these issues proactively on every Hollywood call." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is your diagnostic fee in Hollywood?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Our diagnostic fee is $89 for residential repairs, waived when you proceed with the repair. Commercial appliance diagnostic is $120, also waived with repair. We give you a complete written estimate before any work begins." }
+    },
+    {
+      "@type": "Question",
+      "name": "What warranty do you offer on appliance repairs in Hollywood?",
+      "acceptedAnswer": { "@type": "Answer", "text": "All repairs come with a 90-day warranty on parts and labor. If the same issue returns within 90 days, we come back and fix it at no charge. We use genuine OEM parts only." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you also serve Silver Lake, Los Feliz, and East Hollywood?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our Hollywood service area extends to Silver Lake, Los Feliz, East Hollywood, Hancock Park, Koreatown, Fairfax District, and West Hollywood. If you're in the 90028, 90038, 90029, or 90046 ZIP codes, we're your closest team." }
+    }
+  ]
+};
 ---
-<Layout title="Appliance Repair Hollywood CA - Fast & Trusted Service" description="Looking for expert appliance repair in Hollywood, CA? Call Same Day Appliance Repair at (323) 870-4790. We service Sub-Zero, Wolf, Miele & more. Licensed, insured & BBB accredited.">
 
-  <Navbar />
-<Reviews />
- 
-  <Container>
-    <div class="full-page">
-      <div class="page-header">
-        <h1 class="animate-charcter">Local Appliance Repair Hollywood CA</h1>
+<Layout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaLocalBusiness)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaFAQ)} />
 
-        <div class="header-a">
-          <img
-            width="600px"
-            height="600px"
-            alt="Same Day Appliance Repair Hollywood CA"
-            src="/images/same-day-appliance-repair-experts.webp"
-          />
-          <Contactbtn />
+  <!-- HERO -->
+  <section class="hw-hero">
+    <div class="hw-hero__inner container">
+      <div class="hw-hero__content">
+        <div class="hw-hero__eyebrow">Hollywood, CA · 90028 · 90038 · 90068 · Hollywood Hills · East Hollywood</div>
+        <h1 class="hw-hero__h1">
+          Appliance Repair<br>
+          <span class="hw-hero__accent">Hollywood, CA</span>
+        </h1>
+        <p class="hw-hero__sub">
+          Hollywood isn't one neighborhood — it's three completely different repair markets.
+          Our technicians cover all of them: the hillside homes with Sub-Zero and Wolf,
+          the dense apartment blocks near Vine and Cahuenga, and the restaurant corridor
+          from Thai Town to Little Armenia. Same-day service, OEM parts, 90-day warranty.
+        </p>
+        <div class="hw-hero__ctas">
+          <a href={`tel:${city.phoneRaw}`} class="btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.29h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call {city.phone}
+          </a>
+          <a href="/book/" class="btn-secondary">Book Online</a>
+        </div>
+        <div class="hw-hero__rating">
+          <span class="stars">★★★★★</span>
+          <span class="rating-text">4.6 · Google reviews · BBB A+ · Licensed & Insured</span>
+        </div>
+      </div>
+      <div class="hw-hero__img-wrap">
+        <img
+          src="/images/areas/appliance-repair-hollywood-ca.webp"
+          alt="Appliance repair technician in Hollywood CA"
+          width="560"
+          height="460"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <section class="trust-bar">
+    <div class="container trust-bar__inner">
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span>Same-Day Service</span>
+      </div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>90-Day Warranty</span>
+      </div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>OEM Parts</span>
+      </div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <span>Licensed & Insured</span>
+      </div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <span>85% First-Visit Fix Rate</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="hw-intro">
+    <div class="container hw-intro__inner">
+      <div class="hw-intro__text">
+        <h2>Same Day Appliance Repair in Hollywood — Three Very Different Markets</h2>
+        <p>
+          Most appliance repair companies treat Hollywood like one place. It isn't.
+          Our technicians have been working this territory long enough to know exactly
+          what they're walking into depending on which zip code you're calling from.
+        </p>
+        <p>
+          Up in the Hills — Beachwood Canyon, Laurel Canyon, the streets off Mulholland —
+          it's luxury appliances in homes that were built for views, not for service access.
+          Sub-Zero built-ins, Wolf dual-fuel ranges, steep driveways and narrow garages.
+          Hollywood's warm, dry climate puts real strain on cooling systems up here —
+          condenser coils clog faster, compressors run harder. Our technicians factor
+          that in on every refrigerator call in the Hills.
+        </p>
+        <p>
+          Down in Hollywood proper — the apartments off Vine and Cahuenga, the condos
+          near Franklin Village, the denser blocks of East Hollywood — it's Samsung,
+          LG, Whirlpool, a lot of stackable units in tight spaces. Different access
+          challenges, different parts, same same-day service.
+        </p>
+        <p>
+          Along the restaurant corridor — Thai Town, Little Armenia, the kitchen equipment
+          along Hollywood Blvd — we see commercial calls regularly. A commercial oven
+          down on a Friday dinner service is a same-day call, and we treat it that way.
+        </p>
+        <p>
+          Diagnostic fee: <strong>$89 residential</strong> · <strong>$120 commercial</strong> —
+          both waived when you proceed with the repair. Written estimate before we start.
+          <strong>90-day warranty</strong> on parts and labor.
+        </p>
+        <div class="hw-tip">
+          <div class="hw-tip__icon">🌡️</div>
+          <div class="hw-tip__text">
+            <strong>Hollywood Hills tip from our techs:</strong> The warm climate up in the
+            hills accelerates condenser coil buildup on refrigerators — faster than anywhere
+            else we work in LA. If your fridge is running constantly or the back of it is
+            warm to the touch, pull it out and vacuum the coils. In a hillside Hollywood
+            home, do this every 4–6 months. It's the single most effective thing you can
+            do to extend a compressor's life in this climate.
+          </div>
+        </div>
+      </div>
+      <div class="hw-intro__cta-box">
+        <div class="cta-box">
+          <div class="cta-box__title">Talk to Our Hollywood Team</div>
+          <div class="cta-box__sub">Hills · Hollywood · East Hollywood · Same day</div>
+          <a href={`tel:${city.phoneRaw}`} class="cta-box__phone">{city.phone}</a>
+          <a href="/book/" class="cta-box__book">Schedule Online →</a>
+          <div class="cta-box__hours">Mon–Fri 7am–9pm · Sat 8am–7pm · Sun 9am–5pm</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="hw-services">
+    <div class="container">
+      <h2 class="section-title">What We Fix in Hollywood</h2>
+      <p class="section-sub">Residential & commercial · All brands · Gas & electric</p>
+      <div class="services-grid">
+
+        <a href="/hollywood/refrigerator-repair/" class="service-card">
+          <div class="service-card__icon">🧊</div>
+          <div class="service-card__name">Refrigerator Repair</div>
+          <div class="service-card__issues">Not cooling · Climate strain · Ice maker · Compressor · Built-in</div>
+          <div class="service-card__brands">Sub-Zero · Samsung · LG · GE · Wolf · Whirlpool</div>
+          <div class="service-card__cta">Learn more →</div>
+        </a>
+
+        <a href="/hollywood/washer-repair/" class="service-card">
+          <div class="service-card__icon">🫧</div>
+          <div class="service-card__name">Washer Repair</div>
+          <div class="service-card__issues">Not spinning · Not draining · Mold on gasket · Stackable units</div>
+          <div class="service-card__brands">LG · Samsung · Whirlpool · Bosch · Miele · Maytag</div>
+          <div class="service-card__cta">Learn more →</div>
+        </a>
+
+        <a href="/hollywood/dryer-repair/" class="service-card">
+          <div class="service-card__icon">♨️</div>
+          <div class="service-card__name">Dryer Repair</div>
+          <div class="service-card__issues">Not heating · Dryer vent cleaning · Drum issues · Gas & electric</div>
+          <div class="service-card__brands">LG · Samsung · GE · Maytag · Whirlpool · Electrolux</div>
+          <div class="service-card__cta">Learn more →</div>
+        </a>
+
+        <a href="/hollywood/oven-repair/" class="service-card">
+          <div class="service-card__icon">🔥</div>
+          <div class="service-card__name">Oven, Stove & Range Repair</div>
+          <div class="service-card__issues">Not heating · Igniter · Temperature off · Gas or electric</div>
+          <div class="service-card__brands">Wolf · Viking · Thermador · GE · Samsung · Bosch</div>
+          <div class="service-card__cta">Learn more →</div>
+        </a>
+
+        <a href="/hollywood/dishwasher-repair/" class="service-card">
+          <div class="service-card__icon">🍽️</div>
+          <div class="service-card__name">Dishwasher Repair</div>
+          <div class="service-card__issues">Not draining · Not cleaning · Leaking · Error codes</div>
+          <div class="service-card__brands">Bosch · Miele · KitchenAid · Samsung · LG · GE</div>
+          <div class="service-card__cta">Learn more →</div>
+        </a>
+
+        <a href="/hollywood/wine-cooler-repair/" class="service-card">
+          <div class="service-card__icon">🍷</div>
+          <div class="service-card__name">Wine Cooler Repair</div>
+          <div class="service-card__issues">Not cooling · Temperature off · Compressor · Climate issues</div>
+          <div class="service-card__brands">Sub-Zero · True · Liebherr · EuroCave · U-Line</div>
+          <div class="service-card__cta">Learn more →</div>
+        </a>
+
+        <a href="/hollywood/cooktop-repair/" class="service-card">
+          <div class="service-card__icon">🔆</div>
+          <div class="service-card__name">Cooktop Repair</div>
+          <div class="service-card__issues">Burner won't light · Induction issues · Sparking</div>
+          <div class="service-card__brands">Wolf · Thermador · GE · Bosch · Viking · Samsung</div>
+          <div class="service-card__cta">Learn more →</div>
+        </a>
+
+        <a href="/hollywood/range-hood-repair/" class="service-card">
+          <div class="service-card__icon">💨</div>
+          <div class="service-card__name">Range Hood & Beverage Center</div>
+          <div class="service-card__issues">Fan not working · Lights out · Beverage center cooling</div>
+          <div class="service-card__brands">Broan · Zephyr · Wolf · Dacor · Jenn-Air · Marvel</div>
+          <div class="service-card__cta">Learn more →</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- THREE SEGMENTS BLOCK -->
+  <section class="hw-segments">
+    <div class="container">
+      <h2 class="section-title">Hollywood Is Three Different Cities for Appliance Repair</h2>
+      <p class="section-sub">Our technicians know each one separately — different homes, different appliances, different challenges</p>
+      <div class="segments-grid">
+
+        <div class="segment-card">
+          <div class="segment-header">
+            <div class="segment-icon">🏔️</div>
+            <div class="segment-name">Hollywood Hills</div>
+            <div class="segment-zip">90068 · 90046</div>
+          </div>
+          <div class="segment-desc">
+            Beachwood Canyon, Laurel Canyon, Cahuenga Pass, Mulholland Drive corridor.
+            These are the homes with Sub-Zero built-ins, Wolf ranges, Thermador cooktops.
+            Steep access, narrow streets, warm hillside climate that runs cooling systems
+            harder than anywhere else in LA. Our technicians know the access challenges
+            and come prepared for luxury brands with OEM parts onboard.
+          </div>
+          <div class="segment-brands">Sub-Zero · Wolf · Viking · Thermador · Miele</div>
         </div>
 
-        <Anchor />
-        <p><strong>Need appliance repair in Hollywood, CA?</strong> You've come to the right place! We provide <strong>fast and reliable home appliance repair</strong> performed by our highly qualified technicians.</p> <p>We are a professional appliance repair company that handles all types of <strong>commercial and home appliance repairs</strong>, maintenance, and installation. Whether it's <strong>dryer repair, washer repair, dishwasher repair, cooktop repair, stove repair, oven repair, refrigerator repair, freezer repair, range repair, microwave repair, fireplace repair, barbecue grill repair, ice machine repair, fryer repair, wine cooler repair, wine cellar repair, walk-in cooler repair</strong>, or a <strong>washing machine repair</strong>, we've got you covered.</p> <p>As a fully licensed, family-owned business offering <strong>appliance repair services in Hollywood, CA</strong>, we pride ourselves on providing excellent service with certified technicians who deliver expert solutions. Our professional techs will diagnose and repair your appliance quickly, so you'll enjoy the best appliance repair experience in Hollywood. Plus, we back our work with a <strong>3-month warranty</strong>. Need same-day appliance repair? <strong>Contact us today</strong> to schedule an appointment!</p>
-      </div>
+        <div class="segment-card">
+          <div class="segment-header">
+            <div class="segment-icon">🎬</div>
+            <div class="segment-name">Hollywood Proper</div>
+            <div class="segment-zip">90028 · 90038</div>
+          </div>
+          <div class="segment-desc">
+            Hollywood Boulevard corridor, Vine Street, Franklin Village, Cahuenga area.
+            A mix of apartment buildings, converted bungalows, and newer condos. Lots of
+            stackable washer-dryer units, aging appliances in older buildings, and humidity
+            issues in ground-floor laundry rooms that cause mold on washer gaskets faster
+            than in drier LA neighborhoods. We see it constantly here.
+          </div>
+          <div class="segment-brands">Samsung · LG · Whirlpool · GE · Maytag · Bosch</div>
+        </div>
 
-<h2>Appliance Repair Hollywood</h2>
-<p><strong>As a family-owned business in Hollywood, CA</strong>, we specialize in servicing both home and commercial appliances of all major brands. Our team provides <strong>professional repairs</strong> with trained technicians who use the right tools to diagnose and fix any issue. All our technicians undergo a thorough background check and are dedicated to doing the job right. <strong>Call us or book online</strong> today for reliable and efficient appliance repair services!</p> <div id="home-anchor"> <h2>Home Appliance Repair Hollywood, CA</h2> <p><strong>Home appliance repair in Hollywood, CA</strong> includes a wide range of services, such as <strong>refrigerator, freezer, dishwasher, oven, microwave, range hood, cooktop</strong>, and <strong>ice maker repairs</strong>. We also handle <strong>laundry appliances</strong> like <strong>dryer repair</strong> and <strong>washer repair</strong>, along with <strong>fireplace repair</strong> and <strong>barbecue grill repair</strong>. Whatever the appliance, <strong>contact us today</strong> to schedule a full, comprehensive service at a competitive price. We also offer flexible solutions to meet your specific needs.</p> </div>
-  <Unitsappliances />
-  <Btn />
-</div>
+        <div class="segment-card">
+          <div class="segment-header">
+            <div class="segment-icon">🍜</div>
+            <div class="segment-name">East Hollywood</div>
+            <div class="segment-zip">90029 · 90004</div>
+          </div>
+          <div class="segment-desc">
+            Thai Town, Little Armenia, the restaurant and entertainment venue corridor.
+            We get commercial calls from here regularly — commercial ovens, walk-in coolers,
+            commercial dishwashers. Our technicians understand that a restaurant kitchen
+            appliance failure is a revenue emergency, not a "schedule for next week" situation.
+            We prioritize same-day for commercial calls in this area.
+          </div>
+          <div class="segment-brands">Commercial ovens · Walk-in coolers · Hobart · True · Manitowoc</div>
+        </div>
 
-
-  <div  id="commercial-anchor">
-<h2>Commercial Appliance Repair Hollywood CA</h2>
-<p><strong>Commercial appliance repair in Hollywood, CA</strong> includes a variety of services such as <strong>commercial kitchen appliance repair</strong>, <strong>commercial laundry service appliance repair</strong> (dryer and washer repair), <strong>bar appliance repair</strong>, and <strong>showcase appliance repair</strong>. We also offer affordable property management solutions to ensure your appliances run efficiently.
-
-    Our customers consistently praise our technicians for their professionalism, as shown in our excellent reviews on <strong>Yelp</strong> and <strong>Google</strong>. With our <strong>same-day appliance repair service</strong>, we'll have your business back up and running without exceeding your budget. <strong>Contact us today</strong> to schedule your commercial appliance repair in Hollywood!</p>
-  <Unitscommercial />
-  <Btn />
-</div>
-  <div class="page-container">
-    <div class="header-container">
-      <div class="head-content-h">
-        <h2>Home Kitchen Appliance Repair Hollywood</h2>
-      </div>
-  
-      <div class="head-content-f">
-        <img
-          src="/dryer-repair/dryer-repair-1.webp"
-          alt="SAME DAY APPLIANCE REPAIR Hollywood"
-          width="450px"
-          height="450px"
-        />
-      </div>
-    </div>
-<p><strong>Home kitchen appliance repair in Hollywood, CA</strong> is one of our top services, delivered with the highest industry standards. We handle all types of <strong>kitchen appliance repairs</strong>, including <strong>refrigerator repair</strong>, <strong>refrigerator maintenance</strong>, ovens, stoves, dishwashers, microwaves, full-unit installations, replacement parts, and other commonly used appliances. Our technicians are expertly trained to service all major brands and models. With our <strong>same-day service</strong> and customer satisfaction guarantee, you can rely on us to get your kitchen back up and running quickly. Whether the repair is big or small, we provide excellent service at a fair price.</p> <h3>Refrigerator Repair Hollywood, CA</h3> <p><strong>Need refrigerator repair in Hollywood, CA?</strong> Our skilled technicians can repair all types of residential and commercial refrigerators across all brands and models. We're experienced in addressing issues such as <strong>temperature fluctuations</strong>, <strong>ice maker malfunctions</strong>, <strong>ice buildup</strong>, and <strong>compressor failure</strong>. If your fridge isn't keeping cool or your energy bills are rising, contact us! We also offer a <strong>3-month labor warranty</strong> to guarantee quality repairs.</p> <p>We service top refrigerator brands like <strong>Samsung, LG, Whirlpool</strong>, and <strong>Frigidaire</strong>, as well as high-end names such as <strong>Sub-Zero, Viking, Bosch</strong>, and <strong>Thermador</strong>. Whether your fridge is a well-known or lesser-known brand like <strong>Kenmore</strong> or <strong>Haier</strong>, we've got the expertise to fix it. Schedule your refrigerator repair in Hollywood today and experience the difference.</p> <h3>Freezer Repair Hollywood, CA</h3> <p>Our <strong>freezer repair in Hollywood</strong> services address problems such as <strong>ice buildup</strong>, <strong>cooling issues</strong>, and <strong>compressor malfunctions</strong>. We handle all major brands, including <strong>Sub-Zero, LG, Whirlpool</strong>, and <strong>Frigidaire</strong>. During the summer, stress on cooling systems can cause breakdowns—don't let your freezer fail when you need it most. Call us today for prompt, expert service.</p> <h3>Stove Repair Hollywood, CA</h3> <p><strong>Stove repair in Hollywood</strong> is essential for safety and performance. Our trained technicians handle gas and electric stove issues, such as <strong>burner malfunctions</strong>, <strong>temperature control problems</strong>, and <strong>ignition failures</strong>. Trust us to provide efficient and reliable service—contact us today to schedule your stove repair!</p> <h3>Dishwasher Repair Hollywood, CA</h3> <p><strong>Dishwasher repair in Hollywood</strong> includes fixing issues like <strong>leaks, drainage problems</strong>, and <strong>water supply issues</strong>. Our technicians are skilled in maintaining high-voltage components and preventing flooding and water damage. We work with major brands such as <strong>Bosch, Whirlpool, KitchenAid</strong>, and <strong>Samsung</strong>. Schedule your dishwasher repair, installation, or maintenance service with us today!</p> <h3>Oven Repair Hollywood, CA</h3> <p><strong>Oven repair in Hollywood</strong> should always be handled by experienced professionals due to safety concerns. Our technicians repair <strong>gas and electric ovens</strong>, focusing on components like <strong>heating elements, thermostats, ignition systems</strong>, and <strong>control panels</strong>. Call us today to fix your oven or schedule an installation or maintenance service.</p> <h3>Cooktop Repair Hollywood, CA</h3> <p><strong>Cooktop repair in Hollywood</strong> involves addressing gas leaks, faulty igniters, and high-voltage components. Whether it's a gas or electric cooktop, our technicians ensure your unit is repaired safely and efficiently. For same-day service, contact us now!</p> <h3>Microwave Repair Hollywood, CA</h3> <p><strong>Microwave repair in Hollywood</strong> covers issues like <strong>capacitor malfunctions</strong>, <strong>control panel errors</strong>, and <strong>sparking issues</strong>. Our skilled technicians handle high-voltage components safely. If your microwave isn't heating properly or has turntable issues, call us today for same-day repairs!</p> <h3>Range Hood Repair Hollywood, CA</h3> <p><strong>Range hood repair in Hollywood</strong> includes cleaning, installation, and repairs for various systems such as <strong>ducts, vents, and exterior caps</strong>. We handle all types of range hoods, including under-cabinet, wall-mounted, and island models. Call us today for fast, reliable service!</p>
-</div>
-<Btn />
-<div class="page-container">
-  <div class="header-container">
-    <div class="head-content-h">
-      <h2>Home Laundry Room Appliance Repair Hollywood</h2>
-    </div>
-
-    <div class="head-content-f">
-      <img
-        src="/dryer-repair/dryer-repair-2.webp"
-        alt="SAME DAY APPLIANCE REPAIR Hollywood"
-        width="450px"
-        height="450px"
-      />
-    </div>
-  </div>
-<p><strong>Home laundry room appliance repair in Hollywood, CA</strong> is one of our most in-demand services. Our team of experienced technicians can diagnose and repair a variety of laundry appliances, including <strong>washers, dryers</strong>, and combination units. We understand how essential it is to have fully functioning laundry appliances, especially when a breakdown disrupts your routine. That's why we offer <strong>same-day service</strong>, so you won't have to wait long for a solution. With customer satisfaction as our top priority, we ensure every unit is repaired efficiently using <strong>high-quality parts</strong> and the latest technology. For fast and reliable home laundry appliance repair in Hollywood, call Same Day Appliance Repair today!</p> <h3>Washer Repair Hollywood, CA</h3> <p><strong>Need washer repair in Hollywood?</strong> Our team frequently handles washer issues, especially during periods of high humidity. One of the most common concerns is <strong>mold formation</strong>, which can pose health risks for your family, particularly children and the elderly. To prevent mold, we recommend keeping your laundry room well-ventilated, wiping the rubber seal dry, and not leaving the washer door open after cycles. If mold has already developed, call us! Our techs will use special cleaning solutions to remove the mold and provide tips to prevent future occurrences.</p> <p>We replace <strong>drum motors, control boards, door switches, locks, water pumps, drain pumps, belts</strong>, and other critical parts. Whether it's a <strong>water leak, spin cycle failure</strong>, or <strong>electronic issue</strong>, we can fix your washer on the spot. We service all major brands, including <strong>Samsung, LG, Whirlpool, Frigidaire, General Electric (GE), Maytag, KitchenAid</strong>, and <strong>Amana</strong>. Our technicians also have expertise in high-end brands like <strong>Miele, Bosch</strong>, and <strong>Electrolux</strong>, as well as lesser-known brands such as <strong>Kenmore, Haier, Speed Queen, Hotpoint, Danby, Insignia</strong>, and <strong>Blomberg</strong>. Call us today for professional washer repair in Hollywood!</p> <h3>Dryer Repair Hollywood, CA</h3> <p><strong>Dryer repair in Hollywood</strong> is one of the most frequently requested services in the area. Common issues include <strong>overheating</strong> and dust buildup, which can wear out internal components and lead to breakdowns. As part of every dryer repair, we include a <strong>free professional dryer cleaning</strong> to extend its lifespan and reduce fire risk. All repairs come with a <strong>3-month labor warranty</strong> for added peace of mind.</p> <p>Our skilled technicians handle everything from <strong>heating element malfunctions</strong> and <strong>thermostat issues</strong> to <strong>mechanical problems</strong> and motor assembly repairs. If your dryer isn't drying properly, makes unusual noises, or has completely stopped working, call us for a same-day solution. We service brands such as <strong>Samsung, LG, Whirlpool, Frigidaire</strong>, <strong>General Electric (GE), Maytag, KitchenAid</strong>, and <strong>Amana</strong>, as well as high-end brands like <strong>Miele, Bosch</strong>, and <strong>Electrolux</strong>. We also work with lesser-known brands like <strong>Kenmore, Haier, Jenn-Air, Speed Queen, Hotpoint, Dacor, Fisher & Paykel, Magic Chef</strong>, and more. Contact us today for reliable dryer repair in Hollywood!</p>
-</div>
-<Btn />
-<h2>Fireplace Repair Hollywood CA</h2>
-<p><strong>Fireplace repair in Hollywood, CA</strong> is expertly handled by our skilled technicians. Whether it's detecting and fixing <strong>gas leaks</strong> or servicing <strong>electric fireplaces</strong>, our team ensures your fireplace operates safely and efficiently. Proper ventilation is another key focus during repairs, as we prioritize the health and safety of you and your family. If your <strong>gas, electric, or wood-burning fireplace</strong> is causing problems, don't wait—<strong>call us today</strong> for professional fireplace repair services in Hollywood!</p> <h2><strong>Barbecue Repair Hollywood, CA</strong></h2> <p><strong>Barbecue repair in Hollywood</strong> is one of our areas of expertise! We repair <strong>gas grills, charcoal grills, electric grills</strong>, and <strong>pellet grills</strong>. Our technicians are trained to safely handle <strong>propane or natural gas tanks</strong> as well as high-voltage systems. Whether you're dealing with <strong>ignition problems, burner issues, control panel malfunctions</strong>, or <strong>temperature regulation</strong> concerns, we've got you covered. <strong>Call us today</strong> to schedule a same-day barbecue repair in Hollywood.</p> <p>In addition to barbecue and fireplace repair, we also provide <strong>refrigerator repair, washer repair</strong>, and installation services. Our appliance repair services in Hollywood are prompt, professional, and budget-friendly. With glowing reviews from satisfied customers, you can trust us to keep your appliances running smoothly. Whether you need help troubleshooting an issue or require a full installation, our technicians are here to help. <strong>Contact us today</strong> for high-quality, affordable service in Hollywood!</p>
-
-  <div class="page-container">
-    <div class="header-container">
-      <div class="head-content-h">
-        <h2>Commercial Appliance Repair Hollywood CA</h2>
-      </div>
-  
-      <div class="head-content-f">
-        <img
-          src="/dryer-repair/dryer-repair-4.webp"
-          alt="SAME DAY APPLIANCE REPAIR Hollywood"
-          width="450px"
-          height="450px"
-        />
       </div>
     </div>
-<p><strong>At Same Day Appliance Repair, we provide same-day commercial appliance repair in Hollywood, CA</strong>. Whether you need help with <strong>commercial refrigerators, freezers, ovens, stoves, dishwashers, or washing machines</strong>, our skilled technicians are trained to handle all makes and models. We understand how important it is to keep your business running smoothly, which is why we offer <strong>same-day service</strong> to minimize downtime, save you money, and ensure your business remains fully operational. From premium brands like <strong>Sub-Zero, Viking</strong>, and <strong>Thermador</strong> to trusted names like <strong>Whirlpool, LG</strong>, and <strong>Frigidaire</strong>, we have the expertise to repair your commercial units quickly and efficiently. Count on us for reliable solutions and top-notch service. <strong>Check out our reviews</strong> to see why businesses in Hollywood trust us!</p> <h3>Commercial Refrigerator Repair Hollywood, CA</h3> <p>For <strong>commercial refrigerator repair in Hollywood</strong>, call Same Day Appliance Repair. We specialize in resolving <strong>fridge and ice maker issues, leaks, compressor problems</strong>, and optimizing temperature settings to reduce energy costs. We service brands like <strong>Sub-Zero, True, Turbo Air</strong>, and <strong>Beverage-Air</strong>. Contact us today for prompt and reliable repairs to keep your refrigeration units running smoothly!</p> <h3>Commercial Freezer Repair Hollywood, CA</h3> <p>Our expert technicians provide <strong>commercial freezer repair in Hollywood</strong>, fixing problems like <strong>ice buildup, defrosting issues, and thermostat malfunctions</strong>. We know how vital freezers are for your business, so we prioritize fast and efficient service. We work with brands like <strong>Traulsen, Manitowoc, Hoshizaki</strong>, and <strong>Arctic Air</strong>. Call us today to keep your freezer in perfect working condition!</p> <h3>Commercial Dishwasher Repair Hollywood, CA</h3> <p><strong>Commercial dishwasher repair in Hollywood</strong> is crucial for maintaining cleanliness standards in your business. We repair issues like <strong>improper cleaning, drainage problems, and electrical malfunctions</strong>. Our technicians are experts with brands like <strong>Hobart, Jackson, Miele</strong>, and <strong>CMA Dishmachines</strong>. Contact us today for fast and reliable service!</p> <h3>Commercial Stove Repair Hollywood, CA</h3> <p><strong>Commercial stove repair in Hollywood</strong> ensures your kitchen operates efficiently. Our techs fix problems like <strong>uneven heating, faulty burners</strong>, and <strong>ignition issues</strong>. We work with trusted brands like <strong>Vulcan, Garland, Wolf</strong>, and <strong>Southbend</strong>. Whether you need repairs, replacements, or installations, we've got you covered—call today!</p> <h3>Commercial Dryer Repair Hollywood, CA</h3> <p><strong>Commercial dryer repair in Hollywood</strong> is essential for laundromats and hotels. If your dryer is <strong>overheating, experiencing drum issues</strong>, or having <strong>electrical problems</strong>, our techs can help. We repair brands like <strong>Speed Queen, Dexter, Maytag</strong>, and <strong>Huebsch</strong>, ensuring your dryer runs smoothly. Contact us today!</p> <h3>Commercial Washer Repair Hollywood, CA</h3> <p>If you need <strong>commercial washer repair in Hollywood</strong>, we're here to help. Common issues like <strong>water leaks, spin cycle malfunctions</strong>, and <strong>control panel failures</strong> are no problem for our skilled technicians. We service brands like <strong>Continental Girbau, UniMac, Electrolux</strong>, and <strong>Wascomat</strong>. Schedule your repair today!</p> <h3>Commercial Oven Repair Hollywood, CA</h3> <p><strong>Commercial oven repair in Hollywood</strong> is vital for food service businesses. We address problems like <strong>temperature control issues, heating element failures</strong>, and <strong>uneven cooking</strong>. Our experienced technicians work with brands like <strong>Rational, Blodgett, Bakers Pride</strong>, and <strong>TurboChef</strong>. Get your oven back in action—call now!</p> <h3>Commercial Walk-In Cooler Repair Hollywood, CA</h3> <p><strong>Walk-in cooler repair in Hollywood</strong> is essential for food safety and storage. Our techs handle issues like <strong>temperature fluctuations, compressor malfunctions</strong>, and <strong>door seal problems</strong>. We service brands like <strong>Norlake, Kolpak, Bally</strong>, and <strong>Amerikooler</strong>. Contact us today for expert service!</p> <h3>Commercial Walk-In Freezer Repair Hollywood, CA</h3> <p><strong>Walk-in freezer repair in Hollywood</strong> addresses problems like <strong>ice buildup, cooling issues</strong>, and <strong>defrost malfunctions</strong>. We work with brands like <strong>Master-Bilt, Thermo-Kool</strong>, and <strong>Imperial Brown</strong>. Schedule your repair with us today!</p> <h3>Commercial Ice Machine Repair Hollywood, CA</h3> <p>If you're experiencing <strong>slow ice production, poor ice quality</strong>, or <strong>mechanical failures</strong>, you need <strong>commercial ice machine repair in Hollywood</strong>. We service brands like <strong>Scotsman, Ice-O-Matic, Manitowoc</strong>, and <strong>Hoshizaki</strong>. Call us today to restore your ice machine!</p> <h3>Showcase Refrigerator Repair Hollywood, CA</h3> <p><strong>Showcase refrigerator repair in Hollywood</strong> ensures your display units maintain proper temperature and function. We repair brands like <strong>True, Turbo Air, Beverage-Air</strong>, and <strong>Structural Concepts</strong>. Contact us today for professional repairs!</p> <h3>Bar Refrigerator Repair Hollywood, CA</h3> <p><strong>Bar refrigerator repair in Hollywood</strong> ensures your drinks and ingredients stay cold. We fix cooling issues, leaks, and electrical malfunctions for brands like <strong>Perlick, U-Line, Marvel</strong>, and <strong>Summit</strong>. Call us now for expert service!</p> <h3>Commercial Slushie Machine Repair Hollywood, CA</h3> <p><strong>Commercial slushie machine repair in Hollywood</strong> covers freezing inconsistencies, mechanical issues, and electrical malfunctions. We service brands like <strong>Bunn, Elmeco, Frosty Factory</strong>, and <strong>Carpigiani</strong>. Contact us for fast, efficient repairs!</p> <h3>Commercial Fryer Repair Hollywood, CA</h3> <p><strong>Commercial fryer repair in Hollywood</strong> resolves issues like <strong>temperature control problems, heating element failures</strong>, and <strong>oil leaks</strong>. We repair brands like <strong>Frymaster, Pitco, Vulcan</strong>, and <strong>Henny Penny</strong>. Call us today for quality service!</p> <h3>Commercial Ice Shaver Repair Hollywood, CA</h3> <p><strong>Ice shaver repair in Hollywood</strong> ensures consistent operation for your shaved ice machines. We fix uneven shaving, motor issues, and mechanical problems for brands like <strong>Hatsuyuki, Swan, Zeny</strong>, and <strong>Great Northern</strong>. Contact us today for expert repairs!</p>
-</div>
-<Btn />
-<h2><strong>Wine Cooler Repair Hollywood, CA</strong></h2> <p><strong>Wine cooler repair in Hollywood</strong> ensures your wine collection is stored at the perfect temperature. If you're experiencing <strong>temperature fluctuations, compressor failures</strong>, or a <strong>faulty thermostat</strong>, Same Day Appliance Repair is here to help. Our technicians are experienced with brands like <strong>Vinotemp, EuroCave, Sub-Zero, Kalamera</strong>, and more. We'll keep your wine cooler functioning efficiently and reliably. For fast and professional wine cooler repair in Hollywood, <strong>call us today</strong>.</p> <h2><strong>Wine Cellar Repair Hollywood, CA</strong></h2> <p>Your wine cellar requires precise conditions, and our <strong>wine cellar repair services in Hollywood</strong> are designed to maintain those standards. We address <strong>humidity control issues, cooling problems</strong>, and <strong>electrical malfunctions</strong>. Our technicians have extensive experience with leading brands such as <strong>WhisperKOOL, CellarPro, Wine Guardian</strong>, and <strong>Breezaire</strong>. Contact us for a thorough inspection, diagnosis, and repair to ensure your wine cellar is in optimal condition. <strong>Call us today</strong>—we'll tajsonke care of everything!</p>
+  </section>
+
+  <!-- NEIGHBORHOODS -->
+  <section class="hw-neighborhoods">
+    <div class="container">
+      <h2>All of Hollywood — We Know Every Street</h2>
+      <p class="section-sub">ZIP codes 90028 · 90038 · 90068 · 90029 · 90046</p>
+      <div class="nh-columns">
+        <div class="nh-col">
+          <div class="nh-col__title">Hollywood Hills</div>
+          <div class="nh-list">
+            <div class="nh-item featured">Beachwood Canyon</div>
+            <div class="nh-item featured">Laurel Canyon</div>
+            <div class="nh-item featured">Cahuenga Pass</div>
+            <div class="nh-item">Runyon Canyon area</div>
+            <div class="nh-item">Mulholland Corridor</div>
+            <div class="nh-item">Hollywood Heights</div>
+          </div>
+        </div>
+        <div class="nh-col">
+          <div class="nh-col__title">Hollywood Proper</div>
+          <div class="nh-list">
+            <div class="nh-item">Franklin Village</div>
+            <div class="nh-item">Vine Street Corridor</div>
+            <div class="nh-item">Hollywood Boulevard</div>
+            <div class="nh-item">Cahuenga Blvd area</div>
+            <div class="nh-item">Sunset Strip east end</div>
+            <div class="nh-item">Whitley Heights</div>
+          </div>
+        </div>
+        <div class="nh-col">
+          <div class="nh-col__title">East Hollywood & Adjacent</div>
+          <div class="nh-list">
+            <div class="nh-item">Thai Town</div>
+            <div class="nh-item">Little Armenia</div>
+            <div class="nh-item">East Hollywood (90029)</div>
+            <div class="nh-item">Hancock Park border</div>
+            <div class="nh-item">Fairfax District</div>
+            <div class="nh-item">Silver Lake / Los Feliz</div>
+          </div>
+        </div>
+      </div>
     </div>
-  </Container>
-  <Cta />
- 
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness", 
-      "name": "Same Day Appliance Repair – Hollywood",
-      "image": "https://samedayappliance.repair/images/same-day-appliance-repair-logo.webp",
-      "@id": "https://samedayappliance.repair/hollywood/",
-      "url": "https://samedayappliance.repair/hollywood/",
-      "telephone": "+1-323-870-4790",
-      "email": "support@samedayappliance.repair",
-      "priceRange": "$$",
-      "openingHours": "Mo-Sa 08:00-20:00",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Hollywood",
-        "addressRegion": "CA",
-        "postalCode": "90028",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 34.1015,
-        "longitude": -118.3269
-      },
-      "areaServed": [
-        { "@type": "Place", "name": "Hollywood" },
-        { "@type": "Place", "name": "Beverly Hills" },
-        { "@type": "Place", "name": "West Hollywood" },
-        { "@type": "Place", "name": "Mid-Wilshire" },
-        { "@type": "Place", "name": "Fairfax" },
-        { "@type": "Place", "name": "Hancock Park" }
-      ],
-      "department": {
-        "@type": "LocalBusiness",
-        "name": "Same Day Appliance Repair – West Hollywood",
-        "url": "https://samedayappliance.repair/west-hollywood/",
-        "telephone": "+1-323-870-4790"
-      },
-      "sameAs": [
-        "https://www.facebook.com/samedayappliancerepair",
-        "https://www.yelp.com/biz/same-day-appliance-repair-los-angeles"
-      ],
-      "description": "Same Day Appliance Repair in Hollywood, CA. Fast service for refrigerators, ovens, washers, and more. Licensed techs. Same-day repair."
-    }
-    </script>
-    
+  </section>
+
+  <!-- RECENT REPAIRS -->
+  <section class="hw-recent">
+    <div class="container">
+      <h2>Jobs Our Team Did in Hollywood</h2>
+      <p class="section-sub">Real calls from Hollywood's three markets. Same-day in most cases.</p>
+      <div class="recent-grid">
+
+        <div class="recent-card">
+          <div class="recent-card__header">
+            <span class="recent-badge">Sub-Zero Refrigerator</span>
+            <span class="recent-location">Beachwood Canyon, 90068</span>
+          </div>
+          <div class="recent-card__title">"Running all the time, back panel is hot"</div>
+          <div class="recent-card__desc">
+            Hillside home, Sub-Zero built-in column. The condenser coils were heavily coated —
+            the warm, dry hill air up here collects dust on coils faster than flatland LA.
+            Compressor was running 90% of the time trying to compensate. Our tech did a full
+            coil cleaning, replaced a worn condenser fan motor, and checked the door seals.
+            Advised the homeowner on a 4-month cleaning schedule for this climate. Compressor
+            running time dropped to normal within an hour.
+          </div>
+          <div class="recent-card__result">✓ Same day · Coil cleaning + fan motor · OEM Sub-Zero</div>
+        </div>
+
+        <div class="recent-card">
+          <div class="recent-card__header">
+            <span class="recent-badge">LG Front-Load Washer</span>
+            <span class="recent-location">Franklin Village, 90028</span>
+          </div>
+          <div class="recent-card__title">"Black mold on the door gasket, smells terrible"</div>
+          <div class="recent-card__desc">
+            Ground-floor apartment unit, higher humidity than the surrounding buildings.
+            The rubber door gasket had significant mold growth — common in Hollywood's lower
+            units. Our tech replaced the gasket with an OEM LG part, treated the drum interior,
+            ran a maintenance wash cycle, and showed the tenant the cleaning protocol to
+            prevent recurrence. Also found the drain pump was partially blocked — cleared
+            that too. Machine runs clean, no smell.
+          </div>
+          <div class="recent-card__result">✓ Same day · OEM gasket + drain pump cleared</div>
+        </div>
+
+        <div class="recent-card">
+          <div class="recent-card__header">
+            <span class="recent-badge">Wolf Dual-Fuel Range</span>
+            <span class="recent-location">Laurel Canyon, 90046</span>
+          </div>
+          <div class="recent-card__title">"Oven takes forever to preheat, two burners dead"</div>
+          <div class="recent-card__desc">
+            Wolf 36-inch dual-fuel — oven igniter drawing weak current, two Star burner
+            igniter modules failed. Replaced all three igniters with OEM Wolf parts,
+            calibrated the oven temperature (it was running 35°F low — the homeowner
+            had been compensating on every recipe for months without realizing why).
+            Tested all four burners and both ovens confirmed. The canyon drive access
+            was tight but manageable.
+          </div>
+          <div class="recent-card__result">✓ Same day · OEM Wolf parts · Oven recalibrated</div>
+        </div>
+
+        <div class="recent-card">
+          <div class="recent-card__header">
+            <span class="recent-badge">Commercial Oven</span>
+            <span class="recent-location">East Hollywood / Thai Town, 90029</span>
+          </div>
+          <div class="recent-card__title">"Conveyor oven down, Friday dinner service starting in 3 hours"</div>
+          <div class="recent-card__desc">
+            Restaurant call — Thai Town corridor. Owner called at 2pm. Our tech was there
+            by 3:30pm. Faulty control board relay causing inconsistent heat. We carried
+            a compatible relay on the truck, bypassed and replaced it, tested the conveyor
+            at full service temperature. Restaurant opened on time. We know what a
+            Friday dinner service means — those calls go to the top of the queue.
+          </div>
+          <div class="recent-card__result">✓ 90 min response · Restaurant opened on time</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="hw-why">
+    <div class="container">
+      <h2>Why Hollywood Calls Us Back</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">🗺️</div>
+          <div class="why-title">We Know Hollywood's Three Markets</div>
+          <div class="why-text">Hills luxury, flatland apartments, East Hollywood commercial — we work in all three constantly. We don't show up guessing what we'll find. We come with the right parts for the right neighborhood.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">☀️</div>
+          <div class="why-title">We Factor in the Climate</div>
+          <div class="why-text">Hollywood Hills is one of the most demanding environments for refrigerator cooling systems in LA. Our technicians check condenser coil condition on every Hills refrigerator call — it's that common a factor up here.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🍽️</div>
+          <div class="why-title">Commercial Calls Get Priority</div>
+          <div class="why-text">East Hollywood restaurant kitchen down on a Friday? That's not a scheduled appointment — that's a same-day emergency. We understand what a service means for a restaurant and we respond accordingly.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">✅</div>
+          <div class="why-title">90-Day Warranty on Everything</div>
+          <div class="why-text">Every repair carries a 90-day warranty on parts and labor. OEM parts only — never aftermarket. California licensed, BBB A+ rated. $89 diagnostic fee waived when you proceed with the repair.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="hw-reviews">
+    <div class="container">
+      <h2>What Hollywood Customers Are Saying</h2>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"Our Sub-Zero up in Beachwood Canyon was running constantly. Technician came same day, diagnosed the coil buildup from the hill climate immediately, cleaned everything, replaced the fan motor, and explained why this happens faster up here. Exactly the kind of knowledgeable service I needed."</div>
+          <div class="review-author">— James L., Beachwood Canyon, Hollywood Hills</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"Wolf range in Laurel Canyon — oven not heating properly, two dead burners. Tech showed up with all the OEM Wolf parts, replaced the igniters, recalibrated the oven. Turns out it had been running 35 degrees low for months. Now everything cooks right for the first time in a long time."</div>
+          <div class="review-author">— Maria C., Laurel Canyon, Hollywood Hills</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"Called about my commercial oven going down on a Friday before dinner service. They were there in 90 minutes, had the part, fixed it on the spot. We opened on time. I've used a lot of repair companies over the years — nobody responds to an emergency like Same Day Appliance Repair."</div>
+          <div class="review-author">— Tom K., Restaurant owner, East Hollywood</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="hw-pricing">
+    <div class="container">
+      <h2 class="section-title">Appliance Repair Costs in Hollywood</h2>
+      <p class="section-sub">Written estimate before we start. Residential $89 · Commercial $120 — both waived with repair.</p>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-card__appliance">Refrigerator</div>
+          <div class="pricing-card__range">$200 – $450</div>
+          <div class="pricing-card__note">Fan motor, coil cleaning, ice maker, compressor relay</div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-card__appliance">Washer</div>
+          <div class="pricing-card__range">$150 – $350</div>
+          <div class="pricing-card__note">Drain pump, gasket replacement, shock absorbers</div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-card__appliance">Dryer</div>
+          <div class="pricing-card__range">$150 – $320</div>
+          <div class="pricing-card__note">Heating element, thermal fuse, drum roller, vent cleaning</div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-card__appliance">Oven / Range</div>
+          <div class="pricing-card__range">$175 – $450</div>
+          <div class="pricing-card__note">Igniter, gas valve, calibration — Wolf/Viking cost more</div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-card__appliance">Commercial Appliance</div>
+          <div class="pricing-card__range">$200 – $600+</div>
+          <div class="pricing-card__note">Commercial diagnostic $120 · Same-day for emergencies</div>
+        </div>
+        <div class="pricing-card featured">
+          <div class="pricing-card__appliance">Diagnostic Fee</div>
+          <div class="pricing-card__range">$89 / $120</div>
+          <div class="pricing-card__note">Residential / Commercial · Waived with repair</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="hw-faq">
+    <div class="container">
+      <h2>Questions Hollywood Customers Ask</h2>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary class="faq-question">Do you offer same-day appliance repair in Hollywood, CA?</summary>
+          <div class="faq-answer">Yes. Our technicians cover all of Hollywood — Hollywood Hills, East Hollywood, Beachwood Canyon, Laurel Canyon, Franklin Village, Thai Town, Little Armenia, Hancock Park border area, and the Sunset Strip. Call before noon and we're typically there the same afternoon. We serve ZIP codes 90028, 90038, 90068, 90029, and 90046.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Do you repair Sub-Zero and Wolf appliances in Hollywood Hills?</summary>
+          <div class="faq-answer">Yes. Hollywood Hills homes — especially up in Beachwood Canyon, Laurel Canyon, and the hillside streets off Mulholland — often have Sub-Zero, Wolf, Viking, and Thermador appliances. Our technicians are trained on these brands and carry OEM parts for them on every service vehicle. Hollywood's warm climate also means we check cooling systems more thoroughly on every refrigerator call.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Do you service commercial appliances in Hollywood?</summary>
+          <div class="faq-answer">Yes. Hollywood Boulevard and East Hollywood have a dense restaurant corridor — Thai Town, Little Armenia, and the entertainment venue kitchens near Vine Street. We repair commercial refrigerators, commercial ovens, walk-in coolers, and restaurant equipment in this area. Commercial diagnostic fee is $120, waived with repair.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Does Hollywood's warm climate affect appliances?</summary>
+          <div class="faq-answer">It does. Hollywood Hills in particular — the warm, dry climate puts extra strain on refrigerator cooling systems and condenser coils. We also see more humidity-related issues in ground-floor and basement laundry areas, including mold growth in washer door gaskets. Our technicians check for these issues proactively on every Hollywood call.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">What is your diagnostic fee in Hollywood?</summary>
+          <div class="faq-answer">Our diagnostic fee is $89 for residential repairs, waived when you proceed with the repair. Commercial appliance diagnostic is $120, also waived with repair. We give you a complete written estimate before any work begins.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">What warranty do you offer on appliance repairs in Hollywood?</summary>
+          <div class="faq-answer">All repairs come with a 90-day warranty on parts and labor. If the same issue returns within 90 days, we come back and fix it at no charge. We use genuine OEM parts only.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Do you also serve Silver Lake, Los Feliz, and East Hollywood?</summary>
+          <div class="faq-answer">Yes. Our Hollywood service area extends to Silver Lake, Los Feliz, East Hollywood, Hancock Park, Koreatown, Fairfax District, and West Hollywood. If you're in the 90028, 90038, 90029, or 90046 ZIP codes, we're your closest team.</div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NEARBY -->
+  <section class="hw-nearby">
+    <div class="container">
+      <h2>Also Serving Nearby Areas</h2>
+      <div class="nearby-grid">
+        <a href="/west-hollywood/" class="nearby-link">West Hollywood</a>
+        <a href="/silver-lake/" class="nearby-link">Silver Lake</a>
+        <a href="/los-feliz/" class="nearby-link">Los Feliz</a>
+        <a href="/beverly-hills/" class="nearby-link">Beverly Hills</a>
+        <a href="/glendale/" class="nearby-link">Glendale</a>
+        <a href="/burbank/" class="nearby-link">Burbank</a>
+        <a href="/los-angeles/" class="nearby-link">Los Angeles</a>
+        <a href="/pasadena/" class="nearby-link">Pasadena</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="hw-bottom-cta">
+    <div class="container">
+      <div class="bottom-cta__inner">
+        <div class="bottom-cta__text">
+          <h2>Appliance broken in Hollywood? We're nearby.</h2>
+          <p>Hills, flatland, or East Hollywood commercial — same team, same day. $89 diagnostic waived with repair. 90-day warranty.</p>
+        </div>
+        <div class="bottom-cta__actions">
+          <a href={`tel:${city.phoneRaw}`} class="btn-primary btn-large">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.29h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            {city.phone}
+          </a>
+          <a href="/book/" class="btn-secondary btn-large">Book Online</a>
+        </div>
+        <div class="bottom-cta__nap">
+          <span>Same Day Appliance Repair — Hollywood, CA</span>
+          <span>·</span>
+          <span>90028 · 90038 · 90068 · 90029</span>
+          <span>·</span>
+          <a href={`mailto:${city.email}`}>{city.email}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  :root {
+    --hw-red: #C8102E;
+    --hw-black: #0a0a0a;
+    --hw-gray: #f5f5f5;
+    --hw-border: #e2e2e2;
+    --hw-text: #1a1a1a;
+    --hw-muted: #6b6b6b;
+  }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  /* HERO */
+  .hw-hero { background: var(--hw-black); color: white; padding: 80px 0 60px; }
+  .hw-hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .hw-hero__eyebrow { font-size: 13px; font-weight: 500; color: var(--hw-red); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
+  .hw-hero__h1 { font-size: clamp(36px, 5vw, 52px); font-weight: 700; line-height: 1.1; margin-bottom: 20px; color: white; }
+  .hw-hero__accent { color: var(--hw-red); }
+  .hw-hero__sub { font-size: 17px; line-height: 1.6; color: rgba(255,255,255,0.75); margin-bottom: 32px; max-width: 520px; }
+  .hw-hero__ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+  .hw-hero__rating { display: flex; align-items: center; gap: 10px; }
+  .stars { color: #FFD700; font-size: 18px; letter-spacing: 2px; }
+  .rating-text { font-size: 14px; color: rgba(255,255,255,0.7); }
+  .hw-hero__img-wrap img { width: 100%; height: auto; border-radius: 12px; object-fit: cover; }
+
+  /* BUTTONS */
+  .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--hw-red); color: white; padding: 14px 28px; border-radius: 8px; font-weight: 600; font-size: 16px; text-decoration: none; transition: background 0.2s; }
+  .btn-primary:hover { background: #a50e25; }
+  .btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: white; padding: 14px 28px; border-radius: 8px; font-weight: 600; font-size: 16px; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.35); transition: border-color 0.2s; }
+  .btn-secondary:hover { border-color: white; }
+  .btn-large { padding: 16px 36px; font-size: 17px; }
+  .hw-bottom-cta .btn-secondary { color: var(--hw-text); border-color: var(--hw-border); }
+  .hw-bottom-cta .btn-secondary:hover { background: var(--hw-gray); }
+
+  /* TRUST BAR */
+  .trust-bar { background: var(--hw-red); padding: 16px 0; }
+  .trust-bar__inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .trust-item { display: flex; align-items: center; gap: 8px; color: white; font-size: 14px; font-weight: 500; }
+
+  /* INTRO */
+  .hw-intro { padding: 72px 0; background: white; }
+  .hw-intro__inner { display: grid; grid-template-columns: 1fr 340px; gap: 60px; align-items: start; }
+  .hw-intro__text h2 { font-size: 28px; font-weight: 700; color: var(--hw-black); margin-bottom: 20px; }
+  .hw-intro__text p { font-size: 16px; line-height: 1.7; color: var(--hw-text); margin-bottom: 16px; }
+  .hw-tip { display: flex; gap: 14px; background: #fff8e7; border: 1px solid #f0d070; border-radius: 10px; padding: 16px 20px; margin-top: 24px; }
+  .hw-tip__icon { font-size: 20px; flex-shrink: 0; }
+  .hw-tip__text { font-size: 14px; color: var(--hw-text); line-height: 1.6; }
+  .cta-box { background: var(--hw-black); color: white; border-radius: 12px; padding: 32px; text-align: center; position: sticky; top: 80px; }
+  .cta-box__title { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+  .cta-box__sub { font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 24px; }
+  .cta-box__phone { display: block; font-size: 24px; font-weight: 700; color: var(--hw-red); text-decoration: none; margin-bottom: 12px; }
+  .cta-box__book { display: block; font-size: 15px; color: white; text-decoration: none; padding: 12px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; margin-bottom: 16px; }
+  .cta-box__book:hover { background: rgba(255,255,255,0.08); }
+  .cta-box__hours { font-size: 12px; color: rgba(255,255,255,0.5); }
+
+  /* SECTION */
+  .section-title { font-size: 30px; font-weight: 700; color: var(--hw-black); margin-bottom: 8px; text-align: center; }
+  .section-sub { font-size: 16px; color: var(--hw-muted); text-align: center; margin-bottom: 40px; }
+
+  /* SERVICES */
+  .hw-services { padding: 72px 0; background: var(--hw-gray); }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .service-card { background: white; border: 1px solid var(--hw-border); border-radius: 12px; padding: 24px 20px; text-decoration: none; color: var(--hw-text); transition: box-shadow 0.2s, transform 0.2s; display: block; }
+  .service-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.1); transform: translateY(-2px); }
+  .service-card__icon { font-size: 28px; margin-bottom: 10px; }
+  .service-card__name { font-size: 16px; font-weight: 600; color: var(--hw-black); margin-bottom: 8px; }
+  .service-card__issues { font-size: 13px; color: var(--hw-muted); line-height: 1.5; margin-bottom: 8px; }
+  .service-card__brands { font-size: 12px; color: var(--hw-muted); margin-bottom: 12px; }
+  .service-card__cta { font-size: 13px; color: var(--hw-red); font-weight: 500; }
+
+  /* THREE SEGMENTS */
+  .hw-segments { padding: 72px 0; background: white; }
+  .segments-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .segment-card { background: var(--hw-gray); border-radius: 14px; padding: 28px; border: 1px solid var(--hw-border); }
+  .segment-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+  .segment-icon { font-size: 28px; }
+  .segment-name { font-size: 18px; font-weight: 700; color: var(--hw-black); }
+  .segment-zip { font-size: 12px; color: var(--hw-muted); background: white; padding: 3px 8px; border-radius: 10px; border: 1px solid var(--hw-border); }
+  .segment-desc { font-size: 14px; color: var(--hw-text); line-height: 1.6; margin-bottom: 16px; }
+  .segment-brands { font-size: 12px; color: var(--hw-red); font-weight: 500; }
+
+  /* NEIGHBORHOODS */
+  .hw-neighborhoods { padding: 72px 0; background: var(--hw-gray); }
+  .hw-neighborhoods h2 { font-size: 30px; font-weight: 700; color: var(--hw-black); margin-bottom: 8px; text-align: center; }
+  .nh-columns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .nh-col__title { font-size: 13px; font-weight: 600; color: var(--hw-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 16px; }
+  .nh-list { display: flex; flex-direction: column; gap: 8px; }
+  .nh-item { font-size: 14px; color: var(--hw-text); padding: 8px 12px; background: white; border-radius: 6px; border: 1px solid var(--hw-border); }
+  .nh-item.featured { border-color: var(--hw-red); color: var(--hw-black); font-weight: 500; }
+
+  /* RECENT */
+  .hw-recent { padding: 72px 0; background: white; }
+  .hw-recent h2 { font-size: 30px; font-weight: 700; color: var(--hw-black); margin-bottom: 8px; text-align: center; }
+  .recent-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .recent-card { background: var(--hw-gray); border: 1px solid var(--hw-border); border-radius: 12px; padding: 24px; }
+  .recent-card__header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 6px; }
+  .recent-badge { background: var(--hw-red); color: white; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; }
+  .recent-location { font-size: 12px; color: var(--hw-muted); }
+  .recent-card__title { font-size: 15px; font-weight: 600; color: var(--hw-black); margin-bottom: 10px; font-style: italic; }
+  .recent-card__desc { font-size: 14px; color: var(--hw-text); line-height: 1.6; margin-bottom: 12px; }
+  .recent-card__result { font-size: 13px; color: #2a7a2a; font-weight: 500; }
+
+  /* WHY */
+  .hw-why { padding: 72px 0; background: var(--hw-gray); }
+  .hw-why h2 { font-size: 30px; font-weight: 700; color: var(--hw-black); margin-bottom: 40px; text-align: center; }
+  .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .why-card { background: white; border-radius: 12px; padding: 28px 24px; border: 1px solid var(--hw-border); }
+  .why-icon { font-size: 28px; margin-bottom: 14px; }
+  .why-title { font-size: 16px; font-weight: 600; color: var(--hw-black); margin-bottom: 10px; }
+  .why-text { font-size: 14px; color: var(--hw-muted); line-height: 1.6; }
+
+  /* REVIEWS */
+  .hw-reviews { padding: 72px 0; background: white; }
+  .hw-reviews h2 { font-size: 30px; font-weight: 700; color: var(--hw-black); margin-bottom: 40px; text-align: center; }
+  .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .review-card { background: var(--hw-gray); border: 1px solid var(--hw-border); border-radius: 12px; padding: 28px; }
+  .review-stars { color: #FFD700; font-size: 18px; margin-bottom: 12px; }
+  .review-text { font-size: 14px; color: var(--hw-text); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+  .review-author { font-size: 13px; color: var(--hw-muted); font-weight: 500; }
+
+  /* PRICING */
+  .hw-pricing { padding: 72px 0; background: var(--hw-gray); }
+  .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 20px; }
+  .pricing-card { background: white; border-radius: 10px; padding: 20px 24px; border: 1px solid var(--hw-border); }
+  .pricing-card.featured { background: #fff5f7; border-color: var(--hw-red); }
+  .pricing-card__appliance { font-size: 14px; color: var(--hw-muted); margin-bottom: 6px; }
+  .pricing-card__range { font-size: 22px; font-weight: 700; color: var(--hw-black); margin-bottom: 6px; }
+  .pricing-card.featured .pricing-card__range { color: var(--hw-red); }
+  .pricing-card__note { font-size: 13px; color: var(--hw-muted); }
+
+  /* FAQ */
+  .hw-faq { padding: 72px 0; background: white; }
+  .hw-faq h2 { font-size: 30px; font-weight: 700; color: var(--hw-black); margin-bottom: 40px; text-align: center; }
+  .faq-list { max-width: 800px; margin: 0 auto; }
+  .faq-item { border: 1px solid var(--hw-border); border-radius: 8px; background: var(--hw-gray); margin-bottom: 10px; overflow: hidden; }
+  .faq-question { padding: 18px 24px; font-size: 16px; font-weight: 600; color: var(--hw-black); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-question::after { content: '+'; font-size: 22px; color: var(--hw-red); flex-shrink: 0; margin-left: 16px; }
+  details[open] .faq-question::after { content: '−'; }
+  .faq-answer { padding: 0 24px 20px; font-size: 15px; line-height: 1.7; color: var(--hw-text); background: white; }
+
+  /* NEARBY */
+  .hw-nearby { padding: 48px 0; background: var(--hw-gray); border-top: 1px solid var(--hw-border); }
+  .hw-nearby h2 { font-size: 20px; font-weight: 600; color: var(--hw-black); margin-bottom: 20px; text-align: center; }
+  .nearby-grid { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .nearby-link { padding: 8px 20px; border: 1px solid var(--hw-border); border-radius: 20px; font-size: 14px; color: var(--hw-text); text-decoration: none; transition: border-color 0.2s, color 0.2s; background: white; }
+  .nearby-link:hover { border-color: var(--hw-red); color: var(--hw-red); }
+
+  /* BOTTOM CTA */
+  .hw-bottom-cta { padding: 72px 0; background: var(--hw-black); color: white; }
+  .bottom-cta__inner { text-align: center; }
+  .bottom-cta__text h2 { font-size: 34px; font-weight: 700; color: white; margin-bottom: 12px; }
+  .bottom-cta__text p { font-size: 16px; color: rgba(255,255,255,0.7); margin-bottom: 32px; }
+  .bottom-cta__actions { display: flex; gap: 12px; justify-content: center; margin-bottom: 24px; flex-wrap: wrap; }
+  .bottom-cta__nap { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; font-size: 13px; color: rgba(255,255,255,0.4); }
+  .bottom-cta__nap a { color: rgba(255,255,255,0.4); text-decoration: none; }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+    .reviews-grid { grid-template-columns: 1fr 1fr; }
+    .segments-grid { grid-template-columns: 1fr; }
+    .nh-columns { grid-template-columns: 1fr 1fr; }
+    .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .hw-hero__inner { grid-template-columns: 1fr; }
+    .hw-hero__img-wrap { display: none; }
+    .hw-intro__inner { grid-template-columns: 1fr; }
+    .recent-grid { grid-template-columns: 1fr; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .nh-columns { grid-template-columns: 1fr; }
+    .trust-bar__inner { justify-content: center; }
+  }
+  @media (max-width: 480px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .hw-hero { padding: 48px 0 40px; }
+    .bottom-cta__text h2 { font-size: 26px; }
+  }
+</style>
