@@ -1,0 +1,444 @@
+---
+// src/pages/moorpark.astro
+// SDAR — samedayappliance.repair
+// Moorpark, CA · 93021
+// Филиал: Thousand Oaks · (424) 208-0228
+// Апрель 2026
+
+import Layout from '../layouts/Layout.astro';
+import CTA from '../components/CTA.astro';
+
+const city = "Moorpark";
+const citySlug = "moorpark";
+const phone = "(424) 208-0228";
+const phoneRaw = "+14242080228";
+const email = "thousandoaks@samedayappliance.repair";
+const branch = "Thousand Oaks";
+
+const metaTitle = "Appliance Repair Moorpark CA | Same Day Service | (424) 208-0228";
+const metaDesc = "Same-day appliance repair in Moorpark, CA. Country Club Estates, Campus Park, Spring Road area. All brands. OEM parts, 90-day warranty. $89 diagnostic — waived with repair.";
+
+const neighborhoods = [
+  { name: "Country Club Estates", zip: "93021" },
+  { name: "Campus Park", zip: "93021" },
+  { name: "Moorpark Highlands", zip: "93021" },
+  { name: "Spring Road area", zip: "93021" },
+  { name: "Mountain Meadows", zip: "93021" },
+  { name: "Peach Hill", zip: "93021" },
+  { name: "Tierra Rejada Valley", zip: "93021" },
+  { name: "Campus Canyon", zip: "93021" },
+  { name: "Buttercreek", zip: "93021" },
+  { name: "Montecito at Moorpark", zip: "93021" },
+];
+
+const services = [
+  { name: "Refrigerator Repair", slug: "refrigerator-repair", icon: "&#10052;" },
+  { name: "Washer Repair", slug: "washer-repair", icon: "&#129527;" },
+  { name: "Dryer Repair", slug: "dryer-repair", icon: "&#128168;" },
+  { name: "Dishwasher Repair", slug: "dishwasher-repair", icon: "&#127869;" },
+  { name: "Oven &amp; Range Repair", slug: "oven-repair", icon: "&#128293;" },
+  { name: "Cooktop Repair", slug: "cooktop-repair", icon: "&#9832;" },
+  { name: "Wine Cooler Repair", slug: "wine-cooler-repair", icon: "&#127863;" },
+  { name: "Ice Maker Repair", slug: "ice-maker-repair", icon: "&#129482;" },
+];
+
+const recentRepairs = [
+  {
+    title: "GE refrigerator — running warm, compressor overworking",
+    neighborhood: "Country Club Estates",
+    detail: "Country Club Estates home backing up to agricultural land — GE Profile French door refrigerator running but not reaching temperature, compressor cycling constantly. Pulled the unit out and found the condenser coils packed with a dense layer of fine agricultural dust mixed with pet hair. The Tierra Rejada Valley generates significant airborne particulate from the surrounding farms and orchards, and homes near the agricultural boundary accumulate this faster than typical suburban properties. Thorough coil cleaning, tested the condenser fan motor (running but sluggish — replaced with OEM GE part as a preventive measure), verified temperature drop to 37 degrees within two hours. Placed the homeowner on a 6-month coil cleaning reminder — standard for properties adjacent to agricultural land in Moorpark.",
+    part: "GE OEM condenser fan motor + coil cleaning",
+    time: "2 hours"
+  },
+  {
+    title: "Samsung washer — ND error code, won't drain",
+    neighborhood: "Campus Park",
+    detail: "Campus Park home — Samsung front-load washer throwing ND (no drain) error, water sitting in the drum after every cycle. Pulled the drain pump filter and found it partially blocked with debris, but the real issue was the drain pump motor itself — impeller was cracked and the motor was drawing excessive current. The pump was still running but couldn't generate enough suction to evacuate the drum. Replaced the drain pump assembly with an OEM Samsung part, cleared the drain hose of residual buildup, and ran two full cycles to confirm proper drainage. This is one of the most common Samsung front-load failures we see — the impeller material doesn't hold up past 5-6 years of regular use.",
+    part: "Samsung OEM drain pump assembly",
+    time: "1.5 hours"
+  },
+  {
+    title: "Bosch dishwasher — E09 error, not heating water",
+    neighborhood: "Moorpark Highlands",
+    detail: "Moorpark Highlands home — Bosch 800 series dishwasher displaying E09 error code, dishes coming out cold and not clean. E09 on a Bosch indicates a heating element failure. Tested the flow-through heater and confirmed it was open — no continuity. The heating element in Bosch dishwashers is integrated into the circulation pump assembly on this model, so the entire pump/heater unit needed replacement. Additionally, found significant hard water scale buildup on the heating element housing — Calleguas Municipal Water District serves Moorpark and the mineral content contributes to accelerated scale formation on heating elements. Replaced the circulation pump/heater assembly with an OEM Bosch part, ran a diagnostic cycle to verify heating to proper temperature. Recommended monthly citric acid rinse cycles to manage scale buildup.",
+    part: "Bosch OEM circulation pump/heater assembly",
+    time: "2.5 hours"
+  },
+  {
+    title: "Whirlpool dryer — no heat, grinding noise at startup",
+    neighborhood: "Spring Road area",
+    detail: "Spring Road area home — Whirlpool gas dryer producing no heat and making a grinding noise during the first few minutes of each cycle. Two separate issues: the gas valve solenoid coils had failed (common on Whirlpool gas dryers after 5-7 years — the coils weaken and can't hold the valve open consistently), and the rear drum bearing had worn through its support housing, causing metal-on-metal contact at startup before the drum reached full speed. Replaced both gas valve solenoid coils and the rear drum bearing kit with OEM Whirlpool parts. The bearing replacement requires removing the drum entirely — a 90-minute job on this model. Tested through three full heat cycles. Also inspected the dryer vent run — found it was within acceptable length but recommended cleaning given the lint accumulation.",
+    part: "Whirlpool OEM gas valve solenoid coils + rear drum bearing kit",
+    time: "2.5 hours"
+  }
+];
+
+const faqs = [
+  {
+    q: "Do you offer same-day appliance repair in Moorpark?",
+    a: "Yes. Moorpark is part of our Thousand Oaks branch territory. Our technicians cover all of 93021 daily — Country Club Estates, Campus Park, Moorpark Highlands, Spring Road, Mountain Meadows, and all neighborhoods. Call before noon for same-day afternoon service."
+  },
+  {
+    q: "Does the agricultural dust in Moorpark affect appliances?",
+    a: "Yes — Moorpark sits in the Tierra Rejada Valley surrounded by active agricultural land, and the fine particulate from farms, orchards, and open fields gets drawn into appliance condenser compartments. Refrigerators in homes near the agricultural boundary need condenser coil cleaning more frequently than typical suburban homes — every 6 months rather than annually. We check for this on every Moorpark refrigerator call."
+  },
+  {
+    q: "Does hard water in Moorpark cause appliance problems?",
+    a: "Yes. Calleguas Municipal Water District serves Moorpark, and the mineral content is high enough to cause real issues. We see scaled-up dishwasher heating elements, calcified washer inlet valves, and clogged ice maker lines regularly in 93021. Homes with water softeners have fewer issues, but appliances connected upstream of the softener are still exposed."
+  },
+  {
+    q: "What appliance brands do you repair in Moorpark?",
+    a: "All brands — GE, Samsung, LG, Whirlpool, KitchenAid, Bosch, Maytag, Frigidaire, Sub-Zero, Wolf, Thermador, and more. Moorpark has a mix of newer construction with mid-range appliances and established neighborhoods with upgraded kitchens. We service all of it with OEM parts."
+  },
+  {
+    q: "What is your diagnostic fee in Moorpark?",
+    a: "Our diagnostic fee is $89. It covers the trip, a complete inspection, and a written estimate. If you approve the repair, the $89 is credited toward your total. No hidden fees, no fuel surcharge."
+  },
+  {
+    q: "Do you service the newer developments in Moorpark?",
+    a: "Yes. Mountain Meadows, Montecito at Moorpark, Buttercreek, and all newer developments are in our service area. These homes typically have Samsung, LG, or Whirlpool builder-grade appliances — we carry OEM parts for all of these brands."
+  },
+  {
+    q: "Do you also serve Thousand Oaks, Simi Valley, and Camarillo?",
+    a: "Yes. Our Thousand Oaks branch covers Moorpark, Simi Valley, Camarillo, Thousand Oaks, Agoura Hills, Newbury Park, and all of Ventura County's eastern corridor."
+  }
+];
+
+const nearbyAreas = [
+  { name: "Thousand Oaks", slug: "thousand-oaks" },
+  { name: "Simi Valley", slug: "simi-valley" },
+  { name: "Camarillo", slug: "camarillo" },
+  { name: "Agoura Hills", slug: "agoura-hills" },
+  { name: "Newbury Park", slug: "newbury-park" },
+  { name: "Ventura", slug: "ventura" },
+];
+
+const schemaJSON = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HomeAndConstructionBusiness",
+      "name": "Same Day Appliance Repair — Moorpark",
+      "telephone": phoneRaw,
+      "email": email,
+      "url": "https://samedayappliance.repair/moorpark/",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "100 E Thousand Oaks Blvd Suite 200",
+        "addressLocality": "Thousand Oaks",
+        "addressRegion": "CA",
+        "postalCode": "91360",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Moorpark" },
+        { "@type": "Place", "name": "Tierra Rejada Valley" },
+        { "@type": "Place", "name": "Country Club Estates" }
+      ],
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "21:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "19:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "17:00" }
+      ],
+      "priceRange": "$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "41",
+        "bestRating": "5"
+      },
+      "license": "CA CSLB #1138898"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a }
+      }))
+    }
+  ]
+});
+---
+
+<Layout title={metaTitle} description={metaDesc}>
+
+  <script type="application/ld+json" set:html={schemaJSON}></script>
+
+  <!-- HERO -->
+  <section class="city-hero">
+    <div class="city-hero-inner">
+      <div class="city-hero-text">
+        <div class="city-eyebrow">Moorpark, CA &middot; Ventura County &middot; 93021 &middot; Tierra Rejada Valley</div>
+        <h1>Appliance Repair in Moorpark, CA</h1>
+        <p class="city-hero-sub">Same-day service for GE, Samsung, Whirlpool, Bosch, and all major brands. Agricultural dust and Calleguas hard water create real maintenance challenges here &mdash; we know the area.</p>
+        <div class="city-hero-ctas">
+          <a href={`tel:${phoneRaw}`} class="btn-primary">Call {phone}</a>
+          <a href="/book/" class="btn-secondary">Book Online</a>
+        </div>
+        <div class="city-trust-row">
+          <span>&#9733; 4.9 Google Rating</span>
+          <span>&#10003; Licensed &amp; Insured</span>
+          <span>&#10003; CA CSLB #1138898</span>
+        </div>
+      </div>
+      <div class="city-hero-img">
+        <img
+          src="/images/areas/moorpark/appliance-repair-moorpark-ca.webp"
+          alt="Appliance repair technician in Moorpark CA"
+          width="560" height="420"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <section class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item"><span class="trust-icon">&#9889;</span><span>Same-Day Service</span></div>
+      <div class="trust-item"><span class="trust-icon">&#128295;</span><span>OEM Parts</span></div>
+      <div class="trust-item"><span class="trust-icon">&#128737;</span><span>90-Day Warranty</span></div>
+      <div class="trust-item"><span class="trust-icon">&#9989;</span><span>Licensed &amp; Insured</span></div>
+      <div class="trust-item"><span class="trust-icon">&#127941;</span><span>BBB Accredited</span></div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="city-intro">
+    <div class="city-intro-inner">
+      <div class="city-intro-content">
+        <h2>Appliance Repair in Moorpark &mdash; What the Valley Does to Your Appliances</h2>
+
+        <p>Moorpark sits in the Tierra Rejada Valley, surrounded by active agricultural land, horse properties, and open fields. That geography creates two maintenance realities that most appliance repair companies don't account for: agricultural dust accumulation and Calleguas hard water.</p>
+
+        <p>The fine particulate from surrounding farms and orchards gets drawn into condenser compartments on refrigerators, dryer vent systems, and range hood filters. Homes on the agricultural boundary &mdash; Country Club Estates, parts of Spring Road, properties along Tierra Rejada Road &mdash; accumulate this material significantly faster than homes in the more suburban interior neighborhoods like Campus Park or Mountain Meadows. We see packed condenser coils in Moorpark that would take 18 months to reach the same state in a typical Thousand Oaks home. This particulate forces compressors to overwork, shortens component life, and drives up electricity costs.</p>
+
+        <p>The water quality compounds the issue. Calleguas Municipal Water District serves Moorpark, and the mineral content is high enough to calcify water inlet valves, scale up dishwasher heating elements, and restrict ice maker water lines within a few years. We check for hard water damage on every relevant call in 93021.</p>
+
+        <p>Diagnostic fee is $89 &mdash; credited if you repair. Call <a href={`tel:${phoneRaw}`}>{phone}</a> and we give you a real arrival window.</p>
+      </div>
+      <aside class="city-sidebar">
+        <div class="city-sidebar-inner">
+          <p class="sidebar-city-label">Moorpark Service</p>
+          <a href={`tel:${phoneRaw}`} class="btn-primary-lg">{phone}</a>
+          <p class="sidebar-hours">Mon&ndash;Fri 7am&ndash;9pm &middot; Sat 8am&ndash;7pm &middot; Sun 9am&ndash;5pm</p>
+          <a href="/book/" class="btn-secondary-sm">Book Online</a>
+          <div class="sidebar-guarantee">
+            <strong>$89 Diagnostic</strong>
+            <span>&mdash; credited if you repair</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="city-services">
+    <div class="city-services-inner">
+      <h2>Appliance Repair Services in Moorpark</h2>
+      <div class="services-grid">
+        {services.map(s => (
+          <a href={`/${citySlug}/${s.slug}/`} class="service-card">
+            <span class="service-icon" set:html={s.icon}></span>
+            <span class="service-name" set:html={s.name}></span>
+            <span class="service-cta">Moorpark &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTEXT BLOCK -->
+  <section class="city-context">
+    <div class="city-context-inner">
+      <div class="section-number">01</div>
+      <div class="city-context-content">
+        <h2>Tierra Rejada Valley Dust &amp; Calleguas Hard Water &mdash; The Two Enemies</h2>
+
+        <p>Nobody in the appliance repair industry talks about what agricultural proximity does to household appliances. In Moorpark, we deal with the consequences on nearly every call.</p>
+
+        <p>The Tierra Rejada Valley is one of the most actively farmed areas in Ventura County. The fine agricultural dust &mdash; a mix of soil particulate, pollen, and organic matter from orchards and fields &mdash; doesn't stop at property lines. It gets pulled into refrigerator condenser compartments through the intake vents, accumulates in dryer lint paths beyond what the lint trap catches, and coats range hood filters. In homes backing up to agricultural land, we find condenser coils that are completely packed within 4&ndash;6 months of the last cleaning. In a typical suburban home, that same level of accumulation might take 12&ndash;18 months.</p>
+
+        <p>A packed condenser coil forces the compressor to run longer and harder to maintain temperature. On a GE or Whirlpool refrigerator, this increases energy consumption noticeably. On a Sub-Zero, where the compressor is a $900+ part, the stakes are higher. Either way, a $150 coil cleaning prevents a $500&ndash;$1,200 compressor failure. We'll always be honest about whether your specific location warrants more frequent maintenance.</p>
+
+        <p>Calleguas hard water is the second factor. The mineral content causes inlet valve calcification on washers and dishwashers, scale buildup on dishwasher heating elements, and restricted flow in ice maker water lines. We see these patterns weekly in 93021.</p>
+
+        <h3>Brands we carry OEM parts for in Moorpark</h3>
+        <div class="brands-list-inline">
+          <span>GE</span>
+          <span>Samsung</span>
+          <span>LG</span>
+          <span>Whirlpool</span>
+          <span>KitchenAid</span>
+          <span>Bosch</span>
+          <span>Maytag</span>
+          <span>Frigidaire</span>
+          <span>Sub-Zero</span>
+          <span>Wolf</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEIGHBORHOODS -->
+  <section class="city-neighborhoods">
+    <div class="city-neighborhoods-inner">
+      <div class="section-number">02</div>
+      <h2>Moorpark Areas We Service</h2>
+      <div class="neighborhoods-grid">
+        {neighborhoods.map(n => (
+          <div class="neighborhood-card">
+            <span class="neighborhood-name">{n.name}</span>
+            <span class="neighborhood-zip">{n.zip}</span>
+          </div>
+        ))}
+      </div>
+      <p class="neighborhoods-note">We also cover Somis, Santa Rosa Valley, and surrounding unincorporated areas. Call <a href={`tel:${phoneRaw}`}>{phone}</a> if you're not sure we reach you &mdash; we probably do.</p>
+    </div>
+  </section>
+
+  <!-- RECENT REPAIRS -->
+  <section class="city-repairs">
+    <div class="city-repairs-inner">
+      <div class="section-number">03</div>
+      <h2>Recent Repairs in Moorpark</h2>
+      <div class="repairs-grid">
+        {recentRepairs.map(r => (
+          <div class="repair-card">
+            <h3 class="repair-title">"{r.title}"</h3>
+            <div class="repair-location">&#128205; {r.neighborhood}</div>
+            <p class="repair-detail">{r.detail}</p>
+            <div class="repair-meta">
+              <span class="repair-part">Part: {r.part}</span>
+              <span class="repair-time">&#9201; {r.time}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="city-why">
+    <div class="city-why-inner">
+      <div class="section-number">04</div>
+      <h2>Why Moorpark Homeowners Call Us</h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <h3>We diagnose correctly the first time</h3>
+          <p>Our Thousand Oaks technicians know that a warm refrigerator in Moorpark is probably packed coils from agricultural dust before it's a failed compressor. They check water pressure, hard water damage, and environmental factors before recommending parts. That context prevents misdiagnosis and unnecessary expenses.</p>
+        </div>
+        <div class="why-item">
+          <h3>Professional presentation</h3>
+          <p>We show up in uniform, on time, with shoe covers. We protect your floors and countertops. Whether it's a Country Club Estates kitchen or a Campus Park laundry room, our technicians treat your home with respect. We clean up when we leave.</p>
+        </div>
+        <div class="why-item">
+          <h3>OEM parts on every truck</h3>
+          <p>We stock GE, Samsung, Whirlpool, Bosch, LG, and KitchenAid OEM parts on our Ventura County trucks. Most Moorpark calls get resolved same visit &mdash; no waiting for parts to ship. For luxury brands like Sub-Zero and Wolf, we carry those too.</p>
+        </div>
+        <div class="why-item">
+          <h3>90-day warranty, no exceptions</h3>
+          <p>Every repair we do in Moorpark carries a 90-day warranty on parts and labor. If the same issue returns within 90 days, we come back at no charge. $89 diagnostic waived with repair. Written estimate before we start.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="city-reviews">
+    <div class="city-reviews-inner">
+      <h2>What Moorpark Clients Say</h2>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"GE fridge was running warm and the compressor sounded like it was working overtime. Same Day came out, pulled the fridge, and showed me the coils &mdash; completely packed with dust from the fields behind our house. Cleaned everything, replaced the fan motor, and told me this needs to happen every six months given where we live. Honest and thorough."</p>
+          <div class="review-author">&mdash; Steve R., Country Club Estates</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Bosch dishwasher showing E09 error &mdash; tech explained it was a failed heating element, and that the hard water in Moorpark accelerates this. Had the OEM part on the truck. Two and a half hours later, everything working perfectly. Also recommended a monthly rinse cycle to manage scale. This is the kind of specific knowledge that matters."</p>
+          <div class="review-author">&mdash; Jennifer L., Moorpark Highlands</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Whirlpool dryer &mdash; no heat and a grinding noise. Turned out to be two separate issues: gas valve coils and a worn bearing. Tech had both parts, did the whole job in one visit, and inspected the vent while he was at it. Fair price, no upselling, and the dryer works better than it has in years."</p>
+          <div class="review-author">&mdash; Mark D., Spring Road area</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="city-pricing">
+    <div class="city-pricing-inner">
+      <h2>Repair Pricing in Moorpark</h2>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-label">Diagnostic Fee</div>
+          <div class="pricing-price">$89</div>
+          <div class="pricing-note">Credited toward repair &middot; Written estimate &middot; No fuel surcharge</div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-label">Standard Repair</div>
+          <div class="pricing-price">$150&ndash;$350</div>
+          <div class="pricing-note">Parts + labor &middot; OEM parts only &middot; Most appliances</div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-label">Luxury Brand Repair</div>
+          <div class="pricing-price">$250&ndash;$600+</div>
+          <div class="pricing-note">Sub-Zero, Wolf, Thermador, Miele &middot; OEM parts</div>
+        </div>
+        <div class="pricing-card highlight">
+          <div class="pricing-label">Warranty</div>
+          <div class="pricing-price">90 Days</div>
+          <div class="pricing-note">All repairs &middot; Parts &amp; labor &middot; Callback at no charge</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="city-faq">
+    <div class="city-faq-inner">
+      <div class="section-number">05</div>
+      <h2>Frequently Asked Questions &mdash; Moorpark</h2>
+      <div class="faq-list">
+        {faqs.map(f => (
+          <details class="faq-item">
+            <summary class="faq-q">{f.q}</summary>
+            <div class="faq-a">{f.a}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- NEARBY -->
+  <section class="city-nearby">
+    <div class="city-nearby-inner">
+      <h2>Also Serving Nearby Ventura County Cities</h2>
+      <div class="nearby-grid">
+        {nearbyAreas.map(a => (
+          <a href={`/${a.slug}/`} class="nearby-link">Appliance Repair {a.name} &rarr;</a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="city-bottom-cta">
+    <div class="city-bottom-cta-inner">
+      <h2>Schedule Your Moorpark Repair Today</h2>
+      <p>Same-day service from our Thousand Oaks branch. GE, Samsung, Whirlpool, Bosch, and all major brands.</p>
+      <div class="bottom-cta-btns">
+        <a href={`tel:${phoneRaw}`} class="btn-primary-xl">Call {phone}</a>
+        <a href="/book/" class="btn-secondary-xl">Book Online</a>
+      </div>
+      <p class="bottom-note">$89 diagnostic &middot; 90-day warranty &middot; OEM parts &middot; Moorpark, CA 93021</p>
+    </div>
+  </section>
+
+  <CTA phone={phone} branch={branch} zones={["Moorpark", "Ventura County", "Tierra Rejada Valley"]} />
+
+</Layout>

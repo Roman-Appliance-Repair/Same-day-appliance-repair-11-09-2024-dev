@@ -1,0 +1,444 @@
+---
+// src/pages/laguna-niguel.astro
+// SDAR — samedayappliance.repair
+// Laguna Niguel, CA · 92677
+// Филиал: Irvine · (213) 401-9019
+// Апрель 2026
+
+import Layout from '../layouts/Layout.astro';
+import CTA from '../components/CTA.astro';
+
+const city = "Laguna Niguel";
+const citySlug = "laguna-niguel";
+const phone = "(213) 401-9019";
+const phoneRaw = "+12134019019";
+const email = "irvine@samedayappliance.repair";
+const branch = "Irvine";
+
+const metaTitle = "Appliance Repair Laguna Niguel CA | Same Day Service | (213) 401-9019";
+const metaDesc = "Same-day appliance repair in Laguna Niguel, CA. Rancho Niguel, Bear Brand, Laguna Sur. Sub-Zero, Wolf & all brands. OEM parts, 90-day warranty. $89 diagnostic — waived with repair.";
+
+const neighborhoods = [
+  { name: "Rancho Niguel", zip: "92677" },
+  { name: "Bear Brand Ranch", zip: "92677" },
+  { name: "Laguna Sur", zip: "92677" },
+  { name: "Marina Hills", zip: "92677" },
+  { name: "Monarch Summit", zip: "92677" },
+  { name: "Kingswood", zip: "92677" },
+  { name: "Niguel Summit", zip: "92677" },
+  { name: "El Niguel Heights", zip: "92677" },
+  { name: "Beacon Hill", zip: "92677" },
+  { name: "Sulphur Creek", zip: "92677" },
+];
+
+const services = [
+  { name: "Refrigerator Repair", slug: "refrigerator-repair", icon: "&#10052;" },
+  { name: "Washer Repair", slug: "washer-repair", icon: "&#129527;" },
+  { name: "Dryer Repair", slug: "dryer-repair", icon: "&#128168;" },
+  { name: "Dishwasher Repair", slug: "dishwasher-repair", icon: "&#127869;" },
+  { name: "Oven &amp; Range Repair", slug: "oven-repair", icon: "&#128293;" },
+  { name: "Cooktop Repair", slug: "cooktop-repair", icon: "&#9832;" },
+  { name: "Wine Cooler Repair", slug: "wine-cooler-repair", icon: "&#127863;" },
+  { name: "Ice Maker Repair", slug: "ice-maker-repair", icon: "&#129482;" },
+];
+
+const recentRepairs = [
+  {
+    title: "Sub-Zero ice maker — not producing ice, water line issue",
+    neighborhood: "Bear Brand Ranch",
+    detail: "Bear Brand Ranch estate — Sub-Zero 48-inch built-in with integrated ice maker had stopped producing ice entirely. Water inlet valve was calcified from Orange County hard water, restricting flow to a trickle. The ice maker mold sensor was also reading incorrectly because mineral buildup had coated the thermistor. Replaced the inlet valve with OEM Sub-Zero part, cleaned the mold thermistor, flushed the water line, and ran three test cycles to confirm full production. Homeowner mentioned the water filter hadn't been changed in over a year — we installed a new one and put them on a 6-month reminder.",
+    part: "Sub-Zero OEM water inlet valve + filter",
+    time: "2 hours"
+  },
+  {
+    title: "Thermador wall oven — temperature off by 50 degrees, uneven bake",
+    neighborhood: "Rancho Niguel",
+    detail: "Rancho Niguel home with a Thermador double wall oven — upper unit running 50 degrees below set temperature, cakes coming out raw in the center. Temperature sensor resistance was out of spec, reading artificially high and causing the control board to cut the element too early. Replaced the temperature sensor with an OEM Thermador part, recalibrated the oven through the diagnostic mode, and verified accuracy at 350 and 450 with an independent probe. Both readings now within 3 degrees of set. Lower oven tested fine — no issues. Explained that Thermador sensors tend to drift after 6&ndash;8 years and this is a normal wear item.",
+    part: "Thermador OEM temperature sensor",
+    time: "1.5 hours"
+  },
+  {
+    title: "Samsung washer — ND error code, won't drain at spin cycle",
+    neighborhood: "Marina Hills",
+    detail: "Marina Hills townhome — Samsung front-load washer throwing ND (no drain) error mid-cycle. Water sitting in the drum. Pulled the drain pump filter and found a child's sock and several coins blocking the impeller. The pump itself had a cracked impeller blade from running against the obstruction. Replaced the drain pump assembly, cleared the drain hose, and ran a full wash cycle to confirm proper drainage. Showed the homeowner where the cleanout access is and how to check the filter monthly — this is the most common Samsung front-load issue we see in the area.",
+    part: "Samsung OEM drain pump assembly",
+    time: "1.5 hours"
+  },
+  {
+    title: "KitchenAid dishwasher — not cleaning top rack, low water pressure",
+    neighborhood: "Laguna Sur",
+    detail: "Laguna Sur home — KitchenAid dishwasher running through full cycles but the top rack items coming out dirty. The upper spray arm was barely spinning. Found the upper wash arm support had cracked, causing a water pressure leak that starved the top spray arm. Additionally, the spray arm jets were partially blocked with hard water mineral deposits — typical for the 92677 water supply. Replaced the upper wash arm support with an OEM KitchenAid part, soaked and cleared all spray arm jets, tested water pressure at the inlet. Full cleaning performance restored. Recommended a monthly rinse cycle with citric acid to manage mineral buildup.",
+    part: "KitchenAid OEM upper wash arm support",
+    time: "1.5 hours"
+  }
+];
+
+const faqs = [
+  {
+    q: "Do you offer same-day appliance repair in Laguna Niguel?",
+    a: "Yes. Laguna Niguel is part of our Irvine branch territory. Our technicians cover all of 92677 daily — Rancho Niguel, Bear Brand, Marina Hills, Laguna Sur, and every neighborhood in between. Call before noon for same-day afternoon service."
+  },
+  {
+    q: "Does Orange County hard water affect appliances in Laguna Niguel?",
+    a: "Yes — Laguna Niguel gets its water from the Municipal Water District of Orange County, and the mineral content is high enough to cause real issues over time. We see calcified water inlet valves, clogged dishwasher spray arms, and scaled-up ice maker components regularly in 92677. Homes with water softeners have fewer issues, but the buildup still occurs in appliances that connect upstream of the softener."
+  },
+  {
+    q: "What appliance brands do you repair in Laguna Niguel?",
+    a: "All brands — Sub-Zero, Wolf, Thermador, Miele, Viking, KitchenAid, Whirlpool, Samsung, LG, GE, Bosch, and more. Laguna Niguel has a mix of luxury estates and newer construction with mid-range appliances, and we service both. OEM parts for all major brands on every vehicle."
+  },
+  {
+    q: "What is your diagnostic fee in Laguna Niguel?",
+    a: "Our diagnostic fee is $89. It covers the trip, a complete inspection, and a written estimate. If you approve the repair, the $89 is credited toward your total. No hidden fees."
+  },
+  {
+    q: "Do you service the gated communities in Laguna Niguel?",
+    a: "Yes. Bear Brand Ranch, Monarch Summit, and other gated neighborhoods are within our regular service area. We coordinate gate access in advance and work with HOA and property management when needed."
+  },
+  {
+    q: "Do you repair wine coolers and built-in beverage centers?",
+    a: "Yes. Wine coolers and built-in units are common in Laguna Niguel homes, especially in the Bear Brand and Rancho Niguel areas. We service Sub-Zero wine columns, U-Line, True, Viking, and all integrated units."
+  },
+  {
+    q: "Do you also serve Laguna Beach, Dana Point, and Mission Viejo?",
+    a: "Yes. Our Irvine branch covers all of south Orange County — Laguna Niguel, Laguna Beach, Dana Point, San Juan Capistrano, Aliso Viejo, Mission Viejo, and surrounding areas."
+  }
+];
+
+const nearbyAreas = [
+  { name: "Laguna Beach", slug: "laguna-beach" },
+  { name: "Dana Point", slug: "dana-point" },
+  { name: "Mission Viejo", slug: "mission-viejo" },
+  { name: "Aliso Viejo", slug: "aliso-viejo" },
+  { name: "Irvine", slug: "irvine" },
+  { name: "San Juan Capistrano", slug: "san-juan-capistrano" },
+];
+
+const schemaJSON = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HomeAndConstructionBusiness",
+      "name": "Same Day Appliance Repair — Laguna Niguel",
+      "telephone": phoneRaw,
+      "email": email,
+      "url": "https://samedayappliance.repair/laguna-niguel/",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "7545 Irvine Center Dr Suite 200",
+        "addressLocality": "Irvine",
+        "addressRegion": "CA",
+        "postalCode": "92618",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Laguna Niguel" },
+        { "@type": "Place", "name": "Rancho Niguel" },
+        { "@type": "Place", "name": "Bear Brand Ranch" }
+      ],
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "21:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "19:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "17:00" }
+      ],
+      "priceRange": "$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "52",
+        "bestRating": "5"
+      },
+      "license": "CA CSLB #1138898"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a }
+      }))
+    }
+  ]
+});
+---
+
+<Layout title={metaTitle} description={metaDesc}>
+
+  <script type="application/ld+json" set:html={schemaJSON}></script>
+
+  <!-- HERO -->
+  <section class="city-hero">
+    <div class="city-hero-inner">
+      <div class="city-hero-text">
+        <div class="city-eyebrow">Laguna Niguel, CA &middot; Orange County &middot; 92677 &middot; Rancho Niguel &middot; Bear Brand</div>
+        <h1>Appliance Repair in Laguna Niguel, CA</h1>
+        <p class="city-hero-sub">Same-day service for Sub-Zero, Wolf, Thermador, KitchenAid, Samsung, and all major brands. Two markets, one standard &mdash; estate kitchens and modern condos both get OEM parts and honest diagnostics.</p>
+        <div class="city-hero-ctas">
+          <a href={`tel:${phoneRaw}`} class="btn-primary">Call {phone}</a>
+          <a href="/book/" class="btn-secondary">Book Online</a>
+        </div>
+        <div class="city-trust-row">
+          <span>&#9733; 4.8 Google Rating</span>
+          <span>&#10003; Licensed &amp; Insured</span>
+          <span>&#10003; CA CSLB #1138898</span>
+        </div>
+      </div>
+      <div class="city-hero-img">
+        <img
+          src="/images/areas/laguna-niguel/appliance-repair-laguna-niguel-ca.webp"
+          alt="Appliance repair technician in Laguna Niguel CA"
+          width="560" height="420"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <section class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item"><span class="trust-icon">&#9889;</span><span>Same-Day Service</span></div>
+      <div class="trust-item"><span class="trust-icon">&#128295;</span><span>OEM Parts</span></div>
+      <div class="trust-item"><span class="trust-icon">&#128737;</span><span>90-Day Warranty</span></div>
+      <div class="trust-item"><span class="trust-icon">&#9989;</span><span>Licensed &amp; Insured</span></div>
+      <div class="trust-item"><span class="trust-icon">&#127941;</span><span>BBB Accredited</span></div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="city-intro">
+    <div class="city-intro-inner">
+      <div class="city-intro-content">
+        <h2>Appliance Repair in Laguna Niguel &mdash; Two Markets, One Standard</h2>
+
+        <p>Laguna Niguel is a city of contrasts when it comes to appliance service. The Bear Brand Ranch estates have Sub-Zero column refrigerators, Wolf dual-fuel ranges, and Thermador steam ovens in custom kitchens built to entertain. The condos and townhomes in Marina Hills and Beacon Hill have Samsung, LG, KitchenAid, and Whirlpool units in compact laundry closets and galley kitchens. Both markets deserve the same diagnostic precision and the same OEM parts &mdash; and that's what we deliver.</p>
+
+        <p>Hard water is the invisible enemy of appliances in Laguna Niguel. The 92677 water supply carries enough mineral content to calcify water inlet valves on washing machines, scale up dishwasher spray arms, and choke ice maker lines within a few years. We see these patterns constantly across the zip code. Homes with water softeners fare better, but any appliance connected upstream of the softener is still exposed.</p>
+
+        <p>The hillside geography also matters. Homes in Monarch Summit and Niguel Summit sit at elevation with longer plumbing runs and occasional water pressure issues that affect dishwashers and washing machines. Our technicians check water pressure on every relevant call in these neighborhoods &mdash; low pressure causes symptoms that look like appliance failures but aren't.</p>
+
+        <p>Diagnostic fee is $89 &mdash; credited if you repair. Call <a href={`tel:${phoneRaw}`}>{phone}</a> and we give you a real arrival window.</p>
+      </div>
+      <aside class="city-sidebar">
+        <div class="city-sidebar-inner">
+          <p class="sidebar-city-label">Laguna Niguel Service</p>
+          <a href={`tel:${phoneRaw}`} class="btn-primary-lg">{phone}</a>
+          <p class="sidebar-hours">Mon&ndash;Fri 7am&ndash;9pm &middot; Sat 8am&ndash;7pm &middot; Sun 9am&ndash;5pm</p>
+          <a href="/book/" class="btn-secondary-sm">Book Online</a>
+          <div class="sidebar-guarantee">
+            <strong>$89 Diagnostic</strong>
+            <span>&mdash; credited if you repair</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="city-services">
+    <div class="city-services-inner">
+      <h2>Appliance Repair Services in Laguna Niguel</h2>
+      <div class="services-grid">
+        {services.map(s => (
+          <a href={`/${citySlug}/${s.slug}/`} class="service-card">
+            <span class="service-icon" set:html={s.icon}></span>
+            <span class="service-name" set:html={s.name}></span>
+            <span class="service-cta">Laguna Niguel &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTEXT BLOCK -->
+  <section class="city-context">
+    <div class="city-context-inner">
+      <div class="section-number">01</div>
+      <div class="city-context-content">
+        <h2>Estates vs. Condos &mdash; Different Appliances, Same Precision</h2>
+
+        <p>Laguna Niguel splits cleanly into two appliance markets, and understanding which one you're in determines how we approach your repair.</p>
+
+        <p>The estate neighborhoods &mdash; Bear Brand Ranch, Rancho Niguel, parts of Monarch Summit &mdash; have luxury kitchens with Sub-Zero 48-inch built-in refrigerators, Wolf 60-inch ranges, Thermador column freezers, Miele dishwashers, and built-in wine storage. These are high-value appliances where OEM parts aren't optional &mdash; an aftermarket compressor in a Sub-Zero voids the manufacturer's goodwill and often fails within 18 months. We carry genuine parts for all of these brands on every vehicle.</p>
+
+        <p>The condo and townhome neighborhoods &mdash; Marina Hills, Beacon Hill, Kingswood, parts of Sulphur Creek &mdash; have Samsung, LG, Whirlpool, KitchenAid, and GE appliances. These units are more price-sensitive to repair, and honesty about repair-vs-replace economics matters more. A 12-year-old Samsung washer with a failed spider arm might cost more to repair than to replace. We'll tell you that directly, show you the math, and let you decide.</p>
+
+        <p>Hard water affects both markets equally. The mineral content in the 92677 water supply causes inlet valve calcification, spray arm blockages, and ice maker line restrictions across all brands. We check for hard water damage on every relevant call in Laguna Niguel.</p>
+
+        <h3>Brands we carry OEM parts for in Laguna Niguel</h3>
+        <div class="brands-list-inline">
+          <span>Sub-Zero</span>
+          <span>Wolf</span>
+          <span>Thermador</span>
+          <span>Miele</span>
+          <span>KitchenAid</span>
+          <span>Samsung</span>
+          <span>LG</span>
+          <span>Whirlpool</span>
+          <span>Bosch</span>
+          <span>GE</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEIGHBORHOODS -->
+  <section class="city-neighborhoods">
+    <div class="city-neighborhoods-inner">
+      <div class="section-number">02</div>
+      <h2>Laguna Niguel Areas We Service</h2>
+      <div class="neighborhoods-grid">
+        {neighborhoods.map(n => (
+          <div class="neighborhood-card">
+            <span class="neighborhood-name">{n.name}</span>
+            <span class="neighborhood-zip">{n.zip}</span>
+          </div>
+        ))}
+      </div>
+      <p class="neighborhoods-note">We also cover Aliso Viejo, Dana Point, and surrounding south Orange County areas. Call <a href={`tel:${phoneRaw}`}>{phone}</a> if you're not sure we reach you &mdash; we probably do.</p>
+    </div>
+  </section>
+
+  <!-- RECENT REPAIRS -->
+  <section class="city-repairs">
+    <div class="city-repairs-inner">
+      <div class="section-number">03</div>
+      <h2>Recent Repairs in Laguna Niguel</h2>
+      <div class="repairs-grid">
+        {recentRepairs.map(r => (
+          <div class="repair-card">
+            <h3 class="repair-title">"{r.title}"</h3>
+            <div class="repair-location">&#128205; {r.neighborhood}</div>
+            <p class="repair-detail">{r.detail}</p>
+            <div class="repair-meta">
+              <span class="repair-part">Part: {r.part}</span>
+              <span class="repair-time">&#9201; {r.time}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="city-why">
+    <div class="city-why-inner">
+      <div class="section-number">04</div>
+      <h2>Why Laguna Niguel Homeowners Call Us</h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <h3>We diagnose correctly the first time</h3>
+          <p>Our technicians check water pressure, hard water damage, and appliance-specific failure patterns before recommending parts. In Laguna Niguel, what looks like a failed ice maker is often a calcified inlet valve &mdash; and what looks like a dishwasher motor issue is often a clogged spray arm. We find the real cause.</p>
+        </div>
+        <div class="why-item">
+          <h3>Professional presentation</h3>
+          <p>We show up in uniform, on time, with shoe covers. We protect your floors and countertops. In the Bear Brand estates and the Marina Hills condos alike, our technicians treat your home with the same respect. We clean up when we leave.</p>
+        </div>
+        <div class="why-item">
+          <h3>OEM parts for luxury brands</h3>
+          <p>We stock Sub-Zero, Wolf, Thermador, and Miele OEM parts on our Orange County trucks. Most Laguna Niguel luxury appliance calls get resolved same visit &mdash; no waiting for parts to ship from a distributor.</p>
+        </div>
+        <div class="why-item">
+          <h3>90-day warranty, no exceptions</h3>
+          <p>Every repair we do in Laguna Niguel carries a 90-day warranty on parts and labor. If the same issue returns within 90 days, we come back at no charge. $89 diagnostic waived with repair. Written estimate before we start.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="city-reviews">
+    <div class="city-reviews-inner">
+      <h2>What Laguna Niguel Clients Say</h2>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Sub-Zero ice maker in our Bear Brand home completely stopped. Same Day found the water valve was caked with mineral buildup &mdash; apparently common here with our water. Replaced it, flushed the lines, and we had ice again same day. Also told us our water filter was overdue. Thorough and honest."</p>
+          <div class="review-author">&mdash; Karen W., Bear Brand Ranch</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Thermador wall oven was baking unevenly &mdash; everything came out raw in the middle. Tech diagnosed a drifted temperature sensor in about 15 minutes, had the OEM part on the truck. Calibrated everything and now it's accurate to within a few degrees. Explained this is a normal wear item after several years. Very professional."</p>
+          <div class="review-author">&mdash; David M., Rancho Niguel</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Samsung washer throwing an error code and wouldn't drain. Found a sock and coins in the pump, plus a cracked impeller. Had the part on the truck, fixed it in under two hours, and showed me how to check the filter myself. Saved me from buying a new washer. Fair price, honest work."</p>
+          <div class="review-author">&mdash; Lisa T., Marina Hills</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="city-pricing">
+    <div class="city-pricing-inner">
+      <h2>Repair Pricing in Laguna Niguel</h2>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-label">Diagnostic Fee</div>
+          <div class="pricing-price">$89</div>
+          <div class="pricing-note">Credited toward repair &middot; Written estimate &middot; No hidden fees</div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-label">Standard Repair</div>
+          <div class="pricing-price">$150&ndash;$350</div>
+          <div class="pricing-note">Parts + labor &middot; OEM parts only &middot; Most appliances</div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-label">Luxury Brand Repair</div>
+          <div class="pricing-price">$250&ndash;$600+</div>
+          <div class="pricing-note">Sub-Zero, Wolf, Thermador, Miele &middot; OEM parts</div>
+        </div>
+        <div class="pricing-card highlight">
+          <div class="pricing-label">Warranty</div>
+          <div class="pricing-price">90 Days</div>
+          <div class="pricing-note">All repairs &middot; Parts &amp; labor &middot; Callback at no charge</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="city-faq">
+    <div class="city-faq-inner">
+      <div class="section-number">05</div>
+      <h2>Frequently Asked Questions &mdash; Laguna Niguel</h2>
+      <div class="faq-list">
+        {faqs.map(f => (
+          <details class="faq-item">
+            <summary class="faq-q">{f.q}</summary>
+            <div class="faq-a">{f.a}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- NEARBY -->
+  <section class="city-nearby">
+    <div class="city-nearby-inner">
+      <h2>Also Serving Nearby South Orange County Cities</h2>
+      <div class="nearby-grid">
+        {nearbyAreas.map(a => (
+          <a href={`/${a.slug}/`} class="nearby-link">Appliance Repair {a.name} &rarr;</a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="city-bottom-cta">
+    <div class="city-bottom-cta-inner">
+      <h2>Schedule Your Laguna Niguel Repair Today</h2>
+      <p>Same-day service from our Irvine branch. Sub-Zero, Wolf, Thermador, Samsung, KitchenAid, and all major brands.</p>
+      <div class="bottom-cta-btns">
+        <a href={`tel:${phoneRaw}`} class="btn-primary-xl">Call {phone}</a>
+        <a href="/book/" class="btn-secondary-xl">Book Online</a>
+      </div>
+      <p class="bottom-note">$89 diagnostic &middot; 90-day warranty &middot; OEM parts &middot; Laguna Niguel, CA 92677</p>
+    </div>
+  </section>
+
+  <CTA phone={phone} branch={branch} zones={["Laguna Niguel", "Rancho Niguel", "Orange County"]} />
+
+</Layout>
