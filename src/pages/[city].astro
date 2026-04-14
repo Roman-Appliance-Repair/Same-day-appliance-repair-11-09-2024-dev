@@ -1,0 +1,260 @@
+---
+// src/pages/[city].astro
+// Parametric city page template for cities without a dedicated .astro file
+
+import Layout from '../layouts/Layout.astro';
+import CTA from '@components/CTA.astro';
+import { cities } from '../data/cities';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths: GetStaticPaths = () => {
+  const staticPages = new Set([
+    'west-hollywood','los-angeles','burbank','pasadena','beverly-hills','santa-monica',
+    'glendale','brentwood','pacific-palisades','malibu','manhattan-beach','marina-del-rey',
+    'culver-city','playa-del-rey','hollywood','hollywood-hills','silver-lake','los-feliz',
+    'north-hollywood','south-pasadena','calabasas','westwood','arcadia','la-canada-flintridge',
+    'bel-air','san-marino','glassell-park','ladera-heights','monterey-park','alhambra',
+    'newport-beach','laguna-beach','irvine','huntington-beach','costa-mesa',
+    'thousand-oaks','westlake-village',
+    'long-beach','redondo-beach','el-segundo','studio-city','sherman-oaks','encino',
+    'woodland-hills','tarzana','koreatown','highland-park','atwater-village','eagle-rock',
+    'temple-city','san-gabriel','monrovia',
+  ]);
+  return cities
+    .filter(c => !staticPages.has(c.slug))
+    .map(c => ({ params: { city: c.slug }, props: { city: c } }));
+};
+
+const { city } = Astro.props;
+
+const phoneRaw = '+1' + city.phone.replace(/[^0-9]/g, '');
+const zipsDisplay = city.zips.join(', ');
+const title = `Appliance Repair ${city.name} CA — Same Day | ${city.phone}`;
+const description = `Same-day appliance repair in ${city.name}, CA. All brands — Samsung, LG, GE, Whirlpool, Sub-Zero. Licensed, OEM parts, 90-day warranty. Call ${city.phone}.`;
+const canonical = `https://samedayappliance.repair/${city.slug}/`;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": `Same Day Appliance Repair — ${city.name}`,
+  "image": "https://samedayappliance.repair/images/logo.webp",
+  "url": canonical,
+  "telephone": phoneRaw,
+  "email": city.email,
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "21:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "08:00", "closes": "19:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday"], "opens": "09:00", "closes": "17:00" }
+  ],
+  "areaServed": { "@type": "City", "name": city.name },
+  "priceRange": "$$",
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.6", "reviewCount": "37", "bestRating": "5" }
+};
+
+const schemaFAQ = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": `Do you offer same-day appliance repair in ${city.name}, CA?`, "acceptedAnswer": { "@type": "Answer", "text": `Yes. Our technicians cover all of ${city.name} — ZIP codes ${zipsDisplay}. Call before noon for same-day afternoon service.` } },
+    { "@type": "Question", "name": `What is your diagnostic fee in ${city.name}?`, "acceptedAnswer": { "@type": "Answer", "text": "Our diagnostic fee is $89, waived when you proceed with the repair. Written estimate before we start." } },
+    { "@type": "Question", "name": `Are you available on weekends in ${city.name}?`, "acceptedAnswer": { "@type": "Answer", "text": "Yes. Saturday 8am-7pm and Sunday 9am-5pm." } },
+    { "@type": "Question", "name": `What warranty do you offer in ${city.name}?`, "acceptedAnswer": { "@type": "Answer", "text": "All repairs come with a 90-day warranty on parts and labor. Genuine OEM parts only." } },
+  ]
+};
+
+const nearbyLinks = (city.nearby || []).map(slug => {
+  const found = cities.find(c => c.slug === slug);
+  return found ? { slug: found.slug, name: found.name } : null;
+}).filter(Boolean);
+---
+
+<Layout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaFAQ)} />
+
+  <section class="ct-hero">
+    <div class="ct-hero__inner container">
+      <div class="ct-hero__content">
+        <div class="ct-hero__eyebrow">{city.name}, CA &middot; {zipsDisplay}</div>
+        <h1 class="ct-hero__h1">Appliance Repair<br /><span class="ct-hero__accent">{city.name}, CA</span></h1>
+        <p class="ct-hero__sub">Same-day appliance repair across all of {city.name}. Samsung, LG, GE, Whirlpool, Sub-Zero, Wolf, Thermador &mdash; all brands. OEM parts, 90-day warranty. Licensed &amp; insured. Weekends available.</p>
+        <div class="ct-hero__ctas">
+          <a href={`tel:${phoneRaw}`} class="btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.29h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call {city.phone}
+          </a>
+          <a href="/book/" class="btn-secondary">Book Online</a>
+        </div>
+        <div class="ct-hero__rating">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="rating-text">4.6 &middot; Google reviews &middot; BBB A+ &middot; Licensed &amp; Insured</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust-bar">
+    <div class="container trust-bar__inner">
+      <div class="trust-item"><span>Same-Day Service</span></div>
+      <div class="trust-item"><span>90-Day Warranty</span></div>
+      <div class="trust-item"><span>OEM Parts Only</span></div>
+      <div class="trust-item"><span>Licensed &amp; Insured</span></div>
+      <div class="trust-item"><span>Weekends Available</span></div>
+    </div>
+  </section>
+
+  <section class="ct-intro">
+    <div class="container">
+      <h2>Appliance Repair in {city.name}</h2>
+      <p>Same Day Appliance Repair covers all of {city.name}, CA &mdash; ZIP codes {zipsDisplay}. Our licensed technicians arrive same-day with OEM parts on every vehicle. Diagnostic fee is <strong>$89</strong>, waived when you proceed with the repair. Written estimate before we start. <strong>90-day warranty</strong> on parts and labor.</p>
+      <p>We repair all major brands: Samsung, LG, GE, Whirlpool, KitchenAid, Bosch, Maytag, Sub-Zero, Wolf, Thermador, Miele, Viking, and more. Residential and commercial. Weekends available &mdash; Saturday 8am&ndash;7pm, Sunday 9am&ndash;5pm.</p>
+    </div>
+  </section>
+
+  <section class="ct-services">
+    <div class="container">
+      <h2 class="section-title">What We Repair in {city.name}</h2>
+      <p class="section-sub">All brands &middot; All of {zipsDisplay} &middot; Same-day service</p>
+      <div class="services-grid">
+        <a href="/services/refrigerator-repair-los-angeles/" class="service-card service-card--hl"><div class="sc-icon">&#129482;</div><div class="sc-name">Refrigerator Repair</div><div class="sc-brands">Samsung &middot; LG &middot; GE &middot; Sub-Zero &middot; Whirlpool</div></a>
+        <a href="/services/washing-machine-repair-los-angeles/" class="service-card service-card--hl"><div class="sc-icon">&#129527;</div><div class="sc-name">Washer Repair</div><div class="sc-brands">LG &middot; Samsung &middot; Whirlpool &middot; Maytag &middot; Bosch</div></a>
+        <a href="/services/dryer-repair-los-angeles/" class="service-card"><div class="sc-icon">&#9832;&#65039;</div><div class="sc-name">Dryer Repair</div><div class="sc-brands">LG &middot; Samsung &middot; GE &middot; Maytag &middot; Whirlpool</div></a>
+        <a href="/services/dishwasher-repair-los-angeles/" class="service-card"><div class="sc-icon">&#127869;&#65039;</div><div class="sc-name">Dishwasher Repair</div><div class="sc-brands">Bosch &middot; KitchenAid &middot; Samsung &middot; LG &middot; Miele</div></a>
+        <a href="/services/oven-repair-los-angeles/" class="service-card"><div class="sc-icon">&#128293;</div><div class="sc-name">Oven &amp; Range Repair</div><div class="sc-brands">GE &middot; Samsung &middot; Wolf &middot; Thermador &middot; Viking</div></a>
+        <a href="/services/freezer-repair-los-angeles/" class="service-card"><div class="sc-icon">&#10052;&#65039;</div><div class="sc-name">Freezer Repair</div><div class="sc-brands">Samsung &middot; LG &middot; GE &middot; Sub-Zero &middot; Whirlpool</div></a>
+        <a href="/services/cooktop-repair-los-angeles/" class="service-card"><div class="sc-icon">&#128262;</div><div class="sc-name">Cooktop Repair</div><div class="sc-brands">GE &middot; Bosch &middot; Wolf &middot; Thermador &middot; Samsung</div></a>
+        <a href="/services/wine-cooler-repair-los-angeles/" class="service-card"><div class="sc-icon">&#127863;</div><div class="sc-name">Wine Cooler Repair</div><div class="sc-brands">Sub-Zero &middot; True &middot; U-Line &middot; Liebherr</div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ct-pricing">
+    <div class="container">
+      <h2 class="section-title">Appliance Repair Costs in {city.name}</h2>
+      <p class="section-sub">Written estimate before we start. $89 diagnostic &mdash; waived with repair.</p>
+      <div class="pricing-grid">
+        <div class="pricing-card featured"><div class="pc-name">Refrigerator / Freezer</div><div class="pc-range">$150 &ndash; $400</div><div class="pc-note">Ice maker &middot; Fan motor &middot; Not cooling</div></div>
+        <div class="pricing-card"><div class="pc-name">Washer / Dryer</div><div class="pc-range">$150 &ndash; $350</div><div class="pc-note">Drain pump &middot; Thermal fuse &middot; Vent</div></div>
+        <div class="pricing-card"><div class="pc-name">Dishwasher</div><div class="pc-range">$150 &ndash; $320</div><div class="pc-note">Not draining &middot; E24 &middot; Spray arm</div></div>
+        <div class="pricing-card"><div class="pc-name">Oven / Range</div><div class="pc-range">$150 &ndash; $400</div><div class="pc-note">Gas igniter &middot; Element &middot; Calibration</div></div>
+        <div class="pricing-card"><div class="pc-name">Sub-Zero / Wolf</div><div class="pc-range">$300 &ndash; $700+</div><div class="pc-note">OEM parts &middot; Luxury brands</div></div>
+        <div class="pricing-card"><div class="pc-name">Diagnostic Fee</div><div class="pc-range">$89</div><div class="pc-note">Waived with repair</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ct-faq">
+    <div class="container">
+      <h2>Questions {city.name} Customers Ask</h2>
+      <div class="faq-list">
+        <details class="faq-item"><summary class="faq-q">Do you offer same-day appliance repair in {city.name}, CA?</summary><div class="faq-a">Yes. Our technicians cover all of {city.name} &mdash; ZIP codes {zipsDisplay}. Call before noon for same-day afternoon service.</div></details>
+        <details class="faq-item"><summary class="faq-q">What is your diagnostic fee in {city.name}?</summary><div class="faq-a">Our diagnostic fee is $89, waived when you proceed with the repair. Written estimate before we start. Most repairs run $150&ndash;$400.</div></details>
+        <details class="faq-item"><summary class="faq-q">Are you available on weekends in {city.name}?</summary><div class="faq-a">Yes. Saturday 8am&ndash;7pm and Sunday 9am&ndash;5pm.</div></details>
+        <details class="faq-item"><summary class="faq-q">What brands do you repair in {city.name}?</summary><div class="faq-a">All major brands: Samsung, LG, GE, Whirlpool, KitchenAid, Bosch, Maytag, Sub-Zero, Wolf, Thermador, and more. OEM parts on every vehicle.</div></details>
+        <details class="faq-item"><summary class="faq-q">What warranty do you offer in {city.name}?</summary><div class="faq-a">90-day warranty on parts and labor. Genuine OEM parts only. If the same issue returns within 90 days, we come back at no charge.</div></details>
+      </div>
+    </div>
+  </section>
+
+  {nearbyLinks.length > 0 && (
+    <section class="ct-nearby">
+      <div class="container">
+        <h2>Also Serving Nearby Areas</h2>
+        <div class="nearby-grid">
+          {nearbyLinks.map(link => (
+            <a href={`/${link.slug}/`} class="nearby-link">{link.name}</a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="ct-bottom-cta">
+    <div class="container">
+      <div class="bottom-cta__inner">
+        <h2>Appliance broken in {city.name}?</h2>
+        <p>Same-day service &middot; All of {zipsDisplay} &middot; $89 diagnostic waived with repair &middot; 90-day warranty &middot; OEM parts.</p>
+        <div class="bottom-cta__actions">
+          <a href={`tel:${phoneRaw}`} class="btn-primary btn-large">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.29h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            {city.phone}
+          </a>
+          <a href="/book/" class="btn-secondary btn-large">Book Online</a>
+        </div>
+        <div class="bottom-cta__nap">
+          <span>Same Day Appliance Repair &mdash; {city.name}, CA</span>
+          <span>&middot;</span>
+          <a href={`mailto:${city.email}`}>{city.email}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA phone={city.phone} branch={city.name} zones={city.nearby?.map(s => { const c = cities.find(x => x.slug === s); return c ? c.name : s; }) || [city.name]} />
+</Layout>
+
+<style>
+  :root { --ct-red: #C8102E; --ct-black: #0a0a0a; --ct-gray: #f5f5f5; --ct-border: #e2e2e2; --ct-text: #1a1a1a; --ct-muted: #6b6b6b; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .ct-hero { background: var(--ct-black); color: white; padding: 80px 0 60px; }
+  .ct-hero__inner { max-width: 720px; }
+  .ct-hero__eyebrow { font-size: 13px; font-weight: 500; color: var(--ct-red); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
+  .ct-hero__h1 { font-size: clamp(36px, 5vw, 52px); font-weight: 700; line-height: 1.1; margin-bottom: 20px; color: white; }
+  .ct-hero__accent { color: var(--ct-red); }
+  .ct-hero__sub { font-size: 17px; line-height: 1.6; color: rgba(255,255,255,0.75); margin-bottom: 32px; max-width: 600px; }
+  .ct-hero__ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+  .ct-hero__rating { display: flex; align-items: center; gap: 10px; }
+  .stars { color: #FFD700; font-size: 18px; letter-spacing: 2px; }
+  .rating-text { font-size: 14px; color: rgba(255,255,255,0.7); }
+  .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--ct-red); color: white; padding: 14px 28px; border-radius: 8px; font-weight: 600; font-size: 16px; text-decoration: none; transition: background 0.2s; }
+  .btn-primary:hover { background: #a50e25; }
+  .btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: white; padding: 14px 28px; border-radius: 8px; font-weight: 600; font-size: 16px; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.35); }
+  .btn-large { padding: 16px 36px; font-size: 17px; }
+  .trust-bar { background: var(--ct-red); padding: 16px 0; }
+  .trust-bar__inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .trust-item { color: white; font-size: 14px; font-weight: 500; }
+  .ct-intro { padding: 64px 0; background: white; }
+  .ct-intro h2 { font-size: 28px; font-weight: 700; color: var(--ct-black); margin-bottom: 16px; }
+  .ct-intro p { font-size: 16px; line-height: 1.7; color: var(--ct-text); margin-bottom: 14px; max-width: 800px; }
+  .section-title { font-size: 30px; font-weight: 700; color: var(--ct-black); margin-bottom: 8px; text-align: center; }
+  .section-sub { font-size: 16px; color: var(--ct-muted); text-align: center; margin-bottom: 40px; }
+  .ct-services { padding: 64px 0; background: var(--ct-gray); }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .service-card { background: white; border: 1px solid var(--ct-border); border-radius: 12px; padding: 24px 20px; text-decoration: none; color: var(--ct-text); transition: box-shadow 0.2s, transform 0.2s; display: block; }
+  .service-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.1); transform: translateY(-2px); }
+  .service-card--hl { border-color: var(--ct-red); background: #fff5f7; }
+  .sc-icon { font-size: 28px; margin-bottom: 10px; }
+  .sc-name { font-size: 16px; font-weight: 600; color: var(--ct-black); margin-bottom: 8px; }
+  .sc-brands { font-size: 12px; color: var(--ct-muted); }
+  .ct-pricing { padding: 64px 0; background: white; }
+  .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .pricing-card { background: var(--ct-gray); border-radius: 10px; padding: 20px 24px; border: 1px solid var(--ct-border); }
+  .pricing-card.featured { background: #fff5f7; border-color: var(--ct-red); }
+  .pc-name { font-size: 14px; color: var(--ct-muted); margin-bottom: 6px; }
+  .pc-range { font-size: 22px; font-weight: 700; color: var(--ct-black); margin-bottom: 6px; }
+  .pricing-card.featured .pc-range { color: var(--ct-red); }
+  .pc-note { font-size: 13px; color: var(--ct-muted); }
+  .ct-faq { padding: 64px 0; background: var(--ct-gray); }
+  .ct-faq h2 { font-size: 30px; font-weight: 700; color: var(--ct-black); margin-bottom: 32px; text-align: center; }
+  .faq-list { max-width: 800px; margin: 0 auto; }
+  .faq-item { border: 1px solid var(--ct-border); border-radius: 8px; background: white; margin-bottom: 10px; overflow: hidden; }
+  .faq-q { padding: 18px 24px; font-size: 16px; font-weight: 600; color: var(--ct-black); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-q::after { content: '+'; font-size: 22px; color: var(--ct-red); flex-shrink: 0; margin-left: 16px; }
+  details[open] .faq-q::after { content: '\2212'; }
+  .faq-a { padding: 0 24px 20px; font-size: 15px; line-height: 1.7; color: var(--ct-text); }
+  .ct-nearby { padding: 48px 0; background: white; border-top: 1px solid var(--ct-border); }
+  .ct-nearby h2 { font-size: 20px; font-weight: 600; color: var(--ct-black); margin-bottom: 20px; text-align: center; }
+  .nearby-grid { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .nearby-link { padding: 8px 20px; border: 1px solid var(--ct-border); border-radius: 20px; font-size: 14px; color: var(--ct-text); text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+  .nearby-link:hover { border-color: var(--ct-red); color: var(--ct-red); }
+  .ct-bottom-cta { padding: 64px 0; background: var(--ct-black); color: white; text-align: center; }
+  .ct-bottom-cta h2 { font-size: 34px; font-weight: 700; margin-bottom: 12px; }
+  .ct-bottom-cta p { font-size: 16px; color: rgba(255,255,255,0.7); margin-bottom: 32px; }
+  .bottom-cta__actions { display: flex; gap: 12px; justify-content: center; margin-bottom: 24px; flex-wrap: wrap; }
+  .bottom-cta__nap { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; font-size: 13px; color: rgba(255,255,255,0.4); }
+  .bottom-cta__nap a { color: rgba(255,255,255,0.4); text-decoration: none; }
+  .ct-bottom-cta .btn-secondary { color: var(--ct-text); border-color: var(--ct-border); }
+  @media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2, 1fr); } .pricing-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 768px) { .trust-bar__inner { justify-content: center; } }
+  @media (max-width: 480px) { .services-grid { grid-template-columns: 1fr; } .pricing-grid { grid-template-columns: 1fr; } .ct-hero { padding: 48px 0 40px; } .ct-bottom-cta h2 { font-size: 26px; } }
+</style>
