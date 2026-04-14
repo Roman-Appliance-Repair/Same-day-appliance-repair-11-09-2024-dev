@@ -4,7 +4,7 @@ import { Picture } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
-import Cta from "@components/cta.astro";
+import CTA from "@components/CTA.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import Reviews from "@components/reviews.astro";
 
@@ -60,4 +60,4 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
     </div>
   </Container>
  
-<Cta />
+<CTA phone="(323) 870-4790" branch="West Hollywood" zones={["Los Angeles", "Southern California"]} />

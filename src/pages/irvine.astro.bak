@@ -1,0 +1,192 @@
+---
+import Container from "@components/container.astro";
+import Cta from "@components/cta-irvine.astro";
+import Layout from "@layouts/Layout.astro";
+import Navbar from "@components/navbar/navbar-irvine.astro";
+import Reviews from "@components/reviews.astro";
+import Contactbtn from "@components/contactbtn.astro";
+import Btn from "@components/btn-irvine.astro";
+import Unitsappliances from "@components/units-appliances-pasadena.astro";
+import Unitscommercial from "@components/units-commercial-equipment-pasadena.astro";
+import Unitshvac from "@components/units-hvac.astro";
+import Anchor from "@components/anchor/anchor-areas.astro";
+import "css/service-areas/style-service-areas.css";
+---
+<Layout 
+  title="Appliance Repair Irvine CA - Same Day Certified Technicians" 
+  description="Need expert appliance repair in Irvine or Orange County? Call Same Day Appliance Repair at (213) 401-9019. We fix Sub-Zero, Thermador, Viking & more. Licensed, insured & BBB accredited.">
+
+
+  <Navbar />
+<Reviews />
+ 
+  <Container>
+    <div class="full-page">
+      <div class="page-header">
+        <span class="animate-charcter">
+          <h1>Same Day Appliance Repair Irvine</h1>
+        </span>
+
+        <div class="header-a">
+          <img
+            width="600px"
+            height="600px"
+            alt="Same Day Appliance Repair Irvine"
+            src="/images/same-day-appliance-repair-experts.webp"
+          />
+          
+        </div>
+
+
+
+
+        <section>
+            
+            <p><strong>Fast, Licensed Appliance Repair in Irvine & Surrounding Areas</strong><br>
+            📞 Call Now: <a href="tel:2134019019">(213) 401-9019</a><br>
+            Home | Commercial | HVAC | Licensed & Insured | BBB Accredited</p>
+          
+            <p>If you need reliable appliance repair in Irvine, look no further. <strong>Same Day Appliance Repair</strong> provides fast, affordable service across Orange County, including 
+            <strong>Irvine, Anaheim, Tustin, Newport Beach, Laguna Beach, Lake Forest, Costa Mesa, Villa Park, Yorba Linda, Fountain Valley</strong>, and <strong>Santa Ana</strong>.</p>
+          
+            <p>We offer <strong>same-day service</strong>, transparent pricing, and expert diagnostics for all brands — from Whirlpool and GE to <strong>Sub-Zero, Thermador, Wolf, Viking, and Miele</strong>. 
+            Whether you need residential, commercial, or HVAC service, our <strong>factory-trained and insured technicians</strong> will get the job done right the first time.</p>
+          
+
+            <div  id="home-anchor">
+            <h2>💼 Home Appliance Repair Services in Irvine</h2>
+            <ul>
+              <li>Refrigerator Repair</li>
+              <li>Freezer Repair</li>
+              <li>Washing Machine Repair</li>
+              <li>Dryer Repair</li>
+              <li>Stove & Range Repair</li>
+              <li>Oven & Cooktop Repair</li>
+              <li>Microwave Repair</li>
+              <li>Dishwasher Repair</li>
+              <li>Wine Cooler & Wine Cellar Repair</li>
+              <li>Range Hood Repair</li>
+              <li>Fireplace Repair</li>
+              <li>BBQ Grill Repair</li>
+              <li>Induction Cooktop Repair</li>
+            </ul>
+            <p>From leaking refrigerators to broken washers and non-heating ovens, our team handles it all — using OEM parts and brand-certified methods for lasting results.</p>
+            <Unitsappliances />
+            <Btn />
+          </div>
+
+
+          <div  id="commercial-anchor">
+            <h2>🧰 Commercial Appliance Repair in Irvine</h2>
+            <ul>
+              <li>Commercial Refrigerators</li>
+              <li>Commercial Freezers</li>
+              <li>Walk-In Coolers & Freezers</li>
+              <li>Commercial Ovens, Ranges & Fryers</li>
+              <li>Commercial Dishwashers</li>
+              <li>Commercial Ice Machines & Slushie Machines</li>
+              <li>Showcase Refrigerators & Bar Coolers</li>
+              <li>Commercial Washers & Dryers</li>
+              <li>Commercial Laundry Systems</li>
+            </ul>
+            <p>Whether you're managing a restaurant, hotel, grocery store, or laundromat — we keep your equipment running smoothly so your business never misses a beat.</p>
+          
+            <Unitscommercial />
+            <Btn />
+          </div>
+
+            <h2>🌬️ HVAC Repair & Installation in Irvine</h2>
+            <ul>
+              <li>HVAC System Repair</li>
+              <li>HVAC Installation (Same-Day Options Available)</li>
+              <li>Mini-Split AC Repair</li>
+              <li>Commercial HVAC Maintenance</li>
+              <li>Professional Duct Cleaning</li>
+            </ul>
+            <p>If your AC isn’t cooling, your HVAC system is outdated, or your ducts need cleaning — we’ll restore your indoor air quality and comfort in one visit.</p>
+            <Unitshvac />
+            <Btn />
+
+            <h2>🛠️ Why Irvine Trusts Same Day Appliance Repair</h2>
+            <ul>
+              <li>✅ Licensed, Insured & BBB Accredited</li>
+              <li>✅ Factory-Trained Technicians</li>
+              <li>✅ Same-Day Service</li>
+              <li>✅ OEM Parts Only</li>
+              <li>✅ Full Diagnostics & Transparent Pricing</li>
+              <li>✅ Residential & Commercial Expertise</li>
+              <li>✅ High-End Brand Specialists: Sub-Zero, Thermador, Wolf, Viking, Miele & more</li>
+            </ul>
+            <p>Our service trucks are stocked, our techs are punctual, and our repairs are guaranteed. We treat your home or business with care and deliver long-term appliance solutions — not temporary fixes.</p>
+          
+            <h2>📍 Areas We Serve from Our Irvine Office</h2>
+            <p>We proudly provide appliance repair services across Irvine and nearby cities: <br>
+            <strong>Irvine, Anaheim, Tustin, Newport Beach, Laguna Beach, Lake Forest, Costa Mesa, Villa Park, Yorba Linda, Fountain Valley</strong>, and <strong>Santa Ana</strong>.</p>
+            <Btn />
+            <h2>💬 Book Your Repair Today — We’ll Be There Fast</h2>
+            <p>Call us now at <a href="tel:2134019019">(213) 401-9019</a> or <a href="https://samedayappliance.repair/irvine/">book online</a> to schedule your <strong>same-day appliance repair</strong> in Irvine. 
+            Whether it’s your home, business, or HVAC system — we’ll get you back up and running.</p>
+          </section>
+          
+
+
+
+        
+  </Container>
+  <Cta />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "LocalBusiness",
+    "HomeAndConstructionBusiness"
+  ],
+  "name": "Same Day Appliance Repair – Irvine",
+  "image": "https://samedayappliance.repair/images/same-day-appliance-repair-logo.webp",
+  "@id": "https://samedayappliance.repair/irvine/",
+  "url": "https://samedayappliance.repair/irvine/",
+  "telephone": "+12134019019",
+  "email": "irvine@samedayappliance.repair",
+  "priceRange": "$",
+  "description": "Need expert appliance repair in Irvine or Orange County? Call Same Day Appliance Repair at (213) 401-9019. We fix Sub-Zero, Thermador, Viking & more. Licensed, insured & BBB accredited.",
+  "areaServed": {
+    "@type": "City",
+    "name": "Irvine"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "opens": "08:00",
+    "closes": "20:00"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://samedayappliance.repair/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Same Day Appliance Repair Irvine",
+      "item": "https://samedayappliance.repair/irvine/"
+    }
+  ]
+}
+</script>
+ 
