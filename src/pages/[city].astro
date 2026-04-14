@@ -19,6 +19,7 @@ export const getStaticPaths: GetStaticPaths = () => {
     'long-beach','redondo-beach','el-segundo','studio-city','sherman-oaks','encino',
     'woodland-hills','tarzana','koreatown','highland-park','atwater-village','eagle-rock',
     'temple-city','san-gabriel','monrovia',
+    'anaheim','agoura-hills',
   ]);
   return cities
     .filter(c => !staticPages.has(c.slug))
