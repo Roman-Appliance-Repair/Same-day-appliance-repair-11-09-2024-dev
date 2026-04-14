@@ -9,8 +9,8 @@ import Layout from "@layouts/Layout.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import Reviews from "@components/reviews.astro";
 import Btn from "@components/btn.astro";
-import Unitscommercial from "@components/units-commercial-equipment-los-angeles.astro";
-import Unitsappliances from "@components/units-appliances-los-angeles.astro";
+import UnitsCommercial from "@components/UnitsCommercial.astro";
+import UnitsAppliances from "@components/UnitsAppliances.astro";
 import Unitsheatventcondit from "@components/units-heating-ventilation-air-conditioning.astro";
 import "css/service-areas/style-service-areas.css";
 ---
@@ -250,7 +250,7 @@ import "css/service-areas/style-service-areas.css";
                 satisfaction of our customers.
               </p>
             </div>
-            <Unitsappliances />
+            <UnitsAppliances city="Los Angeles" />
           </div>
         </div>
         <div id="commercial-appliance-repair"><br /></div>
@@ -273,7 +273,7 @@ import "css/service-areas/style-service-areas.css";
                 rely on us for prompt solutions from experienced professionals.
               </p>
             </div>
-            <Unitscommercial />
+            <UnitsCommercial city="Los Angeles" />
           </div>
         </div>
         <div id="heating"><br /></div>
