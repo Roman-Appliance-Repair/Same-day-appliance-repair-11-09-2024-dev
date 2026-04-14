@@ -1,0 +1,224 @@
+---
+// src/pages/[city]/[service].astro
+// Parametric city x service page: 91 cities x 5 tier-1 services = 455 pages
+
+import Layout from '../../layouts/Layout.astro';
+import CTA from '@components/CTA.astro';
+import { cities } from '../../data/cities';
+import { getTier1ResidentialServices } from '../../data/services';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths: GetStaticPaths = () => {
+  const tier1 = getTier1ResidentialServices();
+  const paths: { params: { city: string; service: string }; props: { city: any; service: any } }[] = [];
+  for (const c of cities) {
+    for (const s of tier1) {
+      paths.push({
+        params: { city: c.slug, service: s.slug },
+        props: { city: c, service: s },
+      });
+    }
+  }
+  return paths;
+};
+
+const { city, service } = Astro.props;
+
+const phoneRaw = '+1' + city.phone.replace(/[^0-9]/g, '');
+const zipsDisplay = city.zips.join(', ');
+const nearbyName = city.nearby?.[0] ? cities.find(c => c.slug === city.nearby[0])?.name || '' : '';
+
+const title = `${service.name} in ${city.name}, CA | Same Day Appliance Repair`;
+const description = `Same-day ${service.name.toLowerCase()} in ${city.name}, CA. $89 diagnostic (waived with repair), OEM parts, 90-day warranty. Call ${city.phone}.`;
+const canonical = `https://samedayappliance.repair/${city.slug}/${service.slug}/`;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": `${service.name} in ${city.name}`,
+  "provider": {
+    "@type": "HomeAndConstructionBusiness",
+    "name": `Same Day Appliance Repair — ${city.name}`,
+    "telephone": phoneRaw,
+    "email": city.email,
+    "areaServed": { "@type": "City", "name": city.name },
+    "priceRange": "$$"
+  },
+  "areaServed": { "@type": "City", "name": city.name },
+  "offers": {
+    "@type": "Offer",
+    "price": service.priceFrom,
+    "priceCurrency": "USD",
+    "priceSpecification": { "@type": "PriceSpecification", "price": service.priceFrom, "priceCurrency": "USD", "description": `Starting price for ${service.name.toLowerCase()} in ${city.name}` }
+  }
+};
+
+const schemaFAQ = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": `How much does ${service.name.toLowerCase()} cost in ${city.name}?`, "acceptedAnswer": { "@type": "Answer", "text": `${service.name} in ${city.name} starts from $${service.priceFrom}. Diagnostic fee is $${service.diagnosticFee}, waived when you proceed with the repair. Written estimate before we start.` } },
+    { "@type": "Question", "name": `Do you offer same-day ${service.name.toLowerCase()} in ${city.name}?`, "acceptedAnswer": { "@type": "Answer", "text": `Yes. Call ${city.phone} before noon for same-day afternoon service across all of ${city.name} — ZIP codes ${zipsDisplay}.` } },
+    { "@type": "Question", "name": `What warranty do you offer on ${service.name.toLowerCase()} in ${city.name}?`, "acceptedAnswer": { "@type": "Answer", "text": "90-day warranty on parts and labor. Genuine OEM parts only. If the same issue returns within 90 days, we come back at no charge." } },
+  ]
+};
+---
+
+<Layout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaFAQ)} />
+
+  <section class="cs-hero">
+    <div class="cs-hero__inner container">
+      <div class="cs-hero__eyebrow">{city.name}, CA &middot; {zipsDisplay} &middot; Same-Day Service</div>
+      <h1 class="cs-hero__h1"><span class="cs-hero__accent">{service.icon}</span> {service.name}<br />in {city.name}, CA</h1>
+      <p class="cs-hero__sub">Need {service.name.toLowerCase()} in {city.name}? Our licensed technicians serve all of {city.name}{nearbyName ? ` and nearby ${nearbyName}` : ''}. Same-day service, OEM parts, 90-day warranty. Call {city.phone}.</p>
+      <div class="cs-hero__ctas">
+        <a href={`tel:${phoneRaw}`} class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.29h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call {city.phone}
+        </a>
+        <a href="/book/" class="btn-secondary">Book Online</a>
+      </div>
+      <div class="cs-hero__rating">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="rating-text">4.6 &middot; Google reviews &middot; BBB A+ &middot; Licensed &amp; Insured</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust-bar">
+    <div class="container trust-bar__inner">
+      <div class="trust-item"><span>Same-Day Service</span></div>
+      <div class="trust-item"><span>90-Day Warranty</span></div>
+      <div class="trust-item"><span>OEM Parts Only</span></div>
+      <div class="trust-item"><span>Licensed &amp; Insured</span></div>
+      <div class="trust-item"><span>${service.diagnosticFee} Diagnostic</span></div>
+    </div>
+  </section>
+
+  <section class="cs-intro">
+    <div class="container">
+      <h2>{service.name} in {city.name} &mdash; What to Expect</h2>
+      <p>{service.description} We cover all of {city.name}, CA &mdash; ZIP codes {zipsDisplay}. Diagnostic fee is <strong>${service.diagnosticFee}</strong>, waived when you proceed with the repair. Written estimate before any work begins.</p>
+      <p>Our technicians carry OEM parts for Samsung, LG, GE, Whirlpool, KitchenAid, Bosch, Sub-Zero, Wolf, Thermador, Miele, and all other major brands on every service vehicle. <strong>90-day warranty</strong> on parts and labor.</p>
+    </div>
+  </section>
+
+  <section class="cs-issues">
+    <div class="container">
+      <h2 class="section-title">Common {service.name} Issues in {city.name}</h2>
+      <p class="section-sub">We fix all of these &mdash; same day, OEM parts, written estimate first.</p>
+      <div class="issues-grid">
+        {service.commonIssues.map(issue => (
+          <div class="issue-card">
+            <div class="issue-icon">&#10003;</div>
+            <div class="issue-text">{issue}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-pricing">
+    <div class="container">
+      <h2 class="section-title">{service.name} Cost in {city.name}</h2>
+      <div class="pricing-simple">
+        <div class="price-item featured">
+          <div class="price-label">{service.name}</div>
+          <div class="price-value">From ${service.priceFrom}</div>
+          <div class="price-note">OEM parts &middot; 90-day warranty &middot; Written estimate</div>
+        </div>
+        <div class="price-item">
+          <div class="price-label">Diagnostic Fee</div>
+          <div class="price-value">${service.diagnosticFee}</div>
+          <div class="price-note">Waived when you proceed with the repair</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-faq">
+    <div class="container">
+      <h2>{service.name} in {city.name} &mdash; FAQ</h2>
+      <div class="faq-list">
+        <details class="faq-item"><summary class="faq-q">How much does {service.name.toLowerCase()} cost in {city.name}?</summary><div class="faq-a">{service.name} in {city.name} starts from ${service.priceFrom}. Diagnostic fee is ${service.diagnosticFee}, waived when you proceed with the repair. Written estimate before we start.</div></details>
+        <details class="faq-item"><summary class="faq-q">Do you offer same-day {service.name.toLowerCase()} in {city.name}?</summary><div class="faq-a">Yes. Call {city.phone} before noon for same-day afternoon service across all of {city.name} &mdash; ZIP codes {zipsDisplay}.</div></details>
+        <details class="faq-item"><summary class="faq-q">What warranty do you offer on {service.name.toLowerCase()} in {city.name}?</summary><div class="faq-a">90-day warranty on parts and labor. Genuine OEM parts only. If the same issue returns within 90 days, we come back at no charge.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-bottom-cta">
+    <div class="container">
+      <div class="bottom-cta__inner">
+        <h2>Need {service.name.toLowerCase()} in {city.name}?</h2>
+        <p>Same-day service &middot; From ${service.priceFrom} &middot; ${service.diagnosticFee} diagnostic waived with repair &middot; 90-day warranty.</p>
+        <div class="bottom-cta__actions">
+          <a href={`tel:${phoneRaw}`} class="btn-primary btn-large">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.29h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            {city.phone}
+          </a>
+          <a href="/book/" class="btn-secondary btn-large">Book Online</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA phone={city.phone} branch={city.name} zones={city.nearby?.map(s => { const c = cities.find(x => x.slug === s); return c ? c.name : s; }) || [city.name]} />
+</Layout>
+
+<style>
+  :root { --cs-red: #C8102E; --cs-black: #0a0a0a; --cs-gray: #f5f5f5; --cs-border: #e2e2e2; --cs-text: #1a1a1a; --cs-muted: #6b6b6b; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .cs-hero { background: var(--cs-black); color: white; padding: 80px 0 60px; }
+  .cs-hero__inner { max-width: 720px; }
+  .cs-hero__eyebrow { font-size: 13px; font-weight: 500; color: var(--cs-red); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
+  .cs-hero__h1 { font-size: clamp(32px, 4.5vw, 48px); font-weight: 700; line-height: 1.15; margin-bottom: 20px; color: white; }
+  .cs-hero__accent { margin-right: 8px; }
+  .cs-hero__sub { font-size: 17px; line-height: 1.6; color: rgba(255,255,255,0.75); margin-bottom: 32px; max-width: 600px; }
+  .cs-hero__ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+  .cs-hero__rating { display: flex; align-items: center; gap: 10px; }
+  .stars { color: #FFD700; font-size: 18px; letter-spacing: 2px; }
+  .rating-text { font-size: 14px; color: rgba(255,255,255,0.7); }
+  .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--cs-red); color: white; padding: 14px 28px; border-radius: 8px; font-weight: 600; font-size: 16px; text-decoration: none; transition: background 0.2s; }
+  .btn-primary:hover { background: #a50e25; }
+  .btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: white; padding: 14px 28px; border-radius: 8px; font-weight: 600; font-size: 16px; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.35); }
+  .btn-large { padding: 16px 36px; font-size: 17px; }
+  .trust-bar { background: var(--cs-red); padding: 16px 0; }
+  .trust-bar__inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .trust-item { color: white; font-size: 14px; font-weight: 500; }
+  .cs-intro { padding: 64px 0; background: white; }
+  .cs-intro h2 { font-size: 28px; font-weight: 700; color: var(--cs-black); margin-bottom: 16px; }
+  .cs-intro p { font-size: 16px; line-height: 1.7; color: var(--cs-text); margin-bottom: 14px; max-width: 800px; }
+  .section-title { font-size: 30px; font-weight: 700; color: var(--cs-black); margin-bottom: 8px; text-align: center; }
+  .section-sub { font-size: 16px; color: var(--cs-muted); text-align: center; margin-bottom: 40px; }
+  .cs-issues { padding: 64px 0; background: var(--cs-gray); }
+  .issues-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 800px; margin: 0 auto; }
+  .issue-card { display: flex; align-items: center; gap: 12px; background: white; border: 1px solid var(--cs-border); border-radius: 8px; padding: 16px 20px; }
+  .issue-icon { color: var(--cs-red); font-weight: 700; font-size: 16px; flex-shrink: 0; }
+  .issue-text { font-size: 15px; color: var(--cs-text); }
+  .cs-pricing { padding: 64px 0; background: white; }
+  .pricing-simple { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 600px; margin: 0 auto; }
+  .price-item { background: var(--cs-gray); border: 1px solid var(--cs-border); border-radius: 12px; padding: 28px; text-align: center; }
+  .price-item.featured { background: #fff5f7; border-color: var(--cs-red); }
+  .price-label { font-size: 14px; color: var(--cs-muted); margin-bottom: 8px; }
+  .price-value { font-size: 28px; font-weight: 700; color: var(--cs-black); margin-bottom: 8px; }
+  .price-item.featured .price-value { color: var(--cs-red); }
+  .price-note { font-size: 13px; color: var(--cs-muted); }
+  .cs-faq { padding: 64px 0; background: var(--cs-gray); }
+  .cs-faq h2 { font-size: 30px; font-weight: 700; color: var(--cs-black); margin-bottom: 32px; text-align: center; }
+  .faq-list { max-width: 800px; margin: 0 auto; }
+  .faq-item { border: 1px solid var(--cs-border); border-radius: 8px; background: white; margin-bottom: 10px; overflow: hidden; }
+  .faq-q { padding: 18px 24px; font-size: 16px; font-weight: 600; color: var(--cs-black); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-q::after { content: '+'; font-size: 22px; color: var(--cs-red); flex-shrink: 0; margin-left: 16px; }
+  details[open] .faq-q::after { content: '\2212'; }
+  .faq-a { padding: 0 24px 20px; font-size: 15px; line-height: 1.7; color: var(--cs-text); }
+  .cs-bottom-cta { padding: 64px 0; background: var(--cs-black); color: white; text-align: center; }
+  .cs-bottom-cta h2 { font-size: 34px; font-weight: 700; margin-bottom: 12px; }
+  .cs-bottom-cta p { font-size: 16px; color: rgba(255,255,255,0.7); margin-bottom: 32px; }
+  .bottom-cta__actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .cs-bottom-cta .btn-secondary { color: var(--cs-text); border-color: var(--cs-border); }
+  @media (max-width: 768px) { .issues-grid { grid-template-columns: 1fr 1fr; } .pricing-simple { grid-template-columns: 1fr; } .trust-bar__inner { justify-content: center; } }
+  @media (max-width: 480px) { .issues-grid { grid-template-columns: 1fr; } .cs-hero { padding: 48px 0 40px; } .cs-bottom-cta h2 { font-size: 26px; } }
+</style>
