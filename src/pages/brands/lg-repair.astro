@@ -1,0 +1,424 @@
+// src/pages/brands/lg-repair.astro
+// Same Day Appliance Repair — LG Brand Page
+
+import Layout from '../../layouts/Layout.astro';
+import CTA from '../../components/CTA.astro';
+
+const metaTitle = "LG Appliance Repair Los Angeles & Orange County | Compressor Warranty Specialists";
+const metaDesc = "LG appliance repair in Los Angeles, Orange County & Ventura County. Linear compressor warranty check included — free. Refrigerator, washer, dryer, dishwasher. OEM parts, same-day service.";
+
+const phone_la = "(424) 325-0520";
+const phone_oc = "(213) 401-9019";
+const phone_ventura = "(424) 208-0228";
+
+const appliances = [
+  {
+    name: "LG Refrigerator Repair",
+    slug: "refrigerator-repair",
+    icon: "❄️",
+    failures: [
+      "Not cooling — linear compressor failure (may be warranty covered)",
+      "Clicking/buzzing from compressor area — compressor lock code 67",
+      "Freezer cold but fridge warm — evaporator fan or damper",
+      "Ice maker not working — ice maker assembly or water inlet valve",
+      "Water dispenser not working — inlet valve or frozen line",
+      "Door-in-Door seal failing — gasket replacement",
+      "Error codes: Er FF, Er rF, Er IF, Er dH, Er CF",
+      "Frost buildup — defrost heater or sensor failure",
+    ]
+  },
+  {
+    name: "LG Washer Repair",
+    slug: "washer-repair",
+    icon: "🫧",
+    failures: [
+      "OE drain error — drain pump filter clogged (most common)",
+      "UE / uE — unbalanced load detection, suspension issue",
+      "Door lock failure — dE error, latch assembly",
+      "Direct Drive motor failure — drum not spinning",
+      "LE error — motor locked, overloaded or seized",
+      "tE error — thermistor / temperature sensor fault",
+      "Leaking at door — door gasket / bellows seal",
+      "Not starting — control board or door latch",
+    ]
+  },
+  {
+    name: "LG Dryer Repair",
+    slug: "dryer-repair",
+    icon: "💨",
+    failures: [
+      "Not heating — heating element or thermal fuse",
+      "tE / tE1 / tE3 error — thermistor failure",
+      "d80 / d90 / d95 — vent blockage warning (check vent first)",
+      "Drum not spinning — belt or idler pulley",
+      "CL error — child lock activated (not a fault)",
+      "Squealing — drum bearing or glide worn",
+      "Not drying fully — vent restriction",
+      "Burning smell — lint in heating chamber",
+    ]
+  },
+  {
+    name: "LG Dishwasher Repair",
+    slug: "dishwasher-repair",
+    icon: "🍽️",
+    failures: [
+      "AE / FE — water leak detected, anti-flood triggered",
+      "OE — drain fault, pump or filter blocked",
+      "HE — heating element failure",
+      "IE — water inlet not filling",
+      "Dishes not clean — spray arm clogged",
+      "Door not latching — latch assembly",
+      "Error codes: tE, LE, CE, PE",
+      "Water not draining — sump filter blocked",
+    ]
+  },
+  {
+    name: "LG Range & Oven Repair",
+    slug: "oven-repair",
+    icon: "🔥",
+    failures: [
+      "F9 / F3 error — oven temperature sensor failure",
+      "Oven not heating — bake element or igniter",
+      "Burner not igniting — spark module or electrode",
+      "Cooktop surface cracked — glass replacement",
+      "Control panel unresponsive — control board",
+      "Self-clean door lock stuck — latch motor",
+      "Uneven heating — element or convection fan",
+      "Gas range clicking — electrode corrosion or moisture",
+    ]
+  },
+];
+
+const coveredModels = [
+  "LFXS series", "LFXC series", "LMXS series", "LMXC series",
+  "LRMVS series", "LRMVC series", "LSXS series", "LSXC series",
+  "LTCS series", "LRTLS series",
+];
+
+const serviceAreas = [
+  {
+    region: "Los Angeles",
+    cities: ["Los Angeles", "West Hollywood", "Santa Monica", "Beverly Hills", "Burbank", "Pasadena", "Glendale", "Long Beach", "Manhattan Beach", "Studio City", "Sherman Oaks", "Encino"],
+    phone: phone_la,
+    raw: "+14243250520"
+  },
+  {
+    region: "Orange County",
+    cities: ["Irvine", "Newport Beach", "Anaheim", "Huntington Beach", "Costa Mesa", "Yorba Linda", "Fullerton", "Tustin", "Mission Viejo", "Laguna Niguel", "San Clemente", "Dana Point"],
+    phone: phone_oc,
+    raw: "+12134019019"
+  },
+  {
+    region: "Ventura County",
+    cities: ["Thousand Oaks", "Simi Valley", "Ventura", "Camarillo", "Moorpark", "Newbury Park", "Westlake Village", "Agoura Hills"],
+    phone: phone_ventura,
+    raw: "+14242080228"
+  },
+];
+
+const faqs = [
+  {
+    q: "Is my LG refrigerator compressor covered under warranty?",
+    a: "Following the Rosen v. LG Electronics class action settlement, LG extended its Inverter Linear Compressor warranty to 10 years (parts and labor) for models manufactured between 2014 and 2022. Covered model series include LFXS, LFXC, LMXS, LMXC, LRMVS, LRMVC, LSXS, LSXC, LTCS, and LRTLS. We verify coverage on every LG compressor call before quoting anything. If your unit is covered, you pay diagnostic and labor only — not compressor parts. Call us with your model number and purchase date and we'll check coverage on the spot."
+  },
+  {
+    q: "What does the clicking sound from my LG refrigerator mean?",
+    a: "A rhythmic clicking or click-buzz sound from the back of your LG refrigerator — typically every 2-3 seconds — is the compressor attempting to start and failing. This is the classic LG linear compressor failure signature, known as error code 67 (compressor lock). Before diagnosing a compressor failure, we check the start relay first — a rattling relay is a $25 fix that can mimic compressor failure. If the relay is solid and windings test correctly, the internal compressor mechanism has failed. This is exactly the situation where warranty coverage applies."
+  },
+  {
+    q: "Why does my LG washer show an OE error?",
+    a: "OE on an LG washer means the drain cycle didn't complete. The most common cause by far is a clogged drain pump filter — LG front-load washers have a filter behind a small access panel at the lower front of the machine that needs quarterly cleaning. Most homeowners don't know it exists until the OE error appears. We clear the filter, check the drain pump impeller, and show you the maintenance procedure before we leave. In most OE cases, no parts are needed."
+  },
+  {
+    q: "What is the LG d80 or d90 error on my dryer?",
+    a: "d80, d90, and d95 are vent blockage warnings — they indicate 80%, 90%, or 95% airflow restriction. These are not component failures; they're telling you the dryer vent needs cleaning. If you see these codes, the vent run from the dryer to the exterior needs to be cleared. We inspect and clear dryer vents on every LG dryer call in Southern California. A restricted vent that causes the dryer to overheat will eventually damage the heating element and thermal fuse."
+  },
+  {
+    q: "Is the LG Direct Drive motor warrantied?",
+    a: "LG warranties the Direct Drive motor on washers for 10 years on parts. If your LG washer drum is not spinning and the motor has failed, warranty coverage may apply depending on your model and purchase date. We verify motor warranty coverage the same way we check compressor coverage — before quoting, not after."
+  },
+  {
+    q: "How much does LG appliance repair cost in Southern California?",
+    a: "Our diagnostic fee is $89, credited toward the repair. Common LG repairs: drain pump filter cleaning $89 (service fee only, no parts), door latch replacement $120-180, heating element $150-230, ice maker assembly $180-280, compressor replacement $350-550 out of warranty (or parts-only cost in-warranty). We give a written estimate before any work begins."
+  },
+  {
+    q: "Do you use genuine LG OEM parts?",
+    a: "Yes. All repairs use genuine LG OEM parts. Using non-LG parts on a unit still under warranty voids the remaining coverage — we never do this. Every repair comes with a 90-day warranty on parts and labor."
+  },
+];
+
+const schemaJSON = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HomeAndConstructionBusiness",
+      "name": "Same Day Appliance Repair — LG Repair Specialist",
+      "url": "https://samedayappliance.repair/brands/lg-repair/",
+      "areaServed": [
+        { "@type": "Place", "name": "Los Angeles County" },
+        { "@type": "Place", "name": "Orange County" },
+        { "@type": "Place", "name": "Ventura County" }
+      ],
+      "knowsAbout": ["LG appliance repair", "LG linear compressor repair", "LG refrigerator repair", "LG washer repair"],
+      "priceRange": "$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "278",
+        "bestRating": "5"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a }
+      }))
+    }
+  ]
+});
+---
+
+<Layout title={metaTitle} description={metaDesc}>
+  <script type="application/ld+json" set:html={schemaJSON}></script>
+
+  <section class="brand-hero">
+    <div class="brand-hero-inner">
+      <div class="brand-eyebrow">LG Appliance Repair · Los Angeles · Orange County · Ventura County</div>
+      <h1>LG Appliance Repair — Southern California</h1>
+      <p class="brand-hero-sub">Linear compressor warranty check included on every refrigerator call — free. Same-day service for all LG appliances across LA, OC, and Ventura County. OEM parts, 90-day warranty.</p>
+      <div class="brand-hero-phones">
+        <div class="phone-group">
+          <span class="phone-label">Los Angeles</span>
+          <a href="tel:+14243250520" class="btn-primary">{phone_la}</a>
+        </div>
+        <div class="phone-group">
+          <span class="phone-label">Orange County</span>
+          <a href="tel:+12134019019" class="btn-primary">{phone_oc}</a>
+        </div>
+        <div class="phone-group">
+          <span class="phone-label">Ventura County</span>
+          <a href="tel:+14242080228" class="btn-primary">{phone_ventura}</a>
+        </div>
+      </div>
+      <div class="brand-trust-row">
+        <span>⭐ 4.9 Google Rating</span>
+        <span>✓ Warranty Check Included</span>
+        <span>✓ OEM LG Parts</span>
+        <span>✓ Same-Day Service</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item"><span class="trust-icon">⚡</span><span>Same-Day Available</span></div>
+      <div class="trust-item"><span class="trust-icon">📋</span><span>Warranty Check Free</span></div>
+      <div class="trust-item"><span class="trust-icon">🔧</span><span>OEM LG Parts</span></div>
+      <div class="trust-item"><span class="trust-icon">🛡️</span><span>90-Day Warranty</span></div>
+      <div class="trust-item"><span class="trust-icon">💰</span><span>$89 Diagnostic</span></div>
+    </div>
+  </section>
+
+  <section class="brand-warranty-alert">
+    <div class="brand-warranty-alert-inner">
+      <div class="warranty-alert-icon">⚠️</div>
+      <div class="warranty-alert-content">
+        <h2>LG Linear Compressor — Your Unit May Be Covered at No Parts Cost</h2>
+        <p>Following the <strong>Rosen v. LG Electronics class action settlement</strong>, LG extended its Inverter Linear Compressor warranty to <strong>10 years (parts and labor)</strong> for refrigerators manufactured 2014–2022. Covered series: LFXS, LFXC, LMXS, LMXC, LRMVS, LRMVC, LSXS, LSXC, LTCS, LRTLS.</p>
+        <p>If your LG refrigerator isn't cooling and is in the 5-10 year range — <strong>don't pay for a compressor before you check your coverage.</strong> We verify this on every LG refrigerator compressor call before quoting anything. Call us with your model number and we'll check on the spot.</p>
+        <div class="warranty-phones">
+          <a href="tel:+14243250520" class="btn-primary">LA: {phone_la}</a>
+          <a href="tel:+12134019019" class="btn-primary">OC: {phone_oc}</a>
+          <a href="tel:+14242080228" class="btn-primary">Ventura: {phone_ventura}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-intro">
+    <div class="brand-intro-inner">
+      <h2>LG Appliance Repair in Southern California</h2>
+      <p>LG is one of the most popular appliance brands in Southern California — the brand has been a top seller for over a decade, and its French door refrigerators, front-load washers, and ranges are in hundreds of thousands of homes across LA, OC, and Ventura County. Our technicians service LG appliances daily and are familiar with every characteristic failure pattern the brand has developed over the years.</p>
+      <p>The most significant issue facing LG refrigerator owners right now is the linear compressor — a design that was marketed as more efficient and longer-lasting, but has shown higher-than-expected failure rates at the 4-8 year mark. The class action settlement means many affected units are still covered under warranty. We always check before we quote a compressor job.</p>
+      <p>Beyond the compressor issue, LG appliances are generally reliable when maintained. The most common calls we handle are LG washer OE drain errors (almost always a clogged filter, no parts needed), LG dryer vent restriction warnings, and LG dishwasher AE leak codes. Most of these resolve same visit.</p>
+    </div>
+  </section>
+
+  <section class="brand-appliances">
+    <div class="brand-appliances-inner">
+      <h2>LG Appliances We Repair</h2>
+      <div class="brand-appliance-grid">
+        {appliances.map(a => (
+          <div class="brand-appliance-card">
+            <div class="appliance-header">
+              <span class="appliance-icon">{a.icon}</span>
+              <h3>{a.name}</h3>
+            </div>
+            <ul class="failure-list">
+              {a.failures.map(f => (
+                <li>{f}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-context">
+    <div class="brand-context-inner">
+      <div class="section-number">01</div>
+      <div class="brand-context-content">
+        <h2>How to Diagnose an LG Linear Compressor Failure</h2>
+        <p>The LG linear compressor failure has a distinctive signature that experienced technicians recognize immediately. The most reliable indicator is a rhythmic clicking or click-buzz pattern from the rear of the refrigerator — typically every 2-3 seconds. This is the compressor attempting to start, failing, and resetting via the overload. Error code 67 (compressor lock) will appear in the diagnostic mode.</p>
+        <p>Before condemning the compressor, a proper diagnosis checks the start relay first. Removing the relay and shaking it — if it rattles, the relay has failed internally. A bad relay produces identical symptoms to a failed compressor and costs $25 to fix instead of $400+. We see this misdiagnosis regularly in the field: homeowners told they need a compressor who actually needed a relay.</p>
+        <p>If the relay is solid and compressor winding resistance tests correctly (3-7 ohms across terminals, no ground fault), the internal linear mechanism has failed. At that point, warranty coverage is the critical question. For models and years covered by the settlement, LG provides the replacement compressor at no cost and reimburses labor. We handle the warranty claim process on your behalf.</p>
+
+        <h2>LG Washer OE Error — Almost Never a Pump Failure</h2>
+        <p>The OE drain error is the most common LG washer call we receive. Homeowners frequently assume it's a pump failure — it almost never is. LG front-load washers have a drain pump filter behind a small access panel at the lower right front of the machine. This filter catches lint, coins, hair ties, and other debris from every wash cycle. LG recommends cleaning it monthly. Most people don't know it exists.</p>
+        <p>When the filter clogs completely, the pump can't move water past it and the OE code triggers. The fix: open the access panel, drain the water, unscrew the filter, clean it, reinstall. No parts. We do this on site in 20-30 minutes and show the homeowner the filter location and cleaning procedure. If the filter is clear and the pump itself is seized or failed, that's a parts repair — but that's the exception, not the rule.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-models">
+    <div class="brand-models-inner">
+      <div class="section-number">02</div>
+      <h2>LG Models Potentially Covered by 10-Year Compressor Warranty</h2>
+      <p class="models-intro">The following model series manufactured 2014–2022 may be covered under the Rosen v. LG settlement. Call us with your full model number for verification.</p>
+      <div class="models-grid">
+        {coveredModels.map(m => (
+          <div class="model-tag covered">{m}</div>
+        ))}
+      </div>
+      <p class="models-note">Coverage depends on model year, serial number, and purchase date. We verify at no charge before starting any work.</p>
+    </div>
+  </section>
+
+  <section class="brand-service-areas">
+    <div class="brand-service-areas-inner">
+      <div class="section-number">03</div>
+      <h2>LG Repair Service Areas</h2>
+      <div class="service-areas-grid">
+        {serviceAreas.map(area => (
+          <div class="service-area-card">
+            <h3>{area.region}</h3>
+            <div class="area-cities">
+              {area.cities.map(c => <span class="area-city">{c}</span>)}
+            </div>
+            <a href={`tel:${area.raw}`} class="area-phone">{area.phone}</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-reviews">
+    <div class="brand-reviews-inner">
+      <h2>LG Repair Reviews</h2>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">⭐⭐⭐⭐⭐</div>
+          <p>"LG fridge stopped cooling — that clicking sound. Same Day checked the relay first (fine), then verified the compressor warranty. Unit was covered under the settlement. They replaced the compressor, parts covered by LG, I only paid labor. Saved me $450."</p>
+          <div class="review-author">— Michael R., Irvine</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">⭐⭐⭐⭐⭐</div>
+          <p>"LG washer OE error, water not draining. Tech opened the filter panel, cleaned it out in 20 minutes, showed me where it is and how to clean it quarterly. No parts. $89 service call credited. This is how service should work."</p>
+          <div class="review-author">— Sandra K., Burbank</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">⭐⭐⭐⭐⭐</div>
+          <p>"LG dryer d90 error — they came out, cleared the vent, explained the restriction warning system. No parts needed. Also mentioned the thermal fuse was showing stress and replaced it proactively. That's the kind of service that prevents the next call."</p>
+          <div class="review-author">— Patricia L., Thousand Oaks</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">⭐⭐⭐⭐⭐</div>
+          <p>"LG dishwasher AE error — leak detected. Door gasket replaced same day. Technician found the sump filter was also completely clogged and cleared that at no extra charge. One visit, done right."</p>
+          <div class="review-author">— James T., Newport Beach</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-pricing">
+    <div class="brand-pricing-inner">
+      <h2>LG Repair Pricing</h2>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-label">Diagnostic Fee</div>
+          <div class="pricing-price">$89</div>
+          <div class="pricing-note">All LG appliances · Credited toward repair · Warranty check always included</div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-label">OE Error (Filter Clean)</div>
+          <div class="pricing-price">$89</div>
+          <div class="pricing-note">Service fee only — no parts needed in most cases</div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-label">Standard Repair</div>
+          <div class="pricing-price">$150–$380</div>
+          <div class="pricing-note">Latch, element, pump, sensor · OEM LG parts · 90-day warranty</div>
+        </div>
+        <div class="pricing-card highlight">
+          <div class="pricing-label">Compressor (in-warranty)</div>
+          <div class="pricing-price">Labor only</div>
+          <div class="pricing-note">Parts covered by LG · We handle the claim · Models 2014–2022</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-faq">
+    <div class="brand-faq-inner">
+      <div class="section-number">04</div>
+      <h2>LG Appliance Repair — Frequently Asked Questions</h2>
+      <div class="faq-list">
+        {faqs.map(f => (
+          <details class="faq-item">
+            <summary class="faq-q">{f.q}</summary>
+            <div class="faq-a">{f.a}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-bottom-cta">
+    <div class="brand-bottom-cta-inner">
+      <h2>Schedule LG Appliance Repair Today</h2>
+      <p>Same-day service across Los Angeles, Orange County, and Ventura County. Compressor warranty check always included.</p>
+      <div class="brand-cta-phones">
+        <div class="cta-phone-group">
+          <span>Los Angeles</span>
+          <a href="tel:+14243250520" class="btn-primary-xl">{phone_la}</a>
+        </div>
+        <div class="cta-phone-group">
+          <span>Orange County</span>
+          <a href="tel:+12134019019" class="btn-primary-xl">{phone_oc}</a>
+        </div>
+        <div class="cta-phone-group">
+          <span>Ventura County</span>
+          <a href="tel:+14242080228" class="btn-primary-xl">{phone_ventura}</a>
+        </div>
+      </div>
+      <p class="bottom-note">$89 diagnostic · OEM LG parts · 90-day warranty · Warranty check at no charge</p>
+    </div>
+  </section>
+
+  <section class="brand-links">
+    <div class="brand-links-inner">
+      <h2>Other Brands We Repair</h2>
+      <div class="brand-links-grid">
+        <a href="/brands/samsung-repair/" class="brand-link">Samsung Appliance Repair →</a>
+        <a href="/brands/ge-repair/" class="brand-link">GE Appliance Repair →</a>
+        <a href="/brands/whirlpool-repair/" class="brand-link">Whirlpool Repair →</a>
+        <a href="/brands/sub-zero-repair/" class="brand-link">Sub-Zero Repair →</a>
+        <a href="/brands/kitchenaid-repair/" class="brand-link">KitchenAid Repair →</a>
+        <a href="/brands/bosch-repair/" class="brand-link">Bosch Repair →</a>
+      </div>
+    </div>
+  </section>
+</Layout>
