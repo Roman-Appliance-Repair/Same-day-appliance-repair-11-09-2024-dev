@@ -1,0 +1,715 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "BlueStar Appliance Repair Los Angeles | Open Burner & Infrared Broiler Specialists";
+const description = "Expert BlueStar appliance repair in Los Angeles. Open burner ranges, infrared broilers, Primus/Platinum/Nova series — 25,000 BTU to 130 BTU Ultra-Low. American-made since 1880. Same-day service. Call (626) 376-4458.";
+const phone = "(626) 376-4458";
+const phoneRaw = "6263764458";
+---
+
+<Layout title={title} description={description}>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Same Day Appliance Repair — BlueStar Specialist",
+  "url": "https://samedayappliance.repair/brand-bluestar-appliance-repair/",
+  "telephone": "+16263764458",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Los Angeles",
+    "addressRegion": "CA",
+    "postalCode": "90001",
+    "addressCountry": "US"
+  },
+  "areaServed": ["Los Angeles County", "Orange County", "Ventura County"],
+  "priceRange": "$$",
+  "openingHours": "Mo-Sa 08:00-20:00",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "BlueStar Repair Services",
+    "itemListElement": [
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"BlueStar Range Repair"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"BlueStar Open Burner Service"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"BlueStar Infrared Broiler Repair"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"BlueStar Wall Oven Repair"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"BlueStar Refrigerator Repair"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"BlueStar Rangetop Repair"}}
+    ]
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does BlueStar appliance repair cost in Los Angeles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most BlueStar repairs run $175–$580. Open burner igniter replacement, temperature sensor, or door gasket work is on the lower end. Infrared broiler element, gas valve, or control board replacement runs higher. Diagnostic fee is $89, waived when you proceed. Written flat-rate estimate before work begins."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is BlueStar's open burner design and how does it affect service?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BlueStar uses open burners — the burner is exposed rather than sealed to the cooktop surface. Open burners deliver more heat (up to 25,000 BTU) because combustion isn't restricted by a sealed cap assembly. For service, open burners accumulate debris differently than sealed burners: food particles and grease can reach the burner ports directly. BlueStar burner ports require regular cleaning and specific port-clearing technique. Open burner igniters also use a star-shaped cap geometry requiring OEM igniter positioning."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you repair BlueStar's infrared broiler?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. BlueStar's infrared broiler uses a ceramic-element system that operates at far higher surface temperatures than standard radiant broilers — delivering restaurant-grade searing performance. The infrared ceramic element is the most common broiler failure. We service the full infrared broiler assembly including the ceramic element, gas circuit, and ignition system."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is BlueStar made?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BlueStar is manufactured in Reading, Pennsylvania by Prizer-Painter Stove Works — a company with roots going back to 1880. BlueStar is one of the very few remaining American-made professional range manufacturers. All BlueStar ranges are built in the Reading, PA factory."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can BlueStar ranges really be ordered in 750 colors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. BlueStar offers over 750 color options for their ranges — the most customizable professional range in the residential market. These are custom powder-coat finishes applied to the range body and door. The color finish requires non-abrasive service protocols during any work near the range exterior — powder coat scratches differently than stainless steel."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Ultra-Low simmer on BlueStar and what happens when it fails?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BlueStar's Ultra-Low simmer reaches 130 BTU — the lowest of any residential burner. It uses a valve that partially restricts gas flow to achieve this output. The most common Ultra-Low failure: the restriction valve sticks in the restricted position (burner won't go above a very low flame) or fails to restrict (burner holds higher than intended minimum flame). We service the Ultra-Low valve assembly independently from the main gas valve."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --red: #C8102E;
+    --black: #0a0a0a;
+    --gray: #f5f5f5;
+    --border: #e2e2e2;
+    --text: #1a1a1a;
+    --muted: #6b6b6b;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Barlow', 'Inter', system-ui, sans-serif; color: var(--text); }
+
+  .top-bar { background: var(--red); padding: 8px 24px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #fff; }
+  .top-bar a { color: #fff; text-decoration: none; font-weight: 700; }
+
+  .hero { background: var(--black); padding: 72px 24px 64px; color: #fff; }
+  .hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 420px; gap: 48px; align-items: center; }
+  .hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .hero-title { font-size: clamp(32px, 5vw, 52px); font-weight: 900; line-height: 1.05; text-transform: uppercase; letter-spacing: -0.02em; margin-bottom: 20px; }
+  .hero-title span { color: var(--red); }
+  .hero-sub { font-size: 17px; line-height: 1.6; color: #aaa; margin-bottom: 32px; max-width: 540px; }
+  .hero-cta-group { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary { display: inline-block; background: var(--red); color: #fff; padding: 14px 28px; font-size: 15px; font-weight: 700; text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; }
+  .btn-secondary { display: inline-block; border: 1px solid #555; color: #ccc; padding: 14px 28px; font-size: 15px; font-weight: 600; text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; }
+  .hero-badge-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .hero-badge { background: #161616; border: 1px solid #2a2a2a; padding: 16px 18px; }
+  .badge-num { font-size: 22px; font-weight: 900; color: var(--red); line-height: 1; margin-bottom: 4px; }
+  .badge-label { font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 0.08em; }
+
+  .trust-bar { background: var(--red); padding: 14px 24px; }
+  .trust-bar-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  .trust-item { color: #fff; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+  .trust-item::before { content: "✓ "; }
+
+  .section { padding: 64px 24px; }
+  .section-gray { background: var(--gray); }
+  .section-black { background: var(--black); color: #fff; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-num { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+  .section-title { font-size: clamp(24px, 3.5vw, 36px); font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 20px; }
+  .section-black .section-title { color: #fff; }
+  .section-lead { font-size: 17px; line-height: 1.7; color: var(--muted); max-width: 760px; margin-bottom: 40px; }
+  .section-black .section-lead { color: #999; }
+
+  /* BTU range visual */
+  .btu-bar { background: linear-gradient(to right, #1a3a6a 0%, #2a5ea5 20%, #e8a030 70%, #C8102E 100%); height: 8px; border-radius: 4px; margin: 16px 0 8px; }
+  .btu-labels { display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; color: var(--muted); }
+
+  /* Series grid */
+  .series-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #2a2a2a; border: 1px solid #2a2a2a; margin-top: 28px; }
+  .series-card { background: #161616; padding: 20px 18px; }
+  .series-name { font-size: 15px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.06em; color: #fff; margin-bottom: 6px; }
+  .series-btu { font-size: 12px; color: var(--red); font-weight: 700; margin-bottom: 8px; }
+  .series-desc { font-size: 12px; color: #666; line-height: 1.55; }
+
+  .tip-block { border-left: 3px solid var(--red); background: #fff8f8; padding: 18px 20px; margin: 32px 0; max-width: 760px; }
+  .tip-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; color: var(--red); margin-bottom: 6px; }
+  .tip-text { font-size: 14px; line-height: 1.65; color: var(--text); }
+  .tip-usa { border-color: #2a5ea5; background: #f0f7ff; }
+  .tip-usa .tip-label { color: #2a5ea5; }
+  .tip-open { border-color: #c8820a; background: #fff8f0; }
+  .tip-open .tip-label { color: #c8820a; }
+
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .service-card { background: #fff; padding: 28px 24px; }
+  .service-icon { font-size: 28px; margin-bottom: 12px; }
+  .service-name { font-size: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 10px; color: var(--text); }
+  .service-desc { font-size: 14px; line-height: 1.65; color: var(--muted); margin-bottom: 12px; }
+  .service-issues { font-size: 12px; color: var(--red); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  .features-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  .features-list { list-style: none; }
+  .features-list li { padding: 14px 0; border-bottom: 1px solid #2a2a2a; font-size: 15px; color: #ccc; display: flex; gap: 12px; }
+  .features-list li::before { content: "→"; color: var(--red); flex-shrink: 0; }
+
+  .problems-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-top: 32px; }
+  .problem-card { border: 1px solid var(--border); background: #fff; padding: 20px; }
+  .problem-title { font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; color: var(--text); }
+  .problem-cause { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 10px; }
+  .problem-tag { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 3px 8px; color: #fff; }
+  .tag-common { background: var(--red); }
+  .tag-open { background: #c8820a; }
+  .tag-broiler { background: #2a5ea5; }
+  .tag-coastal { background: #2a7a2a; }
+
+  .pricing-table { width: 100%; border-collapse: collapse; margin-top: 24px; }
+  .pricing-table th { background: var(--text); color: #fff; text-align: left; padding: 12px 16px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; }
+  .pricing-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); font-size: 14px; }
+  .pricing-table tr:last-child td { border-bottom: none; }
+  .pricing-table tr:nth-child(even) td { background: var(--gray); }
+  .price-range { font-weight: 700; color: var(--red); }
+
+  .why-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 24px; margin-top: 32px; }
+  .why-card { border-left: 3px solid var(--red); padding: 20px; background: #fff; }
+  .why-icon { font-size: 24px; margin-bottom: 10px; }
+  .why-title { font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  .why-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 32px; }
+  .review-card { background: #fff; border: 1px solid var(--border); padding: 24px; }
+  .review-stars { color: var(--red); font-size: 18px; margin-bottom: 10px; }
+  .review-text { font-size: 14px; line-height: 1.7; color: var(--text); margin-bottom: 14px; }
+  .review-author { font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--muted); }
+
+  .repairs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 32px; }
+  .repair-item { background: #fff; padding: 24px; }
+  .repair-appliance { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--red); margin-bottom: 6px; }
+  .repair-issue { font-size: 15px; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+  .repair-detail { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .repair-meta { margin-top: 12px; font-size: 12px; font-weight: 600; color: #aaa; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  .faq-list { margin-top: 32px; }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
+  .faq-q { font-size: 16px; font-weight: 800; color: var(--text); margin-bottom: 10px; }
+  .faq-a { font-size: 14px; line-height: 1.7; color: var(--muted); max-width: 760px; }
+
+  .nearby-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .nearby-chip { background: var(--gray); border: 1px solid var(--border); padding: 8px 14px; font-size: 13px; color: var(--muted); text-decoration: none; font-weight: 600; }
+  .nearby-chip:hover { border-color: var(--red); color: var(--red); }
+
+  .bottom-cta { background: var(--black); padding: 72px 24px; text-align: center; color: #fff; }
+  .bottom-cta-title { font-size: clamp(28px, 4vw, 44px); font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 12px; }
+  .bottom-cta-title span { color: var(--red); }
+  .bottom-cta-sub { font-size: 17px; color: #888; margin-bottom: 32px; }
+  .cta-phone-large { display: inline-block; font-size: clamp(28px, 4vw, 42px); font-weight: 900; color: #fff; text-decoration: none; letter-spacing: -0.01em; margin-bottom: 24px; border-bottom: 2px solid var(--red); padding-bottom: 4px; }
+
+  @media (max-width: 768px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-badge-grid { grid-template-columns: 1fr 1fr; }
+    .features-2col { grid-template-columns: 1fr; }
+    .series-grid { grid-template-columns: 1fr; }
+    .trust-bar-inner { flex-direction: column; gap: 6px; }
+  }
+</style>
+
+<div class="top-bar">
+  <span>Mon–Sat 8am–8pm · Los Angeles &amp; Southern California</span>
+  <a href={`tel:${phoneRaw}`}>{phone}</a>
+</div>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">BlueStar Appliance Repair — Los Angeles</div>
+      <h1 class="hero-title">
+        BlueStar Repair.<br/>
+        <span>Open Burner. Infrared.</span><br/>
+        American-Made.
+      </h1>
+      <p class="hero-sub">
+        BlueStar has been made in Reading, Pennsylvania since 1880 — open burners that reach 25,000 BTU and drop to 130 BTU Ultra-Low simmer, the infrared broiler no other residential range offers, and 750 color options. We know open burner service. We know the star-shaped cap geometry. We know the infrared element.
+      </p>
+      <div class="hero-cta-group">
+        <a href={`tel:${phoneRaw}`} class="btn-primary">Call {phone}</a>
+        <a href="/book/" class="btn-secondary">Book Online</a>
+      </div>
+    </div>
+    <div class="hero-badge-grid">
+      <div class="hero-badge">
+        <div class="badge-num">Same</div>
+        <div class="badge-label">Day Service</div>
+      </div>
+      <div class="hero-badge">
+        <div class="badge-num">OEM</div>
+        <div class="badge-label">BlueStar Parts</div>
+      </div>
+      <div class="hero-badge">
+        <div class="badge-num">90-Day</div>
+        <div class="badge-label">Warranty</div>
+      </div>
+      <div class="hero-badge">
+        <div class="badge-num">$89</div>
+        <div class="badge-label">Diagnostic Fee</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <span class="trust-item">Licensed &amp; Insured · CSLB #1138898</span>
+    <span class="trust-item">Open Burner Port Service</span>
+    <span class="trust-item">Infrared Broiler Specialists</span>
+    <span class="trust-item">Ultra-Low Simmer Valve Service</span>
+    <span class="trust-item">Flat-Rate Written Estimate</span>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="section-num">01 — About BlueStar</div>
+    <h2 class="section-title">Open Burners. American-Made. 25,000 BTU to 130 BTU.</h2>
+    <p class="section-lead">
+      BlueStar is manufactured by Prizer-Painter Stove Works in Reading, Pennsylvania — a company with roots going back to 1880. It's one of a tiny handful of professional ranges still made entirely in the United States. The Reading factory produces every BlueStar range by hand, and the product reflects that: open burners that deliver commercial-kitchen power, an infrared broiler that creates restaurant-grade searing, and a BTU range wider than any other residential range — from 25,000 BTU on the power burner down to 130 BTU on the Ultra-Low simmer, all without turning off the flame.
+    </p>
+    <p class="section-lead">
+      BlueStar's other defining characteristic is color: over 750 custom powder-coat options for the range body and door, making it the most customizable professional range in the residential market. An LA kitchen with a custom-colored BlueStar is a design statement — which is why these appliances attract serious cooks who are equally serious about their kitchen aesthetic. They deserve service that matches that seriousness.
+    </p>
+
+    <div style="margin: 28px 0 8px">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:8px">BlueStar BTU Range — Widest in Residential</div>
+      <div class="btu-bar"></div>
+      <div class="btu-labels">
+        <span>130 BTU Ultra-Low Simmer</span>
+        <span>25,000 BTU Power Burner</span>
+      </div>
+    </div>
+
+    <div class="series-grid" style="margin-top:24px">
+      <div class="series-card">
+        <div class="series-name">Primus Series</div>
+        <div class="series-btu">Up to 22,000 BTU · Ultra-Low 130 BTU</div>
+        <div class="series-desc">BlueStar's professional entry range. Open burners, cast iron grates, convection oven. Available in 30", 36", and 48". Standard stainless or custom color option.</div>
+      </div>
+      <div class="series-card">
+        <div class="series-name">Platinum Series</div>
+        <div class="series-btu">Up to 25,000 BTU · Ultra-Low 130 BTU</div>
+        <div class="series-desc">The flagship BlueStar. 25,000 BTU power burner, infrared broiler standard, dry heat convection oven, telescoping rack. The range serious chefs choose.</div>
+      </div>
+      <div class="series-card">
+        <div class="series-name">Nova Series</div>
+        <div class="series-btu">Up to 18,000 BTU · Ultra-Low 130 BTU</div>
+        <div class="series-desc">BlueStar's more accessible configuration — slightly lower BTU, still open burner design with Ultra-Low simmer. Same American manufacturing quality as Platinum.</div>
+      </div>
+    </div>
+
+    <div class="tip-block tip-usa" style="margin-top:32px">
+      <div class="tip-label">🇺🇸 Made in Reading, PA — What It Means for Parts</div>
+      <div class="tip-text">BlueStar's Reading, Pennsylvania manufacturing has a practical implication for LA service: US-sourced OEM parts move faster than European imports. When we need a specific BlueStar open burner component, igniter assembly, or infrared broiler element, we're sourcing from a domestic supply chain rather than waiting for Italian or German parts. Most BlueStar OEM parts arrive same-day or next-day in the LA market. The American manufacturing also means service documentation and technical specifications are in English and accessible through the domestic service network — not translated from German or Italian.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-gray">
+  <div class="section-inner">
+    <div class="section-num">02 — Services</div>
+    <h2 class="section-title">Every BlueStar Appliance We Service</h2>
+    <p class="section-lead">All BlueStar series — Primus, Platinum, Nova — across all configurations. Same-day across Los Angeles County.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🔥</div>
+        <div class="service-name">Open Burner Range Repair</div>
+        <div class="service-desc">BlueStar's open burners are the defining feature — and the primary service consideration. The star-shaped burner cap creates more contact points between flame and cookware but also creates specific debris accumulation patterns. Food particles and grease can reach the burner ports directly (no sealed cap to prevent it), and the star geometry requires specific port-clearing technique to fully restore gas flow. We clean and service open burner ports differently than sealed burner maintenance. Igniter geometry is also star-cap specific — OEM BlueStar igniters only.</div>
+        <div class="service-issues">Common: open burner port blockage · star-cap igniter failure · gas valve · Ultra-Low simmer valve · oven temperature · convection fan · door gasket · control board · coastal corrosion</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🔆</div>
+        <div class="service-name">Infrared Broiler Repair</div>
+        <div class="service-desc">BlueStar's infrared broiler is genuinely unique in the residential range market — a ceramic radiant element that operates at far higher surface temperatures than standard broilers, delivering restaurant-grade searing and crisping performance. The ceramic infrared element is the most common broiler failure: thermal shock from rapid temperature cycling degrades the ceramic over time. Infrared broiler service requires specific component knowledge — the ceramic element, gas circuit, and ignition system are all specific to the BlueStar infrared configuration.</div>
+        <div class="service-issues">Common: infrared ceramic element failure · ignition fault · temperature inconsistency · gas valve · thermal shock damage assessment · element replacement</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🌡️</div>
+        <div class="service-name">Wall Oven Repair</div>
+        <div class="service-desc">BlueStar single and double wall ovens — gas and electric with convection. BlueStar's dry heat convection oven design circulates air without adding moisture, which home cooks and bakers value for specific cooking applications. The convection fan and temperature sensor are the most common wall oven failure points. BlueStar also offers a combination range oven + wall oven configuration that we service as a complete system.</div>
+        <div class="service-issues">Common: temperature sensor · convection fan · dry heat mode fault · door gasket · heating element · self-clean lock · control board · temperature calibration</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">✨</div>
+        <div class="service-name">Custom Color Range Service</div>
+        <div class="service-desc">BlueStar's 750+ color options mean many LA kitchens have a uniquely specified range finish. Custom powder-coat surfaces scratch and chip differently than stainless — the powder coat is harder than paint but more vulnerable to edge contact than brushed stainless. We apply protective covers to all color-finish panels before any service work and use non-abrasive cleaning agents exclusively. A chip on a custom Midnight Blue or French Red BlueStar is immediately visible and not repairable without a full panel respray.</div>
+        <div class="service-issues">All standard repairs with powder-coat safe protocols — protective covers, non-abrasive tools, and visual finish inspection before and after every service visit.</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">❄️</div>
+        <div class="service-name">Refrigerator Repair</div>
+        <div class="service-desc">BlueStar's refrigerator line — column and French door configurations added to complement the range lineup. BlueStar refrigerators use a standard sealed system platform with specific component configurations. As with any premium column refrigerator in a custom kitchen, we check installation clearances for condenser ventilation before any sealed system diagnosis. BlueStar refrigerators are a newer addition to the brand's lineup and parts availability continues to improve through the domestic supply chain.</div>
+        <div class="service-issues">Common: not cooling · condenser service · clearance check · door gasket · temperature sensor · ice maker · water dispenser · compressor · defrost system</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🔩</div>
+        <div class="service-name">Rangetop &amp; Cooktop Repair</div>
+        <div class="service-desc">BlueStar rangetops — freestanding or built-in cooktop configurations with the same open burner system as the full ranges. Rangetops in custom island installations accumulate debris from all sides rather than just the front, which affects burner port maintenance frequency. We service BlueStar rangetops with the same open burner port protocol as the full range line.</div>
+        <div class="service-issues">Common: open burner port blockage · igniter failure · gas valve · Ultra-Low simmer valve · island installation debris accumulation · coastal corrosion</div>
+      </div>
+    </div>
+
+    <div class="tip-block tip-open" style="margin-top:32px">
+      <div class="tip-label">🔥 Open Burner vs Sealed Burner — What the Service Difference Means</div>
+      <div class="tip-text">BlueStar's open burners are fundamentally different from the sealed burners used on Wolf, Viking, Thermador, and most other premium brands. Sealed burners have a cap assembly that prevents debris from reaching the burner head — grease and food particles can only enter the burner from the sides. Open burners have direct access to the star-shaped cap from above — debris lands directly on the burner ports during cooking. The result: open burners deliver more heat but require more frequent port cleaning to maintain performance. We clean all open burner ports during every BlueStar range service call, regardless of whether it was the stated complaint — because partially blocked ports often affect performance subtly before causing obvious failure.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-black">
+  <div class="section-inner">
+    <div class="section-num">03 — Technology</div>
+    <h2 class="section-title">BlueStar Engineering — What Makes It Different to Service</h2>
+    <p class="section-lead">BlueStar's open burner philosophy creates specific service requirements that sealed-burner experience doesn't prepare you for.</p>
+
+    <div class="features-2col">
+      <ul class="features-list">
+        <li><strong>Star-Shaped Open Burner Cap</strong> — BlueStar's distinctive star-shaped burner cap distributes flame in a pattern that creates more even heating across the cookware bottom. The star geometry creates 8–12 gas ports in a circular pattern. When ports clog (the most common BlueStar range issue), the clogging is asymmetric — certain points of the star block while others remain clear, creating uneven flames before the burner fails completely. We test each port individually during open burner service.</li>
+        <li><strong>Infrared Ceramic Broiler Element</strong> — The infrared element operates at 1,500–1,800°F surface temperature during use — far beyond the 700–900°F of a standard radiant broiler. This thermal load creates specific wear: the ceramic element develops micro-fractures from repeated thermal cycling before developing visible cracks. We inspect the infrared element visually at 400% magnification during every BlueStar broiler service call — catching micro-fracture progression before complete failure.</li>
+        <li><strong>Ultra-Low Simmer Valve</strong> — Reaching 130 BTU requires a dedicated restriction valve that partially closes the gas supply path. This valve operates in its most restricted position far more often than any other position — holding the flame at 130 BTU for slow braises and sauces that can run for hours. The restriction mechanism wears from this sustained use, gradually losing its minimum restriction (simmer creeps higher) or sticking in restriction (burner won't go above simmer). We service the Ultra-Low valve assembly as a separate unit from the main gas valve.</li>
+        <li><strong>Dry Heat Convection</strong> — BlueStar's convection system uses a fan without an additional heating element — circulating ambient oven heat rather than adding heated air. This dry heat convection produces specific results (better crisping, browning without added steam) that BlueStar owners depend on. When the fan fails, the oven still heats but results change noticeably. We test fan speed and blade integrity on every BlueStar oven call.</li>
+        <li><strong>Custom Powder-Coat Finish</strong> — BlueStar's 750+ color options are powder-coat applied to steel panels. Powder coat is more durable than paint but chips at impact and scratches at abrasive contact. Unlike stainless steel, there's no touch-up for powder coat — a chip requires full panel respray. We apply protective covers before any service work near powder-coat panels and use felt-backed tools for all contact points.</li>
+        <li><strong>Cast Iron Grates (Open Design)</strong> — BlueStar's bare cast iron grates — no porcelain coating — can be re-seasoned and are more durable long-term than porcelain-coated alternatives. Cast iron grates collect grease into the seasoning layer, which eventually saturates and flakes. Regular cleaning and periodic re-seasoning extend grate life. LA coastal properties see accelerated rust on insufficiently seasoned grates — we note grate seasoning condition and recommend service protocol on every coastal BlueStar call.</li>
+      </ul>
+      <div>
+        <div class="tip-block" style="background:#0a1015; border-color:#c8820a; margin-top:0">
+          <div class="tip-label" style="color:#e8a030">🔥 Infrared Broiler — The Repair Nobody Else Does</div>
+          <div class="tip-text" style="color:#bbb">BlueStar's infrared broiler is available on Platinum series ranges and produces a level of searing heat unavailable in any other residential range. Most appliance technicians have never serviced one — they treat it as a standard radiant broiler with a different element. It's not. The ceramic infrared element operates at 3x the temperature of a radiant broiler, the gas circuit has specific pressure requirements, and the ignition system is calibrated for the element's thermal characteristics. We service the BlueStar infrared system as the distinct high-temperature assembly it is.</div>
+        </div>
+        <div class="tip-block" style="background:#0a0a1a; border-color:#3a7bd5; margin-top:16px">
+          <div class="tip-label" style="color:#6aabff">🌊 Coastal BlueStar — Cast Iron Grates + Salt Air</div>
+          <div class="tip-text" style="color:#bbb">BlueStar's bare cast iron grates — unlike ZLINE's porcelain-coated grates — can rust at coastal LA properties if not properly maintained. The seasoning layer on cast iron grates provides rust protection, but ocean salt air penetrates inadequately seasoned areas rapidly. Properties in Malibu, Pacific Palisades, and Manhattan Beach should have grate re-seasoning as part of annual BlueStar service. We inspect and document grate seasoning condition on every coastal BlueStar call — rust caught early is resolved with re-seasoning, rust left unchecked requires grate replacement.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="section-num">04 — Common Problems</div>
+    <h2 class="section-title">Most Common BlueStar Failures in Los Angeles</h2>
+
+    <div class="problems-grid">
+      <div class="problem-card">
+        <div class="problem-title">🔥 Open Burner Port Blockage</div>
+        <div class="problem-cause">Grease and food debris reaching the star-shaped burner ports directly — the absence of a sealed cap means debris lands on the ports during cooking. Initially presents as uneven flame (some ports partially blocked) before progressing to no-light. LA cooking styles (wok, high-heat searing) generate more port-blocking debris than moderate cooking. We clean all ports using specific technique for the star-cap geometry on every BlueStar service call.</div>
+        <span class="problem-tag tag-open">Open Burner</span>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-title">🔆 Infrared Broiler Element Failure</div>
+        <div class="problem-cause">Ceramic infrared element thermal fatigue — repeated cycling to 1,500°F+ creates micro-fractures that eventually cause visible cracking and performance loss. The symptom: broiler starts taking longer to reach searing temperature, then eventually fails to reach it. We inspect the element for micro-fracture patterns and test surface temperature before and after any broiler repair to verify full restoration.</div>
+        <span class="problem-tag tag-broiler">Infrared Broiler</span>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-title">🌡️ Ultra-Low Simmer Creeping Higher</div>
+        <div class="problem-cause">Ultra-Low restriction valve wear — the valve that creates the 130 BTU minimum gradually loses its restriction calibration through sustained use. The simmer temperature creeps from 130 BTU toward 200–300 BTU over months. Owners notice that slow braises require more attention than they used to. Ultra-Low valve service (not main gas valve replacement) restores the minimum restriction to factory spec.</div>
+        <span class="problem-tag tag-common">Most Common</span>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-title">🔩 Star-Cap Igniter Failure</div>
+        <div class="problem-cause">BlueStar's star-shaped burner cap positions the igniter at a specific geometry for the star configuration — ceramic igniters must be positioned correctly for reliable spark at each port. Coastal LA salt air accelerates ceramic tip corrosion. Generic igniters at incorrect geometry produce weak spark even when new. OEM BlueStar star-cap igniters only — the geometry matters for this specific burner design.</div>
+        <span class="problem-tag tag-common">Most Common</span>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-title">🌊 Cast Iron Grate Rust (Coastal)</div>
+        <div class="problem-cause">Inadequate seasoning layer on bare cast iron grates — salt air at coastal properties penetrates the cast iron surface where seasoning is thin or absent. Unlike porcelain-coated grates, BlueStar cast iron grates can be restored with re-seasoning if caught early. Structural rust requires grate replacement. Annual seasoning maintenance at coastal properties prevents this from reaching replacement stage.</div>
+        <span class="problem-tag tag-coastal">Coastal LA</span>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-title">💨 Convection Fan Bearing Failure</div>
+        <div class="problem-cause">Dry heat convection fan bearing wear — the fan motor bearings degrade from sustained use at oven temperatures. LA's dusty environment (especially Valley and hillside properties) contributes to earlier bearing wear. The symptom: grinding or squealing during convection cycles before the fan motor fails. We replace the full fan motor assembly on BlueStar ovens — bearing-only service rarely lasts as long as full motor replacement.</div>
+        <span class="problem-tag tag-common">Most Common</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-gray">
+  <div class="section-inner">
+    <div class="section-num">05 — Recent Work</div>
+    <h2 class="section-title">Recent BlueStar Repairs Across Los Angeles</h2>
+
+    <div class="repairs-grid">
+      <div class="repair-item">
+        <div class="repair-appliance">BlueStar Platinum RNB366BV2 Range — Brentwood</div>
+        <div class="repair-issue">Infrared Broiler Not Reaching Temperature</div>
+        <div class="repair-detail">Platinum series 36" range — infrared broiler taking 12+ minutes to reach searing temperature (should be 3–4 minutes). Visually inspected the ceramic infrared element — visible fracture lines across two quadrants of the element face. The fractures were reducing the element's surface area for heat generation. Replaced the infrared ceramic element with OEM BlueStar Platinum spec part (different element from the Primus series — higher temperature rating). Temperature test after replacement: broiler reaching searing target in 3.5 minutes. Also cleaned all six open burner ports during the visit — two were 30-40% blocked, affecting flame pattern though owner hadn't noticed yet.</div>
+        <div class="repair-meta">Parts: Infrared ceramic element OEM · Time: 2 hours · Same Day</div>
+      </div>
+
+      <div class="repair-item">
+        <div class="repair-appliance">BlueStar Primus RNB304BV2 Range — Silver Lake</div>
+        <div class="repair-issue">Two Burners Dead — Open Port Blockage</div>
+        <div class="repair-detail">Primus 30" range — front left and rear right burners not igniting. Silver Lake property, heavy wok cooking usage. Both burner ports had significant grease and carbon accumulation from high-heat wok cooking — the open burner design allows direct debris access from above, and wok cooking generates more overhead splatter than standard cooking. Cleared all ports on both burners using the star-cap specific port clearing technique (individual port probe, not compressed air — compressed air pushes debris deeper into the star channels). Both igniters intact and functional once ports cleared. Cleaned all four remaining burner port assemblies preventively — all showed some accumulation. Recommended monthly port inspection for this cooking style.</div>
+        <div class="repair-meta">Parts: None (port service) · Time: 1.5 hours · Same Day</div>
+      </div>
+
+      <div class="repair-item">
+        <div class="repair-appliance">BlueStar Platinum RNB486GV2 Custom Color — Beverly Hills</div>
+        <div class="repair-issue">Ultra-Low Simmer Not Holding — Flame Creeping Up</div>
+        <div class="repair-detail">48" Platinum range in custom French Red powder coat — Ultra-Low simmer on the center burner had been gradually creeping from 130 BTU toward an estimated 250 BTU over several months. Owner used this burner specifically for long overnight braises. Ultra-Low restriction valve wear confirmed — the valve's minimum restriction position had drifted approximately 15% open from factory spec. Replaced the Ultra-Low valve assembly with OEM BlueStar part. Applied full powder-coat protection protocol throughout the service (French Red is a particularly visible finish for any tool marks). Tested minimum simmer flame height — verified 130 BTU spec output. Braises reliably holding again without attention.</div>
+        <div class="repair-meta">Parts: Ultra-Low valve assembly OEM · Time: 1.5 hours · Same Day</div>
+      </div>
+
+      <div class="repair-item">
+        <div class="repair-appliance">BlueStar RNB364GV2 Range — Pacific Palisades</div>
+        <div class="repair-issue">Cast Iron Grate Rust + Coastal Annual Service</div>
+        <div class="repair-detail">36" range at a Pacific Palisades property — owner called about rust appearing on the front left grate. Coastal property 2 miles from the ocean. Inspection: front left grate had surface rust in two areas where the seasoning layer had worn through. Rear grates showed early seasoning thinning. Front left grate: rust was surface-only, structurally sound — performed mechanical rust removal and full re-seasoning. Rear grates: full re-seasoning preventively. Also cleaned all open burner ports (three were partially blocked — expected at a coastal property with elevated humidity), inspected all igniter tips (all in good condition), and verified oven temperature calibration (2°F high — within spec, no adjustment). Set annual coastal service reminder. Owner hadn't known cast iron grates needed re-seasoning — now they do.</div>
+        <div class="repair-meta">Parts: None (grate re-seasoning + port service) · Time: 2 hours · Same Day</div>
+      </div>
+
+      <div class="repair-item">
+        <div class="repair-appliance">BlueStar Platinum BSPRO36S Rangetop — Pasadena</div>
+        <div class="repair-issue">Island Rangetop — All Six Burners Showing Uneven Flame</div>
+        <div class="repair-detail">36" Platinum rangetop in a center island installation — all six open burners showing asymmetric flame patterns (some ports stronger than others on the same burner). Island location meant debris from all cooking directions reached the burner ports — more accumulation than a wall-mounted range would show in the same time period. Full port service on all six burners — the star-cap geometry required individual port clearing on all 72 ports (12 per burner × 6 burners). Post-service flame pattern: symmetric on all six burners, visible improvement in flame evenness that the owner confirmed immediately. Annual port cleaning is standard maintenance for any BlueStar in island installation — we noted this in the service record.</div>
+        <div class="repair-meta">Parts: None (complete port service) · Time: 2 hours · Same Day</div>
+      </div>
+
+      <div class="repair-item">
+        <div class="repair-appliance">BlueStar RWO30AG Wall Oven — Studio City</div>
+        <div class="repair-issue">Convection Fan Grinding, Dry Heat Mode Uneven</div>
+        <div class="repair-detail">30" gas wall oven — grinding noise from the convection fan during baking, and baking results becoming inconsistent (some areas over-browning). Studio City Valley location with significant dust load. Fan motor bearing had worn — partial bearing seizure was reducing fan speed and creating the grinding noise simultaneously. Replaced the convection fan motor assembly with OEM BlueStar part. Temperature and airflow distribution tested at 350°F and 450°F — even dry heat distribution across the full oven cavity. Also cleaned the oven interior and burner assembly — Valley dust accumulation was significant. Baking results back to the dry heat precision BlueStar ovens are known for.</div>
+        <div class="repair-meta">Parts: Convection fan motor OEM · Time: 1.5 hours · Same Day</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="section-num">06 — Pricing</div>
+    <h2 class="section-title">BlueStar Repair Cost — What to Expect</h2>
+    <p class="section-lead">Written flat-rate estimates before work begins. $89 diagnostic fee, waived when you proceed with repair.</p>
+
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th>Repair Type</th>
+          <th>Typical Range</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Open Burner Port Service (full set)</td>
+          <td class="price-range">$145–$240</td>
+          <td>All burner ports cleared using star-cap specific technique. Done on every BlueStar range visit.</td>
+        </tr>
+        <tr>
+          <td>Star-Cap Igniter Replacement</td>
+          <td class="price-range">$175–$295</td>
+          <td>OEM BlueStar igniter — geometry-specific for star-shaped cap. Per burner; discount on multiple.</td>
+        </tr>
+        <tr>
+          <td>Infrared Ceramic Element Replacement</td>
+          <td class="price-range">$285–$480</td>
+          <td>OEM element, Platinum or Primus spec. Temperature test before and after repair confirms restoration.</td>
+        </tr>
+        <tr>
+          <td>Ultra-Low Simmer Valve Service</td>
+          <td class="price-range">$195–$340</td>
+          <td>OEM restriction valve assembly. Independent from main gas valve. 130 BTU output verified post-repair.</td>
+        </tr>
+        <tr>
+          <td>Temperature Sensor / Calibration</td>
+          <td class="price-range">$89–$295</td>
+          <td>Calibration adjustment (no parts) or OEM sensor replacement. Calibrated probe test first.</td>
+        </tr>
+        <tr>
+          <td>Convection Fan Motor Assembly</td>
+          <td class="price-range">$260–$420</td>
+          <td>OEM motor assembly. Includes airflow distribution verification after replacement.</td>
+        </tr>
+        <tr>
+          <td>Cast Iron Grate Re-Seasoning</td>
+          <td class="price-range">$95–$165</td>
+          <td>Full mechanical cleaning and re-seasoning. Coastal properties: annual schedule recommended.</td>
+        </tr>
+        <tr>
+          <td>Annual Maintenance (Full Range)</td>
+          <td class="price-range">$165–$240</td>
+          <td>Port service, igniter inspection, grate condition, temperature verification, infrared element inspection. Coastal: grate re-seasoning included.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;color:var(--muted);margin-top:16px;">Prices reflect Los Angeles County. Diagnostic fee ($89) waived on repair. Final quote on-site before work begins.</p>
+  </div>
+</section>
+
+<section class="section section-gray">
+  <div class="section-inner">
+    <div class="section-num">07 — Why Us</div>
+    <h2 class="section-title">Why BlueStar Owners in LA Choose Us</h2>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🔥</div>
+        <div class="why-title">Open Burner Port Service</div>
+        <div class="why-desc">We clean all open burner ports using star-cap specific technique on every BlueStar visit — individual port clearing, not compressed air. Partially blocked ports affect flame pattern before obvious failure. This is standard on every BlueStar call, not an upsell.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔆</div>
+        <div class="why-title">Infrared Broiler Expertise</div>
+        <div class="why-desc">BlueStar's infrared broiler is unique in residential ranges. We service it as the high-temperature ceramic system it is — not as a standard radiant broiler. Ceramic element micro-fracture inspection, temperature verification before and after repair.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🎨</div>
+        <div class="why-title">Custom Color Protocol</div>
+        <div class="why-desc">BlueStar's 750+ powder-coat colors chip at contact. We apply protective covers to all color-finish panels before any service work. A custom Midnight Blue or French Red BlueStar leaves our service call without new marks — we confirm this before signing off.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔩</div>
+        <div class="why-title">Ultra-Low Valve Service</div>
+        <div class="why-desc">The 130 BTU Ultra-Low simmer requires a dedicated restriction valve. We service it independently from the main gas valve — correct diagnosis saves the cost of a full valve replacement when only the restriction mechanism needs service.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📋</div>
+        <div class="why-title">Flat-Rate Written Estimate</div>
+        <div class="why-desc">Written quote before work begins. $89 diagnostic fee waived on repair. No surprise charges. What we quote is what you pay.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">✅</div>
+        <div class="why-title">Licensed &amp; Insured</div>
+        <div class="why-desc">CSLB #1138898. Licensed, bonded, insured. COI available for property managers on request. Same-day across all of Los Angeles County.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="section-num">08 — Reviews</div>
+    <h2 class="section-title">What BlueStar Owners Say</h2>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Infrared broiler on my Platinum had been getting slower for months — other company said it was a gas pressure issue. Same Day inspected the ceramic element, found the fracture lines, replaced the element. Broiler back to reaching temperature in under 4 minutes. They treated the infrared system as the specific high-temperature assembly it is, not as a standard broiler. That knowledge is the difference between BlueStar and every other range.</div>
+        <div class="review-author">— David H., Brentwood · 2 weeks ago</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">My custom French Red BlueStar needed the Ultra-Low simmer serviced — was creeping above 130 BTU. They applied powder-coat protection before touching anything, serviced the restriction valve (not the whole gas valve — saved me hundreds), and confirmed 130 BTU output before leaving. The finish looked perfect. The braises are holding again. Exactly the right service for a custom-color range.</div>
+        <div class="review-author">— Claire R., Beverly Hills · 1 month ago</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Two burners dead on my BlueStar — no ignition at all. Same Day explained the open burner port blockage from my wok cooking before even opening the range. Individual port clearing on both burners (not compressed air — they explained why that pushes debris deeper), cleaned the other four burners preventively. All six firing perfectly. No parts needed. The fact that they knew about open burner port technique before arriving tells you everything.</div>
+        <div class="review-author">— Jason M., Silver Lake · 3 weeks ago</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-gray">
+  <div class="section-inner">
+    <div class="section-num">09 — FAQ</div>
+    <h2 class="section-title">BlueStar Repair FAQ</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">What is BlueStar's open burner design and why does it matter for service?</div>
+        <div class="faq-a">BlueStar's open burners have no sealed cap to prevent debris from reaching the burner ports — food and grease land directly on the star-shaped ports during cooking. This delivers more heat than sealed burners but requires regular port cleaning. We service open burner ports using star-cap specific technique (individual port probe) on every BlueStar range visit — partially blocked ports affect flame performance before causing obvious failure.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you repair BlueStar's infrared broiler?</div>
+        <div class="faq-a">Yes — and it's a specialty. BlueStar's infrared ceramic broiler element operates at 1,500–1,800°F and requires specific service knowledge. The ceramic element is the most common failure — thermal fatigue from repeated cycling creates micro-fractures before visible failure. We inspect with magnification and replace with the correct Platinum or Primus spec element. Temperature verification before and after repair confirms full restoration.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">My BlueStar's Ultra-Low simmer seems higher than it used to be — what's wrong?</div>
+        <div class="faq-a">The Ultra-Low restriction valve has drifted from its factory spec. This valve creates the 130 BTU minimum by partially restricting gas flow — it wears from sustained use holding minimum position for long braises. We service the restriction valve assembly independently from the main gas valve — this is the correct repair and costs significantly less than a full valve replacement.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can you service a custom-colored BlueStar without damaging the finish?</div>
+        <div class="faq-a">Yes — powder-coat finish protection is a standard part of our BlueStar service protocol. We apply protective covers to all color-finish panels before any service work begins and use non-abrasive tools throughout. A chip on a custom French Red or Midnight Blue BlueStar is immediately visible and cannot be repaired without full panel respray. We confirm finish condition before and after every service visit.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Where is BlueStar made?</div>
+        <div class="faq-a">BlueStar is manufactured in Reading, Pennsylvania by Prizer-Painter Stove Works — one of the very few professional ranges still made entirely in the United States. The Reading factory has been producing cooking equipment since 1880. US manufacturing means domestic parts supply — most BlueStar OEM components arrive same-day or next-day in the LA market.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do BlueStar's cast iron grates need special maintenance?</div>
+        <div class="faq-a">Yes. Unlike ZLINE's porcelain-coated grates, BlueStar uses bare cast iron that requires periodic re-seasoning to maintain rust protection. LA coastal properties (within 5 miles of the ocean) should have grate re-seasoning annually — salt air penetrates thin seasoning rapidly. Inland properties can go 2–3 years between re-seasonings with proper cleaning habits. We inspect grate seasoning condition and note any rust initiation on every BlueStar service call.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="section-num">10 — Service Area</div>
+    <h2 class="section-title">BlueStar Repair Across Los Angeles</h2>
+    <p style="font-size:15px;color:var(--muted);line-height:1.7;max-width:720px;margin-bottom:24px;">Same-day BlueStar repair throughout Los Angeles County — open burner service, infrared broiler, custom color protocol.</p>
+
+    <div class="nearby-grid">
+      <a href="/brentwood/" class="nearby-chip">Brentwood</a>
+      <a href="/silver-lake/" class="nearby-chip">Silver Lake</a>
+      <a href="/beverly-hills/" class="nearby-chip">Beverly Hills</a>
+      <a href="/pacific-palisades/" class="nearby-chip">Pacific Palisades</a>
+      <a href="/malibu/" class="nearby-chip">Malibu</a>
+      <a href="/pasadena/" class="nearby-chip">Pasadena</a>
+      <a href="/studio-city/" class="nearby-chip">Studio City</a>
+      <a href="/los-feliz/" class="nearby-chip">Los Feliz</a>
+      <a href="/echo-park/" class="nearby-chip">Echo Park</a>
+      <a href="/west-hollywood/" class="nearby-chip">West Hollywood</a>
+      <a href="/santa-monica/" class="nearby-chip">Santa Monica</a>
+      <a href="/culver-city/" class="nearby-chip">Culver City</a>
+      <a href="/los-angeles/" class="nearby-chip">Los Angeles</a>
+      <a href="/glendale/" class="nearby-chip">Glendale</a>
+      <a href="/manhattan-beach/" class="nearby-chip">Manhattan Beach</a>
+    </div>
+
+    <p style="margin-top:20px;font-size:14px;color:var(--muted)">American-made: <a href="/brand-viking-appliance-repair/">Viking Repair</a> · <a href="/brand-zline-appliance-repair/">ZLINE Repair</a> · <a href="/brand-bertazzoni-appliance-repair/">Bertazzoni Repair</a> · <a href="/brand-wolf-appliance-repair/">Wolf Repair</a></p>
+  </div>
+</section>
+
+<div class="bottom-cta">
+  <div class="bottom-cta-title">BlueStar. Reading, PA.<br/><span>Open Burner. Infrared. American-Made.</span></div>
+  <div class="bottom-cta-sub">Open burner port service · Infrared broiler · Ultra-Low valve · Custom color protocol</div>
+  <div>
+    <a href={`tel:${phoneRaw}`} class="cta-phone-large">{phone}</a>
+  </div>
+  <div>
+    <a href="/book/" class="btn-primary" style="font-size:16px;padding:16px 40px;">Book Online</a>
+  </div>
+</div>
+
+</Layout>
