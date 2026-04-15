@@ -1,0 +1,727 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "Hestan Appliance Repair Los Angeles | Indoor & Outdoor Specialists";
+const description = "Expert Hestan appliance repair in Los Angeles. Trellis Burner grills, Campania Pizza Oven, indoor ranges, refrigerators & more. Made in Anaheim — we know this brand. Same-day service, OEM parts, 90-day warranty. Call (626) 376-4458.";
+const phone = "(626) 376-4458";
+const phoneRaw = "6263764458";
+---
+
+<Layout title={title} description={description}>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Same Day Appliance Repair — Hestan Specialist",
+  "url": "https://samedayappliance.repair/brand-hestan-appliance-repair/",
+  "telephone": "+16263764458",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Los Angeles",
+    "addressRegion": "CA",
+    "postalCode": "90001",
+    "addressCountry": "US"
+  },
+  "areaServed": ["Los Angeles County", "Orange County", "Ventura County"],
+  "priceRange": "$$",
+  "openingHours": "Mo-Sa 08:00-20:00",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Hestan Repair Services",
+    "itemListElement": [
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Hestan Trellis Burner Grill Repair"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Hestan Campania Pizza Oven Repair"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Hestan Indoor Range Repair"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Hestan Refrigerator Repair"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Hestan Outdoor Kitchen Repair"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Hestan Dishwasher Repair"}}
+    ]
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does Hestan appliance repair cost in Los Angeles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most Hestan repairs run $185–$620. Trellis Burner igniter replacement, door gasket, or temperature sensor work is on the lower end. Control board or sealed system repairs run higher. Diagnostic fee is $89, waived when you proceed. Written flat-rate estimate before work begins."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you repair the Hestan Campania Pizza Oven?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The Hestan Campania Pizza Oven is a unique product requiring specific service knowledge — the ceramic deck, gas burner configuration, and high-temperature operation (up to 700°F) create failure modes different from standard outdoor cooking equipment. Common issues: igniter failure, burner valve fault, temperature inconsistency, and ceramic deck damage assessment. We service the Campania as part of our Hestan outdoor service scope."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you service Hestan outdoor grills in coastal Los Angeles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — and coastal service is a specialty. Hestan grills are made from heavy-gauge stainless steel in Anaheim, CA, but even the best materials are vulnerable to salt air corrosion at igniter tips and valve stems. Properties in Malibu, Pacific Palisades, and Manhattan Beach need annual igniter and valve inspection. We treat Hestan outdoor service calls with marine-grade anti-corrosion protocols."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Hestan's Trellis Burner and what breaks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Trellis Burner™ is Hestan's patented grill burner design — a trellis-shaped stainless steel configuration that delivers 25,000 BTUs with more even heat distribution than standard tube burners. The most common failure: burner tube blockage from grease and debris accumulation between the trellis elements. The trellis geometry traps debris differently than tube burners and requires specific cleaning technique. Igniter failure is the second most common Trellis Burner issue."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is Hestan made?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hestan grills are made in Anaheim, California — about 30 miles from Los Angeles. Hestan cuts its own steel, fabricates grates in-house, and laser-cuts components on-site. This makes Hestan the only major luxury grill brand manufactured in the United States. Indoor Hestan appliances (ranges, refrigerators, dishwashers) are also designed in the US."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you service both Hestan Indoor and Hestan Outdoor appliances?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — both the Hestan Indoor line (ranges, ovens, refrigerators, dishwashers, wine storage, ventilation) and Hestan Outdoor (grills, outdoor kitchen suites, Campania Pizza Oven). Many LA homeowners have both. We service the complete Hestan ecosystem in a single visit."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --red: #C8102E;
+    --black: #0a0a0a;
+    --gray: #f5f5f5;
+    --border: #e2e2e2;
+    --text: #1a1a1a;
+    --muted: #6b6b6b;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Barlow', 'Inter', system-ui, sans-serif; color: var(--text); }
+
+  .top-bar { background: var(--red); padding: 8px 24px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #fff; }
+  .top-bar a { color: #fff; text-decoration: none; font-weight: 700; }
+
+  .hero { background: var(--black); padding: 72px 24px 64px; color: #fff; }
+  .hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 420px; gap: 48px; align-items: center; }
+  .hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .hero-title { font-size: clamp(32px, 5vw, 52px); font-weight: 900; line-height: 1.05; text-transform: uppercase; letter-spacing: -0.02em; margin-bottom: 20px; }
+  .hero-title span { color: var(--red); }
+  .hero-sub { font-size: 17px; line-height: 1.6; color: #aaa; margin-bottom: 32px; max-width: 540px; }
+  .hero-cta-group { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary { display: inline-block; background: var(--red); color: #fff; padding: 14px 28px; font-size: 15px; font-weight: 700; text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; }
+  .btn-secondary { display: inline-block; border: 1px solid #555; color: #ccc; padding: 14px 28px; font-size: 15px; font-weight: 600; text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; }
+  .hero-badge-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .hero-badge { background: #161616; border: 1px solid #2a2a2a; padding: 16px 18px; }
+  .badge-num { font-size: 28px; font-weight: 900; color: var(--red); line-height: 1; margin-bottom: 4px; }
+  .badge-label { font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 0.08em; }
+
+  .trust-bar { background: var(--red); padding: 14px 24px; }
+  .trust-bar-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  .trust-item { color: #fff; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+  .trust-item::before { content: "✓ "; }
+
+  .section { padding: 64px 24px; }
+  .section-gray { background: var(--gray); }
+  .section-black { background: var(--black); color: #fff; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-num { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+  .section-title { font-size: clamp(24px, 3.5vw, 36px); font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 20px; }
+  .section-black .section-title { color: #fff; }
+  .section-lead { font-size: 17px; line-height: 1.7; color: var(--muted); max-width: 760px; margin-bottom: 40px; }
+  .section-black .section-lead { color: #999; }
+
+  /* Indoor/Outdoor split */
+  .ecosystem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #2a2a2a; border: 1px solid #2a2a2a; margin-top: 28px; }
+  .eco-card { background: #161616; padding: 24px; }
+  .eco-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; color: var(--red); margin-bottom: 8px; }
+  .eco-title { font-size: 18px; font-weight: 900; text-transform: uppercase; color: #fff; margin-bottom: 12px; }
+  .eco-list { list-style: none; }
+  .eco-list li { font-size: 13px; color: #888; padding: 4px 0; border-bottom: 1px solid #222; }
+  .eco-list li::before { content: "· "; color: var(--red); }
+
+  .tip-block { border-left: 3px solid var(--red); background: #fff8f8; padding: 18px 20px; margin: 32px 0; max-width: 760px; }
+  .tip-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; color: var(--red); margin-bottom: 6px; }
+  .tip-text { font-size: 14px; line-height: 1.65; color: var(--text); }
+  .tip-made { border-color: #2a7a4a; background: #f0fff5; }
+  .tip-made .tip-label { color: #2a7a4a; }
+  .tip-coastal { border-color: #3a7bd5; background: #f0f7ff; }
+  .tip-coastal .tip-label { color: #3a7bd5; }
+
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .service-card { background: #fff; padding: 28px 24px; }
+  .service-icon { font-size: 28px; margin-bottom: 12px; }
+  .service-name { font-size: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 10px; color: var(--text); }
+  .service-desc { font-size: 14px; line-height: 1.65; color: var(--muted); margin-bottom: 12px; }
+  .service-issues { font-size: 12px; color: var(--red); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  .features-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  .features-list { list-style: none; }
+  .features-list li { padding: 14px 0; border-bottom: 1px solid #2a2a2a; font-size: 15px; color: #ccc; display: flex; gap: 12px; }
+  .features-list li::before { content: "→"; color: var(--red); flex-shrink: 0; }
+
+  .problems-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-top: 32px; }
+  .problem-card { border: 1px solid var(--border); background: #fff; padding: 20px; }
+  .problem-title { font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; color: var(--text); }
+  .problem-cause { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 10px; }
+  .problem-tag { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 3px 8px; color: #fff; }
+  .tag-common { background: var(--red); }
+  .tag-outdoor { background: #2a7a2a; }
+  .tag-coastal { background: #2a5ea5; }
+  .tag-pizza { background: #8b3a14; }
+
+  .pricing-table { width: 100%; border-collapse: collapse; margin-top: 24px; }
+  .pricing-table th { background: var(--text); color: #fff; text-align: left; padding: 12px 16px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; }
+  .pricing-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); font-size: 14px; }
+  .pricing-table tr:last-child td { border-bottom: none; }
+  .pricing-table tr:nth-child(even) td { background: var(--gray); }
+  .price-range { font-weight: 700; color: var(--red); }
+
+  .why-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 24px; margin-top: 32px; }
+  .why-card { border-left: 3px solid var(--red); padding: 20px; background: #fff; }
+  .why-icon { font-size: 24px; margin-bottom: 10px; }
+  .why-title { font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  .why-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 32px; }
+  .review-card { background: #fff; border: 1px solid var(--border); padding: 24px; }
+  .review-stars { color: var(--red); font-size: 18px; margin-bottom: 10px; }
+  .review-text { font-size: 14px; line-height: 1.7; color: var(--text); margin-bottom: 14px; }
+  .review-author { font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--muted); }
+
+  .repairs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 32px; }
+  .repair-item { background: #fff; padding: 24px; }
+  .repair-appliance { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--red); margin-bottom: 6px; }
+  .repair-issue { font-size: 15px; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+  .repair-detail { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .repair-meta { margin-top: 12px; font-size: 12px; font-weight: 600; color: #aaa; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  .faq-list { margin-top: 32px; }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
+  .faq-q { font-size: 16px; font-weight: 800; color: var(--text); margin-bottom: 10px; }
+  .faq-a { font-size: 14px; line-height: 1.7; color: var(--muted); max-width: 760px; }
+
+  .nearby-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .nearby-chip { background: var(--gray); border: 1px solid var(--border); padding: 8px 14px; font-size: 13px; color: var(--muted); text-decoration: none; font-weight: 600; }
+  .nearby-chip:hover { border-color: var(--red); color: var(--red); }
+
+  .bottom-cta { background: var(--black); padding: 72px 24px; text-align: center; color: #fff; }
+  .bottom-cta-title { font-size: clamp(28px, 4vw, 44px); font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 12px; }
+  .bottom-cta-title span { color: var(--red); }
+  .bottom-cta-sub { font-size: 17px; color: #888; margin-bottom: 32px; }
+  .cta-phone-large { display: inline-block; font-size: clamp(28px, 4vw, 42px); font-weight: 900; color: #fff; text-decoration: none; letter-spacing: -0.01em; margin-bottom: 24px; border-bottom: 2px solid var(--red); padding-bottom: 4px; }
+
+  @media (max-width: 768px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-badge-grid { grid-template-columns: 1fr 1fr; }
+    .features-2col { grid-template-columns: 1fr; }
+    .ecosystem-grid { grid-template-columns: 1fr; }
+    .trust-bar-inner { flex-direction: column; gap: 6px; }
+  }
+</style>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <span>Mon–Sat 8am–8pm · Los Angeles &amp; Southern California</span>
+  <a href={`tel:${phoneRaw}`}>{phone}</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">Hestan Appliance Repair — Los Angeles</div>
+      <h1 class="hero-title">
+        Hestan Repair.<br/>
+        <span>Made 30 Miles</span><br/>
+        From Here.
+      </h1>
+      <p class="hero-sub">
+        Hestan grills are built in Anaheim, California — the only major luxury grill brand manufactured in the United States. Indoor ranges, refrigerators, the Campania Pizza Oven, the Trellis Burner™. We service the complete Hestan ecosystem, same day, with OEM parts sourced from the same supply chain as the factory.
+      </p>
+      <div class="hero-cta-group">
+        <a href={`tel:${phoneRaw}`} class="btn-primary">Call {phone}</a>
+        <a href="/book/" class="btn-secondary">Book Online</a>
+      </div>
+    </div>
+    <div class="hero-badge-grid">
+      <div class="hero-badge">
+        <div class="badge-num">Same</div>
+        <div class="badge-label">Day Service</div>
+      </div>
+      <div class="hero-badge">
+        <div class="badge-num">OEM</div>
+        <div class="badge-label">Hestan Parts</div>
+      </div>
+      <div class="hero-badge">
+        <div class="badge-num">90-Day</div>
+        <div class="badge-label">Warranty</div>
+      </div>
+      <div class="hero-badge">
+        <div class="badge-num">$89</div>
+        <div class="badge-label">Diagnostic Fee</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <span class="trust-item">Licensed &amp; Insured · CSLB #1138898</span>
+    <span class="trust-item">Trellis Burner™ Specialists</span>
+    <span class="trust-item">Campania Pizza Oven Service</span>
+    <span class="trust-item">Indoor + Outdoor Complete Service</span>
+    <span class="trust-item">Flat-Rate Written Estimate</span>
+  </div>
+</div>
+
+<!-- 01 — ABOUT HESTAN -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-num">01 — About Hestan</div>
+    <h2 class="section-title">The Youngest Luxury Brand in the Room — Built 30 Miles From LA</h2>
+    <p class="section-lead">
+      Hestan was founded in 2015 by Stanley Chue, who also founded Meyer Corporation — the company behind Circulon, Anolon, and Farberware, and one of the world's largest cookware manufacturers. Chue applied the same manufacturing philosophy to appliances: control the entire process, use restaurant-grade materials, and build something that performs for professionals without requiring a commercial kitchen installation.
+    </p>
+    <p class="section-lead">
+      The outdoor line is made in Anaheim, California. Hestan cuts its own steel, fabricates its own grates, and laser-cuts components in-house. This makes Hestan the only major luxury grill brand manufactured in the United States — and it puts the supply chain 30 miles from Los Angeles. The indoor line brings the same approach to ranges, refrigerators, dishwashers, and wine storage. When you have a Hestan in LA, you have a product that was built nearby.
+    </p>
+
+    <div class="ecosystem-grid">
+      <div class="eco-card">
+        <div class="eco-label">Hestan Indoor</div>
+        <div class="eco-title">Kitchen Suite</div>
+        <ul class="eco-list">
+          <li>Professional ranges (30", 36", 48")</li>
+          <li>Wall ovens — single &amp; double</li>
+          <li>Refrigerators &amp; wine storage</li>
+          <li>Dishwashers</li>
+          <li>Ventilation hoods</li>
+          <li>NanoeShield™ antimicrobial coating</li>
+        </ul>
+      </div>
+      <div class="eco-card">
+        <div class="eco-label">Hestan Outdoor</div>
+        <div class="eco-title">Outdoor Kitchen</div>
+        <ul class="eco-list">
+          <li>Built-in &amp; freestanding grills</li>
+          <li>Campania Pizza Oven™</li>
+          <li>Trellis Burner™ 25,000 BTU</li>
+          <li>Ceramic infrared top burner</li>
+          <li>Outdoor kitchen suites</li>
+          <li>Aspire collection (outdoor)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tip-block tip-made" style="margin-top:32px">
+      <div class="tip-label">🏭 Made in Anaheim — What It Means for Service</div>
+      <div class="tip-text">Because Hestan manufactures in Anaheim, OEM parts move faster through the supply chain for LA service calls than for imported luxury brands. When we need a specific Trellis Burner™ component or a Horizon Hood™ motor, we're sourcing from the same regional supply network as the factory. Most Hestan outdoor parts arrive same-day or next-day in the LA market. This is a real advantage over European luxury brands where specialty parts can take a week.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 — SERVICES -->
+<section class="section section-gray">
+  <div class="section-inner">
+    <div class="section-num">02 — Services</div>
+    <h2 class="section-title">Every Hestan Appliance We Service</h2>
+    <p class="section-lead">Complete Hestan Indoor and Outdoor service, same-day across Los Angeles County.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🔥</div>
+        <div class="service-name">Trellis Burner™ Grill Repair</div>
+        <div class="service-desc">Hestan's patented Trellis Burner™ delivers 25,000 BTUs through a trellis-shaped stainless steel configuration that distributes heat more evenly than standard tube burners. The trellis geometry accumulates grease and debris differently than tube burners — cleaning requires specific technique to clear between the trellis elements without damaging the burner. We service all Hestan grill configurations including the ceramic infrared top burner and rotisserie system.</div>
+        <div class="service-issues">Common: trellis burner blocked · igniter failure · ceramic infrared fault · burner valve · rotisserie motor · temperature inconsistency · coastal corrosion (Malibu/Palisades)</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🍕</div>
+        <div class="service-name">Campania Pizza Oven™ Repair</div>
+        <div class="service-desc">The Hestan Campania Pizza Oven is one of the most distinctive outdoor cooking products on the market — a purpose-built pizza oven designed to reach 700°F with a ceramic deck that mimics a wood-fired oven. Service requires knowledge of the high-temperature gas circuit, ceramic deck assessment, and the dome ventilation system. Most general appliance companies have never serviced one. We have.</div>
+        <div class="service-issues">Common: igniter failure (high-temp environment) · burner valve fault · ceramic deck inspection · temperature inconsistency · ventilation restriction · door seal · control knob</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🔴</div>
+        <div class="service-name">Indoor Range &amp; Oven Repair</div>
+        <div class="service-desc">Hestan's indoor professional ranges — the KNG (KANA collection) and KRGD series — bring outdoor grill-grade burner technology inside. The ranges use sealed burners with similar BTU output to the Trellis Burner outdoor system. Common issues mirror DCS and Wolf at comparable BTU levels: igniter failure from high-heat thermal cycling, oven temperature calibration, and control board faults.</div>
+        <div class="service-issues">Common: igniter failure · oven temperature off · convection fan · door gasket · control board · bake element · dual fuel ignition · range hood motor</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">❄️</div>
+        <div class="service-name">Refrigerator &amp; Wine Storage Repair</div>
+        <div class="service-desc">Hestan column refrigerators and wine storage units. Hestan's refrigeration line shares design language with the indoor range suite — panel-ready configurations designed to integrate into custom cabinetry. Service requires care around the cabinetry interface, NanoeShield™ coated interior surfaces, and the wine storage temperature calibration system.</div>
+        <div class="service-issues">Common: not cooling · temperature fluctuation · wine storage calibration · ice maker · door gasket · compressor · condenser service · NanoeShield interior care</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🌿</div>
+        <div class="service-name">Outdoor Kitchen Suite Repair</div>
+        <div class="service-desc">Complete Hestan outdoor kitchen suites — built-in grills, side burners, refrigeration drawers, and the full Aspire and Kana outdoor collection. LA outdoor kitchens run year-round, which means year-round exposure to the coastal and Santa Ana conditions that accelerate valve and igniter wear. We provide full outdoor kitchen service including weatherproofing assessment.</div>
+        <div class="service-issues">Common: igniter failure · valve corrosion · refrigeration drawer · side burner · outdoor refrigerator · Horizon Hood™ · lighting system · weatherproofing</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🍽️</div>
+        <div class="service-name">Dishwasher &amp; Ventilation Repair</div>
+        <div class="service-desc">Hestan dishwashers and ventilation hoods. Hestan's indoor dishwashers use a quiet-operation design with specific filter and spray arm configurations. The ventilation hood line includes wall and island configurations designed to match the indoor range suite — blower motor and speed selector are the most common service points.</div>
+        <div class="service-issues">Common: dishwasher not draining · spray arm blocked · control board · hood motor failure · speed selector · lighting · duct restriction · door latch</div>
+      </div>
+    </div>
+
+    <div class="tip-block tip-coastal" style="margin-top:32px">
+      <div class="tip-label">🌊 LA Coastal + Hestan Outdoor — Annual Service Protocol</div>
+      <div class="tip-text">Hestan outdoor grills are built from heavy-gauge stainless steel and designed for longevity — but even 5/16" laser-cut stainless is vulnerable to the salt air corrosion that LA coastal properties generate. Properties in Malibu, Pacific Palisades, Manhattan Beach, and Santa Monica should have annual outdoor kitchen service: Trellis Burner™ cleaning, igniter tip inspection, valve stem anti-corrosion treatment, and Campania Pizza Oven ventilation check if equipped. We provide this as a seasonal service package for coastal Hestan installations.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 — TECHNOLOGY -->
+<section class="section section-black">
+  <div class="section-inner">
+    <div class="section-num">03 — Technology</div>
+    <h2 class="section-title">What Makes Hestan Different — And How Each System Fails</h2>
+    <p class="section-lead">Hestan's products are engineered with restaurant-kitchen mindset applied to residential installation. The failure modes reflect that engineering.</p>
+
+    <div class="features-2col">
+      <ul class="features-list">
+        <li><strong>Trellis Burner™ Geometry</strong> — The trellis pattern creates more contact points between flame and cooking surface than a standard tube burner, delivering more even heat coverage. The same geometry accumulates grease in the trellis channels differently than tube burners. Proper Trellis Burner cleaning requires specific brushing technique — improper cleaning pushes debris into the burner ports. We clean and inspect the Trellis Burner as a complete assembly, not just the igniter.</li>
+        <li><strong>Ceramic Infrared Top Burner</strong> — The 12,000–18,000 BTU ceramic infrared burner for searing and finishing runs at far higher surface temperatures than standard burners. Thermal shock — rapid temperature cycling — is the primary failure mechanism for the ceramic element. We inspect the ceramic for micro-fractures before they become complete failures during service calls.</li>
+        <li><strong>Campania Pizza Oven High-Temp Circuit</strong> — The Campania operates at up to 700°F — temperatures that stress every component of the gas circuit differently than a standard grill. The igniter system must generate a spark in a high-temperature environment where the ceramic tip degrades faster than at standard outdoor cooking temperatures. We use high-temp-rated OEM Campania igniters on every Campania service call.</li>
+        <li><strong>Horizon Hood™ Spring System</strong> — The Hestan grill's Horizon Hood uses spring-assisted hinges designed to hold at any desired height without swinging. When the spring loses tension, the hood falls closed or won't hold its position. Spring replacement is model-specific — we carry OEM Hestan Horizon Hood spring assemblies.</li>
+        <li><strong>Indoor NanoeShield™ Coating</strong> — Hestan's proprietary antimicrobial coating on indoor appliance interiors requires specific cleaning protocols during service. Standard oven cleaning chemicals damage the NanoeShield™ surface. We use only coating-compatible cleaning agents during interior service work.</li>
+        <li><strong>Motion-Activated Under-Hood Lighting</strong> — Hestan grills include motion-activated LED lighting that illuminates the cooking surface when the hood opens. LED driver failure is the most common lighting system fault. We carry replacement LED assemblies for current Hestan grill models.</li>
+      </ul>
+      <div>
+        <div class="tip-block" style="background:#0a1015; border-color:#3a7bd5; margin-top:0">
+          <div class="tip-label" style="color:#6aabff">🍕 Campania Pizza Oven — Why It's a Specialty</div>
+          <div class="tip-text" style="color:#bbb">The Hestan Campania is a gas-fired pizza oven with a ceramic deck and dome designed to reach 700°F — temperatures that create service requirements completely unlike a standard outdoor grill. The gas circuit is rated for this temperature range; standard grill gas components are not interchangeable. The ceramic deck needs professional assessment after any unusual event (extreme temperature cycling, thermal shock from rain). We service the Campania as a distinct product, not as a grill variant.</div>
+        </div>
+        <div class="tip-block" style="background:#0a150a; border-color:#2a7a2a; margin-top:16px">
+          <div class="tip-label" style="color:#5abf5a">🏭 Made in Anaheim — Parts Speed</div>
+          <div class="tip-text" style="color:#bbb">Hestan's Anaheim manufacturing means OEM parts for outdoor models typically arrive same-day or next-day in the LA market. For premium European brands, specialty parts can take a week. When we book a Hestan outdoor service call, we usually have the most common parts on the truck already — and any specialty component arrives before the customer notices a delay.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 — COMMON PROBLEMS -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-num">04 — Common Problems</div>
+    <h2 class="section-title">Most Common Hestan Failures in Los Angeles</h2>
+
+    <div class="problems-grid">
+      <div class="problem-card">
+        <div class="problem-title">🔥 Trellis Burner™ Not Igniting</div>
+        <div class="problem-cause">Igniter failure or trellis channel blockage. The trellis geometry accumulates grease in channels that standard tube burners don't have — a full Trellis Burner clean is step one before replacing the igniter. Coastal LA properties add salt air corrosion to the ceramic igniter tip as a secondary cause. We clean first, replace only what's actually failed.</div>
+        <span class="problem-tag tag-outdoor">Outdoor</span>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-title">🍕 Campania Pizza Oven Won't Reach Temperature</div>
+        <div class="problem-cause">Gas pressure fault, igniter degradation in the high-temperature environment, or ventilation restriction reducing oxygen supply to the dome. The Campania's 700°F operating temperature degrades igniters faster than standard grill temperatures. High-temp OEM igniters are required — standard grill igniters fail rapidly at Campania temperatures.</div>
+        <span class="problem-tag tag-pizza">Campania</span>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-title">🌊 Coastal Valve Corrosion</div>
+        <div class="problem-cause">Salt air corrosion on gas valve stems — the valve begins to stick or close partially, causing uneven flame or no-light conditions. This is the most common Hestan outdoor failure in Malibu, Pacific Palisades, and Manhattan Beach. Annual anti-corrosion treatment on valve stems prevents it. Once it occurs, valve replacement with OEM Hestan parts restores full function.</div>
+        <span class="problem-tag tag-coastal">Coastal LA</span>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-title">🔆 Horizon Hood™ Won't Stay Up</div>
+        <div class="problem-cause">Horizon Hood spring tension loss — the spring-assisted hinge loses its calibration over time, causing the hood to fall closed or fail to hold position. Spring replacement is model-specific (different spring rates for different hood sizes). We replace the full spring assembly rather than attempting to re-tension the existing spring.</div>
+        <span class="problem-tag tag-outdoor">Outdoor</span>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-title">🔥 Indoor Range Igniter Failure</div>
+        <div class="problem-cause">High-BTU indoor range igniters degrade faster than standard residential burners — the same thermal cycling stress we see on Wolf and DCS ranges. Hestan indoor ranges use sealed burners where grease accumulation around the igniter well can contribute to failure. We clean the burner well and replace with OEM Hestan igniters.</div>
+        <span class="problem-tag tag-common">Most Common</span>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-title">💡 Under-Hood Motion Lighting Dead</div>
+        <div class="problem-cause">LED driver board failure — the motion-activated lighting system's LED driver fails independently of the main grill electronics. The motion sensor sometimes fails separately from the LED array itself. We test both the driver and the sensor before ordering parts — often it's the driver only, which is less expensive than the full lighting assembly.</div>
+        <span class="problem-tag tag-common">Most Common</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 — RECENT REPAIRS -->
+<section class="section section-gray">
+  <div class="section-inner">
+    <div class="section-num">05 — Recent Work</div>
+    <h2 class="section-title">Recent Hestan Repairs Across Los Angeles</h2>
+
+    <div class="repairs-grid">
+      <div class="repair-item">
+        <div class="repair-appliance">Hestan 42" Built-In Grill — Malibu</div>
+        <div class="repair-issue">Two Trellis Burners Not Lighting, Valve Stiff</div>
+        <div class="repair-detail">Beachfront Malibu property — 3 years of direct ocean exposure. Two Trellis Burners™ had failed igniters; both gas valves were stiff from salt air corrosion. Performed full Trellis Burner clean on all four burners (grease accumulation in trellis channels on all of them), replaced both failed igniters with OEM Hestan high-temp igniters, freed and treated both corroded valve stems with marine-grade anti-corrosion compound. Also inspected the ceramic infrared top burner — ceramic showed early micro-fractures, advised proactive replacement before next season. Full outdoor service with weatherproofing of all accessible metal surfaces.</div>
+        <div class="repair-meta">Parts: 2× igniters OEM + valve treatment · Time: 2 hours · Same Day</div>
+      </div>
+
+      <div class="repair-item">
+        <div class="repair-appliance">Hestan Campania Pizza Oven™ — Beverly Hills</div>
+        <div class="repair-issue">Not Reaching Temperature — Stalling at 450°F</div>
+        <div class="repair-detail">Campania pizza oven installed in a custom outdoor kitchen — owner reported it hadn't reached the target 700°F dome temperature in three weeks. High-temp igniter had degraded (standard grill igniters had been used during an earlier service call — they fail rapidly at Campania temperatures). Also found the dome ventilation aperture partially blocked by debris from nearby vegetation. Replaced with OEM Hestan Campania high-temp igniter, cleared the ventilation aperture, tested at full temperature for 45 minutes. Dome reaching 720°F before service end. Owner was making 90-second Neapolitan pizzas within the hour.</div>
+        <div class="repair-meta">Parts: Campania igniter OEM (high-temp rated) · Time: 1.5 hours · Same Day</div>
+      </div>
+
+      <div class="repair-item">
+        <div class="repair-appliance">Hestan KRGD 36" Indoor Range — Brentwood</div>
+        <div class="repair-issue">Left Rear Burner Not Igniting</div>
+        <div class="repair-detail">Hestan professional indoor range — left rear burner clicking but not igniting. Grease accumulation around the sealed burner well had contaminated the igniter ceramic. Cleaned the burner well assembly thoroughly (NanoeShield™ compatible cleaning agents for the interior surface), tested the igniter — it had cracked. Replaced with OEM Hestan indoor igniter for this burner position. Tested all six burners at low, medium, and high. Also verified oven temperature calibration while we had the range open — running 15°F high, recalibrated through the service menu.</div>
+        <div class="repair-meta">Parts: Igniter OEM · Time: 1.5 hours · Same Day</div>
+      </div>
+
+      <div class="repair-item">
+        <div class="repair-appliance">Hestan Outdoor Kitchen Suite — Pacific Palisades</div>
+        <div class="repair-issue">Horizon Hood™ Won't Hold Position + Lighting Dead</div>
+        <div class="repair-detail">Full outdoor kitchen suite — Horizon Hood spring tension loss (hood falling closed after about 8 inches) and the motion-activated under-hood lighting had stopped. Two separate failures in the same visit. Hood: replaced the spring assembly (OEM Hestan — size-specific for the 42" hood configuration). Lighting: LED driver board had failed; motion sensor still functional. Replaced driver board only. Both issues resolved in one visit. Owner mentioned they'd been planning to call for weeks — the hood issue had been making grilling difficult. Complete function restored same day.</div>
+        <div class="repair-meta">Parts: Horizon Hood spring OEM + LED driver OEM · Time: 1.5 hours · Same Day</div>
+      </div>
+
+      <div class="repair-item">
+        <div class="repair-appliance">Hestan Column Refrigerator — West Hollywood</div>
+        <div class="repair-issue">Temperature Running 5°F High</div>
+        <div class="repair-detail">Hestan 30" column refrigerator — temperature displaying 37°F but measured at 42°F throughout. West Hollywood condo with limited air circulation around the installation. Condenser coil was 55% blocked — the panel-ready installation had insufficient rear ventilation clearance (the previous installer had framed the cavity 1.5" too tight). Cleaned the condenser coil, confirmed refrigerant pressure (normal), then carefully repositioned the unit within the allowed adjustment range to increase ventilation. Temperature back to 37°F within 90 minutes. Documented the ventilation clearance requirement for the owner going forward.</div>
+        <div class="repair-meta">Parts: None (condenser cleaning + position adjust) · Time: 1 hour · Same Day</div>
+      </div>
+
+      <div class="repair-item">
+        <div class="repair-appliance">Hestan Aspire Outdoor Grill — Manhattan Beach</div>
+        <div class="repair-issue">Annual Pre-Season Service</div>
+        <div class="repair-detail">Aspire series built-in grill — annual service call requested by the owner before the summer season. Salt air inspection: all three Trellis Burner™ assemblies cleaned, trellis channels cleared, igniter tips inspected (one showing early corrosion — replaced proactively), all valve stems treated with marine-grade anti-corrosion compound, Horizon Hood™ spring tension tested (adequate — no replacement needed), ceramic infrared burner inspected (no fractures). Motion lighting tested. Full function verification. Owner uses the grill 4–5 nights per week in summer — now ready for the season with zero deferred maintenance.</div>
+        <div class="repair-meta">Parts: 1× igniter OEM (proactive) · Time: 1.5 hours · Same Day</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 — PRICING -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-num">06 — Pricing</div>
+    <h2 class="section-title">Hestan Repair Cost — What to Expect</h2>
+    <p class="section-lead">Written flat-rate estimates before work begins. $89 diagnostic fee, waived when you proceed with repair.</p>
+
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th>Repair Type</th>
+          <th>Typical Range</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Trellis Burner™ Full Service + Igniter</td>
+          <td class="price-range">$185–$320</td>
+          <td>Complete clean of trellis channels + OEM igniter replacement. Coastal properties: marine anti-corrosion treatment included.</td>
+        </tr>
+        <tr>
+          <td>Campania Pizza Oven Igniter (High-Temp)</td>
+          <td class="price-range">$195–$340</td>
+          <td>OEM high-temp Campania igniter. Different spec from standard grill igniters — critical to use correct part.</td>
+        </tr>
+        <tr>
+          <td>Horizon Hood™ Spring Assembly</td>
+          <td class="price-range">$175–$295</td>
+          <td>OEM spring assembly, size-specific. Includes tension verification at multiple hood positions.</td>
+        </tr>
+        <tr>
+          <td>Under-Hood Motion LED System</td>
+          <td class="price-range">$165–$280</td>
+          <td>Driver board vs full assembly diagnosis. Often driver only — saves cost over full replacement.</td>
+        </tr>
+        <tr>
+          <td>Outdoor Valve Service (Corrosion)</td>
+          <td class="price-range">$185–$340</td>
+          <td>Valve freed + treated or replaced. Marine anti-corrosion protocol for coastal properties.</td>
+        </tr>
+        <tr>
+          <td>Indoor Range Igniter Replacement</td>
+          <td class="price-range">$185–$310</td>
+          <td>OEM Hestan indoor igniter. Per burner; discount on multiple. NanoeShield™ safe cleaning included.</td>
+        </tr>
+        <tr>
+          <td>Refrigerator Condenser Service</td>
+          <td class="price-range">$145–$240</td>
+          <td>Coil cleaning + ventilation assessment. Panel-ready installation clearance check included.</td>
+        </tr>
+        <tr>
+          <td>Annual Outdoor Kitchen Service</td>
+          <td class="price-range">$195–$320</td>
+          <td>Full Trellis Burner clean, igniter inspection, valve treatment, Horizon Hood check, lighting test. Coastal rate includes marine anti-corrosion treatment.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;color:var(--muted);margin-top:16px;">Prices reflect Los Angeles County. Diagnostic fee ($89) waived on repair. Final quote on-site before work begins.</p>
+  </div>
+</section>
+
+<!-- 07 — WHY US -->
+<section class="section section-gray">
+  <div class="section-inner">
+    <div class="section-num">07 — Why Us</div>
+    <h2 class="section-title">Why Hestan Owners in LA Choose Us</h2>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🍕</div>
+        <div class="why-title">Campania Pizza Oven Service</div>
+        <div class="why-desc">We service the Campania as a distinct high-temperature product — using correct high-temp rated OEM Hestan igniters. Standard grill igniters fail quickly in Campania conditions. Most companies don't make this distinction. We do.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔥</div>
+        <div class="why-title">Trellis Burner™ Clean &amp; Service</div>
+        <div class="why-desc">The trellis geometry accumulates debris differently than tube burners — we clean first, replace only what's actually failed. Coastal properties get marine anti-corrosion treatment on every outdoor service call.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🏭</div>
+        <div class="why-title">Made in Anaheim — Parts Speed</div>
+        <div class="why-desc">Hestan's Anaheim manufacturing means OEM outdoor parts typically arrive same-day or next-day in LA. We often have common Hestan parts on the truck already — no week-long waits for specialty components.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🌿</div>
+        <div class="why-title">Indoor + Outdoor Both</div>
+        <div class="why-desc">Hestan Indoor ranges, refrigerators, and dishwashers plus Hestan Outdoor grills, pizza oven, and kitchen suites — complete ecosystem service in one call. Many LA homeowners have both.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📋</div>
+        <div class="why-title">Flat-Rate Written Estimate</div>
+        <div class="why-desc">Written quote before work begins. $89 diagnostic fee waived on repair. No surprise charges. What we quote is what you pay.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">✅</div>
+        <div class="why-title">Licensed &amp; Insured</div>
+        <div class="why-desc">CSLB #1138898. Licensed, bonded, insured. COI available for property managers on request. Same-day across all of Los Angeles County.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 — REVIEWS -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-num">08 — Reviews</div>
+    <h2 class="section-title">What Hestan Owners Say</h2>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Campania Pizza Oven not reaching temperature — they were the only company in LA who actually knew what it was, let alone how to service it. Came out same day, replaced the igniter with the correct high-temp rated Hestan part (previous service had used a standard grill igniter), cleared the ventilation. Oven hitting 720°F within an hour of the repair. Outstanding service for a very specialized product.</div>
+        <div class="review-author">— Richard K., Beverly Hills · 2 weeks ago</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Malibu beachfront — two Trellis Burners not igniting. They cleaned all four burner assemblies (all had grease in the trellis channels, not just the two dead ones), replaced the failed igniters, treated all the valve stems with marine compound. Also spotted early micro-fractures in the infrared ceramic before it failed completely. This is the proactive approach you need for coastal outdoor appliances.</div>
+        <div class="review-author">— Sarah M., Malibu · 1 month ago</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Horizon Hood falling closed and motion lighting dead — both fixed in one visit, same day. They diagnosed the lighting as a driver board issue (not the full assembly), which saved money. Hood spring replaced with the correct size-specific part. Everything back to factory function. Clean work, fast service, no mess in the outdoor kitchen. Will be calling annually for pre-season service going forward.</div>
+        <div class="review-author">— Jennifer A., Pacific Palisades · 3 weeks ago</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 — FAQ -->
+<section class="section section-gray">
+  <div class="section-inner">
+    <div class="section-num">09 — FAQ</div>
+    <h2 class="section-title">Hestan Repair FAQ</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">How much does Hestan appliance repair cost in Los Angeles?</div>
+        <div class="faq-a">Most Hestan repairs run $145–$620. Trellis Burner service, Horizon Hood spring, or LED lighting work is on the lower end. Campania igniter, valve replacement, or control board runs higher. Diagnostic fee is $89, waived when you proceed. Written flat-rate estimate before work begins.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you repair the Hestan Campania Pizza Oven?</div>
+        <div class="faq-a">Yes — and this is a specialty. The Campania operates at 700°F, which creates service requirements completely unlike a standard grill. We use OEM Hestan Campania high-temp igniters specifically rated for this temperature environment. Standard grill igniters fail rapidly at Campania temperatures — using the wrong part is the most common reason a recent Campania repair fails again quickly.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What is the Trellis Burner™ and how does it fail?</div>
+        <div class="faq-a">The Trellis Burner™ is Hestan's patented grill burner — a trellis-shaped stainless steel configuration delivering 25,000 BTUs with more even heat distribution than tube burners. The trellis geometry accumulates grease in channels that tube burners don't have. We clean the full trellis assembly before replacing any igniter — many Trellis Burner failures are blockage, not component failure.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Where is Hestan made?</div>
+        <div class="faq-a">Hestan grills are manufactured in Anaheim, California — about 30 miles from Los Angeles. Hestan cuts its own steel, fabricates grates, and laser-cuts components in-house. This makes Hestan the only major luxury grill brand made in the United States. OEM parts for Hestan outdoor products move fast through the LA supply chain as a result.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How often should Hestan outdoor grills be serviced in LA?</div>
+        <div class="faq-a">Annually for all LA properties; twice per year for coastal locations (Malibu, Pacific Palisades, Manhattan Beach, Santa Monica). Annual service includes Trellis Burner™ full clean, igniter inspection, valve stem anti-corrosion treatment, Horizon Hood™ spring check, and lighting test. Coastal properties also get marine anti-corrosion treatment on all accessible metal surfaces. This prevents the majority of outdoor failures we're called for.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you service both Hestan Indoor and Hestan Outdoor?</div>
+        <div class="faq-a">Yes — complete Hestan ecosystem service. Hestan Indoor (ranges, ovens, refrigerators, wine storage, dishwashers, ventilation) and Hestan Outdoor (grills, Campania Pizza Oven, outdoor kitchen suites). Many LA homeowners have both. We handle the full scope in a single visit.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 — NEARBY -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-num">10 — Service Area</div>
+    <h2 class="section-title">Hestan Repair Across Los Angeles</h2>
+    <p style="font-size:15px;color:var(--muted);line-height:1.7;max-width:720px;margin-bottom:24px;">Same-day Hestan Indoor and Outdoor repair throughout Los Angeles County. Coastal properties welcome — salt air protocols standard.</p>
+
+    <div class="nearby-grid">
+      <a href="/malibu/" class="nearby-chip">Malibu</a>
+      <a href="/pacific-palisades/" class="nearby-chip">Pacific Palisades</a>
+      <a href="/beverly-hills/" class="nearby-chip">Beverly Hills</a>
+      <a href="/bel-air/" class="nearby-chip">Bel Air</a>
+      <a href="/brentwood/" class="nearby-chip">Brentwood</a>
+      <a href="/santa-monica/" class="nearby-chip">Santa Monica</a>
+      <a href="/manhattan-beach/" class="nearby-chip">Manhattan Beach</a>
+      <a href="/west-hollywood/" class="nearby-chip">West Hollywood</a>
+      <a href="/calabasas/" class="nearby-chip">Calabasas</a>
+      <a href="/studio-city/" class="nearby-chip">Studio City</a>
+      <a href="/sherman-oaks/" class="nearby-chip">Sherman Oaks</a>
+      <a href="/pasadena/" class="nearby-chip">Pasadena</a>
+      <a href="/los-angeles/" class="nearby-chip">Los Angeles</a>
+      <a href="/culver-city/" class="nearby-chip">Culver City</a>
+      <a href="/encino/" class="nearby-chip">Encino</a>
+    </div>
+
+    <p style="margin-top:20px;font-size:14px;color:var(--muted)">Also servicing: <a href="/brand-wolf-appliance-repair/">Wolf Repair</a> · <a href="/brand-subzero-appliance-repair/">Sub-Zero Repair</a> · <a href="/brand-viking-appliance-repair/">Viking Repair</a> · <a href="/brand-thermador-appliance-repair/">Thermador Repair</a></p>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<div class="bottom-cta">
+  <div class="bottom-cta-title">Hestan. Made in Anaheim.<br/><span>Repaired in LA. Same Day.</span></div>
+  <div class="bottom-cta-sub">Trellis Burner · Campania Pizza Oven · Indoor + Outdoor · OEM parts</div>
+  <div>
+    <a href={`tel:${phoneRaw}`} class="cta-phone-large">{phone}</a>
+  </div>
+  <div>
+    <a href="/book/" class="btn-primary" style="font-size:16px;padding:16px 40px;">Book Online</a>
+  </div>
+</div>
+
+</Layout>
