@@ -22,7 +22,8 @@
       "Bash(node:*)",
       "Bash(git status:*)",
       "Bash(npx sharp-cli:*)",
-      "Bash(echo \"exit: $?\")"
+      "Bash(echo \"exit: $?\")",
+      "Bash(awk '{print $5, $9}')"
     ]
   }
 }
