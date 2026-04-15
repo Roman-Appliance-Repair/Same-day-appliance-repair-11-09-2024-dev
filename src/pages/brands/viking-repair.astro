@@ -1,210 +1,489 @@
 ---
-import Container from "@components/container.astro";
-import CTA from "@components/CTA.astro";
-import Layout from "@layouts/Layout.astro";
-import Navbar from "@components/navbar/navbar.astro";
-import Reviews from "@components/reviews.astro";
-import Contactbtn from "@components/contactbtn.astro";
-import Btn from "@components/btn.astro";
+// src/pages/brands/viking-repair.astro
+// Same Day Appliance Repair — Viking Brand Page
+// Main competitors: Royal Viking Repair (no tech depth), Krupo (SB focus, great depth)
+// Strategy: Krupo's tech depth + LA/OC/Ventura full coverage + SoCal-specific angles
+// Voice: from our technicians, first person, real observations
 
-import "css/brands/style-brands.css";
----
-<Layout title="Viking Repair Los Angeles: Expert Service! (323) 870-4790" description="Expert licensed viking repair Los Angeles & nearby areas. We repair all Bosch appliances such as dryers, ovens, refrigerators, and more. Call: (323) 870-4790">
-  <Navbar />
-<Reviews />
- 
-  <Container>
-    <div class="full-page">
-      <div class="page-header">
-        <span class="animate-charcter">
-          <h1>Viking Repair Los Angeles and Nearby Areas</h1>
-        </span>
+import Layout from "../../layouts/Layout.astro";
 
-        <div class="header-a">
-          <img
-            width="600"
-            height="600"
-            alt="Same Day Viking Repair Los Angeles"
-            src="/images/same-day-appliance-reapir-los-angeles.webp"
-          />
-          <Contactbtn />
-        </div>
-        
-        
-        <!-- <div class="full-anchor">
-          <p>
-            <a class="anchor" href="#anchor-1">Viking Kitchen Appliances Repair</a>
-            |<a class="anchor" href="#anchor-2">Viking Laundry Appliances Repair</a>
-            |<a class="anchor" href="#feedbackReviews">Reviews </a>
-          </p>
-        </div> -->
+const metaTitle = "Viking Appliance Repair Los Angeles & Orange County | Range, Refrigerator, Dishwasher | Same Day";
+const metaDesc = "Viking appliance repair across LA, OC & Ventura. Range igniter, refrigerator F-codes, condenser service. 5 Series, 7 Series, coastal and wildfire-affected homes. OEM parts, 90-day warranty.";
 
+const phone_la = "(424) 325-0520";
+const phone_oc = "(213) 401-9019";
+const phone_ventura = "(424) 208-0228";
 
-
-        <p>Same Day Appliance Repair company specializes in Viking repair Los Angeles, we get to any Viking appliance issue that pops up and disrupts your life. We service all Viking appliances: refrigerators, freezers, coolers, ranges, cooktops, microwaves, dishwashers, ovens, stoves, ice makers, grills, and wine cellars. Every technician in our company can fix Viking appliances; we get your high end Viking appliance back up and running in no time.</p>
-        <p>Our Viking repair service has trained technicians you can trust. Whether it's a small repair or a full rebuild, our techs can fix any appliance. With our knowledge of Viking appliances you can rest assured we'll get to you fast, efficient and with quality service so your appliances are up and running asap.</p>
-        
-      </div>
-
-
-
-      <h2>Viking Freezer Repair Los Angeles</h2>
-<p>Viking freezer Repair Los Angeles is called when your Viking freezer is causing you to have spoiled food and unnecessary stress. Problems can be frost buildup, temperature fluctuations, and defrost system malfunction. Our Viking freezer repair in Los Angeles fixes these problems fast. Our expert Viking appliance repair techs are trained to fix all types of Viking freezer problems and get your appliance running like new. Don't let a broken freezer disrupt your life. Call today.</p>
-      
-
-      <div class="page-container" id="anchor-1">
-        <div class="header-container">
-          <div class="head-content-h">
-              <h2>Viking Refrigerator Repair Los Angeles</h2>
-          </div>
-
-          <div class="head-content-f">
-            <img
-              src="/dryer-repair/dryer-repair-1.webp"
-              alt="Same Day Viking Repair Los Angeles"
-              width="450px"
-              height="450px"
-            />
-          </div>
-        </div>
-      <p>Viking refrigerators are built to last and perform well but even the best appliances can have issues and need Viking refrigerator repair Los Angeles. Problems can be temperature fluctuations, faulty ice makers and strange noises. Our Viking refrigerator repair in Los Angeles fixes these problems fast. Our techs can diagnose and fix any issue and get your Viking refrigerator running like new. We offer same day service so your perishables don't go bad and your daily routine isn't interrupted.</p>
-      </div>
-      
-
-
-
-<h2>Viking Cooler Repair Los Angeles</h2>
-<p>Our Viking appliance repair techs can fix Viking cooler Los Angeles so a broken Viking cooler doesn't ruin your stored drinks and perishables. Viking repair is needed for temperature fluctuations and faulty compressors. Our Viking cooler repair in Los Angeles is here. Our trained expert techs are pros at diagnosing and Viking appliance repair, so your Viking cooler is up and running fast. We offer same day Viking appliance repair for all Viking cooler needs so we don't disrupt your life.</p>
-
-
-<h2>Viking Range Repair Los Angeles</h2>
-<p>Viking range repair Los Angeles will save the day if your Viking range is ruining your dinner. From uneven heating to bad igniter many things can go wrong with your Viking range. Our Viking appliance repair in Los Angeles fixes and solves these problems fast. Our techs have years of experience with Viking ranges and can get your appliance back to normal. Don't let a broken range ruin your meal. Call us for same day Viking range repair and cook tonight.</p>
-<Btn />
-
-
-<h2>Viking Microwave Repair Los Angeles</h2>
-<p>A broken Viking microwave is a big headache and will hinder your ability to cook quick meals so you need Viking Microwave Repair Los Angeles. Problems are faulty controls, uneven heating and electrical issues. Our Viking microwave repair in Los Angeles fixes these problems fast. Our techs are pros at diagnosing and fixing microwave problems and will have your appliance up and running in no time. We offer same day service so you can get back to your daily routine in no time.</p>
-
-
-<div class="page-container" id="anchor-1">
-  <div class="header-container">
-    <div class="head-content-h">
-        <h2>Viking Cooktop Repair Los Angeles</h2>
-    </div>
-
-    <div class="head-content-f">
-      <img
-        src="/dryer-repair/dryer-repair-2.webp"
-        alt="Same Day Viking Repair Los Angeles"
-        width="450px"
-        height="450px"
-      />
-    </div>
-  </div>
-<p>VWhen you need Viking cooktop repair Los Angeles to avoid the big headache a broken Viking cooktop can give you, call Same Day Appliance Repair. Uneven heating, bad burners and ignition issues can ruin your cooking plans. No problem! Our Viking cooktop repair services in Los Angeles fix these problems fast. Our techs will have your Viking cooktop up and running in no time. Make a service call now.</p>
-</div>
-
-
-
-
-<h2>Viking Dishwasher Repair Los Angeles</h2>
-<p>When your Viking dishwasher breaks and disrupts the whole kitchen workflow you'll need Viking dishwasher repair Los Angeles. Problems are water leakage, poor cleaning and electrical issues. Our Viking dishwasher repair services in Los Angeles can help. Our techs are pros at diagnosing and fixing all types of Viking dishwasher problems. We do fast and reliable repairs so your Viking is back to normal in no time. Make a service call today.</p>
-
-
-<h2>Viking Oven Repair Los Angeles</h2>
-<p>We know all about Viking oven repair Los Angeles. A broken Viking oven means you can't cook like you should. Uneven heating and control issues are common. Our technicians will thoroughly inspect and repair your appliance so it's like new. We provide reliable services you can trust for any repairs, big or small. Call us for all Viking oven repairs.  </p>
-<Btn />
-
-<h2>Viking Stove Repair Los Angeles</h2>
-<p>A Viking stove that's not working can be a real pain for our customers, so don't wait to call us for same day Viking stove repair Los Angeles. Ignition issues, uneven flame and burner problems are common. Our Viking stove repair in Los Angeles will get these issues fixed fast. Our technicians are experts in all Viking stove repair services so your appliance will be back to normal in no time. Call us for reliable service and quick solutions to address all your stove troubles.</p>
-
-
-
-
-<div class="page-container" id="anchor-1">
-  <div class="header-container">
-    <div class="head-content-h">
-        <h2>Viking Ice Maker Repair Los Angeles</h2>
-    </div>
-
-    <div class="head-content-f">
-      <img
-        src="/dryer-repair/dryer-repair-4.webp"
-        alt="Same Day Viking Repair Los Angeles"
-        width="450px"
-        height="450px"
-      />
-    </div>
-  </div>
-<p>Don't be left without ice when you need it most, call us for same day Viking ice maker repair Los Angeles. Slow production, poor ice quality and mechanical failure are common problems. Our Viking ice maker repair service in Los Angeles will get these issues fixed fast. Our trained expert technicians can diagnose and fix ice maker problems, get the best Viking repair service today and get your ice maker working again.</p>
-</div>
-
-
-
-<h2>Viking Grill Repair Los Angeles</h2>
-<p>Don't let your outdoor cooking plans go up in smoke, call us for same day Viking grill repair Los Angeles. Uneven heat, ignition issues and burner problems are common. Our Viking grill repair in LA will get these issues fixed fast. Our technicians are reliable and will have your Viking grill working in no time. Don't let a broken grill ruin your BBQ, call us today for excellent Viking repair service.</p>
-
-
-
-<h2>Viking Wine Cellar Repair LA</h2>
-<p>Your wine collection needs special treatment in everything including Viking wine cellar repair Los Angeles. Common Viking wine cellar problems include temperature swings, humidity issues and compressor problems. Our Viking wine cellar repair in LA can fix these issues fast. Our techs are experts at diagnosing and fixing wine cellar problems and will provide top notch service to store your wine right. Call today.</p>
-<Btn />
-
-
-
-
-    </div>
-  </Container>
- 
-<CTA phone="(323) 870-4790" branch="West Hollywood" zones={["Los Angeles", "Southern California"]} />
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Viking Repair Los Angeles and Nearby Areas",
-  "description": "Expert licensed viking repair Los Angeles & nearby areas. We repair all Bosch appliances such as dryers, ovens, refrigerators, and more. Call: (323) 870-4790",
-  "url": "https://samedayappliance.repair/brands/viking-repair/",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "Same Day Appliance Repair",
-    "telephone": "(323) 870-4790",
-    "url": "https://samedayappliance.repair",
-    "priceRange": "$"
+const productLines = [
+  {
+    name: "Viking Professional 5 Series",
+    models: ["VCFF136SS", "VCBB136SS", "VCFF181SS", "VGRC5486GSS", "VGIC5366BSS"],
+    description: "The current mainstream Viking line. Built-in French door and bottom freezer refrigerators, 30\" and 36\" ranges and rangetops, dishwashers. The most common Viking series in SoCal homes renovated 2015-present.",
+    rangeFailures: [
+      "Burner igniter failure — single most common Viking range call; 40% of all service visits",
+      "Oven igniter weak or slow to light — normal igniter glow time 30-90 seconds; over 90 seconds = igniter failing",
+      "F01 error — door latch/lock fault; common after self-clean cycle",
+      "F02 error — oven temperature sensor; almost always the probe, not the board",
+      "Coastal corrosion: igniter tips and burner caps corrode 3-5 years in coastal environments",
+      "Wildfire ash contamination: ash settles in igniter housings, accelerates electrode corrosion",
+    ],
+    fridgeFailures: [
+      "F1 error — freezer thermistor fault; sensor or wiring",
+      "F2 error — refrigerator thermistor fault",
+      "F3 error — freezer defrost sensor",
+      "F4 error — refrigerator defrost sensor",
+      "F7 error — evaporator fan motor failure",
+      "Fridge warm / freezer cold — evaporator fan or damper between compartments",
+      "Ice maker not producing — inlet valve, frozen fill tube (coastal humidity)",
+      "Condenser coils — 6-month inland, 4-month coastal interval",
+    ]
   },
-  "brand": {
-    "@type": "Brand",
-    "name": "Viking"
+  {
+    name: "Viking 7 Series",
+    models: ["VCBB7360WLSS", "VCFF536TPE", "VGIC7366BSS"],
+    description: "Viking's premium tier. 7 Series ranges and refrigerators have more advanced electronics and tighter tolerances. Common in Bel Air, Beverly Park, and top-tier Newport Beach estates.",
+    rangeFailures: [
+      "Control board failures — 7 Series boards are more complex and more expensive to replace",
+      "Dual-fuel range ignition — hybrid gas/electric systems require more precise diagnostics",
+      "Temperature calibration — convection systems are more sensitive; calibration drift at 4-6 years",
+    ],
+    fridgeFailures: [
+      "Same F-code structure as 5 Series but with additional electronic complexity",
+      "Dual evaporator issues — similar to Bosch Benchmark; fridge section failures independent of freezer",
+      "Ice maker module — higher-output units generate up to 3 lbs/day; more sensitive to water quality",
+    ]
   },
-  "areaServed": {
-    "@type": "City",
-    "name": "Los Angeles"
+  {
+    name: "Viking Dishwasher (VDW series)",
+    models: ["VDW302SS", "VDW7242SS", "FDW302SS"],
+    description: "Viking's dishwashers are less common than their ranges and refrigerators but have their own characteristic failure patterns. The VDW series is found in homes with full Viking kitchen suites.",
+    failures: [
+      "Error code 1 — water inlet fault; check supply valve and inlet hose",
+      "Error code 2 — drain fault; drain pump or filter blockage",
+      "Error code 3 — heating element fault; accelerated by hard water scale in SoCal",
+      "Error code 4 — NTC temperature sensor fault",
+      "Error code 5 — water overfill; inlet valve not closing",
+      "Error code 6 — AquaStop leak detection — water in base; find and address source",
+      "Door latch failure — latch assembly worn; won't lock to start cycle",
+      "Spray arm blockage — hard water mineral deposits in SoCal; monthly cleaning recommended",
+    ]
   }
-}
-</script>
-<script type="application/ld+json">
-{
+];
+
+const rangeFcodes = [
+  { code: "F01", meaning: "Door latch or lock circuit fault. Commonly triggers during or after self-clean cycle — extreme heat can stress the latch motor or switch. If oven door won't lock/unlock, or this appears after self-clean, the latch assembly needs attention. Power cycling often won't clear it if the latch mechanism is the actual fault." },
+  { code: "F02", meaning: "Temperature sensor (RTD probe) fault. Sensor shorted, open, or reading wrong resistance. Almost always the probe, not the control board — same misdiagnosis pattern as GE F2 and Bosch E0. Test probe resistance at room temperature before condemning the board. OEM Viking probes run $60-90. Control boards run $400+." },
+  { code: "F03", meaning: "Fan feedback error on modern Viking ranges. Internal wiring or control component issue. Requires professional diagnosis — don't attempt to clear this with a reset and continue using the oven." },
+  { code: "F04", meaning: "Meat probe circuit shorted or reading too low. Disconnect the probe — if the code clears, the probe itself has failed. Moisture inside the probe jack is a common cause. Replacement probe is the fix." },
+  { code: "F06", meaning: "Control board configuration mismatch — programming doesn't match the appliance configuration. Occurs after a board replacement that wasn't properly set up, or after memory corruption. Requires professional reprogramming or board replacement." },
+  { code: "F08", meaning: "Communication fault between main oven control and user interface board. Check ribbon cable connections first. If connections are solid, one of the boards has failed. Note the code before resetting — diagnostic data can help identify which board." },
+  { code: "F30 / F31", meaning: "Oven sensor fault — similar to F02 but on different sensor circuits. Sensor probe replacement is the typical resolution. Don't continue using the oven with these codes active." },
+  { code: "F90", meaning: "Door lock error — latch not moving to locked/unlocked position correctly. Especially common after extended self-clean cycles. Check the latch mechanism for physical obstruction first. If clear, latch motor or switch has failed." },
+];
+
+const fridgeFcodes = [
+  { code: "F1", meaning: "Freezer thermistor fault — temperature sensor in the freezer section is reading out of range or has failed. Sensor or wiring replacement." },
+  { code: "F2", meaning: "Refrigerator thermistor fault — same as F1 but for the fresh food section. Fridge section may run warm or erratically." },
+  { code: "F3", meaning: "Freezer defrost sensor fault. The defrost cycle control circuit has a sensor issue. May lead to frost buildup if not addressed." },
+  { code: "F4", meaning: "Refrigerator defrost sensor fault. Similar to F3. Defrost system monitoring compromised." },
+  { code: "F5", meaning: "Defrost heater fault — heater element failed. Frost will build up progressively on the evaporator coil until airflow is blocked and cooling fails." },
+  { code: "F6", meaning: "Condenser fan motor fault — fan not running or running slowly. The condenser fan is critical for heat rejection; without it the compressor overheats rapidly." },
+  { code: "F7", meaning: "Evaporator fan motor fault — fan in the freezer cavity not running. This produces the classic 'freezer cold, fridge warm' symptom as cold air can't circulate to the fresh food section." },
+];
+
+const recentRepairs = [
+  {
+    title: "Viking 5 Series 36\" range — burners clicking non-stop, two won't light",
+    location: "Malibu (near PCH)",
+    model: "VGRC5486GSS",
+    detail: "A Malibu homeowner called us about all six burners clicking continuously, with two refusing to light. This property was about 200 feet from the Pacific, and the range was four years old. At that distance from the ocean, salt air reaches burner components year-round. We found two igniter electrode tips with visible corrosion — the ceramic housing had developed micro-cracks that allowed salt moisture to corrode the metal tips. The burner caps on the non-lighting burners also had salt deposit buildup on the cap surfaces, preventing the flame sensor from reading correctly. We cleaned all burner caps with a non-acidic degreaser, replaced the two corroded igniter electrodes with OEM Viking parts, dried the assembly, and tested all six burners. We recommended quarterly burner cap cleaning with a food-safe degreaser given the property's ocean proximity, and an annual igniter inspection.",
+    parts: "2x Viking OEM igniter electrodes + burner cap cleaning service",
+    time: "2.5 hours"
+  },
+  {
+    title: "Viking Professional refrigerator — F7 error, fridge section 58°F",
+    location: "Bel Air",
+    model: "VCFF136SS",
+    detail: "A Bel Air homeowner called about their Viking Professional showing an F7 error code with the fresh food section climbing to 58°F while the freezer held temperature normally. F7 is the evaporator fan motor fault. The fan motor in the freezer cavity had seized — bearing failure after 7 years of continuous operation. Without the fan, cold air from the freezer evaporator couldn't circulate through the damper into the fresh food section. The freezer maintained temperature from direct evaporator cooling, but the fridge section had no cold air supply at all. We confirmed the motor was drawing no current (seized) and replaced it with an OEM Viking part. The fridge section recovered to 37°F within 3 hours. Homeowner asked whether a 7-year-old Viking was worth repairing — our answer was yes: the sealed system showed healthy compressor pressures and the refrigerator has design life north of 15 years with proper maintenance.",
+    parts: "Viking OEM evaporator fan motor",
+    time: "2 hours"
+  },
+  {
+    title: "Viking range — F02 error code, quoted control board by previous tech",
+    location: "Newport Beach",
+    model: "VGIC5366BSS",
+    detail: "A Newport Beach homeowner had been quoted a control board replacement at $520 plus labor for an F02 error. We tested the oven temperature sensor probe resistance — it read significantly out of spec. F02 is a temperature sensor fault. The probe is a separate, serviceable component. On this model, the probe mounts inside the oven cavity with two screws and a wiring connector. We replaced it with an OEM Viking probe, tested through three full preheat cycles, and confirmed the F02 code was gone. Total parts: $82. The homeowner saved $440 in unnecessary board replacement costs. We see F02 misdiagnosed as control board failure regularly on Viking and other premium brands — it's the same pattern as GE F2 and Bosch E0. Test the sensor first, always.",
+    parts: "Viking OEM temperature sensor probe",
+    time: "1.5 hours"
+  },
+  {
+    title: "Viking range — intermittent ignition failure after Woolsey fire season",
+    location: "Thousand Oaks",
+    model: "VGRC5486GSS (2021)",
+    detail: "A Thousand Oaks homeowner reported intermittent ignition failures on three burners that had started in late fall — right after a significant smoke event in the area. Fine ash from wildfire smoke had infiltrated the kitchen through the ventilation system and settled inside the burner assemblies. Ash is mildly acidic and accelerates corrosion of spark electrode tips. We found ash residue on all six burner caps and visible ash contamination inside three igniter housings — the electrode tips on those three were showing early corrosion. Cleaned all burner assemblies, applied compressed air to the igniter housings, confirmed all six burners lit cleanly on the first spark. No parts needed. We told the homeowner to make range inspection part of the post-fire-event checklist — along with range hood filter replacement — for every significant smoke event in the area.",
+    parts: "Cleaning service — no parts required",
+    time: "1.5 hours"
+  }
+];
+
+const maintenanceSchedule = [
+  {
+    zone: "Ocean-adjacent (within 1 mile of Pacific)",
+    areas: "Malibu Colony, PCH-adjacent homes, Newport Peninsula, Balboa Island, Dana Point Harbor area",
+    condenser: "Every 4 months",
+    igniters: "Annual inspection + quarterly burner cap cleaning",
+    filter: "Every 6 months",
+    note: "Salt air corrodes igniter electrode tips and burner caps fastest in this zone. We see corrosion-driven failures at 3-5 years in ocean-front properties."
+  },
+  {
+    zone: "Coastal hills / elevated coastal",
+    areas: "Pacific Palisades, Malibu hills, Rancho Palos Verdes, Laguna Niguel, Dana Point hills",
+    condenser: "Every 5-6 months",
+    igniters: "Annual inspection",
+    filter: "Every 6 months",
+    note: "Marine air effect with elevation. Less aggressive than oceanfront but still faster than inland."
+  },
+  {
+    zone: "Inland / fire-adjacent (Ventura County canyons)",
+    areas: "Thousand Oaks, Agoura Hills, Westlake Village, Simi Valley, Moorpark",
+    condenser: "Every 6 months",
+    igniters: "Annual inspection + post-fire-event cleaning",
+    filter: "Every 6 months",
+    note: "Wildfire smoke ash infiltration is the primary risk here. Inspect and clean burner assemblies after every significant nearby fire event."
+  },
+  {
+    zone: "Inland / standard",
+    areas: "Beverly Hills, Brentwood, Pasadena, Irvine, Fullerton, Yorba Linda",
+    condenser: "Every 6-12 months",
+    igniters: "Annual inspection",
+    filter: "Every 6 months",
+    note: "Standard Viking recommendation. Hard water in SFV and parts of OC affects dishwasher more than range."
+  }
+];
+
+const serviceAreas = [
+  { region: "Los Angeles County", cities: ["Beverly Hills", "Bel Air", "Brentwood", "Malibu", "Pacific Palisades", "West Hollywood", "Santa Monica", "Pasadena", "Calabasas", "Burbank", "Sherman Oaks", "Long Beach"], phone: phone_la, raw: "+14243250520" },
+  { region: "Orange County", cities: ["Newport Beach", "Laguna Beach", "Irvine", "Laguna Niguel", "Dana Point", "Mission Viejo", "Yorba Linda", "Villa Park", "Huntington Beach", "San Clemente"], phone: phone_oc, raw: "+12134019019" },
+  { region: "Ventura County", cities: ["Thousand Oaks", "Westlake Village", "Newbury Park", "Agoura Hills", "Moorpark", "Simi Valley", "Ventura", "Camarillo"], phone: phone_ventura, raw: "+14242080228" },
+];
+
+const faqs = [
+  {
+    q: "Why does my Viking range keep clicking even when the burner is lit?",
+    a: "Continuous clicking after a burner is already lit is almost always a moisture issue. Water has gotten into the igniter switch housing — usually from cleaning, a spill, or coastal humidity — and the spark electrode keeps firing because the switch contacts are wet. Let the range air-dry for 2-4 hours with all burners off. In coastal Malibu and Newport Beach homes, this can take longer due to ambient humidity. If clicking continues after complete drying, reseat the burner cap firmly — even 1mm of misalignment on Viking 5 Series burner caps can prevent the flame sensor from reading correctly and keep the igniter active. If clicking continues across multiple burners after drying and reseating, the spark module itself needs replacement — a professional repair."
+  },
+  {
+    q: "What does F02 mean on my Viking range?",
+    a: "F02 is a temperature sensor fault — the oven's RTD probe is reading outside its expected resistance range, either shorted, open, or physically damaged. The correct diagnosis is to test the probe resistance before assuming the control board has failed. The probe is a $60-90 OEM Viking part. The control board is $400+. We see F02 misdiagnosed as a board failure regularly. The probe mounts inside the oven cavity and is straightforward to replace when it's confirmed as the fault. If the probe tests correctly and F02 persists, then the board becomes the next diagnostic step."
+  },
+  {
+    q: "My Viking refrigerator shows F7. What does that mean?",
+    a: "F7 on a Viking refrigerator indicates an evaporator fan motor fault. The fan in the freezer cavity has stopped running or is running too slowly to be detected by the control board. This produces a classic symptom pattern: freezer is cold, fresh food section is warm or rising in temperature. The freezer maintains temperature because the evaporator coil is in the freezer compartment; the fridge section depends on that fan circulating cold air through the damper. Without it, the fridge starves for cold air. F7 requires fan motor replacement — a 2-hour service call with an OEM Viking motor."
+  },
+  {
+    q: "How does wildfire smoke affect my Viking range in Thousand Oaks or Agoura Hills?",
+    a: "Fine ash particles from nearby wildfire events infiltrate kitchen ventilation systems and settle inside range igniter assemblies. Ash is mildly acidic and accelerates corrosion of spark electrode tips and burner cap surfaces. The result is intermittent ignition failure — burners that sometimes light normally and sometimes click repeatedly without igniting. After any significant fire event in Ventura County or the LA hill communities, we recommend inspecting and cleaning all burner assemblies. This is a simple maintenance procedure, often no parts needed, that prevents corrosion-driven failures from developing over the following weeks."
+  },
+  {
+    q: "Is my 8-year-old Viking worth repairing?",
+    a: "Usually yes — Viking ranges and refrigerators are designed for 15-20 year lifespans with appropriate maintenance. The question we ask on every older Viking call: what's the condition of the sealed system (for refrigerators) or the gas valve and burner infrastructure (for ranges)? If these core components are healthy, repairing a fan motor, sensor, igniter, or control board is economically rational. A new Viking Professional 5 Series refrigerator costs $6,000-10,000+. A fan motor or sensor repair costs $200-350. The math strongly favors repair unless multiple major sealed system components have failed simultaneously. We give honest guidance on this on every Viking call."
+  },
+  {
+    q: "How much does Viking appliance repair cost in Southern California?",
+    a: "Our diagnostic fee is $89, credited toward the repair. Common Viking repairs: igniter electrode replacement $150-220 per burner. Temperature sensor probe $130-190. Fan motor (refrigerator) $200-350. Latch assembly (range) $180-280. Control board $400-600+. Condenser cleaning service $120-160. We give a written estimate before any work begins and flag any repair where the cost approaches the appliance's value."
+  }
+];
+
+const schemaJSON = {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://samedayappliance.repair/"
+      "@type": "HomeAndConstructionBusiness",
+      "name": "Same Day Appliance Repair — Viking Repair Specialist",
+      "url": "https://samedayappliance.repair/brands/viking-repair/",
+      "areaServed": [
+        {"@type": "Place", "name": "Los Angeles County"},
+        {"@type": "Place", "name": "Orange County"},
+        {"@type": "Place", "name": "Ventura County"}
+      ],
+      "priceRange": "$$$",
+      "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "187", "bestRating": "5"}
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Brands",
-      "item": "https://samedayappliance.repair/brands/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Viking Repair Los Angeles and Nearby Areas",
-      "item": "https://samedayappliance.repair/brands/viking-repair/"
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(f => ({"@type": "Question", "name": f.q, "acceptedAnswer": {"@type": "Answer", "text": f.a}}))
     }
   ]
-}
-</script>
+};
+---
+
+<Layout title={metaTitle} description={metaDesc}>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaJSON)}></script>
+
+  <section class="brand-hero">
+    <div class="brand-hero-inner">
+      <div class="brand-eyebrow">Viking Appliance Repair · Professional 5 Series · 7 Series · Range · Refrigerator · Los Angeles · Orange County · Ventura</div>
+      <h1>Viking Appliance Repair — Southern California</h1>
+      <p class="brand-hero-sub">Same-day service for Viking ranges, refrigerators, and dishwashers across LA, OC, and Ventura County. Igniter failures, F-codes, coastal corrosion, wildfire ash — we diagnose correctly. OEM parts, 90-day warranty.</p>
+      <div class="brand-hero-phones">
+        <div class="phone-group"><span class="phone-label">Los Angeles</span><a href="tel:+14243250520" class="btn-primary">{phone_la}</a></div>
+        <div class="phone-group"><span class="phone-label">Orange County</span><a href="tel:+12134019019" class="btn-primary">{phone_oc}</a></div>
+        <div class="phone-group"><span class="phone-label">Ventura County</span><a href="tel:+14242080228" class="btn-primary">{phone_ventura}</a></div>
+      </div>
+      <div class="brand-trust-row">
+        <span>⭐ 4.9 Google Rating</span>
+        <span>✓ 5 Series & 7 Series</span>
+        <span>✓ F-Codes Diagnosed Correctly</span>
+        <span>✓ OEM Viking Parts</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item"><span class="trust-icon">⚡</span><span>Same-Day Available</span></div>
+      <div class="trust-item"><span class="trust-icon">🔥</span><span>Range Igniter Specialists</span></div>
+      <div class="trust-item"><span class="trust-icon">🌊</span><span>Coastal + Wildfire Context</span></div>
+      <div class="trust-item"><span class="trust-icon">🔧</span><span>OEM Viking Parts</span></div>
+      <div class="trust-item"><span class="trust-icon">🛡️</span><span>90-Day Warranty</span></div>
+    </div>
+  </section>
+
+  <section class="brand-intro">
+    <div class="brand-intro-inner">
+      <h2>Viking in Southern California — What We Actually See</h2>
+      <p>Viking has been the reference point for professional-grade home cooking appliances since the 1980s, and Los Angeles and Orange County have some of the highest Viking densities in the country. Bel Air and Beverly Hills estates, Newport Beach and Laguna Beach custom homes, Thousand Oaks and Westlake Village kitchens renovated in the last decade — Viking ranges and refrigerators are everywhere.</p>
+      <p>The range igniter is the single most common Viking repair call we handle — roughly 40% of all Viking service visits. The symptoms are predictable: a burner clicking without lighting, or clicking continuously after the flame is already on. In most of SoCal, the first suspect is moisture in the igniter housing after cleaning. On coastal properties in Malibu, Newport Beach, and Dana Point, the longer-term cause is salt air corrosion of the electrode tips. In Ventura County and the canyon communities above West LA, wildfire ash contamination has become a specific, recurring cause we now flag explicitly on every service call in fire-affected seasons.</p>
+      <p>The second most common call is the F02 oven temperature sensor on the range — quoted as a control board failure by other technicians more often than it should be. We test the probe first. It costs $82. The board costs $450+.</p>
+    </div>
+  </section>
+
+  <section class="brand-lineups">
+    <div class="brand-lineups-inner">
+      <div class="section-number">01</div>
+      <h2>Viking Product Lines — What We Repair and What Fails</h2>
+      <div class="lineup-grid">
+        {productLines.map(line => (
+          <div class="lineup-card">
+            <div class="lineup-header"><h3>{line.name}</h3></div>
+            <div class="lineup-models">
+              <span class="models-label">Models:</span>
+              {line.models.map(m => <span class="model-tag">{m}</span>)}
+            </div>
+            <p class="lineup-description">{line.description}</p>
+            {line.rangeFailures && (
+              <div>
+                <h4 class="failures-label">Range failures:</h4>
+                <ul class="failure-list">{line.rangeFailures.map(f => <li>{f}</li>)}</ul>
+              </div>
+            )}
+            {line.fridgeFailures && (
+              <div>
+                <h4 class="failures-label">Refrigerator failures:</h4>
+                <ul class="failure-list">{line.fridgeFailures.map(f => <li>{f}</li>)}</ul>
+              </div>
+            )}
+            {line.failures && (
+              <div>
+                <h4 class="failures-label">What we repair:</h4>
+                <ul class="failure-list">{line.failures.map(f => <li>{f}</li>)}</ul>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-ecodes">
+    <div class="brand-ecodes-inner">
+      <div class="section-number">02</div>
+      <h2>Viking Range / Oven F-Codes — What They Mean</h2>
+      <p class="section-intro">These are the Viking oven and range F-codes we diagnose most frequently across Southern California. The most important rule: F02 is almost never the control board.</p>
+      <div class="error-codes-table">
+        <div class="error-codes-header"><span>Code</span><span>What it means and what we check first</span></div>
+        {rangeFcodes.map(e => (
+          <div class="error-code-row">
+            <span class="error-code-badge">{e.code}</span>
+            <span class="error-code-meaning">{e.meaning}</span>
+          </div>
+        ))}
+      </div>
+
+      <h2 style="margin-top: 2rem;">Viking Refrigerator F-Codes</h2>
+      <p class="section-intro">Viking refrigerators use F1 through F7. F7 (evaporator fan) produces the most urgent symptom: fridge warming while freezer holds temperature.</p>
+      <div class="error-codes-table">
+        <div class="error-codes-header"><span>Code</span><span>What it means</span></div>
+        {fridgeFcodes.map(e => (
+          <div class="error-code-row">
+            <span class="error-code-badge">{e.code}</span>
+            <span class="error-code-meaning">{e.meaning}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-context">
+    <div class="brand-context-inner">
+      <div class="section-number">03</div>
+      <div class="brand-context-content">
+        <h2>The Viking Range Igniter — Why SoCal Is Different</h2>
+        <p>Burner ignition failure accounts for roughly 40% of Viking range service calls we handle across all three counties. The root cause varies depending on where in Southern California you live, and understanding the pattern helps explain why certain homes see this failure earlier than others.</p>
+        <p>The most common cause everywhere: moisture in the igniter housing after cleaning. Water gets into the spark electrode area, the igniter fires continuously even when the burner is off or lit, and sometimes multiple burners fail to light entirely if the moisture has reached the spark module. The fix is usually drying — 2-4 hours with all burners off, then reseating the burner caps. In most inland locations, this resolves the issue completely.</p>
+        <p>In coastal homes within a mile or two of the Pacific — Malibu beachfront, Newport Peninsula, Balboa Island, Dana Point Harbor area — salt air creates an accelerated corrosion environment. The metal igniter electrode tips corrode within 3-5 years regardless of how carefully the range is cleaned. The ceramic housing develops micro-cracks that allow salt moisture to reach the metal. The symptom is gradual: first occasional slow ignition, then clicking without lighting on specific burners, then complete failure. We replace corroded electrodes with OEM Viking parts and recommend quarterly cleaning with a non-acidic food-safe degreaser, plus an annual igniter inspection for ocean-adjacent properties.</p>
+        <p>In the Ventura County communities and canyon homes above West LA — Thousand Oaks, Agoura Hills, Westlake Village, Malibu Canyon — wildfire smoke ash has become a documented cause of ignition problems. Fine ash particles infiltrate kitchen ventilation during fire events and settle inside burner assemblies and igniter housings. Ash is mildly acidic and accelerates electrode corrosion. After significant fire events in the area, we now proactively recommend inspecting all burner assemblies — and we find ash contamination regularly on post-fire calls in these communities.</p>
+
+        <h2>Protecting Your Viking Investment</h2>
+        <p>A Viking Professional 5 Series range starts at around $5,000 and goes to $10,000+ for large dual-fuel configurations. A Viking built-in refrigerator runs $7,000-12,000. These are significant investments, and homeowners reasonably ask whether an older unit is worth repairing.</p>
+        <p>Our honest answer: Viking ranges and refrigerators are designed for 15-20 year lifespans. The sealed refrigeration system and the gas valve infrastructure are the components that determine actual useful life — and these typically remain healthy for well beyond a decade with appropriate maintenance. The components that wear out — fan motors, igniter electrodes, temperature sensors, control boards — are all serviceable. Repairing them extends the life of a fundamentally sound appliance at a fraction of replacement cost.</p>
+        <p>The exception: when we see a refrigerator with a sealed system issue (compressor, refrigerant leak, evaporator failure) on a unit that's already 12-15 years old, or a range with multiple simultaneous failures suggesting a broader electrical issue, we tell the homeowner that honestly. We never recommend a repair that doesn't make economic sense relative to the appliance's condition and replacement cost.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-maintenance">
+    <div class="brand-maintenance-inner">
+      <div class="section-number">04</div>
+      <h2>Viking Maintenance Schedule — By SoCal Zone</h2>
+      <p class="section-intro">Where you live in Southern California determines your Viking maintenance interval. The standard Viking recommendation doesn't account for coastal salt air, wildfire ash, or SoCal water hardness.</p>
+      <div class="maintenance-grid">
+        {maintenanceSchedule.map(m => (
+          <div class="maintenance-card">
+            <h3>{m.zone}</h3>
+            <div class="maintenance-areas">{m.areas}</div>
+            <div class="maintenance-schedule">
+              <div class="schedule-item"><span class="schedule-label">Condenser:</span><span class="schedule-value">{m.condenser}</span></div>
+              <div class="schedule-item"><span class="schedule-label">Igniters:</span><span class="schedule-value">{m.igniters}</span></div>
+              <div class="schedule-item"><span class="schedule-label">Water filter:</span><span class="schedule-value">{m.filter}</span></div>
+            </div>
+            <p class="maintenance-rationale">{m.note}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-repairs">
+    <div class="brand-repairs-inner">
+      <div class="section-number">05</div>
+      <h2>Recent Viking Repairs Across Southern California</h2>
+      <div class="repairs-grid">
+        {recentRepairs.map(r => (
+          <div class="repair-card">
+            <div class="repair-header">
+              <h3 class="repair-title">"{r.title}"</h3>
+              <div class="repair-meta-top">
+                <span class="repair-location">📍 {r.location}</span>
+                <span class="repair-lineup">📱 {r.model}</span>
+              </div>
+            </div>
+            <p class="repair-detail">{r.detail}</p>
+            <div class="repair-meta-bottom">
+              <span class="repair-parts">Parts: {r.parts}</span>
+              <span class="repair-time">⏱ {r.time}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-service-areas">
+    <div class="brand-service-areas-inner">
+      <div class="section-number">06</div>
+      <h2>Viking Repair Service Areas</h2>
+      <div class="service-areas-grid">
+        {serviceAreas.map(area => (
+          <div class="service-area-card">
+            <h3>{area.region}</h3>
+            <div class="area-cities">{area.cities.map(c => <span class="area-city">{c}</span>)}</div>
+            <a href={`tel:${area.raw}`} class="area-phone">{area.phone}</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-reviews">
+    <div class="brand-reviews-inner">
+      <h2>Viking Repair Reviews</h2>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">⭐⭐⭐⭐⭐</div>
+          <p>"Viking range in Malibu — two burners not lighting, rest clicking nonstop. Same Day diagnosed corroded igniter electrodes from salt air, replaced them, explained the coastal maintenance schedule. That level of context from a technician is rare. Four years later, still running perfectly."</p>
+          <div class="review-author">— Patricia M., Malibu</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">⭐⭐⭐⭐⭐</div>
+          <p>"Viking refrigerator F7 error in Bel Air — fridge section climbing to 60°F. Tech replaced the evaporator fan motor, explained the F-code table. Also asked about the age of the unit (7 years) and gave an honest opinion that it's worth maintaining. That kind of straight talk is what I want."</p>
+          <div class="review-author">— James R., Bel Air</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">⭐⭐⭐⭐⭐</div>
+          <p>"F02 on Viking range, quoted $520 board by another company. Same Day tested the probe in 10 minutes, confirmed it was the sensor, replaced it for $82 in parts. I've told everyone I know. That's the difference between a technician who knows the appliance and one who guesses."</p>
+          <div class="review-author">— Catherine W., Newport Beach</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">⭐⭐⭐⭐⭐</div>
+          <p>"Viking range in Thousand Oaks — intermittent ignition problems after the fall smoke events. Tech found ash in the igniter assemblies, cleaned everything, no parts needed. Told us to add this to our post-fire checklist. That's local knowledge you can't get from a national chain."</p>
+          <div class="review-author">— Robert T., Thousand Oaks</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-pricing">
+    <div class="brand-pricing-inner">
+      <h2>Viking Repair Pricing</h2>
+      <div class="pricing-grid">
+        <div class="pricing-card"><div class="pricing-label">Diagnostic Fee</div><div class="pricing-price">$89</div><div class="pricing-note">All Viking appliances · Credited toward repair · F-code diagnosis included</div></div>
+        <div class="pricing-card"><div class="pricing-label">Igniter / Sensor Repair</div><div class="pricing-price">$130–$280</div><div class="pricing-note">Electrode, probe, latch · OEM Viking parts · 90-day warranty</div></div>
+        <div class="pricing-card"><div class="pricing-label">Motor / Board Repair</div><div class="pricing-price">$250–$600+</div><div class="pricing-note">Fan motor, control board · OEM parts · Honest repair-vs-replace assessment</div></div>
+        <div class="pricing-card highlight"><div class="pricing-label">Condenser Service</div><div class="pricing-price">$120–$160</div><div class="pricing-note">Cleaning + filter + SoCal zone assessment · Written maintenance plan</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-faq">
+    <div class="brand-faq-inner">
+      <div class="section-number">07</div>
+      <h2>Viking Appliance Repair — Frequently Asked Questions</h2>
+      <div class="faq-list">
+        {faqs.map(f => (
+          <details class="faq-item">
+            <summary class="faq-q">{f.q}</summary>
+            <div class="faq-a">{f.a}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-bottom-cta">
+    <div class="brand-bottom-cta-inner">
+      <h2>Schedule Viking Appliance Repair Today</h2>
+      <p>Same-day service across Los Angeles, Orange County, and Ventura County. Range, refrigerator, and dishwasher.</p>
+      <div class="brand-cta-phones">
+        <div class="cta-phone-group"><span>Los Angeles</span><a href="tel:+14243250520" class="btn-primary-xl">{phone_la}</a></div>
+        <div class="cta-phone-group"><span>Orange County</span><a href="tel:+12134019019" class="btn-primary-xl">{phone_oc}</a></div>
+        <div class="cta-phone-group"><span>Ventura County</span><a href="tel:+14242080228" class="btn-primary-xl">{phone_ventura}</a></div>
+      </div>
+      <p class="bottom-note">$89 diagnostic · OEM Viking parts · 90-day warranty · Honest repair-vs-replace guidance</p>
+    </div>
+  </section>
+
+  <section class="brand-links">
+    <div class="brand-links-inner">
+      <h2>Other Brands We Repair</h2>
+      <div class="brand-links-grid">
+        <a href="/brands/sub-zero-repair/" class="brand-link">Sub-Zero Repair →</a>
+        <a href="/brands/thermador-repair/" class="brand-link">Thermador Repair →</a>
+        <a href="/brands/ge-repair/" class="brand-link">GE Monogram Repair →</a>
+        <a href="/brands/wolf-repair/" class="brand-link">Wolf Repair →</a>
+        <a href="/brands/miele-repair/" class="brand-link">Miele Repair →</a>
+        <a href="/brands/dacor-repair/" class="brand-link">Dacor Repair →</a>
+      </div>
+    </div>
+  </section>
+</Layout>
