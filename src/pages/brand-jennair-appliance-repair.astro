@@ -1,0 +1,733 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "JennAir Appliance Repair Los Angeles | RISE & NOIR Specialists";
+const description = "Expert JennAir appliance repair in Los Angeles. Certified technicians for RISE™ and NOIR™ collections — ranges, ovens, refrigerators, dishwashers & more. Same-day service, OEM parts, 90-day warranty. Call (626) 376-4458.";
+const phone = "(626) 376-4458";
+const phoneRaw = "6263764458";
+---
+
+<Layout title={title} description={description}>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Same Day Appliance Repair — JennAir Specialist",
+  "url": "https://samedayappliance.repair/brand-jennair-appliance-repair/",
+  "telephone": "+16263764458",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Los Angeles",
+    "addressRegion": "CA",
+    "postalCode": "90001",
+    "addressCountry": "US"
+  },
+  "areaServed": ["Los Angeles County", "Orange County", "Ventura County"],
+  "priceRange": "$$",
+  "openingHours": "Mo-Sa 08:00-20:00",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "JennAir Repair Services",
+    "itemListElement": [
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"JennAir Range Repair"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"JennAir Wall Oven Repair"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"JennAir Refrigerator Repair"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"JennAir Dishwasher Repair"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"JennAir Cooktop Repair"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"JennAir NOIR Collection Repair"}}
+    ]
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does JennAir appliance repair cost in Los Angeles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most JennAir repairs run $175–$600. Common fixes like an igniter replacement, door gasket, or temperature sensor are $175–$320. Control board work or dual-fan convection system repairs run higher. Diagnostic fee is $89, waived when you proceed. Written flat-rate estimate before work begins."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you service both JennAir RISE and NOIR collections?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — both collections across all appliance types. RISE™ professional-style ranges with 25,000 BTU brass burners, and NOIR™ minimalist black-glass appliances with Obsidian interiors and cinematic lighting. Both use the Whirlpool platform for core components, with collection-specific finishes and electronics that require careful handling during service."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you repair JennAir NOIR appliances without scratching the black glass finish?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. JennAir NOIR's black glass panels and Obsidian interior surfaces are significantly more scratch-sensitive than standard stainless steel. We use non-abrasive protective covers and avoid any contact between tools and the NOIR finish during service. We treat NOIR appliance calls with the same care as panel-ready installations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is JennAir part of Whirlpool?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — JennAir is part of Whirlpool Corporation, alongside KitchenAid, Maytag, and Amana. Current JennAir appliances use the Whirlpool platform for core components. This means excellent parts availability and fast diagnosis — our deep KitchenAid and Whirlpool experience applies directly to JennAir repair."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is JennAir's Culinary Center and how does it fail?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The JennAir Culinary Center is the touchscreen control interface on RISE and NOIR appliances that integrates recipe guidance, temperature management, and smart home connectivity. The most common failure: touch panel delamination or unresponsive zones after moisture exposure from cooking steam. We diagnose the panel vs. the control board behind it before recommending replacement — the panel itself is the most common fault."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does JennAir's downdraft ventilation system fail?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "JennAir invented downdraft ventilation in 1961 — it remains a signature feature on many of their cooktops and ranges. Common failures: the downdraft blower motor loses efficiency, the lift mechanism sticks or fails to retract, or the grease filter becomes restricted. We service the complete downdraft assembly — motor, lift mechanism, filter, and duct connection."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --red: #C8102E;
+    --black: #0a0a0a;
+    --gray: #f5f5f5;
+    --border: #e2e2e2;
+    --text: #1a1a1a;
+    --muted: #6b6b6b;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Barlow', 'Inter', system-ui, sans-serif; color: var(--text); }
+
+  .top-bar { background: var(--red); padding: 8px 24px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #fff; }
+  .top-bar a { color: #fff; text-decoration: none; font-weight: 700; }
+
+  .hero { background: var(--black); padding: 72px 24px 64px; color: #fff; }
+  .hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 420px; gap: 48px; align-items: center; }
+  .hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .hero-title { font-size: clamp(32px, 5vw, 52px); font-weight: 900; line-height: 1.05; text-transform: uppercase; letter-spacing: -0.02em; margin-bottom: 20px; }
+  .hero-title span { color: var(--red); }
+  .hero-sub { font-size: 17px; line-height: 1.6; color: #aaa; margin-bottom: 32px; max-width: 540px; }
+  .hero-cta-group { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary { display: inline-block; background: var(--red); color: #fff; padding: 14px 28px; font-size: 15px; font-weight: 700; text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; }
+  .btn-secondary { display: inline-block; border: 1px solid #555; color: #ccc; padding: 14px 28px; font-size: 15px; font-weight: 600; text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; }
+  .hero-badge-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .hero-badge { background: #161616; border: 1px solid #2a2a2a; padding: 16px 18px; }
+  .badge-num { font-size: 28px; font-weight: 900; color: var(--red); line-height: 1; margin-bottom: 4px; }
+  .badge-label { font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 0.08em; }
+
+  .trust-bar { background: var(--red); padding: 14px 24px; }
+  .trust-bar-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  .trust-item { color: #fff; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+  .trust-item::before { content: "✓ "; }
+
+  .section { padding: 64px 24px; }
+  .section-gray { background: var(--gray); }
+  .section-black { background: var(--black); color: #fff; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-num { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+  .section-title { font-size: clamp(24px, 3.5vw, 36px); font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 20px; }
+  .section-black .section-title { color: #fff; }
+  .section-lead { font-size: 17px; line-height: 1.7; color: var(--muted); max-width: 760px; margin-bottom: 40px; }
+  .section-black .section-lead { color: #999; }
+
+  /* Collection cards */
+  .collection-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #2a2a2a; border: 1px solid #2a2a2a; margin-top: 28px; }
+  .collection-card { background: #161616; padding: 28px 24px; }
+  .collection-name { font-size: 22px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+  .rise-name { color: #c8a040; }
+  .noir-name { color: #aaa; }
+  .collection-tagline { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--red); margin-bottom: 14px; }
+  .collection-desc { font-size: 14px; color: #888; line-height: 1.65; margin-bottom: 16px; }
+  .collection-features { list-style: none; }
+  .collection-features li { font-size: 13px; color: #666; padding: 5px 0; border-bottom: 1px solid #222; }
+  .collection-features li::before { content: "· "; color: var(--red); }
+
+  .tip-block { border-left: 3px solid var(--red); background: #fff8f8; padding: 18px 20px; margin: 32px 0; max-width: 760px; }
+  .tip-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; color: var(--red); margin-bottom: 6px; }
+  .tip-text { font-size: 14px; line-height: 1.65; color: var(--text); }
+  .tip-blue { border-color: #3a7bd5; background: #f0f7ff; }
+  .tip-blue .tip-label { color: #3a7bd5; }
+  .tip-noir { border-color: #555; background: #f8f8f8; }
+  .tip-noir .tip-label { color: #333; }
+
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .service-card { background: #fff; padding: 28px 24px; }
+  .service-icon { font-size: 28px; margin-bottom: 12px; }
+  .service-name { font-size: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 10px; color: var(--text); }
+  .service-desc { font-size: 14px; line-height: 1.65; color: var(--muted); margin-bottom: 12px; }
+  .service-issues { font-size: 12px; color: var(--red); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  .features-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  .features-list { list-style: none; }
+  .features-list li { padding: 14px 0; border-bottom: 1px solid #2a2a2a; font-size: 15px; color: #ccc; display: flex; gap: 12px; }
+  .features-list li::before { content: "→"; color: var(--red); flex-shrink: 0; }
+
+  .problems-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-top: 32px; }
+  .problem-card { border: 1px solid var(--border); background: #fff; padding: 20px; }
+  .problem-title { font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; color: var(--text); }
+  .problem-cause { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 10px; }
+  .problem-tag { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 3px 8px; color: #fff; }
+  .tag-common { background: var(--red); }
+  .tag-noir { background: #333; }
+  .tag-rise { background: #8b6914; }
+  .tag-la { background: #2a5ea5; }
+
+  .pricing-table { width: 100%; border-collapse: collapse; margin-top: 24px; }
+  .pricing-table th { background: var(--text); color: #fff; text-align: left; padding: 12px 16px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; }
+  .pricing-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); font-size: 14px; }
+  .pricing-table tr:last-child td { border-bottom: none; }
+  .pricing-table tr:nth-child(even) td { background: var(--gray); }
+  .price-range { font-weight: 700; color: var(--red); }
+
+  .why-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 24px; margin-top: 32px; }
+  .why-card { border-left: 3px solid var(--red); padding: 20px; background: #fff; }
+  .why-icon { font-size: 24px; margin-bottom: 10px; }
+  .why-title { font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  .why-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 32px; }
+  .review-card { background: #fff; border: 1px solid var(--border); padding: 24px; }
+  .review-stars { color: var(--red); font-size: 18px; margin-bottom: 10px; }
+  .review-text { font-size: 14px; line-height: 1.7; color: var(--text); margin-bottom: 14px; }
+  .review-author { font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--muted); }
+
+  .repairs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 32px; }
+  .repair-item { background: #fff; padding: 24px; }
+  .repair-appliance { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--red); margin-bottom: 6px; }
+  .repair-issue { font-size: 15px; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+  .repair-detail { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .repair-meta { margin-top: 12px; font-size: 12px; font-weight: 600; color: #aaa; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  .faq-list { margin-top: 32px; }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
+  .faq-q { font-size: 16px; font-weight: 800; color: var(--text); margin-bottom: 10px; }
+  .faq-a { font-size: 14px; line-height: 1.7; color: var(--muted); max-width: 760px; }
+
+  .nearby-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .nearby-chip { background: var(--gray); border: 1px solid var(--border); padding: 8px 14px; font-size: 13px; color: var(--muted); text-decoration: none; font-weight: 600; }
+  .nearby-chip:hover { border-color: var(--red); color: var(--red); }
+
+  .bottom-cta { background: var(--black); padding: 72px 24px; text-align: center; color: #fff; }
+  .bottom-cta-title { font-size: clamp(28px, 4vw, 44px); font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 12px; }
+  .bottom-cta-title span { color: var(--red); }
+  .bottom-cta-sub { font-size: 17px; color: #888; margin-bottom: 32px; }
+  .cta-phone-large { display: inline-block; font-size: clamp(28px, 4vw, 42px); font-weight: 900; color: #fff; text-decoration: none; letter-spacing: -0.01em; margin-bottom: 24px; border-bottom: 2px solid var(--red); padding-bottom: 4px; }
+
+  @media (max-width: 768px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-badge-grid { grid-template-columns: 1fr 1fr; }
+    .features-2col { grid-template-columns: 1fr; }
+    .collection-grid { grid-template-columns: 1fr; }
+    .trust-bar-inner { flex-direction: column; gap: 6px; }
+  }
+</style>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <span>Mon–Sat 8am–8pm · Los Angeles &amp; Southern California</span>
+  <a href={`tel:${phoneRaw}`}>{phone}</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">JennAir Appliance Repair — Los Angeles</div>
+      <h1 class="hero-title">
+        JennAir Repair.<br/>
+        <span>RISE™ &amp; NOIR™.</span><br/>
+        Both Collections.
+      </h1>
+      <p class="hero-sub">
+        JennAir calls it "rebel luxury" — RISE for professional power with 25,000 BTU brass burners, NOIR for minimalist black-glass design with Obsidian interiors and cinematic lighting. We service both collections, same day, with the care that black glass demands and the platform knowledge that Whirlpool makes possible.
+      </p>
+      <div class="hero-cta-group">
+        <a href={`tel:${phoneRaw}`} class="btn-primary">Call {phone}</a>
+        <a href="/book/" class="btn-secondary">Book Online</a>
+      </div>
+    </div>
+    <div class="hero-badge-grid">
+      <div class="hero-badge">
+        <div class="badge-num">Same</div>
+        <div class="badge-label">Day Service</div>
+      </div>
+      <div class="hero-badge">
+        <div class="badge-num">OEM</div>
+        <div class="badge-label">JennAir Parts</div>
+      </div>
+      <div class="hero-badge">
+        <div class="badge-num">90-Day</div>
+        <div class="badge-label">Warranty</div>
+      </div>
+      <div class="hero-badge">
+        <div class="badge-num">$89</div>
+        <div class="badge-label">Diagnostic Fee</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <span class="trust-item">Licensed &amp; Insured · CSLB #1138898</span>
+    <span class="trust-item">RISE™ &amp; NOIR™ Specialists</span>
+    <span class="trust-item">Genuine JennAir OEM Parts</span>
+    <span class="trust-item">NOIR Black Glass — No Scratch Protocol</span>
+    <span class="trust-item">Flat-Rate Written Estimate</span>
+  </div>
+</div>
+
+<!-- 01 — RISE & NOIR -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-num">01 — The Collections</div>
+    <h2 class="section-title">RISE™ and NOIR™ — Two Expressions of "Rebel Luxury"</h2>
+    <p class="section-lead">
+      JennAir rebranded around 2018 with a bold identity: "rebel luxury." The brand split its lineup into two distinct design expressions, each with its own aesthetic logic and specific technologies. Understanding which collection you have is the first step in any JennAir service call — the components, finishes, and diagnostic approach differ between them.
+    </p>
+
+    <div class="collection-grid">
+      <div class="collection-card">
+        <div class="collection-name rise-name">RISE™</div>
+        <div class="collection-tagline">Professional Power · Bold Industrial Design</div>
+        <div class="collection-desc">RISE takes JennAir's professional heritage and makes it visible. Brushed stainless, prominent hardware, 25,000 BTU brass burners, the Culinary Center touchscreen, and V2™ Vertical Dual-Fan convection. This is the collection for homeowners who want a professional kitchen aesthetic with actual professional performance.</div>
+        <ul class="collection-features">
+          <li>25,000 BTU brass burners — highest in class</li>
+          <li>V2™ Vertical Dual-Fan convection system</li>
+          <li>JennAir Culinary Center touchscreen</li>
+          <li>30", 36", 48" professional-style ranges</li>
+          <li>Built-in column refrigerators</li>
+          <li>Downdraft ventilation integration</li>
+        </ul>
+      </div>
+      <div class="collection-card">
+        <div class="collection-name noir-name">NOIR™</div>
+        <div class="collection-tagline">Minimalist Black Glass · Hidden Hardware</div>
+        <div class="collection-desc">NOIR eliminates visible hardware in favor of seamless black glass surfaces, Obsidian interiors, and cinematic LED lighting inside refrigerators and dishwashers. Same high-performance components as RISE, hidden behind a design language that prioritizes visual integration over professional aesthetics.</div>
+        <ul class="collection-features">
+          <li>Black glass panel surfaces throughout</li>
+          <li>Obsidian interior finish — oven and dishwasher</li>
+          <li>Cinematic LED lighting — refrigerator and dishwasher</li>
+          <li>Hidden touch controls</li>
+          <li>38 dBA ultra-quiet dishwasher</li>
+          <li>Panel-ready integration options</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tip-block tip-noir" style="margin-top:32px">
+      <div class="tip-label">⬛ NOIR Black Glass — Our Service Protocol</div>
+      <div class="tip-text">JennAir NOIR's black glass panels and Obsidian interior surfaces scratch at contact pressure that stainless steel would shrug off. We apply non-abrasive protective covers to all adjacent surfaces before any service work on NOIR appliances. Tools never contact the glass or Obsidian finish directly. Reinstallation is verified visually before the job is considered complete. This isn't special treatment — it's the minimum standard for NOIR service.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 — SERVICES -->
+<section class="section section-gray">
+  <div class="section-inner">
+    <div class="section-num">02 — Services</div>
+    <h2 class="section-title">Every JennAir Appliance We Service</h2>
+    <p class="section-lead">All RISE™ and NOIR™ models across all appliance categories. Same-day availability across Los Angeles County.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🔥</div>
+        <div class="service-name">Range &amp; Cooktop Repair</div>
+        <div class="service-desc">RISE gas, dual-fuel, and induction ranges (30", 36", 48") and NOIR equivalents. The 25,000 BTU brass burners on RISE require specific OEM igniters — the higher BTU output creates different thermal stress on igniter ceramics than standard burners. We also service JennAir's signature downdraft cooktops, a technology JennAir invented in 1961.</div>
+        <div class="service-issues">Common: brass burner igniter failure · oven temperature off · V2 convection fan · downdraft motor · touch panel unresponsive · control board · door gasket · dual-fuel ignition</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🌡️</div>
+        <div class="service-name">Wall Oven Repair</div>
+        <div class="service-desc">RISE and NOIR single, double, and combination wall ovens with V2™ Vertical Dual-Fan convection. The dual-fan system moves more air volume than single-fan convection — when one fan fails, baking results become uneven in a pattern that's easy to misdiagnose as a heating element issue. We test each fan independently.</div>
+        <div class="service-issues">Common: V2 convection fan failure · uneven baking · temperature sensor · door gasket · Obsidian interior damage (NOIR) · self-clean fault · control board · steam oven circuit</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">❄️</div>
+        <div class="service-name">Refrigerator Repair</div>
+        <div class="service-desc">RISE and NOIR built-in column refrigerators, French door models, and under-counter beverage centers. NOIR models include cinematic LED lighting that owners notice immediately when it fails — a minor component but a visible one. Column refrigerators are panel-ready; service requires protective handling of the integrated panel system.</div>
+        <div class="service-issues">Common: not cooling · ice maker failure · cinematic lighting (NOIR) · temperature fluctuation · door gasket · compressor · control board · water dispenser · condenser service</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🍽️</div>
+        <div class="service-name">Dishwasher Repair</div>
+        <div class="service-desc">RISE and NOIR dishwashers — the NOIR model is among the quietest at 38 dBA, with Obsidian racks and interior and cinematic lighting. Any noise on a NOIR dishwasher is immediately obvious to the owner. We service the wash pump, drain system, door latch, and NOIR-specific Obsidian rack system without surface damage.</div>
+        <div class="service-issues">Common: not draining · not cleaning · noise (immediately noticeable at 38 dBA) · Obsidian rack damage · door latch · control board · water inlet · heating element</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📱</div>
+        <div class="service-name">Culinary Center &amp; Controls</div>
+        <div class="service-desc">JennAir's Culinary Center is the touchscreen interface that integrates recipe guidance, precise temperature management, and smart home connectivity across RISE and NOIR appliances. Touch panel delamination or unresponsive zones — often caused by cooking steam condensation behind the glass — are among the most common JennAir service calls we receive.</div>
+        <div class="service-issues">Common: unresponsive touch zones · screen delamination · Wi-Fi connectivity loss · software error codes · display not turning on · panel separation</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">💨</div>
+        <div class="service-name">Downdraft &amp; Ventilation Repair</div>
+        <div class="service-desc">JennAir invented downdraft ventilation in 1961 — it remains a signature product. The retractable downdraft system on JennAir cooktops and ranges lifts from behind the cooking surface to capture smoke and steam at the source. The lift mechanism and blower motor are the most common failure points. We service both, plus the overhead hood systems on RISE and NOIR.</div>
+        <div class="service-issues">Common: downdraft motor failure · lift mechanism stuck · won't retract · filter restriction · overhead hood motor · speed selector · lighting</div>
+      </div>
+    </div>
+
+    <div class="tip-block tip-blue" style="margin-top:32px">
+      <div class="tip-label">🏭 Whirlpool Platform — Parts Advantage</div>
+      <div class="tip-text">JennAir is part of Whirlpool Corporation alongside KitchenAid, Maytag, and Amana. Current JennAir appliances share the Whirlpool platform for core components — control board families, sealed system designs, sensor types, and washer/dryer platforms. Our deep KitchenAid and Whirlpool experience applies directly to JennAir diagnostics. More parts on the truck, faster identification, more single-visit completions.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 — TECHNOLOGY -->
+<section class="section section-black">
+  <div class="section-inner">
+    <div class="section-num">03 — Technology</div>
+    <h2 class="section-title">What Makes JennAir Different — And How It Fails</h2>
+    <p class="section-lead">JennAir's technology decisions are design-forward — which creates specific service requirements that generic appliance repair misses.</p>
+
+    <div class="features-2col">
+      <ul class="features-list">
+        <li><strong>25,000 BTU Brass Burners (RISE)</strong> — The highest output burner in the residential market. The brass construction and high thermal load creates specific igniter wear patterns. Igniter ceramic tips on 25K BTU burners degrade faster than on standard burners — we inspect and proactively replace before failure in annual maintenance.</li>
+        <li><strong>V2™ Vertical Dual-Fan Convection</strong> — Two vertically-stacked convection fans that circulate air in a vertical pattern, eliminating the hot/cool spots that single horizontal fans create. When one fan fails, baking is uneven in a vertical pattern — top shelf different from bottom shelf, rather than side-to-side. We test each fan motor independently before recommending the assembly.</li>
+        <li><strong>JennAir Culinary Center Touchscreen</strong> — The glass-covered touch interface for recipe guidance, temperature control, and smart connectivity. Cooking steam condensation behind the glass is the primary failure mechanism — the condensation disrupts the capacitive layer. Panel replacement (not full control board) resolves most touch failures.</li>
+        <li><strong>Obsidian Interior (NOIR)</strong> — The dark matte finish inside NOIR ovens and dishwashers is more scratch-sensitive than standard enamel. During service, we never use abrasive cloths or scraping tools inside NOIR appliances. Parts installation in NOIR interiors requires extra care around the finish edges.</li>
+        <li><strong>Downdraft Lift Mechanism</strong> — The retractable downdraft panel that lifts from the cooktop surface uses a motorized lift mechanism that JennAir has refined since 1961. Most common failure: the motor loses torque over time, causing sluggish retraction or failure to fully extend. We replace the motor assembly, not just the belt.</li>
+        <li><strong>Cinematic LED Lighting (NOIR)</strong> — LED array systems in NOIR refrigerators and dishwashers that create a dramatic "theater opening" effect when doors are opened. The LED driver board is the most common failure point. Replacement is model-specific — we source OEM JennAir lighting assemblies through Whirlpool's supply network.</li>
+      </ul>
+      <div>
+        <div class="tip-block" style="background:#0a1015; border-color:#3a7bd5; margin-top:0">
+          <div class="tip-label" style="color:#6aabff">🌊 LA + JennAir RISE</div>
+          <div class="tip-text" style="color:#bbb">The 25,000 BTU brass burners that make RISE distinctive also create accelerated igniter wear in coastal LA environments. Salt air corrosion on the higher-temperature ceramic tip progresses faster than on standard burners. Properties in Malibu, Pacific Palisades, and Manhattan Beach should include igniter inspection in annual maintenance. We check RISE burner tip condition on every service call.</div>
+        </div>
+        <div class="tip-block" style="background:#1a0a0a; border-color:var(--red); margin-top:16px">
+          <div class="tip-label">⬛ NOIR Dishwasher — Noise = News</div>
+          <div class="tip-text" style="color:#bbb">JennAir NOIR's dishwasher runs at 38 dBA — one of the quietest on the market. Any noise from a NOIR dishwasher is instantly noticeable to the owner and almost always indicates something specific: pump impeller debris (grinding), loose motor mount (vibration), or Obsidian rack contact (clicking). We diagnose by noise character before opening the unit.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 — COMMON PROBLEMS -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-num">04 — Common Problems</div>
+    <h2 class="section-title">Most Common JennAir Failures in Los Angeles</h2>
+
+    <div class="problems-grid">
+      <div class="problem-card">
+        <div class="problem-title">📱 Culinary Center Touch Panel Unresponsive</div>
+        <div class="problem-cause">Cooking steam condensation behind the glass panel disrupts the capacitive layer — certain zones stop responding while others work normally. This is a panel failure, not a control board failure. Replacing the panel (not the full board) resolves most cases. We test the control board separately to confirm before ordering the panel.</div>
+        <span class="problem-tag tag-common">Most Common</span>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-title">🔥 RISE Brass Burner Won't Ignite</div>
+        <div class="problem-cause">25,000 BTU brass burners run hotter than standard burners — the ceramic igniter tip experiences higher thermal cycling stress. Coastal LA accelerates this further with salt air corrosion. The igniter is geometry-specific for the high-output brass burner configuration — generic replacements don't fit correctly at this BTU level.</div>
+        <span class="problem-tag tag-rise">RISE Collection</span>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-title">🌡️ Oven Baking Unevenly (V2 Fan)</div>
+        <div class="problem-cause">One of the two V2 vertical fans has failed. The pattern is diagnostic: uneven results that vary top-to-bottom indicate a V2 fan issue, while side-to-side variation suggests a single-fan convection problem. We test each fan motor's speed and current draw independently before recommending parts.</div>
+        <span class="problem-tag tag-common">Most Common</span>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-title">⬛ NOIR Cinematic Lighting Dead</div>
+        <div class="problem-cause">The LED driver board in NOIR refrigerators and dishwashers fails independently of the main control board. The "cinematic opening" effect disappears entirely when the driver fails. OEM replacement is model-specific — the LED assembly differs between NOIR refrigerator and dishwasher models. We carry common driver boards for current NOIR models.</div>
+        <span class="problem-tag tag-noir">NOIR Collection</span>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-title">💨 Downdraft Won't Lift or Retract</div>
+        <div class="problem-cause">Downdraft lift motor torque loss — the motor weakens gradually, causing sluggish or incomplete extension and retraction. Left unaddressed, the motor eventually stops entirely. We replace the lift motor assembly (not just the drive mechanism) for a complete repair that lasts. The downdraft fan and filter are inspected simultaneously.</div>
+        <span class="problem-tag tag-common">Most Common</span>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-title">❄️ Column Refrigerator Not Cooling</div>
+        <div class="problem-cause">JennAir RISE and NOIR column refrigerators use the Whirlpool sealed system platform. Most cooling failures trace to condenser coil dust accumulation (LA particulate is significant on hillside and Valley properties), thermistor failure, or a defrost system fault. We diagnose by checking coil condition first — it resolves the majority of cases without parts.</div>
+        <span class="problem-tag tag-la">LA Environment</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 — RECENT REPAIRS -->
+<section class="section section-gray">
+  <div class="section-inner">
+    <div class="section-num">05 — Recent Work</div>
+    <h2 class="section-title">Recent JennAir Repairs Across Los Angeles</h2>
+
+    <div class="repairs-grid">
+      <div class="repair-item">
+        <div class="repair-appliance">JennAir RISE JDRP548WP Range — Bel Air</div>
+        <div class="repair-issue">Culinary Center — Right Side Touch Zones Dead</div>
+        <div class="repair-detail">48" dual-fuel RISE range — the right portion of the Culinary Center touchscreen had stopped responding, making temperature adjustment and timer functions inaccessible from that side. Diagnosed as panel delamination from steam condensation behind the glass — the capacitive layer had separated in the right zone. Control board tested separately and confirmed normal. Replaced the Culinary Center panel assembly with OEM JennAir part. Full touch response restored across the entire screen surface. Owner had been reaching across to use left-side controls for three months.</div>
+        <div class="repair-meta">Parts: Culinary Center panel OEM · Time: 1.5 hours · Same Day</div>
+      </div>
+
+      <div class="repair-item">
+        <div class="repair-appliance">JennAir NOIR JDTSS246KS Dishwasher — West Hollywood</div>
+        <div class="repair-issue">Grinding Noise + Cinematic Lighting Dead</div>
+        <div class="repair-detail">NOIR dishwasher — two separate issues in one visit. Grinding during wash cycle: bone fragment in the wash pump impeller (NOIR's quiet baseline makes pump noise immediately obvious). Cinematic lighting dead: LED driver board failure — the dramatic door-open lighting effect had stopped entirely. Cleared the pump impeller (no damage to the Obsidian racks — careful removal with non-abrasive tools), replaced the LED driver board with OEM part. Both issues resolved. The owner mentioned three other companies had quoted only the pump cleaning, missing the lighting issue entirely.</div>
+        <div class="repair-meta">Parts: LED driver board OEM · Time: 1.5 hours · Same Day</div>
+      </div>
+
+      <div class="repair-item">
+        <div class="repair-appliance">JennAir RISE JGS1450DP Range — Pacific Palisades</div>
+        <div class="repair-issue">Two Brass Burners Not Igniting</div>
+        <div class="repair-detail">36" gas RISE range — two of the four burners stopped igniting. Pacific Palisades salt air environment. Both ceramic igniters had corroded at the tip — the 25,000 BTU configuration runs the igniters at higher thermal stress than standard burners, and the coastal environment accelerated surface corrosion. Replaced both with OEM JennAir high-BTU specific igniters (different geometry than standard residential igniters). Tested all four burners at low and high. Recommended annual igniter inspection for this property given the coastal location.</div>
+        <div class="repair-meta">Parts: 2× OEM RISE igniters · Time: 1.5 hours · Same Day</div>
+      </div>
+
+      <div class="repair-item">
+        <div class="repair-appliance">JennAir NOIR JJW2827IL Wall Oven — Beverly Hills</div>
+        <div class="repair-issue">Uneven Baking — Top Rack Burns, Bottom Underdone</div>
+        <div class="repair-detail">NOIR double wall oven — owner reporting consistent top-rack overbrowning while bottom rack items came out underdone. Classic V2 dual-fan failure pattern: vertical unevenness indicates one of the two stacked fans is not spinning. Tested both fan motors — upper fan had failed (motor drawing no current). Replaced the upper V2 fan motor assembly with OEM JennAir part. Ran a full temperature verification cycle at 350°F and 450°F with the oven loaded to confirm even distribution. Zero temperature gradient between top and bottom rack positions after repair.</div>
+        <div class="repair-meta">Parts: V2 upper fan motor OEM · Time: 2 hours · Same Day</div>
+      </div>
+
+      <div class="repair-item">
+        <div class="repair-appliance">JennAir JED4536WS Downdraft Cooktop — Studio City</div>
+        <div class="repair-issue">Downdraft Not Lifting — Stuck Flush</div>
+        <div class="repair-detail">JennAir electric downdraft cooktop — the retractable downdraft panel had stopped lifting entirely. Owner had been using the kitchen without ventilation for two weeks. Lift motor had failed — drew current but produced no torque. Also found the lift mechanism track was partially blocked by grease accumulation around the base of the downdraft panel, which had been gradually adding resistance until the weakened motor couldn't overcome it. Cleaned the mechanism track, replaced the lift motor assembly with OEM JennAir part, tested full extension and retraction 10 times. Grease filter also replaced.</div>
+        <div class="repair-meta">Parts: Lift motor OEM + filter · Time: 1.5 hours · Same Day</div>
+      </div>
+
+      <div class="repair-item">
+        <div class="repair-appliance">JennAir RISE JCD2389WTB Column Refrigerator — Santa Monica</div>
+        <div class="repair-issue">Temperature Running 6°F Warm</div>
+        <div class="repair-detail">36" RISE built-in column refrigerator — displaying set temperature of 38°F but actual internal temperature measuring 44°F. Santa Monica coastal location. Condenser coil was 65% blocked with dust and salt residue — the Whirlpool platform condenser on these column units is positioned where it accumulates coastal airborne particulate quickly. Cleaned the condenser thoroughly, tested the fan (normal), verified thermistor calibration (accurate). Temperature back to 38°F within 2 hours of service. No parts required — pure maintenance call that prevented a compressor overwork failure.</div>
+        <div class="repair-meta">Parts: None (condenser cleaning) · Time: 1 hour · Same Day</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 — PRICING -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-num">06 — Pricing</div>
+    <h2 class="section-title">JennAir Repair Cost — What to Expect</h2>
+    <p class="section-lead">Written flat-rate estimates before work begins. $89 diagnostic fee, waived when you proceed with repair.</p>
+
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th>Repair Type</th>
+          <th>Typical Range</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>RISE Brass Burner Igniter Replacement</td>
+          <td class="price-range">$195–$320</td>
+          <td>OEM high-BTU specific igniter. Different geometry than standard burners. Per igniter.</td>
+        </tr>
+        <tr>
+          <td>Culinary Center Touch Panel Replacement</td>
+          <td class="price-range">$280–$460</td>
+          <td>Panel assembly OEM. Control board tested separately to confirm panel-only fault before ordering.</td>
+        </tr>
+        <tr>
+          <td>V2 Dual-Fan Motor Replacement</td>
+          <td class="price-range">$260–$440</td>
+          <td>OEM fan motor. Each fan tested independently. Includes temperature distribution verification.</td>
+        </tr>
+        <tr>
+          <td>NOIR Cinematic LED Driver Board</td>
+          <td class="price-range">$195–$340</td>
+          <td>OEM driver board, model-specific. Restores cinematic lighting to refrigerator or dishwasher.</td>
+        </tr>
+        <tr>
+          <td>Downdraft Lift Motor Assembly</td>
+          <td class="price-range">$240–$400</td>
+          <td>Full motor assembly OEM. Includes mechanism track cleaning and 10-cycle test.</td>
+        </tr>
+        <tr>
+          <td>Door Gasket Replacement</td>
+          <td class="price-range">$175–$295</td>
+          <td>Oven or refrigerator OEM gasket. NOIR models: extra care around black glass perimeter.</td>
+        </tr>
+        <tr>
+          <td>Control Board Repair or Replacement</td>
+          <td class="price-range">$320–$580</td>
+          <td>Full diagnosis before ordering. Whirlpool platform boards often available same-day from local supply.</td>
+        </tr>
+        <tr>
+          <td>Annual Maintenance — RISE or NOIR</td>
+          <td class="price-range">$165–$220</td>
+          <td>Igniter inspection, coil cleaning, gasket check, Culinary Center calibration, filter service.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;color:var(--muted);margin-top:16px;">Prices reflect Los Angeles County. Diagnostic fee ($89) waived on repair. Final quote on-site before work begins.</p>
+  </div>
+</section>
+
+<!-- 07 — WHY US -->
+<section class="section section-gray">
+  <div class="section-inner">
+    <div class="section-num">07 — Why Us</div>
+    <h2 class="section-title">Why JennAir Owners in LA Choose Us</h2>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">⬛</div>
+        <div class="why-title">NOIR Black Glass Protocol</div>
+        <div class="why-desc">We apply protective covers before every NOIR service call. No tool contact with the glass or Obsidian surfaces. Panel reinstallation verified visually. This is non-negotiable for NOIR service — one scratch on a black glass panel is immediately visible.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔥</div>
+        <div class="why-title">RISE High-BTU Expertise</div>
+        <div class="why-desc">JennAir's 25,000 BTU brass burners use igniters with different geometry than standard residential burners. We carry OEM RISE-specific igniters. Generic igniters at this BTU level fail quickly — we won't install them.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📱</div>
+        <div class="why-title">Culinary Center Diagnosis</div>
+        <div class="why-desc">Touch panel vs control board — we test both before recommending parts. Most Culinary Center failures are panel-only (steam condensation), not full board replacement. This distinction saves hundreds of dollars on the wrong repair.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🏭</div>
+        <div class="why-title">Whirlpool Platform Knowledge</div>
+        <div class="why-desc">JennAir shares the Whirlpool platform with KitchenAid and Maytag. Our deep experience with all three brands means more parts on the truck, faster diagnosis, and better first-visit completion rates on JennAir calls.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📋</div>
+        <div class="why-title">Flat-Rate Written Estimate</div>
+        <div class="why-desc">Written quote before work begins. $89 diagnostic fee waived on repair. No surprise charges after the fact. What we quote is what you pay.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">✅</div>
+        <div class="why-title">Licensed &amp; Insured</div>
+        <div class="why-desc">CSLB #1138898. Licensed, bonded, insured. COI available for property managers and estate teams. Same-day across all of Los Angeles County.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 — REVIEWS -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-num">08 — Reviews</div>
+    <h2 class="section-title">What JennAir Owners Say</h2>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">My RISE range's Culinary Center had dead touch zones on the right side. They diagnosed it as panel delamination, tested the control board separately to confirm it wasn't that, and replaced just the panel. Three other companies wanted to replace the entire control board assembly — which would have cost three times as much for the wrong fix. Same day, correct diagnosis, correct repair.</div>
+        <div class="review-author">— Catherine B., Bel Air · 2 weeks ago</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">NOIR dishwasher was making a grinding noise AND the cinematic lighting had stopped. They found both issues in one visit — bone fragment in the pump and a failed LED driver board. They were careful with the Obsidian interior when pulling the pump, which I specifically asked about. Both fixed same day. The attention to the NOIR finish was exactly what I needed.</div>
+        <div class="review-author">— Marcus L., West Hollywood · 1 month ago</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">NOIR wall oven baking unevenly — top burned, bottom undercooked. They explained the V2 dual-fan system before even opening the oven, which told me they actually knew JennAir. Upper fan had failed. Fixed same day. They ran a full temperature verification with the oven loaded before leaving. First company I've found that knows RISE and NOIR specifically, not just JennAir generically.</div>
+        <div class="review-author">— Diane H., Beverly Hills · 3 weeks ago</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 — FAQ -->
+<section class="section section-gray">
+  <div class="section-inner">
+    <div class="section-num">09 — FAQ</div>
+    <h2 class="section-title">JennAir Repair FAQ</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">How much does JennAir appliance repair cost in Los Angeles?</div>
+        <div class="faq-a">Most JennAir repairs run $175–$580. Igniter replacement, door gasket, or cinematic LED driver are on the lower end. Culinary Center panel, V2 fan motor, or control board work runs higher. Diagnostic fee is $89, waived when you proceed. Written flat-rate estimate before work begins.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you service both JennAir RISE and NOIR collections?</div>
+        <div class="faq-a">Yes — both collections across all appliance types. RISE professional-style ranges with 25,000 BTU brass burners, and NOIR minimalist black-glass appliances with Obsidian interiors. Both use the Whirlpool platform for core components, with collection-specific finishes and electronics that require different handling during service.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can you repair JennAir NOIR without scratching the black glass?</div>
+        <div class="faq-a">Yes — this is a specific part of our NOIR protocol. We apply protective covers to all adjacent surfaces before service, use non-abrasive tools only near the glass and Obsidian surfaces, and do a visual inspection before the job is complete. One scratch on NOIR black glass is immediately visible — we don't take that risk.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">My Culinary Center touchscreen has dead zones — is it the control board?</div>
+        <div class="faq-a">Most likely not. Culinary Center touch failures are usually panel-level — cooking steam condensation behind the glass disrupts the capacitive layer in specific zones. We test the control board separately to confirm before recommending parts. A panel replacement is usually one-third the cost of a full control board assembly.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What is the V2 Vertical Dual-Fan convection and how does it fail?</div>
+        <div class="faq-a">V2 uses two vertically-stacked convection fans to circulate heated air in a vertical pattern, eliminating the hot/cool spots single-fan ovens create. When one fan fails, baking becomes uneven top-to-bottom — a distinct pattern that tells us which component to test first. We test each fan motor independently before ordering parts.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is JennAir part of Whirlpool?</div>
+        <div class="faq-a">Yes — JennAir is a Whirlpool Corporation brand alongside KitchenAid, Maytag, and Amana. Current JennAir appliances share the Whirlpool platform for core components — control board families, sealed systems, sensor types. Our deep KitchenAid and Whirlpool experience translates directly to JennAir diagnostics and parts sourcing.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you repair JennAir's downdraft ventilation systems?</div>
+        <div class="faq-a">Yes — JennAir invented downdraft ventilation in 1961 and it remains a signature product. Common failures: lift motor torque loss (causing slow or failed extension and retraction), grease accumulation blocking the lift mechanism track, and blower motor failure. We service the complete downdraft assembly including the lift motor, fan, filter, and duct connection.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 — NEARBY -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-num">10 — Service Area</div>
+    <h2 class="section-title">JennAir Repair Across Los Angeles</h2>
+    <p style="font-size:15px;color:var(--muted);line-height:1.7;max-width:720px;margin-bottom:24px;">Same-day JennAir RISE™ and NOIR™ repair throughout Los Angeles County.</p>
+
+    <div class="nearby-grid">
+      <a href="/beverly-hills/" class="nearby-chip">Beverly Hills</a>
+      <a href="/bel-air/" class="nearby-chip">Bel Air</a>
+      <a href="/brentwood/" class="nearby-chip">Brentwood</a>
+      <a href="/west-hollywood/" class="nearby-chip">West Hollywood</a>
+      <a href="/santa-monica/" class="nearby-chip">Santa Monica</a>
+      <a href="/pacific-palisades/" class="nearby-chip">Pacific Palisades</a>
+      <a href="/malibu/" class="nearby-chip">Malibu</a>
+      <a href="/studio-city/" class="nearby-chip">Studio City</a>
+      <a href="/pasadena/" class="nearby-chip">Pasadena</a>
+      <a href="/encino/" class="nearby-chip">Encino</a>
+      <a href="/sherman-oaks/" class="nearby-chip">Sherman Oaks</a>
+      <a href="/calabasas/" class="nearby-chip">Calabasas</a>
+      <a href="/culver-city/" class="nearby-chip">Culver City</a>
+      <a href="/los-angeles/" class="nearby-chip">Los Angeles</a>
+      <a href="/manhattan-beach/" class="nearby-chip">Manhattan Beach</a>
+    </div>
+
+    <p style="margin-top:20px;font-size:14px;color:var(--muted)">Also servicing: <a href="/brand-kitchenaid-appliance-repair/">KitchenAid Repair</a> · <a href="/brand-dacor-appliance-repair/">Dacor Repair</a> · <a href="/brand-wolf-appliance-repair/">Wolf Repair</a> · <a href="/brand-subzero-appliance-repair/">Sub-Zero Repair</a></p>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<div class="bottom-cta">
+  <div class="bottom-cta-title">JennAir RISE™ &amp; NOIR™.<br/><span>Rebel Luxury. Expert Repair.</span></div>
+  <div class="bottom-cta-sub">Same-day service · NOIR black glass protocol · OEM parts · 90-day warranty</div>
+  <div>
+    <a href={`tel:${phoneRaw}`} class="cta-phone-large">{phone}</a>
+  </div>
+  <div>
+    <a href="/book/" class="btn-primary" style="font-size:16px;padding:16px 40px;">Book Online</a>
+  </div>
+</div>
+
+</Layout>
