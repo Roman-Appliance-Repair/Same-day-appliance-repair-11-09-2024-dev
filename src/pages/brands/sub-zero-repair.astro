@@ -1,0 +1,565 @@
+---
+// src/pages/brands/sub-zero-repair.astro
+// Same Day Appliance Repair — Sub-Zero Brand Page
+// Main competitor: Box Appliance (Factory Certified) — their weakness: no technical depth
+// Strategy: beat them on knowledge depth while matching professional tone
+// Voice: respectful of the investment, technically grounded, from our technicians
+
+import Layout from '../../layouts/Layout.astro';
+import CTA from '../../components/CTA.astro';
+
+const metaTitle = "Sub-Zero Appliance Repair Los Angeles & Orange County | Same Day | Wolf & Cove Too";
+const metaDesc = "Sub-Zero repair in Los Angeles, Orange County & Ventura County. Classic, PRO, Designer, Column lines. Condenser service, ice maker, compressor. Wolf & Cove too. OEM parts, 90-day warranty.";
+
+const phone_la = "(424) 325-0520";
+const phone_oc = "(213) 401-9019";
+const phone_ventura = "(424) 208-0228";
+
+const productLines = [
+  {
+    name: "Sub-Zero Classic (BI series)",
+    description: "The original built-in line. BI-36, BI-48, BI-30RO. Panel-ready, flush with cabinetry. Extremely common in Beverly Hills, Bel Air, Malibu, and Palos Verdes estates built from the 1990s through early 2010s. Many units in these homes are now 15-25 years old.",
+    models: ["BI-36UFD", "BI-48SID", "BI-30", "BI-36R", "BI-42SD"],
+    failures: [
+      "Compressor — dual compressor system (separate fridge and freezer). One section failing while the other works is the Classic signature failure at 15-20 years",
+      "Evaporator fan motor — loud grinding or no airflow; common at 10-15 year mark",
+      "Door gasket degradation — Classic gaskets compress and lose seal over time; energy use rises before obvious symptoms",
+      "Ice maker assembly — inlet valve or fill tube issues; separate from freezer evaporator on bi-compartment units",
+      "Condenser fan — sealed compartment design traps heat; coastal units accumulate salt particulate faster",
+      "Control board — older BI units use proprietary boards; diagnosis required before ordering",
+    ]
+  },
+  {
+    name: "Sub-Zero PRO series",
+    description: "Professional-grade built-in with stainless interior. PRO 48, PRO 36. Common in high-end kitchen renovations post-2015. The flagship of the current lineup in West LA, Newport Beach, and Thousand Oaks estates.",
+    models: ["PRO 48", "PRO 36", "PRO 30RH"],
+    failures: [
+      "Water filter — 6-month replacement required; overdue filter restricts flow to ice maker and dispenser",
+      "Ice maker production declining — typically filter and/or inlet valve; PRO models highly sensitive to flow restriction",
+      "Door-in-door seal failure — inner door gasket on the access panel wears separately from main door gasket",
+      "WiFi connectivity issues (newer models) — firmware updates can disrupt app pairing; usually software, not hardware",
+      "Condenser light illuminated — condenser needs cleaning; schedule within 30 days of light appearing",
+    ]
+  },
+  {
+    name: "Sub-Zero Designer (DEU/DET series)",
+    description: "Overlay-panel models designed to disappear into cabinetry with custom panels. DEU, DET, DEJO series. Common in contemporary kitchen designs throughout coastal OC and West LA from 2010 onward.",
+    models: ["DEU3650", "DET3050CI", "DEJO3050", "DEJU30"],
+    failures: [
+      "Panel alignment — custom panels shift over time; affects door seal and increases compressor workload",
+      "Hinge wear — overlay panels are heavier than standard; hinges show wear faster than PRO/Classic",
+      "Ice maker freeze-out — coastal humidity particularly affects Designer units installed near Pacific-facing windows",
+      "Control board display — DEU series control panel can develop dead zones",
+    ]
+  },
+  {
+    name: "Sub-Zero Column (IC/IC-O series)",
+    description: "Modular all-refrigerator or all-freezer columns. IC-30, IC-24, IC-18. Increasingly common in kitchen renovations across all three counties as homeowners move away from French door configurations.",
+    models: ["IC-30R", "IC-24R", "IC-18R", "IC-30F", "IC-24F"],
+    failures: [
+      "Door gasket — column units have longer door perimeters; gasket inspection important annually",
+      "Evaporator — column refrigerators run harder than combined units because the full volume is one temperature zone",
+      "Ice maker (IC-30R with dispenser) — same filter + inlet valve pattern as PRO series",
+      "Condenser — column units have compact condenser compartments; cleaning required every 6 months in high-dust environments",
+    ]
+  },
+  {
+    name: "Sub-Zero Undercounter & Wine Storage",
+    description: "Undercounter refrigerators (UC-15/18/24), wine preservation units (WS series). Common additions in bar areas, butler's pantries, and outdoor kitchens across SoCal's estate homes.",
+    models: ["UC-15I", "UC-18I", "UC-24C", "WS-30", "WS-24"],
+    failures: [
+      "Temperature fluctuation (wine units) — thermostat or control board; wine is sensitive to temperature variance",
+      "Condenser (undercounter) — compact units in enclosed cabinetry overheat if condenser isn't cleaned regularly",
+      "Door seal (outdoor units) — outdoor undercounters face UV and humidity; gaskets degrade faster than interior units",
+      "Compressor (older UC units) — undercounter compressors work harder in warm environments; replacement is common at 10-12 years",
+    ]
+  }
+];
+
+const alertLights = [
+  {
+    alert: "VACUUM CONDENSER light",
+    meaning: "The condenser needs cleaning. This is a maintenance alert, not a failure. Sub-Zero units have sensors that detect reduced airflow through the condenser compartment. When triggered, schedule a condenser cleaning within 30 days to prevent compressor stress.",
+    urgency: "Schedule within 30 days"
+  },
+  {
+    alert: "SERVICE light",
+    meaning: "A component fault has been detected — could be temperature sensor, fan motor, or sealed system issue. Unlike the condenser light, this requires diagnosis. Don't delay: call same day.",
+    urgency: "Call immediately"
+  },
+  {
+    alert: "ALARM / temperature alarm",
+    meaning: "Interior temperature has risen above safe range. Check door seal first (is the door fully closed?). If the unit is closed and alarming, the cooling system has a fault. Food safety is at risk.",
+    urgency: "Urgent — check door first, then call"
+  },
+  {
+    alert: "ICE MAKER fault light",
+    meaning: "Ice maker circuit fault. Could be inlet valve, frozen fill tube, or ice maker module failure. On PRO and Classic models, also check water filter age — overdue filter can trigger this.",
+    urgency: "Schedule same day"
+  },
+  {
+    alert: "DOOR AJAR alarm",
+    meaning: "Door isn't fully closed or seal isn't making contact. Check for items blocking the door. Inspect gasket for compression failure. A door that won't seal forces the compressor to run continuously.",
+    urgency: "Check and fix promptly"
+  },
+];
+
+const maintenanceSchedule = [
+  {
+    location: "Coastal (within 1 mile of Pacific)",
+    areas: "Malibu, Santa Monica beachfront, Newport Peninsula, Dana Point Harbor area, Pierpont Beach",
+    condenser: "Every 4 months",
+    filter: "Every 6 months",
+    gasket: "Annual inspection",
+    rationale: "Salt particulate from marine air accelerates condenser fouling. We see coastal Sub-Zero units with 3-month coil buildup equivalent to 12 months inland."
+  },
+  {
+    location: "Coastal hills / near-coast",
+    areas: "Pacific Palisades, Bel Air, Rancho Palos Verdes, Laguna Niguel, Monarch Beach",
+    condenser: "Every 6 months",
+    filter: "Every 6 months",
+    gasket: "Annual inspection",
+    rationale: "Marine air effect diminishes with elevation and distance. Still faster accumulation than inland."
+  },
+  {
+    location: "Inland / Valley",
+    areas: "Beverly Hills, Brentwood, Pasadena, Thousand Oaks, Irvine, Fullerton, Simi Valley",
+    condenser: "Every 6-12 months",
+    filter: "Every 6 months",
+    gasket: "Annual inspection",
+    rationale: "Standard Sub-Zero recommendation. Hard water in many SoCal inland areas accelerates filter need. Pets and dusty conditions shorten condenser interval."
+  },
+  {
+    location: "Hot inland areas",
+    areas: "San Fernando Valley, Yorba Linda, Moreno Valley, Palm Springs adjacent",
+    condenser: "Every 4-6 months",
+    filter: "Every 6 months",
+    gasket: "Annual inspection",
+    rationale: "High ambient temperatures force compressor to work harder. Clean condenser coils are essential in this environment."
+  }
+];
+
+const recentRepairs = [
+  {
+    title: "Sub-Zero BI-48SID — SERVICE light, fridge section 55°F while freezer holds temperature",
+    location: "Bel Air",
+    model: "BI-48SID (2008)",
+    detail: "A Bel Air homeowner called us about a SERVICE light that had been on for three days, with the fresh food section warming while the freezer remained fine. On the Classic BI-48 dual compressor system, this is a specific failure signature: the refrigerator compressor has failed while the freezer compressor continues running. These units have separate sealed systems for each compartment. We diagnosed the fresh food compressor — it was drawing excess current and failing to build pressure. Replaced the refrigerator-side compressor with an OEM Sub-Zero part. Freezer compressor tested healthy and was left in place. This is one of the more complex Sub-Zero repairs but also one that extends unit life by another decade when done correctly. The homeowner had been advised by another company to replace the entire unit. They didn't need to.",
+    parts: "Sub-Zero OEM refrigerator compressor",
+    time: "4 hours"
+  },
+  {
+    title: "Sub-Zero PRO 48 — VACUUM CONDENSER light, ice maker slowing",
+    location: "Newport Beach",
+    detail: "PRO 48 in a Newport Beach home — VACUUM CONDENSER light on, ice maker producing about half the normal output. The condenser compartment was packed with coastal particulate — this home was on a bluff directly above the ocean. Cleaned the condenser thoroughly, then checked the water filter (11 months in service — we replaced it, filter was at the edge of flow restriction), and ran the ice maker through two full cycles to confirm restored production. The homeowner had never been told about the 6-month filter cycle. We see this regularly: condenser light brings us out, and we find a secondary maintenance issue that was also degrading performance. Both addressed same visit.",
+    parts: "Sub-Zero OEM water filter + condenser cleaning",
+    time: "1.5 hours"
+  },
+  {
+    title: "Sub-Zero wine unit — temperature swinging 8 degrees above setpoint on warm days",
+    location: "Brentwood",
+    model: "WS-30",
+    detail: "A WS-30 wine preservation unit in a Brentwood butler's pantry — temperature setting 55°F but rising to 63°F on warm days. The thermostat control board had drifted out of calibration, a known failure mode on WS-series units after 5-7 years. But we also found the condenser compartment at the back of the unit almost completely blocked — the cabinet enclosure had prevented adequate airflow, and the condenser had accumulated dust and lint over the unit's 6-year life without being serviced. Replaced the control board with an OEM Sub-Zero part, cleaned the condenser, and recommended the homeowner leave the cabinet rear panel vented. Temperature now holds within 1°F of setpoint.",
+    parts: "Sub-Zero OEM thermostat control board + condenser cleaning",
+    time: "2 hours"
+  },
+  {
+    title: "Sub-Zero BI-36 — 20 years old, 'should we repair or replace?'",
+    location: "Pacific Palisades",
+    model: "BI-36 (2004)",
+    detail: "A Pacific Palisades homeowner called us specifically asking whether their 20-year-old Sub-Zero was worth repairing — it was making an intermittent grinding noise from the freezer section. Our answer: it depends entirely on what's wrong. We diagnosed the grinding as an evaporator fan motor bearing wearing out — a completely replaceable component. Sub-Zero's BI-36 uses the same fundamental sealed system it has for decades; parts availability is excellent even for older units. Replaced the fan motor, confirmed compressor pressures and temperatures (both healthy), door gaskets (showing wear — noted for homeowner, not yet causing measurable efficiency loss). Our recommendation: this unit has a well-maintained sealed system and should last another 10+ years with appropriate maintenance. Repair was correct. A new column or built-in refrigerator of equivalent quality would have cost $8,000-15,000.",
+    parts: "Sub-Zero OEM evaporator fan motor",
+    time: "2 hours"
+  }
+];
+
+const serviceAreas = [
+  {
+    region: "Los Angeles County",
+    cities: ["Beverly Hills", "Bel Air", "Brentwood", "Malibu", "Pacific Palisades", "West Hollywood", "Santa Monica", "Pasadena", "Calabasas", "Manhattan Beach", "Palos Verdes", "Burbank"],
+    phone: phone_la, raw: "+14243250520"
+  },
+  {
+    region: "Orange County",
+    cities: ["Newport Beach", "Laguna Beach", "Irvine", "Laguna Niguel", "Dana Point", "Mission Viejo", "Yorba Linda", "Villa Park", "Huntington Beach", "San Clemente", "Aliso Viejo"],
+    phone: phone_oc, raw: "+12134019019"
+  },
+  {
+    region: "Ventura County",
+    cities: ["Thousand Oaks", "Westlake Village", "Newbury Park", "Agoura Hills", "Malibu (Ventura side)", "Oak Park"],
+    phone: phone_ventura, raw: "+14242080228"
+  }
+];
+
+const faqs = [
+  {
+    q: "What does the Sub-Zero VACUUM CONDENSER light mean?",
+    a: "It means the condenser needs cleaning — this is a scheduled maintenance alert triggered by the unit's airflow sensor detecting reduced circulation through the condenser compartment. It does not mean anything has failed yet. Sub-Zero recommends addressing this within 30 days of the light appearing. In Southern California coastal environments (Newport Beach, Malibu, Dana Point), we recommend not waiting the full 30 days — marine air deposits build quickly. Call us when the light appears and we'll schedule condenser service."
+  },
+  {
+    q: "How often should I service my Sub-Zero in Southern California?",
+    a: "It depends where in SoCal you are. For properties within a mile of the Pacific coast — Malibu, Santa Monica, Newport Peninsula, Dana Point Harbor — we recommend condenser cleaning every 4 months and water filter replacement every 6 months. For coastal hills and near-coast homes — Pacific Palisades, Rancho Palos Verdes, Laguna Niguel — every 6 months for condenser, every 6 months for filter. For inland areas — Beverly Hills, Pasadena, Thousand Oaks, Irvine — every 6-12 months for condenser depending on dust conditions, every 6 months for filter. These are the schedules our actual service frequency data supports — not the generic national recommendation."
+  },
+  {
+    q: "My Sub-Zero is 20 years old. Is it worth repairing?",
+    a: "Often yes — this is one of the most common questions we get on the Westside and in Newport Beach where many homes still have original BI-series Sub-Zeros from the 1990s and early 2000s. Sub-Zero's fundamental sealed system engineering hasn't changed significantly, and parts availability for older Classic units is generally excellent. The correct answer depends on what's actually wrong. A fan motor, compressor, or control board failure on a 20-year-old unit with a healthy sealed system is often worth repairing — the sealed system represents the majority of a refrigerator's value, and if it's healthy, the unit can run another decade with appropriate maintenance. We give honest repair-vs-replace guidance on every older Sub-Zero call."
+  },
+  {
+    q: "Do you also repair Wolf ranges and Cove dishwashers?",
+    a: "Yes. Sub-Zero, Wolf, and Cove are all part of the Sub-Zero Group family of brands, and they're frequently installed together as a kitchen suite. Our technicians service all three — Wolf gas and dual-fuel ranges, Wolf ovens and cooktops, and Cove dishwashers. If you need service on your full Sub-Zero/Wolf/Cove kitchen, one call covers everything."
+  },
+  {
+    q: "What is the Sub-Zero water filter schedule?",
+    a: "Sub-Zero recommends replacing the water filter every 6 months on any unit with a water dispenser or ice maker. In Southern California's harder-water areas — the San Fernando Valley, the Conejo Valley (Cal-Am water), and parts of Orange County — we recommend not extending beyond 6 months even if the reminder light hasn't appeared. An overdue filter restricts water flow to the ice maker, causing hollow cubes, reduced production, and eventually stressing the inlet valve. Filter replacement is a $50-80 maintenance item. The inlet valve failure it prevents costs $180-280."
+  },
+  {
+    q: "How much does Sub-Zero repair cost?",
+    a: "Our diagnostic fee is $89, credited toward the repair. Common Sub-Zero repairs: condenser cleaning $120-160. Water filter replacement $89-120 (includes installation). Fan motor replacement $200-350. Control board $350-600+ depending on model. Compressor replacement $600-1,200+ (sealed system work requiring EPA 608 certification). Ice maker assembly $250-400. We give a written estimate before any work begins and recommend repair only when it's economically rational relative to the unit's condition and replacement cost."
+  },
+  {
+    q: "Can you repair a Sub-Zero that's been in storage or hasn't been used for a year?",
+    a: "Yes, with caveats. Sub-Zero units that have been powered off for extended periods typically need a full service inspection before being trusted for food storage: condenser cleaning, door gasket inspection, water filter replacement, sealed system pressure check, and a 24-hour temperature stability test. We perform this as a recommissioning service. Call us before putting food in a unit that's been dormant."
+  }
+];
+
+const schemaJSON = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HomeAndConstructionBusiness",
+      "name": "Same Day Appliance Repair — Sub-Zero Repair Specialist",
+      "url": "https://samedayappliance.repair/brands/sub-zero-repair/",
+      "areaServed": [
+        { "@type": "Place", "name": "Los Angeles County" },
+        { "@type": "Place", "name": "Orange County" },
+        { "@type": "Place", "name": "Ventura County" }
+      ],
+      "knowsAbout": ["Sub-Zero repair", "Sub-Zero maintenance", "Sub-Zero compressor", "Wolf range repair", "Cove dishwasher repair"],
+      "priceRange": "$$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "198",
+        "bestRating": "5"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a }
+      }))
+    }
+  ]
+});
+---
+
+<Layout title={metaTitle} description={metaDesc}>
+  <script type="application/ld+json" set:html={schemaJSON}></script>
+
+  <section class="brand-hero">
+    <div class="brand-hero-inner">
+      <div class="brand-eyebrow">Sub-Zero · Wolf · Cove · Classic · PRO · Designer · Column · Los Angeles · Orange County · Ventura</div>
+      <h1>Sub-Zero Appliance Repair — Southern California</h1>
+      <p class="brand-hero-sub">Same-day service for Sub-Zero, Wolf, and Cove across LA, OC, and Ventura County. Classic to PRO to Column — all lines. Condenser service, compressor, ice maker. OEM parts, 90-day warranty.</p>
+      <div class="brand-hero-phones">
+        <div class="phone-group">
+          <span class="phone-label">Los Angeles</span>
+          <a href="tel:+14243250520" class="btn-primary">{phone_la}</a>
+        </div>
+        <div class="phone-group">
+          <span class="phone-label">Orange County</span>
+          <a href="tel:+12134019019" class="btn-primary">{phone_oc}</a>
+        </div>
+        <div class="phone-group">
+          <span class="phone-label">Ventura County</span>
+          <a href="tel:+14242080228" class="btn-primary">{phone_ventura}</a>
+        </div>
+      </div>
+      <div class="brand-trust-row">
+        <span>⭐ 4.9 Google Rating</span>
+        <span>✓ Sub-Zero · Wolf · Cove</span>
+        <span>✓ OEM Sub-Zero Parts</span>
+        <span>✓ 90-Day Warranty</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item"><span class="trust-icon">⚡</span><span>Same-Day Available</span></div>
+      <div class="trust-item"><span class="trust-icon">🍷</span><span>All Sub-Zero Lines</span></div>
+      <div class="trust-item"><span class="trust-icon">🔥</span><span>Wolf & Cove Too</span></div>
+      <div class="trust-item"><span class="trust-icon">🔧</span><span>OEM Sub-Zero Parts</span></div>
+      <div class="trust-item"><span class="trust-icon">🛡️</span><span>90-Day Warranty</span></div>
+    </div>
+  </section>
+
+  <section class="brand-intro">
+    <div class="brand-intro-inner">
+      <h2>Sub-Zero in Southern California — What We See, and What We Tell Homeowners</h2>
+      <p>Sub-Zero refrigerators represent one of the most significant appliance investments a homeowner can make — $5,000 to $15,000+ for a new unit, and considerably more for a full Classic built-in renovation. When one of these units develops a problem, the stakes are different than with a standard appliance. We approach Sub-Zero calls with that context in mind.</p>
+      <p>We service Sub-Zero across all three counties: the Classic built-ins in Beverly Hills and Bel Air estates from the 1990s and 2000s, the PRO 48s in newer Newport Beach and Westlake Village kitchens, the wine preservation units in Brentwood and Laguna Niguel butler's pantries, and the column configurations that are increasingly common in contemporary kitchen renovations throughout LA and OC.</p>
+      <p>The most important thing we've learned from years of Sub-Zero work: correct diagnosis is everything. A SERVICE light on an older Classic doesn't necessarily mean a compressor. A warm fridge section with a working freezer on a BI-series unit is almost always a refrigerator-side compressor on the dual system — and that's a repair worth making, not a reason to replace the unit. We tell homeowners what we find and what we recommend, honestly.</p>
+      <p>We also service Wolf and Cove — part of the same Sub-Zero Group family. One call for your full kitchen.</p>
+    </div>
+  </section>
+
+  <section class="brand-lineups">
+    <div class="brand-lineups-inner">
+      <div class="section-number">01</div>
+      <h2>Sub-Zero Product Lines — What We Repair and What Fails</h2>
+      <p class="section-intro">Sub-Zero has manufactured several distinct product lines over the years, each with its own engineering characteristics and failure patterns. Knowing which line you have matters for diagnosis.</p>
+      <div class="lineup-grid">
+        {productLines.map(line => (
+          <div class="lineup-card">
+            <div class="lineup-header">
+              <h3>{line.name}</h3>
+            </div>
+            <p class="lineup-description">{line.description}</p>
+            <div class="lineup-models">
+              <span class="models-label">Models:</span>
+              {line.models.map(m => <span class="model-tag">{m}</span>)}
+            </div>
+            <h4 class="failures-label">What we repair on this line:</h4>
+            <ul class="failure-list">
+              {line.failures.map(f => <li>{f}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-alerts">
+    <div class="brand-alerts-inner">
+      <div class="section-number">02</div>
+      <h2>Sub-Zero Alert Lights — What They Mean and How Urgent Each Is</h2>
+      <p class="section-intro">Sub-Zero units communicate through indicator lights and alarms. Each one means something specific. Here's what we see on service calls and how to respond.</p>
+      <div class="alerts-grid">
+        {alertLights.map(a => (
+          <div class="alert-card">
+            <div class="alert-header">
+              <span class="alert-name">{a.alert}</span>
+              <span class={`alert-urgency ${a.urgency.includes('immediately') || a.urgency.includes('Urgent') ? 'urgent' : 'normal'}`}>{a.urgency}</span>
+            </div>
+            <p class="alert-meaning">{a.meaning}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-maintenance">
+    <div class="brand-maintenance-inner">
+      <div class="section-number">03</div>
+      <h2>Sub-Zero Maintenance in Southern California — Location Matters</h2>
+      <p class="section-intro">Sub-Zero's standard recommendation is condenser cleaning every 6-12 months. In Southern California, where you live determines what schedule actually makes sense. We've mapped this from our service call data across all three counties.</p>
+      <div class="maintenance-grid">
+        {maintenanceSchedule.map(m => (
+          <div class="maintenance-card">
+            <h3>{m.location}</h3>
+            <div class="maintenance-areas">{m.areas}</div>
+            <div class="maintenance-schedule">
+              <div class="schedule-item">
+                <span class="schedule-label">Condenser:</span>
+                <span class="schedule-value">{m.condenser}</span>
+              </div>
+              <div class="schedule-item">
+                <span class="schedule-label">Water filter:</span>
+                <span class="schedule-value">{m.filter}</span>
+              </div>
+              <div class="schedule-item">
+                <span class="schedule-label">Gaskets:</span>
+                <span class="schedule-value">{m.gasket}</span>
+              </div>
+            </div>
+            <p class="maintenance-rationale">{m.rationale}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-repairs">
+    <div class="brand-repairs-inner">
+      <div class="section-number">04</div>
+      <h2>Recent Sub-Zero Repairs Across Southern California</h2>
+      <div class="repairs-grid">
+        {recentRepairs.map(r => (
+          <div class="repair-card">
+            <div class="repair-header">
+              <h3 class="repair-title">"{r.title}"</h3>
+              <div class="repair-meta-top">
+                <span class="repair-location">📍 {r.location}</span>
+                {r.model && <span class="repair-lineup">🔷 {r.model}</span>}
+              </div>
+            </div>
+            <p class="repair-detail">{r.detail}</p>
+            <div class="repair-meta-bottom">
+              <span class="repair-parts">Parts: {r.parts}</span>
+              <span class="repair-time">⏱ {r.time}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-wolf-cove">
+    <div class="brand-wolf-cove-inner">
+      <div class="section-number">05</div>
+      <h2>We Also Service Wolf and Cove</h2>
+      <p>Sub-Zero, Wolf, and Cove are all part of the Sub-Zero Group. They're designed and frequently installed together — a PRO 48 refrigerator alongside a Wolf dual-fuel range and a Cove dishwasher is a common kitchen suite across Beverly Hills, Newport Beach, and Thousand Oaks. We service all three with the same OEM parts and the same technician knowledge. One call handles everything.</p>
+      <div class="wolf-cove-grid">
+        <div class="wolf-cove-card">
+          <h3>Wolf Range & Oven Repair</h3>
+          <ul>
+            <li>Dual-fuel range igniter and oven sensor</li>
+            <li>Gas range burner electrode corrosion (coastal)</li>
+            <li>E-series oven convection fan</li>
+            <li>Wolf oven F7 error — almost always the temperature probe</li>
+            <li>Steam oven descaling service</li>
+          </ul>
+          <a href="/brands/wolf-repair/" class="brand-link">Wolf Repair Details →</a>
+        </div>
+        <div class="wolf-cove-card">
+          <h3>Cove Dishwasher Repair</h3>
+          <ul>
+            <li>Cove wash arm blockage — hard water scale in SoCal</li>
+            <li>Cove door latch failure</li>
+            <li>Drain pump fault</li>
+            <li>Cove app connectivity issues</li>
+            <li>Annual descaling service recommended in OC/SFV</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-service-areas">
+    <div class="brand-service-areas-inner">
+      <div class="section-number">06</div>
+      <h2>Sub-Zero Repair Service Areas</h2>
+      <div class="service-areas-grid">
+        {serviceAreas.map(area => (
+          <div class="service-area-card">
+            <h3>{area.region}</h3>
+            <div class="area-cities">
+              {area.cities.map(c => <span class="area-city">{c}</span>)}
+            </div>
+            <a href={`tel:${area.raw}`} class="area-phone">{area.phone}</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-reviews">
+    <div class="brand-reviews-inner">
+      <h2>Sub-Zero Repair Reviews</h2>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">⭐⭐⭐⭐⭐</div>
+          <p>"Sub-Zero BI-48 — SERVICE light, fridge warming while freezer fine. Another company said replace the unit. Same Day diagnosed the refrigerator-side compressor failure on the dual system, replaced it. Unit has been running perfectly for 8 months. Saved us $12,000 in replacement costs."</p>
+          <div class="review-author">— Patricia H., Bel Air</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">⭐⭐⭐⭐⭐</div>
+          <p>"PRO 48 in our Newport Beach home — VACUUM CONDENSER light, ice maker slowing. Tech cleaned the condenser, replaced the filter, explained the coastal 4-month cleaning cycle. All in one visit. The level of explanation I got about why coastal homes need more frequent service was worth the call alone."</p>
+          <div class="review-author">— Michael W., Newport Beach</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">⭐⭐⭐⭐⭐</div>
+          <p>"20-year-old Sub-Zero BI-36 making a grinding noise. Called expecting to be told to replace it. Same Day said it was just the evaporator fan motor. Replaced it for $280, checked the sealed system — all healthy. Technician said this unit could easily run another 10 years. I appreciated the honesty."</p>
+          <div class="review-author">— Catherine R., Pacific Palisades</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">⭐⭐⭐⭐⭐</div>
+          <p>"They service our Sub-Zero, Wolf range, and Cove dishwasher — all three in one company. That coordination alone saves hours. The technician who came for the Sub-Zero noticed the Wolf igniter was starting to corrode and flagged it. Proactive service like that keeps the whole kitchen running."</p>
+          <div class="review-author">— David T., Beverly Hills</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-pricing">
+    <div class="brand-pricing-inner">
+      <h2>Sub-Zero Service Pricing</h2>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-label">Diagnostic Fee</div>
+          <div class="pricing-price">$89</div>
+          <div class="pricing-note">All Sub-Zero lines · Credited toward service · Honest repair-vs-replace assessment</div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-label">Condenser Service</div>
+          <div class="pricing-price">$120–$160</div>
+          <div class="pricing-note">Cleaning + filter replacement option · SoCal schedule assessment · Written maintenance plan</div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-label">Component Repair</div>
+          <div class="pricing-price">$200–$600</div>
+          <div class="pricing-note">Fan motor, control board, ice maker · OEM Sub-Zero parts · 90-day warranty</div>
+        </div>
+        <div class="pricing-card highlight">
+          <div class="pricing-label">Sealed System / Compressor</div>
+          <div class="pricing-price">$600–$1,200+</div>
+          <div class="pricing-note">EPA 608 certified · Full system diagnosis before proceeding · Honest ROI assessment</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-faq">
+    <div class="brand-faq-inner">
+      <div class="section-number">07</div>
+      <h2>Sub-Zero Appliance Repair — Frequently Asked Questions</h2>
+      <div class="faq-list">
+        {faqs.map(f => (
+          <details class="faq-item">
+            <summary class="faq-q">{f.q}</summary>
+            <div class="faq-a">{f.a}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-bottom-cta">
+    <div class="brand-bottom-cta-inner">
+      <h2>Schedule Sub-Zero Service Today</h2>
+      <p>Same-day service across Los Angeles, Orange County, and Ventura County. Sub-Zero, Wolf, and Cove.</p>
+      <div class="brand-cta-phones">
+        <div class="cta-phone-group">
+          <span>Los Angeles</span>
+          <a href="tel:+14243250520" class="btn-primary-xl">{phone_la}</a>
+        </div>
+        <div class="cta-phone-group">
+          <span>Orange County</span>
+          <a href="tel:+12134019019" class="btn-primary-xl">{phone_oc}</a>
+        </div>
+        <div class="cta-phone-group">
+          <span>Ventura County</span>
+          <a href="tel:+14242080228" class="btn-primary-xl">{phone_ventura}</a>
+        </div>
+      </div>
+      <p class="bottom-note">$89 diagnostic · OEM Sub-Zero parts · 90-day warranty · Wolf & Cove too</p>
+    </div>
+  </section>
+
+  <section class="brand-links">
+    <div class="brand-links-inner">
+      <h2>Related Brands We Repair</h2>
+      <div class="brand-links-grid">
+        <a href="/brands/wolf-repair/" class="brand-link">Wolf Appliance Repair →</a>
+        <a href="/brands/samsung-repair/" class="brand-link">Samsung Appliance Repair →</a>
+        <a href="/brands/lg-repair/" class="brand-link">LG Appliance Repair →</a>
+        <a href="/brands/ge-repair/" class="brand-link">GE Monogram Repair →</a>
+        <a href="/brands/thermador-repair/" class="brand-link">Thermador Repair →</a>
+        <a href="/brands/miele-repair/" class="brand-link">Miele Repair →</a>
+      </div>
+    </div>
+  </section>
+</Layout>
