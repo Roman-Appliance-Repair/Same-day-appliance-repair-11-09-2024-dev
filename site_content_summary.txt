@@ -1,0 +1,63 @@
+Site Content Export Summary
+===========================
+Date: 2026-02-28
+
+Total pages: 450
+Pages with schema markup: 71
+Pages without schema markup: 379
+
+Breakdown by section:
+
+Services (services/, hvac/, root service & brand+appliance pages): 224 pages
+
+Price List (price-list/ and cost pages): 39 pages
+
+Areas (areas/ and city subpages): 56 pages
+
+Brands (brands/ and brand- pages): 95 pages
+
+City pages at root level (e.g. /pasadena/, /glendale/): 24 pages
+  /alhambra/
+  /beverly-hills/
+  /brentwood/
+  /culver-city/
+  /glassell-park/
+  /glendale/
+  /hollywood-hills/
+  /hollywood/
+  /irvine/
+  /ladera-heights/
+  /los-angeles/
+  /los-feliz/
+  /marina-del-rey/
+  /monterey-park/
+  /north-hollywood/
+  /pacific-palisades/
+  /pasadena/
+  /playa-del-rey/
+  /san-marino/
+  /santa-monica/
+  /silver-lake/
+  /south-pasadena/
+  /thousand-oaks/
+  /west-hollywood/
+
+Other (about, blog, contact, etc.): 12 pages
+
+Pages without title: 2
+  src/pages/blog.astro
+  src/pages/m-refrigeration-repair.astro
+
+Pages without description: 3
+  src/pages/blog.astro
+  src/pages/m-refrigeration-repair.astro
+  src/pages/pricing.astro
+
+Pages without h1: 7
+  src/pages/about.astro
+  src/pages/blog.astro
+  src/pages/contact.astro
+  src/pages/hvac/air-duct-cleaning.astro
+  src/pages/m-refrigeration-repair.astro
+  src/pages/pricing.astro
+  src/pages/reviews-page-nearbynow.astro

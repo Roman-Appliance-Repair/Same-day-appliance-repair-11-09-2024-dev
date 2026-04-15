@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir \"C:\\\\Users\\\\Roman\\\\WebstormProjects\\\\Same-day-appliance-repair\")",
+      "Bash(dir:*)",
+      "Bash(git config:*)",
+      "Bash(npx astro build)",
+      "Bash(npm run build:*)",
+      "Bash(ls:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nFix sitemap.xml 404: add redirect and filter test pages\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nFix broken images: range-hood paths, middleby-marshall typo, Cyrillic cleveland filename\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit:*)",
+      "Bash(LC_ALL=en_US.UTF-8 grep:*)",
+      "Bash(test:*)",
+      "Bash(mkdir:*)",
+      "Bash(mv:*)",
+      "Bash(git checkout:*)",
+      "Bash(node:*)",
+      "Bash(git status:*)",
+      "Bash(npx sharp-cli:*)",
+      "Bash(echo \"exit: $?\")"
+    ]
+  }
+}
