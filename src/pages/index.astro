@@ -1,699 +1,328 @@
 ---
-import Container from "../components/container.astro";
-import CTA from "@components/CTA.astro";
-import Features from "../components/features.astro";
-import Hero from "@components/hero.astro";
-import Logos from "@components/logos.astro";
-import Navbar from "@components/navbar/navbar.astro";
-import Reviews from "@components/reviews.astro";
-import UnitsAppliances from "@components/UnitsAppliances.astro";
-import UnitsCommercial from "@components/UnitsCommercial.astro";
-import Unitshvac from "@components/units-hvac.astro";
-import CostanchorIndex from "@components/price-list/components_dryer-repair-cost-index.astro";
-import Contactbtn from "@components/contactbtn.astro";
-import Btn from "@components/btn.astro";
-import LogoBrands from "@components/js/logo-brands.astro";
-import Areas from "@components/areas.astro";
-import Layout from "@layouts/Layout.astro";
-
-import "css/service/style_services.css";
-import "css/style-index.css";
+import Layout from '../layouts/Layout.astro';
 ---
-   
-<Layout 
-title="Same Day Appliance Repair Los Angeles | (323) 870-4790" 
-description="Fast, licensed, and factory-trained appliance & HVAC repair experts. Serving Los Angeles, Pasadena, West Hollywood, Orange County & Ventura. Call (323)...">
 
-  <Navbar />
-<Reviews />
-  <main>
-    <div class="full-index">
-      <div class="full-index-1920">
-        <!---test -->
-        <h1><span class="animate-charcter">Same Day Appliance Repair in Los Angeles, Pasadena, Orange & Ventura County</span></h1>
-        <div class="two-col-grid">
-          <div class="col-one">
-            <img
-              width="500px"
-              height="500px"
-              src="/dryer-repair/dryer-repair-3.webp"
-              alt="Same Day Appliance Repair"
-            />
-            <Contactbtn />
-          </div>
-          <div class="col-two">
-            <CostanchorIndex />
-           <!--- <p>
-              Need fast, reliable <b>appliance repair</b>? Look no further! Our team offers same-day, expert repair services for all major home and commercial appliances, including <b>refrigerators</b>, <b>freezers</b>, <b>washers</b>, <b>dryers</b>, <b>dishwashers</b>, <b>stoves</b>, <b>ovens</b>, <b>microwaves</b>, <b>ice machines</b>, <b>fireplaces</b>, <b>BBQ grills</b>, <b>cooktops</b>, <b>range hoods</b>, <b>walk-in coolers</b>, <b>HVAC systems</b>, and more.<br><br> We're trusted by customers throughout Los Angeles and the surrounding areas to repair top brands like <b>KitchenAid</b>, <b>Frigidaire</b>, <b>LG</b>, <b>Samsung</b>, <b>GE</b>, <b>Sub-Zero</b>, <b>Wolf</b>, <b>Cove</b>, <b>Whirlpool</b>, <b>Monogram</b>, <b>Miele</b>, <b>Bosch</b>, <b>Thermador</b>, and many others. Our licensed, insured, and factory-trained technicians often carry parts in stock, meaning we can fix most appliance issues on the spot!</p>-->
-
-              <p>
-                Looking for fast, professional appliance or HVAC repair? <strong>Same Day Appliance Repair</strong> is your trusted partner for same-day service across 
-                <a href="/los-angeles/">Los Angeles</a>, 
-                <a href="/pasadena/">Pasadena</a>, 
-                <a href="/west-hollywood/">West Hollywood</a>, Orange County, and Ventura County.
-              </p>
-              
-              <p>
-                Our licensed, insured, and factory-trained technicians specialize in both residential and commercial repairs — including 
-                <a href="/services/refrigerator-repair-los-angeles/">refrigerators</a>, freezers, washers, dryers, ovens, dishwashers, cooktops, microwaves, ice machines, fireplaces, BBQ grills, walk-in coolers, and more. 
-                <br /><br />
-                We also offer expert repair and professional installation of <strong>HVAC systems</strong> for homes and businesses.
-              </p>
-              
-              <p>
-                Customers trust us to service top brands like 
-                <a href="/brands/sub-zero-repair/">Sub-Zero</a>, Wolf, Thermador, Miele, Bosch, KitchenAid, Samsung, LG, Whirlpool, GE, and others. 
-                Our technicians often carry OEM parts, meaning we can complete most repairs on the first visit — saving you time and frustration.
-              </p>
-              
-              <h2>Why Choose Us?</h2>
-              
-              <ul>
-                <li><strong>✔ Same-Day Service Across All Zones</strong></li>
-                <li><strong>✔ Repairs & Installations for Appliances & HVAC Systems</strong></li>
-                <li><strong>✔ Factory-Trained, Licensed & Insured Technicians</strong></li>
-                <li><strong>✔ OEM Parts Only — No Substitutes</strong></li>
-                <li><strong>✔ 90-Day Satisfaction Guarantee:</strong> If any issues arise within 90 days, we’ll return at no charge to make it right.</li>
-                <li><strong>✔ Transparent Pricing:</strong> No hidden fees. We provide a clear, upfront estimate before any work begins.</li>
-                <li><strong>✔ Book Online & Save 10%:</strong> First-time customers get 10% off when scheduling through our website.</li>
-              </ul>
-              
-              <p>
-                Every customer matters to us. We’re committed to delivering outstanding service on every call. 
-                Let our skilled technicians get your appliances — and your life — back on track. Contact us today for fast, dependable repairs!
-              </p>
-              
-              
-              
-             <!--- <h2>Why choose us?</h2>
-              
-              <p> <b>90-Day Satisfaction Guarantee:</b> We stand by our work—if any issues arise within 90 days, we'll come back to make it right at no extra charge.
-              <p>  <b>Transparent Pricing:</b> No hidden fees or surprise charges. You'll get a clear, upfront estimate before any work begins, so you know exactly what to expect.<br><br> <b>Book Online & Save 10%:</b> Schedule your repair on our website as a first-time customer to enjoy a 10% discount on your service call.<br><br> Every customer is important to us, and we're committed to delivering outstanding service with every call. Let our skilled technicians get your appliances up and running today. Contact us for quick, dependable repairs!
-              
-            </p></div></div>
-                <h2>
-                  Same Day Home Appliance Repair, Installation, and
-                  Maintenance...
-                </h2>
-                <p>
-                  Our same day appliance repair experts will fix your appliance
-                  on the first visit in 90% of cases. Our trained technicians
-                  have parts on hand to ensure a quick repair.
-                </p> -->
-              <UnitsAppliances city="Los Angeles" />
-          <!-- Grey коммерчеcкая техника 
-          
-                <h2>
-                  Same Day Commercial Appliance Repair, Maintenance, and
-                  Installation
-                </h2>
-                <p>
-                  Our same day commercial appliance repair experts are trained
-                  commercially.
-                </p>-->
-             
-              <UnitsCommercial city="Los Angeles" />
-
-              <Unitshvac />
-          <Features />
-         
-
-
-<!-- ✅ 3. Our Service Branches -->
-
-
-
-            <h2>Ensuring Compatibility and Performance</h2>
-            <p>
-              Providing professional appliance repair service, we are commitment
-              to quality appliance repair services doesn't stop at just stocking
-              parts; we also ensure that each component precisely matches the
-              specifications of your refrigerator's brand and model. This
-              meticulous attention to compatibility means that when we repair
-              your appliance, it's done with parts that are designed to work
-              seamlessly with your specific unit. This approach not only
-              enhances the efficiency of your refrigerator but also helps
-              preserve its original functionality and aesthetics. By choosing
-              parts that align perfectly with the manufacturer's design, we
-              ensure that your refrigerator continues to operate as efficiently
-              as on the day you bought it.
-            </p>
-            <h2 id="faqs-anchor">
-              How to Schedule Same-Day Appointment For Appliance and HVAC Repair and What to Expect
-            </h2>
-            <h3>How to Contact Us</h3>
-            <p>
-              No matter which city you live in, you can reach us at our central service number: (323) 870-4790 — available for all zones and service areas.
-This is the fastest way to schedule a same-day appointment with our licensed technician.
-You can also book online by filling out a simple form with your appliance brand, issue details, and preferred time.
-Have a quick question? Feel free to chat live with our lead technician right on the website.
-            </p>
-            <h3>Service Fee Cost and When It's Waived</h3>
-<p>
-  We charge a diagnostic service fee based on the type of equipment:
-</p>
-<ul>
-  <li><strong>$89</strong> for home appliances</li>
-  <li><strong>$120</strong> for commercial appliances</li>
-  <li><strong>$120</strong> for HVAC systems</li>
-</ul>
-<p>
-  When our technician arrives, they will perform a full diagnosis and provide you with a detailed repair quote. You’re free to decide whether or not to proceed.
-</p>
-<p>
-  <strong>If you approve the repair, the service fee will be fully waived</strong>, and you’ll only pay for the repair itself.
-</p>
-
-            <h3>Estimate the cost of appliance repair work</h3>
-            <p>
-              Our repair process is grounded in transparency and integrity. We
-              prioritize honesty and clear communication in every repair job.
-              Our skilled technicians will thoroughly explain the nature of the
-              problem with your appliance and provide a detailed repair quote
-              upfront, ensuring there are no hidden charges.
-            <br><br>
-              You may refer to the price list on our website to get an idea of
-              what it might cost. While our price list offers a preliminary
-              estimate, remember that only a qualified technician can accurately
-              diagnose the issue with your appliance. Often, what a customer
-              assumes to be the problem can turn out to be something completely
-              different, ranging from a basic issue like a malfunctioning outlet
-              to more complex problems like a faulty compressor. 
-            </p>
-         
-<h2>Brands We Repair</h2>
-    <div class="content__page-full-logo-brand">
-      <div class="ph-logo-brand">
-        <div class="logo-brand logo-bran-ph-1">
-          <a href="#" class="logo-brand logo-bran-ph-1">
-            <img
-              width="300px"
-              height="300px"
-              src="/brand-logos/whirlpool.webp"
-              alt="Whirlpool"
-              loading="lazy"
-            />
-          </a>
-        </div>
-
-        <div class="logo-brand logo-bran-ph-2">
-          <a href="#">
-            <img
-              width="300px"
-              height="300px"
-              src="/brand-logos/samsung.webp"
-              alt="Samsung"
-              loading="lazy"
-            />
-          </a>
-        </div>
-
-        <div class="logo-brand logo-bran-ph-3">
-          <a href="#">
-            <img
-              width="300px"
-              height="300px"
-              src="/brand-logos/lg.webp"
-              alt="LG"
-              loading="lazy"
-            />
-          </a>
-        </div>
-
-        <div class="logo-brand logo-bran-ph-4">
-          <a href="#">
-            <img
-              width="300px"
-              height="300px"
-              src="/brand-logos/GE-general-electric.webp"
-              alt="General Electric"
-              loading="lazy"
-            />
-          </a>
-        </div>
-
-        <div class="logo-brand logo-bran-ph-5">
-          <a href="#">
-            <img
-              width="300px"
-              height="300px"
-              src="/brand-logos/frigidaire.webp"
-              alt="Frigidaire"
-              loading="lazy"
-            />
-          </a>
-        </div>
-
-        <div class="logo-brand logo-bran-ph-6">
-          <a href="#">
-            <img
-              width="300px"
-              height="300px"
-              src="/brand-logos/kenmore.webp"
-              alt="Kenmore"
-              loading="lazy"
-            />
-          </a>
-        </div>
-
-        <div class="logo-brand logo-bran-ph-7">
-          <a href="#">
-            <img
-              width="300px"
-              height="300px"
-              src="/brand-logos/maytag.webp"
-              alt="Maytag"
-              loading="lazy"
-            />
-          </a>
-        </div>
-
-        <div class="logo-brand logo-bran-ph-8">
-          <a href="#">
-            <img
-              width="300px"
-              height="300px"
-              src="/brand-logos/kitchenAid.webp"
-              alt="KitchenAid"
-              loading="lazy"
-            />
-          </a>
-        </div>
-
-        <div class="logo-brand logo-bran-ph-9">
-          <a href="#">
-            <img
-              width="300px"
-              height="300px"
-              src="/brand-logos/sub-zero.webp"
-              alt="Sub-Zero"
-              loading="lazy"
-            />
-          </a>
-        </div>
-
-        <div class="logo-brand logo-bran-ph-10">
-          <a href="#">
-            <img
-              width="300px"
-              height="300px"
-              src="/brand-logos/bosch.webp"
-              alt="Bosch"
-              loading="lazy"
-            />
-          </a>
-        </div>
-
-        <div class="logo-brand logo-bran-ph-11">
-          <a href="#">
-            <img
-              width="300px"
-              height="300px"
-              src="/brand-logos/amana.webp"
-              alt="Amana"
-              loading="lazy"
-            />
-          </a>
-        </div>
-
-        <div class="logo-brand logo-bran-ph-12">
-          <a href="#">
-            <img
-              width="300px"
-              height="300px"
-              src="/brand-logos/electrolux.webp"
-              alt="Electrolux"
-              loading="lazy"
-            />
-          </a>
-        </div>
-
-        <div class="logo-brand logo-bran-ph-13">
-          <a href="#">
-            <img
-              width="300px"
-              height="300px"
-              src="/brand-logos/haier.webp"
-              alt="Haier"
-              loading="lazy"
-            />
-          </a>
-        </div>
-
-        <div class="logo-brand logo-bran-ph-14">
-          <a href="#">
-            <img
-              width="300px"
-              height="300px"
-              src="/brand-logos/thermador.webp"
-              alt="Thermador"
-              loading="lazy"
-            />
-          </a>
-        </div>
-
-        <div class="logo-brand logo-bran-ph-15">
-          <a href="#">
-            <img
-              width="300px"
-              height="300px"
-              src="/brand-logos/fisher-paykel.webp"
-              alt="Fisher & Paykel"
-              loading="lazy"
-            />
-          </a>
-        </div>
-
-        <div class="logo-brand logo-bran-ph-16">
-          <a href="#">
-            <img
-              width="300px"
-              height="300px"
-              src="/brand-logos/jennAir.webp"
-              alt="Jenn-Air"
-              loading="lazy"
-            />
-          </a>
-        </div>
-
-        <div class="logo-brand logo-bran-ph-17">
-          <a href="#">
-            <img
-              width="300px"
-              height="300px"
-              src="/brand-logos/viking.webp"
-              alt="Viking"
-              loading="lazy"
-            />
-          </a>
-        </div>
-
-        <div class="logo-brand logo-bran-ph-18">
-          <a href="#">
-            <img
-              width="300px"
-              height="300px"
-              src="/brand-logos/hotpoint.webp"
-              alt="Hotpoint"
-              loading="lazy"
-            />
-          </a>
-        </div>
-
-        <div class="logo-brand logo-bran-ph-19">
-          <a href="#">
-            <img
-              width="300px"
-              height="300px"
-              src="/brand-logos/magic-chef.webp"
-              alt="Magic Chef"
-              loading="lazy"
-            />
-          </a>
-        </div>
-
-        <div class="logo-brand logo-bran-ph-20">
-          <a href="#">
-            <img
-              width="300px"
-              height="300px"
-              src="/brand-logos/dacor.webp"
-              alt="Dacor"
-              loading="lazy"
-            />
-          </a>
-        </div>
+<Layout>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg" style="background-image:url('/images/lg-dryer-hero.jpg')"></div>
+    <div class="hero-content glass">
+      <span class="badge badge-blue">Same-day service available</span>
+      <h1>LG Dryer Repair in Los Angeles</h1>
+      <p class="subtitle">Certified technicians for all LG dryer models. Fast diagnostics, genuine parts, guaranteed results.</p>
+      <div class="hero-buttons">
+        <a href="tel:3239907550" class="btn btn-primary btn-lg">Call (323) 990-7550</a>
+        <a href="/book" class="btn btn-secondary btn-lg">Book a Visit</a>
       </div>
-
-      <div class="full-desc-logo-brand">
-        
-          <h3 class="desc-logo-brand logo-bran-d-1"><a href="#">Whirlpool</a></h3>
-          <h3 class="desc-logo-brand logo-bran-d-2"><a href="#">Samsung</a></h3>
-          <h3 class="desc-logo-brand logo-bran-d-3"><a href="#">LG Electronics</a></h3>
-          <h3 class="desc-logo-brand logo-bran-d-4"><a href="#">General Electric</a></h3>
-          <h3 class="desc-logo-brand logo-bran-d-5"><a href="#">Frigidaire</a></h3>
-          <h3 class="desc-logo-brand logo-bran-d-6"><a href="#">Kenmore</a></h3>
-          <h3 class="desc-logo-brand logo-bran-d-7"><a href="#">Maytag</a></h3>
-          <h3 class="desc-logo-brand logo-bran-d-8"><a href="#">KitchenAid</a></h3>
-          <h3 class="desc-logo-brand logo-bran-d-9"><a href="#">Sub-Zero</a></h3>
-          <h3 class="desc-logo-brand logo-bran-d-10"><a href="#">Bosch</a></h3>
-          <h3 class="desc-logo-brand logo-bran-d-11"><a href="#">Amana</a></h3>
-          <h3 class="desc-logo-brand logo-bran-d-12"><a href="#">Electrolux</a></h3>
-          <h3 class="desc-logo-brand logo-bran-d-13"><a href="#">Haier</a></h3>
-          <h3 class="desc-logo-brand logo-bran-d-14"><a href="#">Thermador</a></h3>
-          <h3 class="desc-logo-brand logo-bran-d-15"><a href="#">Fisher & Paykel</a></h3>
-          <h3  class="desc-logo-brand logo-bran-d-16"><a href="#">Jenn-Air</a></h3>
-          <h3 class="desc-logo-brand logo-bran-d-17"><a href="#">Viking</a></h3>
-          <h3 class="desc-logo-brand logo-bran-d-18"><a href="#">Hotpoint</a></h3>
-          <h3 class="desc-logo-brand logo-bran-d-19"><a href="#">Magic Chef</a></h3>
-          <h3 class="desc-logo-brand logo-bran-d-20"><a href="#">Dacor</a></h3>
-        </div>
+      <div class="trust-bar">
+        <span>&#10003; CSLB Licensed</span>
+        <span>&#10003; BBB Accredited</span>
+        <span>&#10003; Same-Day Service</span>
+        <span>&#10003; All LG Models</span>
       </div>
-    
-   <!---<h2> Areas We Serve for Same-Day Appliance Repair</h2>
-
-<p>At Same Day Appliance Repair, we proudly serve a wide range of areas, offering professional in-home appliance repair services to keep your household running smoothly. From ensuring your refrigerator keeps your food fresh to fixing washers, dryers, stoves, and more, our technicians are stationed across Los Angeles and nearby communities to provide fast, reliable service when you need it most.</p>
-Major Cities We Serve:
-<div class="content__page-desc">
-  <Areas /> 
-  </div>
-
-Whether you're located in bustling city centers or surrounding neighborhoods, we're committed to delivering expert appliance repair on the same day. We proudly serve:-->
-  </div>
-
-  <section>
-    <h2>Our Service Branches Across Southern California</h2>
-    <p>At <strong>Same Day Appliance Repair</strong>, we operate through five fully staffed local branches across Los Angeles, Ventura, and Orange Counties. Each branch serves a cluster of nearby cities, ensuring fast dispatch, personalized service, and same-day appliance repairs by certified technicians.</p>
-  
-    <div class="branch">
-      <h3>📍 Same Day Appliance Repair – West Hollywood</h3>
-      <p><strong>Phone:</strong> (323) 870-4790  — available in all service areas<br>
-      <strong>Email:</strong> support@samedayappliance.repair</p>
-      <p><strong>Service Areas:</strong> West Hollywood, Beverly Hills, Hollywood, Mid-Wilshire, Fairfax, Hancock Park</p>
     </div>
-  
-    <div class="branch">
-      <h3>📍 Same Day Appliance Repair – Pasadena</h3>
-      <p><strong>Phone:</strong> (626) 376-4458<br>
-      <strong>Email:</strong> pasadena@samedayappliance.repair</p>
-      <p><strong>Service Areas:</strong> La Canada Flintridge, Pasadena, South Pasadena, Glendale, Arcadia, Sierra Madre, Los Feliz, Eagle Rock, Alhambra, San Marino, San Gabriel, Monterey Park, Highland Park, Silver Lake, Atwater Village, Altadena</p>
-    </div>
-  
-    <div class="branch">
-      <h3>📍 Same Day Appliance Repair – Los Angeles</h3>
-      <p><strong>Phone:</strong> (424) 325-0520<br>
-      <strong>Email:</strong> info@samedayappliance.repair</p>
-      <p><strong>Service Areas:</strong> Brentwood, Bel Air, Pacific Palisades, Santa Monica, Westwood, Century City, Cheviot Hills, West Los Angeles, Beverly Glen, Marina Del Rey, Playa Del Rey, Culver City, Venice, Mar Vista</p>
-    </div>
-  
-    <div class="branch">
-      <h3>📍 Same Day Appliance Repair – Thousand Oaks</h3>
-      <p><strong>Phone:</strong> (424) 208-0228<br>
-      <strong>Email:</strong> thousandoaks@samedayappliance.repair</p>
-      <p><strong>Service Areas:</strong> Thousand Oaks, Westlake Village, Oak Park, Camarillo, Moorpark, Simi Valley</p>
-    </div>
-  
-    <div class="branch">
-      <h3>📍 Same Day Appliance Repair – Irvine</h3>
-      <p><strong>Phone:</strong> (213) 401-9019<br>
-      <strong>Email:</strong> irvine@samedayappliance.repair</p>
-      <p><strong>Service Areas:</strong> Irvine, Anaheim, Tustin, Newport Beach, Laguna Beach, Lake Forest, Costa Mesa, Villa Park, Yorba Linda, Fountain Valley, Santa Ana</p>
-    </div>
-  
-    <p>No matter where you're located, you’ll always be connected with the <strong>nearest local branch</strong> for faster arrival, localized service, and expert repairs using OEM parts only. We’re proud to bring dependable same-day appliance repair across all five regions, with personal attention and city-specific support.</p>
   </section>
 
+  <!-- Two-column: AI Diagnostics + Contact Form -->
+  <section class="section">
+    <div class="container">
+      <div class="two-col" style="position:relative;z-index:10;">
 
+        <!-- AI Diagnostics -->
+        <div class="glass">
+          <h2 style="font-size:1.35rem;margin-bottom:.35rem">AI Diagnostics</h2>
+          <p class="text-secondary" style="font-size:.9rem;margin-bottom:1rem">Describe your dryer issue or select symptoms below</p>
 
-</div>
-    <Btn />
-  </main>
-<CTA phone="(323) 870-4790" branch="West Hollywood" zones={["Los Angeles", "Orange County", "Ventura County"]} />
-<LogoBrands />
+          <div class="symptom-chips" id="symptomChips">
+            <button class="symptom-chip" data-symptom="Not heating">Not heating</button>
+            <button class="symptom-chip" data-symptom="Not spinning">Not spinning</button>
+            <button class="symptom-chip" data-symptom="Making noise">Making noise</button>
+            <button class="symptom-chip" data-symptom="Not starting">Not starting</button>
+            <button class="symptom-chip" data-symptom="Not drying">Not drying</button>
+            <button class="symptom-chip" data-symptom="Overheating">Overheating</button>
+            <button class="symptom-chip" data-symptom="Error code">Error code</button>
+            <button class="symptom-chip" data-symptom="Door issue">Door issue</button>
+          </div>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HomeAndConstructionBusiness",
-  "name": "Same Day Appliance Repair",
-  "legalName": "HVAC 777 LLC",
-  "description": "Same day appliance repair service in Los Angeles and surrounding areas. Licensed, insured, BBB A+ accredited.",
-  "telephone": "(323) 870-4790",
-  "url": "https://samedayappliance.repair",
-  "logo": "https://samedayappliance.repair/logo.webp",
-  "image": "https://samedayappliance.repair/logo.webp",
-  "priceRange": "$",
-  "paymentAccepted": "Cash, Credit Card, Debit Card",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "8746 Rangely Ave",
-    "addressLocality": "West Hollywood",
-    "addressRegion": "CA",
-    "postalCode": "90048",
-    "addressCountry": "US"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 34.0838,
-    "longitude": -118.3614
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "49"
-  },
-  "hasCredential": [
-    {
-      "@type": "EducationalOccupationalCredential",
-      "credentialCategory": "license",
-      "name": "California CSLB C-20 HVAC Contractor License",
-      "recognizedBy": {
-        "@type": "Organization",
-        "name": "Contractors State License Board (CSLB)",
-        "url": "https://www.cslb.ca.gov"
-      },
-      "identifier": "1138898"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "credentialCategory": "accreditation",
-      "name": "BBB A+ Accreditation",
-      "recognizedBy": {
-        "@type": "Organization",
-        "name": "Better Business Bureau",
-        "url": "https://www.bbb.org"
-      }
-    }
-  ],
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
-      ],
-      "opens": "08:00",
-      "closes": "20:00"
-    }
-  ],
-  "areaServed": [
-    {
-      "@type": "City",
-      "name": "Los Angeles"
-    },
-    {
-      "@type": "City",
-      "name": "West Hollywood"
-    },
-    {
-      "@type": "City",
-      "name": "Beverly Hills"
-    },
-    {
-      "@type": "City",
-      "name": "Pasadena"
-    },
-    {
-      "@type": "City",
-      "name": "Glendale"
-    },
-    {
-      "@type": "City",
-      "name": "Burbank"
-    },
-    {
-      "@type": "City",
-      "name": "Santa Monica"
-    },
-    {
-      "@type": "City",
-      "name": "Thousand Oaks"
-    },
-    {
-      "@type": "City",
-      "name": "Irvine"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "Orange County"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "Ventura County"
-    }
-  ],
-  "department": [
-    {
-      "@type": "HomeAndConstructionBusiness",
-      "name": "Same Day Appliance Repair - Los Angeles",
-      "telephone": "(424) 325-0520",
-      "email": "info@samedayappliance.repair",
-      "areaServed": {
-        "@type": "City",
-        "name": "Los Angeles"
-      }
-    },
-    {
-      "@type": "LocalBusiness",
-      "name": "Same Day Appliance Repair - West Hollywood",
-      "telephone": "(323) 870-4790",
-      "email": "support@samedayappliance.repair",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "8746 Rangely Ave",
-        "addressLocality": "West Hollywood",
-        "addressRegion": "CA",
-        "postalCode": "90048",
-        "addressCountry": "US"
-      }
-    },
-    {
-      "@type": "HomeAndConstructionBusiness",
-      "name": "Same Day Appliance Repair Beverly Hills",
-      "telephone": "(424) 248-1199",
-      "email": "beverlyhills@samedayappliance.repair",
-      "areaServed": {
-        "@type": "City",
-        "name": "Beverly Hills"
-      }
-    },
-    {
-      "@type": "HomeAndConstructionBusiness",
-      "name": "Same Day Appliance Repair Pasadena",
-      "telephone": "(626) 376-4458",
-      "email": "pasadena@samedayappliance.repair",
-      "areaServed": {
-        "@type": "City",
-        "name": "Pasadena"
-      }
-    },
-    {
-      "@type": "HomeAndConstructionBusiness",
-      "name": "Same Day Appliance Repair Thousand Oaks",
-      "telephone": "(424) 208-0228",
-      "email": "thousandoaks@samedayappliance.repair",
-      "areaServed": {
-        "@type": "City",
-        "name": "Thousand Oaks"
-      }
-    },
-    {
-      "@type": "HomeAndConstructionBusiness",
-      "name": "Same Day Appliance Repair Irvine",
-      "telephone": "(213) 401-9019",
-      "email": "irvine@samedayappliance.repair",
-      "areaServed": {
-        "@type": "City",
-        "name": "Irvine"
-      }
-    }
-  ]
-}
-</script>
-  
+          <textarea class="diagnose-textarea" id="diagnoseInput" placeholder="e.g. My LG dryer runs but clothes are still damp after a full cycle..." rows="4"></textarea>
 
+          <button class="btn btn-primary" id="diagnoseBtn" style="width:100%">Diagnose</button>
+
+          <div class="diagnose-result" id="diagnoseResult">
+            <p id="diagnoseText"></p>
+          </div>
+        </div>
+
+        <!-- Contact Form with two modes -->
+        <div class="glass" id="contactPanel">
+
+          <!-- Mode Switcher -->
+          <div class="mode-switcher">
+            <button class="mode-btn active" id="modeCallback" data-mode="callback">
+              📞 Call Me Back
+            </button>
+            <button class="mode-btn" id="modeBooking" data-mode="booking">
+              📅 Book a Visit
+            </button>
+          </div>
+
+          <!-- CALLBACK MODE -->
+          <div id="formCallback">
+            <p class="form-mode-desc">I have questions or want to schedule by phone</p>
+            <div class="form-group">
+              <label for="cbPhone">Your Phone Number <span class="required">*</span></label>
+              <input type="tel" id="cbPhone" class="form-input" placeholder="(323) ___-____" />
+            </div>
+            <button class="btn btn-primary" style="width:100%;margin-top:.5rem" id="cbSubmit">
+              Call Me Back
+            </button>
+            <p class="form-note">We'll call you back within 15 minutes during business hours</p>
+          </div>
+
+          <!-- BOOKING MODE -->
+          <div id="formBooking" style="display:none">
+            <p class="form-mode-desc">Schedule your LG dryer repair appointment</p>
+            <div class="form-group">
+              <label for="bkPhone">Phone Number <span class="required">*</span></label>
+              <input type="tel" id="bkPhone" class="form-input" placeholder="(323) ___-____" />
+            </div>
+            <div class="form-group">
+              <label for="bkName">Full Name</label>
+              <input type="text" id="bkName" class="form-input" placeholder="John Smith" />
+            </div>
+            <div class="form-group">
+              <label for="bkAddress">Address</label>
+              <input type="text" id="bkAddress" class="form-input" placeholder="123 Main St, Los Angeles, CA" />
+            </div>
+            <div class="form-group">
+              <label for="bkTime">Preferred Time</label>
+              <select id="bkTime" class="form-input">
+                <option value="">Select a time...</option>
+                <option>8:00 AM – 10:00 AM</option>
+                <option>10:00 AM – 12:00 PM</option>
+                <option>12:00 PM – 2:00 PM</option>
+                <option>2:00 PM – 4:00 PM</option>
+                <option>4:00 PM – 6:00 PM</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="bkComments">Comments</label>
+              <textarea id="bkComments" class="form-input" rows="2" placeholder="Describe the issue, model number, etc."></textarea>
+            </div>
+            <button class="btn btn-primary" style="width:100%;margin-top:.25rem" id="bkSubmit">
+              Confirm Booking
+            </button>
+          </div>
+
+          <!-- Success message (hidden) -->
+          <div id="formSuccess" style="display:none;text-align:center;padding:1.5rem 0">
+            <div style="font-size:2.5rem;margin-bottom:.75rem">✅</div>
+            <h3 style="margin:0 0 .5rem;color:var(--accent)">Got it!</h3>
+            <p class="text-secondary" style="font-size:.9rem" id="successMsg">We'll be in touch shortly.</p>
+            <a href="tel:3239907550" class="btn btn-primary" style="margin-top:1rem;display:inline-flex">
+              Or call now: (323) 990-7550
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
+
+<style>
+  .mode-switcher {
+    display: flex;
+    gap: .5rem;
+    margin-bottom: 1.25rem;
+    background: rgba(255,255,255,.05);
+    border-radius: 10px;
+    padding: 4px;
+  }
+  .mode-btn {
+    flex: 1;
+    padding: .6rem .75rem;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text-secondary, #888);
+    font-size: .875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .2s;
+    white-space: nowrap;
+  }
+  .mode-btn.active {
+    background: var(--accent, #1a6cf6);
+    color: #fff;
+  }
+  .form-mode-desc {
+    font-size: .875rem;
+    color: var(--text-secondary, #888);
+    margin: 0 0 1rem;
+  }
+  .form-note {
+    font-size: .78rem;
+    color: var(--text-secondary, #888);
+    text-align: center;
+    margin: .6rem 0 0;
+  }
+  .required {
+    color: var(--accent, #1a6cf6);
+  }
+  textarea.form-input {
+    resize: vertical;
+    min-height: 64px;
+  }
+</style>
+
+<script>
+  // ── Symptom chips ──────────────────────────────────────────
+  document.querySelectorAll('.symptom-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      chip.classList.toggle('active');
+      const textarea = document.getElementById('diagnoseInput') as HTMLTextAreaElement;
+      const active = document.querySelectorAll('.symptom-chip.active');
+      const symptoms = Array.from(active).map(c => (c as HTMLElement).dataset.symptom);
+      if (symptoms.length > 0) {
+        const current = textarea.value.replace(/^Selected symptoms:.*\n?/, '');
+        textarea.value = `Selected symptoms: ${symptoms.join(', ')}\n${current}`.trim();
+      }
+    });
+  });
+
+  // ── AI Diagnose ────────────────────────────────────────────
+  document.getElementById('diagnoseBtn')?.addEventListener('click', async () => {
+    const input = (document.getElementById('diagnoseInput') as HTMLTextAreaElement)?.value;
+    if (!input.trim()) return;
+
+    const resultDiv = document.getElementById('diagnoseResult')!;
+    const resultText = document.getElementById('diagnoseText')!;
+    const btn = document.getElementById('diagnoseBtn') as HTMLButtonElement;
+
+    btn.textContent = 'Analyzing...';
+    btn.disabled = true;
+    resultDiv.classList.add('visible');
+    resultText.textContent = 'Running diagnostics...';
+
+    try {
+      const apiKey = (import.meta as any).env.PUBLIC_ANTHROPIC_KEY;
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': apiKey,
+          'anthropic-version': '2023-06-01',
+          'anthropic-dangerous-direct-browser-access': 'true',
+        },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 1024,
+          messages: [{
+            role: 'user',
+            content: `You are an expert LG dryer repair technician. A customer describes their LG dryer issue below. Provide a brief diagnosis: likely cause, recommended fix, estimated cost range, and urgency level. Be helpful and professional. Keep it concise (3-5 short paragraphs).\n\nCustomer issue: ${input}`
+          }]
+        })
+      });
+
+      const data = await res.json();
+      if (data.content?.[0]?.text) {
+        resultText.textContent = data.content[0].text;
+      } else if (data.error) {
+        resultText.textContent = `Error: ${data.error.message}`;
+      }
+    } catch (err: any) {
+      resultText.textContent = `Could not connect to AI service. Please call (323) 990-7550 for a free phone diagnosis.`;
+    }
+
+    btn.textContent = 'Diagnose';
+    btn.disabled = false;
+  });
+
+  // ── Mode switcher ──────────────────────────────────────────
+  const modeCallback = document.getElementById('modeCallback')!;
+  const modeBooking  = document.getElementById('modeBooking')!;
+  const formCallback = document.getElementById('formCallback')!;
+  const formBooking  = document.getElementById('formBooking')!;
+
+  modeCallback.addEventListener('click', () => {
+    modeCallback.classList.add('active');
+    modeBooking.classList.remove('active');
+    formCallback.style.display = 'block';
+    formBooking.style.display  = 'none';
+  });
+
+  modeBooking.addEventListener('click', () => {
+    modeBooking.classList.add('active');
+    modeCallback.classList.remove('active');
+    formBooking.style.display  = 'block';
+    formCallback.style.display = 'none';
+  });
+
+  // ── Generic submit helper ──────────────────────────────────
+  async function submitForm(payload: object, btn: HTMLButtonElement, successMsg: string) {
+    btn.disabled = true;
+    const origText = btn.textContent;
+    btn.textContent = 'Sending...';
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+
+      if (data.ok) {
+        // Hide both forms, show success
+        formCallback.style.display = 'none';
+        formBooking.style.display  = 'none';
+        document.querySelector('.mode-switcher')!.setAttribute('style', 'display:none');
+        document.getElementById('successMsg')!.textContent = successMsg;
+        document.getElementById('formSuccess')!.style.display = 'block';
+      } else {
+        alert('Something went wrong. Please call (323) 990-7550 directly.');
+        btn.disabled = false;
+        btn.textContent = origText;
+      }
+    } catch {
+      alert('Network error. Please call (323) 990-7550 directly.');
+      btn.disabled = false;
+      btn.textContent = origText;
+    }
+  }
+
+  // ── Callback submit ────────────────────────────────────────
+  document.getElementById('cbSubmit')?.addEventListener('click', async () => {
+    const phone = (document.getElementById('cbPhone') as HTMLInputElement).value.trim();
+    if (!phone) {
+      alert('Please enter your phone number.');
+      return;
+    }
+    await submitForm(
+      { type: 'callback', phone },
+      document.getElementById('cbSubmit') as HTMLButtonElement,
+      "We'll call you back within 15 minutes during business hours (Mon–Sat 8am–7pm)."
+    );
+  });
+
+  // ── Booking submit ─────────────────────────────────────────
+  document.getElementById('bkSubmit')?.addEventListener('click', async () => {
+    const phone    = (document.getElementById('bkPhone')    as HTMLInputElement).value.trim();
+    const name     = (document.getElementById('bkName')     as HTMLInputElement).value.trim();
+    const address  = (document.getElementById('bkAddress')  as HTMLInputElement).value.trim();
+    const time     = (document.getElementById('bkTime')     as HTMLSelectElement).value;
+    const comments = (document.getElementById('bkComments') as HTMLTextAreaElement).value.trim();
+
+    if (!phone) {
+      alert('Please enter your phone number.');
+      return;
+    }
+
+    await submitForm(
+      { type: 'booking', phone, name, address, time, comments },
+      document.getElementById('bkSubmit') as HTMLButtonElement,
+      "Your booking request is received! We'll confirm your appointment shortly."
+    );
+  });
+</script>
