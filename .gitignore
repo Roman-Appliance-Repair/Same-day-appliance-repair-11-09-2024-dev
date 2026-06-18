@@ -19,3 +19,15 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# editor/page backups
+*.bak
+
+# local dev audit tooling & reports
+sdar_*.js
+sdar_*_report.txt
+INVENTORY.md
+new_content_files.txt
+
+# machine-local Claude Code settings
+.claude/settings.local.json

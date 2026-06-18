@@ -1,1351 +1,243 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import Container from "@components/container.astro";
-import Contactbtn from "@components/contactbtn.astro";
-import Btn from "@components/btn.astro";
-import Costanchor from "@components/price-list/components_dryer-repair-cost.astro";
-import CTA from "@components/CTA.astro";
-import Navbar from "@components/navbar/navbar.astro";
-import Reviews from "@components/reviews.astro";
-
-import "css/price/style_price.css";
+// Commercial Refrigerator Repair Cost in Los Angeles | Same Day Appliance Repair
+// /price-list/commercial-refrigerator-repair-cost/
 ---
-    <Layout title="Commercial Fridge Repair Cost LA | Price Guide" description="Commercial refrigerator repair costs in Los Angeles. Labor, parts & fees for walk-ins & reach-ins. Call (323) 870-4790 for same day service.">
-  <Navbar />
-<Reviews />
- 
-  <Container>
-    <main>
-      <h1>
-        <span class="animate-charcter"
-          >Commercial Refrigerator Repair Cost
-        </span>
-      </h1>
-
-      <div class="two-col-grid">
-        <div class="col-one">
-          <img
-            width="500px"
-            height="500px"
-            src="/refrigerator-repair/refrigerator-repair-1.webp"
-            alt="Commercial refrigerator repair cost"
-          />
-
-          <Contactbtn />
-        </div>
-
-        <div class="col-two">
-          <Costanchor />
-
-          <p>
-            At Same Day Appliance Repair, we are a family-owned business
-            committed to enhancing your customer experience. We understand the
-            frustration of appliance repairs, and we pride ourselves on our
-            transparency and reliability. This page is created to give you a
-            thorough understanding of our pricing policies, the costs associated
-            with a commercial refrigerator repair, and our unique approach to
-            service designed to relieve you of the stress of appliance
-            breakdowns.
-          </p>
-
-          <p>
-            We understand the importance of keeping your commercial
-            refrigeration units running efficiently without breaking the bank.
-            We offer competitive pricing tailored to your specific repair needs
-            and guarantee transparent cost estimates with no hidden fees,
-            ensuring you feel comfortable about the affordability of our
-            services.
-          </p>
-
-          <p><b>Have Questions? We're Here to Help!</b></p>
-
-          <p>
-            Feel free to call us if you have any questions. Our team is
-            dedicated to helping you and making sure you're happy.
-          </p>
-
-          <h2>How Much Does It Cost To Repair a Commercial Refrigerator?</h2>
-          <p>
-            The typical cost to repair a commercial fridge varies from $100 to
-            $1200, including parts and labor. The price can vary based on the
-            issue type and your appliance's brand and model. Our technician will
-            first need to diagnose the problem to provide you with the most
-            accurate estimate. Following the diagnosis, you'll receive a
-            detailed price breakdown.
-          </p>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Commercial Refrigerator Repair Cost Los Angeles 2026</title>
+  <meta name="description" content="Commercial refrigerator repair cost in Los Angeles — reach-in, prep tables, undercounter units. Labor from $240. $120 commercial diagnostic. (424) 325-0520."/>
+  <link rel="canonical" href="https://samedayappliance.repair/price-list/commercial-refrigerator-repair-cost/"/>
+  <style>
+    :root{--red:#C8102E;--black:#0a0a0a;--gray:#f5f5f5;--border:#e2e2e2;--text:#1a1a1a;--muted:#6b6b6b;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Inter',-apple-system,sans-serif;color:var(--text);line-height:1.6;}
+    a{color:inherit;text-decoration:none;}
+    .hero{background:var(--black);color:#fff;padding:72px 24px 64px;}
+    .hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:center;}
+    .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:14px;}
+    .hero h1{font-size:clamp(26px,3.5vw,42px);font-weight:700;line-height:1.15;margin-bottom:16px;letter-spacing:-.02em;}
+    .hero-sub{font-size:16px;color:rgba(255,255,255,.68);line-height:1.65;margin-bottom:28px;}
+    .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;}
+    .btn-red{background:var(--red);color:#fff;padding:13px 26px;border-radius:6px;font-size:15px;font-weight:600;}
+    .btn-out{border:1.5px solid rgba(255,255,255,.3);color:#fff;padding:13px 26px;border-radius:6px;font-size:15px;}
+    .stars{color:#f59e0b;}
+    .pbox{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:28px 24px;}
+    .pbox-lbl{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:16px;}
+    .pbox-main{font-size:42px;font-weight:700;color:#fff;line-height:1;margin-bottom:6px;}
+    .pbox-note{font-size:13px;color:rgba(255,255,255,.5);margin-bottom:20px;}
+    .pitems{border-top:1px solid rgba(255,255,255,.1);padding-top:16px;display:flex;flex-direction:column;gap:10px;}
+    .pi{display:flex;justify-content:space-between;font-size:13px;}
+    .pi-label{color:rgba(255,255,255,.55);}
+    .pi-val{font-weight:600;color:#fff;}
+    .pnote{margin-top:14px;background:rgba(200,16,46,.15);border:1px solid rgba(200,16,46,.3);border-radius:7px;padding:10px 14px;font-size:12px;color:rgba(255,255,255,.7);line-height:1.5;}
+    .tbar{background:var(--red);padding:13px 24px;}
+    .tbar-inner{max-width:1100px;margin:0 auto;display:flex;gap:20px;flex-wrap:wrap;justify-content:center;}
+    .ti{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:500;color:#fff;}
+    .sec{padding:68px 24px;}
+    .sec-gray{background:var(--gray);}
+    .sec-black{background:var(--black);color:#fff;}
+    .con{max-width:1100px;margin:0 auto;}
+    .sl{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:12px;}
+    h2{font-size:clamp(22px,3vw,32px);font-weight:700;line-height:1.2;letter-spacing:-.02em;margin-bottom:16px;}
+    .sec-black h2{color:#fff;}
+    .lead{font-size:16px;line-height:1.7;color:var(--muted);max-width:680px;margin-bottom:36px;}
+    .body-text p{font-size:16px;line-height:1.75;color:var(--text);margin-bottom:16px;}
+    .body-text p:last-child{margin-bottom:0;}
+    .tip-block{background:#fff8e7;border:1px solid #f0d070;border-radius:8px;padding:18px 20px;margin-top:32px;}
+    .tip-lbl{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#b08000;margin-bottom:8px;}
+    .tip-block p{font-size:14px;line-height:1.6;color:#6b5800;}
+    .ptable-wrap{overflow-x:auto;margin-top:8px;}
+    .ptable{width:100%;border-collapse:collapse;font-size:15px;}
+    .ptable th{text-align:left;padding:13px 16px;background:var(--black);color:#fff;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;}
+    .ptable td{padding:14px 16px;border-bottom:1px solid var(--border);vertical-align:top;}
+    .ptable tr:last-child td{border-bottom:none;}
+    .ptable tr:nth-child(even) td{background:#fafafa;}
+    .ptable tr.lux-row td{background:#fdf8f0;}
+    .rt{font-weight:600;}
+    .rd{font-size:13px;color:var(--muted);margin-top:3px;}
+    .pl{font-weight:700;color:var(--red);}
+    .pn{font-size:12px;color:var(--muted);margin-top:3px;}
+    .badge-lux{display:inline-block;background:#f5e6c8;color:#8a5a00;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;margin-left:6px;}
+    .badge-common{display:inline-block;background:#e8f4fd;color:#1060a0;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;margin-left:6px;}
+    .tnote{font-size:13px;color:var(--muted);margin-top:14px;padding:13px 16px;background:var(--gray);border-radius:6px;border-left:3px solid var(--red);}
+    .ex-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:32px;}
+    .ex-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:20px;}
+    .ex-tag{display:inline-block;background:var(--gray);font-size:11px;font-weight:600;text-transform:uppercase;color:var(--muted);padding:3px 8px;border-radius:4px;margin-bottom:10px;}
+    .ex-title{font-size:14px;font-weight:700;margin-bottom:8px;line-height:1.35;}
+    .ex-body{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
+    .ex-cost{background:var(--gray);border-radius:6px;padding:10px 12px;}
+    .ex-row{display:flex;justify-content:space-between;font-size:13px;padding:3px 0;}
+    .ex-l{color:var(--muted);}
+    .ex-v{font-weight:600;}
+    .ex-total{display:flex;justify-content:space-between;font-size:14px;font-weight:700;padding-top:8px;margin-top:6px;border-top:1px solid var(--border);}
+    .ex-tv{color:var(--red);}
+    .nb{background:var(--gray);border:1px solid var(--border);border-radius:6px;padding:8px 14px;font-size:14px;}
+    .nb-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
+    .btm{background:var(--black);color:#fff;padding:68px 24px;text-align:center;}
+    .btm h2{color:#fff;margin-bottom:12px;}
+    .btm p{font-size:16px;color:rgba(255,255,255,.62);margin-bottom:28px;max-width:520px;margin-left:auto;margin-right:auto;}
+    .btm-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+    @media(max-width:768px){.hero-inner{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <p class="eyebrow">Commercial Price List &middot; Los Angeles &middot; 2026</p>
+      <h1>Commercial Refrigerator Repair Cost in Los Angeles</h1>
+      <p class="hero-sub">Labor rates for commercial reach-in, prep table, undercounter, and display refrigerators. Not cooling, temperature issues, compressor, defrost, door seals. Same-day service.</p>
+      <div class="hero-ctas">
+        <a href="tel:+14243250520" class="btn-red">&#9990; (424) 325-0520</a>
+        <a href="/contact/" class="btn-out">Request Service</a>
       </div>
-
-      <div class="pricing-policy">
-        <div class="head_pricing-policy head_pricing-policy_foto">
-          <div class="head_pricing-policy_foto-a">
-            <h2>
-              Our Pricing Policy For Commercial Refrigerator Repair And How We
-              Work
-            </h2>
-            <p>
-              There are four costs to consider when making your commercial
-              refrigerator work optimally.
-            </p>
-          </div>
-
-          <div class="head_pricing-policy_foto-b">
-            <img
-              loading="lazy"
-              width="500px"
-              height="500px"
-              src="/refrigerator-repair/refrigerator-repair-2.webp"
-              alt="Commercial refrigerator repair cost per hour"
-            />
-          </div>
-        </div>
-
-        <div class="content_pricing-policy">
-          <div class="con-inside_pricing-policy">
-            <div class="icon_pricing-policy">
-              <svg
-                fill="#000000"
-                height="50px"
-                width="50px"
-                version="1.1"
-                id="Capa_1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                viewBox="0 0 490 490"
-                xml:space="preserve">
-                <g id="bold_copy_5_">
-                  <path
-                    d="M392.383,0H245H97.617v369.414L245,490l147.383-120.586V0z M361.758,354.898L245,450.432l-116.758-95.535V30.625H245
-		h116.758V354.898z"
-                  ></path>
-                  <path
-                    d="M245,311.395c-23.229,0-42.109,18.88-42.109,42.109c0,23.229,18.88,42.109,42.109,42.109
-		c23.229,0,42.109-18.88,42.109-42.109C287.109,330.275,268.229,311.395,245,311.395z M245,364.989
-		c-6.324,0-11.484-5.16-11.484-11.484c0-6.324,5.16-11.484,11.484-11.484c6.324,0,11.484,5.16,11.484,11.484
-		C256.484,359.828,251.324,364.989,245,364.989z"
-                  ></path>
-                  <path
-                    d="M238.079,62.919v12.005c-13.904,1.378-25.051,6.584-33.427,15.603c-8.376,9.019-12.556,20.151-12.556,33.427
-		c0,13.092,3.706,24.24,11.117,33.427c7.411,9.188,19.018,16.032,34.867,20.565v50.837c-4.364-2.113-8.33-5.497-11.882-10.198
-		c-3.553-4.701-5.987-10.275-7.289-16.752l-31.651,3.399c2.419,15.94,7.993,28.282,16.737,37.01
-		c8.743,8.728,20.09,13.95,34.101,15.649v22.065h17.579v-22.678c15.772-2.251,28.083-8.407,36.949-18.436
-		c8.851-10.03,13.276-22.372,13.276-37.01c0-13.092-3.507-23.842-10.55-32.218c-7.028-8.361-20.258-15.175-39.675-20.442v-47.438
-		c7.855,3.415,12.694,9.876,14.562,19.416l30.686-3.997c-2.098-12.143-6.952-21.82-14.547-29.048
-		c-7.61-7.243-17.839-11.637-30.701-13.169v-12.02H238.079z M238.079,143.356c-5.268-2.251-9.187-5.237-11.775-8.912
-		c-2.588-3.675-3.874-7.672-3.874-11.944c0-4.701,1.409-8.988,4.226-12.862c2.848-3.889,6.645-6.646,11.408-8.253v41.972H238.079z
-		 M271.383,192.187c3.2,3.935,4.778,8.606,4.778,14.011c0,6.064-1.899,11.347-5.696,15.833c-3.797,4.487-8.728,7.304-14.807,8.437
-		v-47.316C262.946,185.266,268.183,188.267,271.383,192.187z"
-                  ></path>
-                </g>
-              </svg>
-              <h3>Maintenance Cost</h3>
-            </div>
-
-            <div class="desc_pricing-policy">
-              <p>
-                Regular maintenance is essential for your refrigerator's
-                longevity and optimal performance. We recommend annual
-                maintenance, which includes cleaning condenser and evaporator
-                coils, inspecting and lubricating parts, checking refrigerant
-                levels and electrical connections, and verifying overall
-                operation, ideally performed by a professional technician to
-                prevent future problems and maintain safety standards. Our flat
-                fee for this comprehensive service is $125 for one refrigerator.
-                If you want our technician to perform maintenance on two or more
-                refrigerators, the cost will be $80 per fridge. The maintenance
-                of a walk-in refrigerator is $250.
-              </p>
-              <p>
-                This preventive approach not only saves you money by reducing
-                the need for repairs but also enhances the efficiency and
-                lifespan of your appliance. Schedule your maintenance
-                appointment with us today and ensure your commercial
-                refrigerator runs smoothly.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="content_pricing-policy">
-          <div class="con-inside_pricing-policy">
-            <div class="icon_pricing-policy">
-              <svg
-                fill="#000000"
-                width="50px"
-                height="50px"
-                viewBox="0 0 1024 1024"
-                xmlns="http://www.w3.org/2000/svg"
-                ><path
-                  d="M951.467 721.067C908.8 678.4 853.334 665.6 802.134 674.134l-409.6-409.6c8.533-51.2-4.267-110.933-46.933-149.333-42.667-46.933-110.933-64-174.933-42.667 0 0-4.267 0-4.267 4.267-4.267 0-4.267 4.267-8.533 4.267-8.533 8.533-8.533 21.333 0 29.867l59.733 59.733c4.267 4.267 4.267 12.8 0 17.067l-29.867 29.867c-8.533 4.267-12.8 4.267-17.067 0l-59.733-55.467c-8.533-8.533-21.333-8.533-29.867 0 0 0 0 4.267-4.267 4.267 0 0 0 4.267-4.267 4.267-21.333 59.733-8.533 128 38.4 174.933 34.133 34.133 76.8 46.933 115.2 46.933 12.8 0 21.333 0 34.133-4.267l409.6 409.6c-12.8 51.2 4.267 110.933 46.933 149.333 29.867 29.867 72.533 46.933 119.467 46.933 21.333 0 38.4-4.267 55.467-8.533 0 0 4.267 0 4.267-4.267 4.267 0 4.267-4.267 8.533-4.267 8.533-8.533 8.533-21.333 0-29.867L849.066 896c-4.267-4.267-4.267-4.267-4.267-8.533s0-8.533 4.267-8.533l29.867-29.867c4.267-4.267 4.267-4.267 8.533-4.267s4.267 0 8.533 4.267l55.467 55.467c8.533 8.533 21.333 8.533 29.867 0 0 0 0-4.267 4.267-4.267 4.267-4.267 4.267-4.267 4.267-8.533 25.6-59.733 8.533-128-38.4-170.667zM140.8 315.733c-25.6-25.6-38.4-64-34.133-98.133l29.867 29.867c12.8 8.533 25.6 17.067 42.667 17.067 12.8 0 29.867-4.267 38.4-17.067l29.867-29.867c21.333-21.333 21.333-55.467 0-76.8l-34.133-34.133c38.4-4.267 72.533 8.533 102.4 34.133 46.933 46.933 46.933 128 0 174.933-46.933 51.2-123.733 51.2-174.933 0zm166.4 59.734c12.8-8.533 29.867-17.067 38.4-29.867 12.8-12.8 21.333-25.6 29.867-42.667l384 384C746.667 695.466 729.6 704 716.8 716.8s-21.333 25.6-29.867 38.4L307.2 375.467zm580.267 426.666c-12.8 0-29.867 4.267-38.4 17.067L819.2 849.067c-8.533 8.533-17.067 25.6-17.067 38.4s4.267 29.867 17.067 38.4l29.867 29.867c-38.4 4.267-72.533-8.533-102.4-34.133-46.933-46.933-46.933-128 0-174.933s128-46.933 174.933 0c25.6 25.6 38.4 64 34.133 102.4l-29.867-29.867c-8.533-8.533-21.333-17.067-38.4-17.067z"
-                ></path><path
-                  d="M610.133 409.6c4.267 0 12.8 0 17.067-4.267L802.133 230.4l34.133 34.133-174.933 174.933c-8.533 8.533-8.533 21.333 0 29.867 4.267 4.267 8.533 4.267 17.067 4.267 4.267 0 12.8 0 17.067-4.267l196.267-192 68.267-25.6c4.267-4.267 12.8-8.533 12.8-12.8l29.867-85.333c4.267-8.533 0-17.067-4.267-21.333l-59.733-64c-4.267-4.267-12.8-8.533-21.333-4.267l-85.333 29.867c-4.267 4.267-12.8 8.533-12.8 12.8l-25.6 72.533c-4.267 0-4.267 4.267-4.267 4.267l-192 192c-8.533 8.533-8.533 21.333 0 29.867 4.267 4.267 8.533 4.267 12.8 4.267zm243.2-277.333l64-21.333 38.4 38.4-21.333 64-64 21.333-38.4-38.4 21.333-64zm-384 558.933L209.066 951.467c-8.533 8.533-17.067 8.533-21.333 4.267l-81.067-81.067c-4.267-4.267 0-12.8 4.267-21.333l256-256c8.533-8.533 8.533-21.333 0-29.867s-21.333-8.533-29.867 0l-256 256c-25.6 25.6-25.6 59.733-4.267 81.067l81.067 81.067c8.533 8.533 21.333 12.8 34.133 12.8 17.067 0 34.133-8.533 46.933-21.333l260.267-260.267c8.533-8.533 8.533-21.333 0-29.867s-21.333-4.267-29.867 4.267z"
-                ></path></svg
-              >
-              <h3>Service fees</h3>
-            </div>
-
-            <div class="desc_pricing-policy">
-              <p>
-                If your commercial refrigerator requires repair, we charge a
-                service fee of $80, which includes a detailed price breakdown.
-                This fee is waived if you choose to proceed with the repair.
-                Unlike some companies, we guarantee you will not pay this fee if
-                we cannot diagnose properly. Our technicians are highly trained
-                and equipped with specialized tools to accurately diagnose and
-                resolve issues, ensuring transparency and fairness in our
-                charges.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="content_pricing-policy">
-          <div class="con-inside_pricing-policy">
-            <div class="icon_pricing-policy">
-              <svg
-                height="50px"
-                width="50px"
-                version="1.1"
-                id="Layer_1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                viewBox="0 0 512 512"
-                xml:space="preserve">
-                <polygon
-                  style="fill:#FFFFFF;"
-                  points="58,397.144 58,114.856 256,9.072 454,114.856 454,397.144 256,502.936 "
-                ></polygon>
-                <path
-                  id="cost-svg"
-                  style="fill:#000;"
-                  d="M256,18.144l190,101.512V392.36L256,493.856L66,392.352V119.648L256,18.144 M256,0L50,110.056
-	v291.888L256,512l206-110.056V110.056L256,0L256,0z"
-                ></path>
-                <circle cx="256" cy="115.624" r="27.256"></circle>
-                <path
-                  d="M286.424,153.776h-60.856c-21.456,0-38.92,17.464-38.92,38.92v76.32c0,7.816,6.336,14.152,14.152,14.152
-	s14.152-6.336,14.152-14.152V200.56h8.496v64.536c0,0.032-0.008,0.056-0.008,0.088v144.288c0,7.816,6.336,14.152,14.152,14.152
-	c7.816,0,14.152-6.336,14.152-14.152v-116.08h8.488v116.08c0,7.816,6.336,14.152,14.152,14.152s14.152-6.336,14.152-14.152v-116.08
-	v-28.208V200.56h8.496v68.448c0,7.816,6.336,14.152,14.152,14.152s14.152-6.336,14.152-14.152v-76.32
-	C325.344,171.24,307.88,153.776,286.424,153.776z"
-                ></path>
-              </svg>
-              <h3>Labor cost</h3>
-            </div>
-
-            <div class="desc_pricing-policy">
-              <p>
-                See prices below. The cost of labor depends on the complexity of
-                the commercial refrigerator repair and the estimated time
-                required. We ensure transparency by providing a detailed quote
-                before you commit to the service. Should the repair take longer
-                than expected, you won't be charged extra; we waive the
-                diagnostic fee upon proceeding with the repair, and you will pay
-                the cost of the repair and parts if needed.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="content_pricing-policy">
-          <div class="con-inside_pricing-policy">
-            <div class="icon_pricing-policy">
-              <svg
-                fill="#000000"
-                height="50px"
-                width="50px"
-                version="1.1"
-                id="Capa_1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                viewBox="0 0 383.114 383.114"
-                xml:space="preserve">
-                <path
-                  d="M144.114,316.654c4.864,1.025,7.976,5.8,6.95,10.663c-0.894,4.237-4.633,7.146-8.798,7.146
- c-0.615,0-1.239-0.063-1.865-0.195c-52.492-11.066-93.56-52.135-104.624-104.627c-1.025-4.864,2.087-9.638,6.951-10.663
- c4.86-1.024,9.637,2.087,10.663,6.95C62.984,271.446,98.596,307.058,144.114,316.654z M177.525,201.533c0-4.971-4.029-9-9-9h-0.031
- c-4.971,0-8.984,4.029-8.984,9s4.044,9,9.015,9S177.525,206.503,177.525,201.533z M383.114,22.071v109.6c0,4.971-4.029,9-9,9
- s-9-4.029-9-9v-10.949H225.56l-30.513,52.852c5.318,5.05,9.203,11.599,10.969,18.96h43.302v-42.865c0-4.971,4.029-9,9-9s9,4.029,9,9
- v51.598c0.002,0.089,0.004,0.178,0.004,0.268c0,29.557-13.044,56.124-33.679,74.247c-0.21,0.222-0.434,0.436-0.67,0.64
- c-8.145,7.018-17.32,12.601-27.13,16.603c-11.401,4.669-23.861,7.267-36.911,7.321c-0.02,0.003-0.038,0-0.056,0
- c-0.024,0-0.044,0-0.067,0.001c-0.025,0.001-0.048,0.001-0.071,0c-0.025-0.001-0.051-0.001-0.074,0c-0.025,0-0.052,0-0.076,0
- c-0.028,0-0.079-0.007-0.078,0c0,0,0,0,0,0c-17.77,0-34.465-4.718-48.89-12.964c-0.172-0.086-0.344-0.178-0.513-0.275
- c-0.179-0.103-0.353-0.212-0.522-0.325c-29.227-17.183-48.887-48.963-48.887-85.247s19.661-68.064,48.888-85.247
- c0.169-0.113,0.343-0.223,0.522-0.325c0.169-0.098,0.34-0.189,0.513-0.275c14.427-8.248,31.117-12.964,48.893-12.964
- c0.719,0,1.419,0.084,2.089,0.244c0.671-0.16,1.37-0.244,2.089-0.244h47.517c0.109-0.003,0.22-0.003,0.329,0h144.578V51.022H172.69
- c-0.717,0-1.415-0.084-2.083-0.242c-0.668,0.158-1.366,0.242-2.083,0.242C85.519,51.022,18,118.541,18,201.533
- s67.519,150.511,150.512,150.511c57.937,0,111.379-33.87,136.151-86.288c0.416-0.878,0.954-1.658,1.586-2.329
- c8.479-18.72,13.235-39.469,13.32-61.301c-0.002-0.075-0.003-0.149-0.003-0.225v-52.233c0-4.971,4.029-9,9-9s9,4.029,9,9v51.598
- c0.002,0.089,0.004,0.178,0.004,0.268c0,92.917-75.594,168.511-168.512,168.511c-0.182,0-0.363,0-0.546,0
- C75.594,370.043,0,294.45,0,201.533S75.594,33.022,168.512,33.022c0.719,0,1.419,0.084,2.089,0.244
- c0.671-0.16,1.37-0.244,2.089-0.244h192.424V22.071c0-4.971,4.029-9,9-9S383.114,17.1,383.114,22.071z M88.195,192.533h42.81
- c1.767-7.362,5.651-13.91,10.971-18.961l-21.397-37.063C102.922,149.559,90.745,169.614,88.195,192.533z M120.577,266.557
- l21.398-37.063c-5.319-5.051-9.204-11.599-10.971-18.961h-42.81C90.745,233.455,102.92,253.508,120.577,266.557z M200.871,275.581
- l-21.4-37.068c-3.475,1.032-7.153,1.586-10.958,1.586c-3.806,0-7.483-0.554-10.959-1.586l-21.401,37.069
- c9.913,4.348,20.86,6.763,32.36,6.763c0.02,0,0.041,0,0.063,0h0.002c0.026,0,0.047,0,0.071,0c0.021,0,0.048,0,0.066,0
- c0.023,0,0.044-0.001,0.068,0c0.019-0.002,0.043-0.001,0.063-0.001c0.008,0,0.01,0,0.019,0c10.25-0.045,20.315-2.037,29.685-5.788
- C199.331,276.242,200.102,275.917,200.871,275.581z M168.512,222.098c11.339,0,20.564-9.226,20.564-20.565
- s-9.225-20.565-20.564-20.565c-11.341,0-20.567,9.226-20.567,20.565S157.171,222.098,168.512,222.098z M195.047,229.493
- l21.398,37.063c17.654-13.049,29.83-33.104,32.379-56.022h-42.808C204.25,217.894,200.365,224.443,195.047,229.493z
-  M204.775,120.721H172.69c-0.717,0-1.415-0.084-2.083-0.242c-0.668,0.158-1.366,0.242-2.083,0.242
- c-11.505,0-22.456,2.415-32.372,6.765l21.4,37.067c3.476-1.032,7.153-1.586,10.959-1.586c3.805,0,7.483,0.554,10.958,1.586
- L204.775,120.721z"
-                ></path>
-              </svg>
-              <h3>Replacement Parts</h3>
-            </div>
-
-            <div class="desc_pricing-policy">
-              <p>
-                See prices below. While not every repair needs new parts,
-                certain situations require replacement parts to restore your
-                commercial refrigerator's peak performance. Our technicians
-                carry various parts in their vehicles, which usually enables
-                same-day repairs. If a part must be ordered, the cost will vary
-                depending on the repair, brand, and model of your commercial
-                refrigerator.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="pros_pricing-policy">
-          <p>
-            *We always do our best to find parts at a lower price for our
-            customers. We do not make extra money on the parts, our priority is
-            to make it as easy as possible for the customer.
-          </p>
-        </div>
-      </div>
-    </main>
-    <Btn />
-
-    <div class="job-prices job-prices-cooktop" id="labor-cost-anchor">
-      <div class="head_pricing-policy head_pricing-policy_foto">
-        <div class="head_pricing-policy_foto-b">
-          <img
-            loading="lazy"
-            width="500px"
-            height="500px"
-            src="/refrigerator-repair/refrigerator-repair-3.webp"
-            alt="refrigerator repair labor cost"
-          />
-        </div>
-
-        <div class="head_pricing-policy_foto-a">
-          <h2>
-            Commercial Refrigerator Repair Cost - Labor Only Excluding Parts
-          </h2>
-          <p>
-            Here are common problems and associated repair costs in Los Angeles:
-          </p>
-        </div>
-      </div>
-
-      <div class="full-content_job-prices">
-        <div class="content_job-prices" id="col-prices">
-          <div class="desk_job-prices">
-            <a href="#"
-              ><p>
-                Refrigerator not cooling, making loud noises, or cycling
-                frequently.
-              </p></a
-            >
-            <p>Compressor Replacement Cost</p>
-          </div>
-
-          <div class="money_job-prices">
-            <p>450 - 900$</p>
-          </div>
-        </div>
-
-        <div class="content_job-prices">
-          <div class="desk_job-prices">
-            <a href="#"
-              ><p>
-                Poor cooling, visible frost build-up on the evaporator coils,
-                hissing sounds.
-              </p></a
-            >
-            <p>Refrigerant Leak Repair Cost</p>
-          </div>
-
-          <div class="money_job-prices">
-            <p>150 - 400$</p>
-          </div>
-        </div>
-
-        <div class="content_job-prices" id="col-prices">
-          <div class="desk_job-prices">
-            <a href="#"
-              ><p>
-                Temperature fluctuations, or the unit not maintaining the set
-                temperature.
-              </p></a
-            >
-            <p>Thermostat Replacement Cost</p>
-          </div>
-
-          <div class="money_job-prices">
-            <p>100 - 300$</p>
-          </div>
-        </div>
-
-        <div class="content_job-prices">
-          <div class="desk_job-prices">
-            <a href="#"
-              ><p>
-                Uneven cooling within the fridge, ice buildup on the evaporator
-                coil, the fridge is unusually warm.
-              </p></a
-            >
-            <p>Evaporator Fan Motor Replacement Cost</p>
-          </div>
-
-          <div class="money_job-prices">
-            <p>120 - 350$</p>
-          </div>
-        </div>
-
-        <div class="content_job-prices" id="col-prices">
-          <div class="desk_job-prices">
-            <a href="#"
-              ><p>Overheating of the fridge's exterior, poor cooling.</p></a
-            >
-            <p>Condenser Fan Motor Replacement Cost</p>
-          </div>
-
-          <div class="money_job-prices">
-            <p>120 - 350$</p>
-          </div>
-        </div>
-
-        <div class="content_job-prices">
-          <div class="desk_job-prices">
-            <a href="#"
-              ><p>Frost buildup near the door, higher energy consumption.</p></a
-            >
-            <p>Door Seal (Gasket) Replacement Cost</p>
-          </div>
-
-          <div class="money_job-prices">
-            <p>50 - 150$</p>
-          </div>
-        </div>
-
-        <div class="content_job-prices" id="col-prices">
-          <div class="desk_job-prices">
-            <a href="#"
-              ><p>
-                Excessive frost and ice accumulation, the fridge constantly
-                running.
-              </p></a
-            >
-            <p>Defrost Heater Replacement Cost</p>
-          </div>
-
-          <div class="money_job-prices">
-            <p>100 - 300$</p>
-          </div>
-        </div>
-
-        <div class="content_job-prices">
-          <div class="desk_job-prices">
-            <a href="#"
-              ><p>
-                The fridge is not responding to controls, erratic behavior, or
-                display issues.
-              </p></a
-            >
-            <p>Control Board Replacement Cost</p>
-          </div>
-
-          <div class="money_job-prices">
-            <p>150 - 400$</p>
-          </div>
-        </div>
-
-        <div class="content_job-prices" id="col-prices">
-          <div class="desk_job-prices">
-            <a href="#"
-              ><p>
-                Refrigerator not starting, or starting then stopping shortly
-                after.
-              </p></a
-            >
-            <p>Start Relay Replacement Cost</p>
-          </div>
-
-          <div class="money_job-prices">
-            <p>80 - 200$</p>
-          </div>
-        </div>
-
-        <div class="content_job-prices">
-          <div class="desk_job-prices">
-            <a href="#"
-              ><p>Water pooling inside the fridge or under the unit.</p></a
-            >
-            <p>Drain Line Clearing Cost</p>
-          </div>
-
-          <div class="money_job-prices">
-            <p>75 - 200$</p>
-          </div>
-        </div>
-
-        <div class="content_job-prices" id="col-prices">
-          <div class="desk_job-prices">
-            <a href="#"
-              ><p>Dim or non-functioning lights inside the refrigerator.</p></a
-            >
-            <p>Interior Lighting Fixtures Replacement Cost</p>
-          </div>
-
-          <div class="money_job-prices">
-            <p>50 - 150$</p>
-          </div>
-        </div>
-
-        <div class="content_job-prices">
-          <div class="desk_job-prices">
-            <a href="#"
-              ><p>
-                Ice not being made, small or misshaped ice cubes, leaking water.
-              </p></a
-            >
-            <p>Icemaker Issues Repair Cost</p>
-          </div>
-
-          <div class="money_job-prices">
-            <p>100 - 300$</p>
-          </div>
-        </div>
-
-        <div class="content_job-prices" id="col-prices">
-          <div class="desk_job-prices">
-            <a href="#"><p>Banging, clicking, humming, or buzzing sounds.</p></a
-            >
-            <p>Unusual Noises Repair Cost</p>
-          </div>
-
-          <div class="money_job-prices">
-            <p>75 - 300$</p>
-          </div>
-        </div>
-
-        <div class="content_job-prices">
-          <div class="desk_job-prices">
-            <a href="#"
-              ><p>Non-responsive or faulty readings on the display.</p></a
-            >
-            <p>Display Panel Malfunction Repair Cost</p>
-          </div>
-
-          <div class="money_job-prices">
-            <p>100 - 350$</p>
-          </div>
-        </div>
+      <div style="margin-top:20px;font-size:13px;color:rgba(255,255,255,.45);">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.6 &middot; 37 reviews &middot; CSLB #1138898 &middot; Commercial diagnostic $120
       </div>
     </div>
-    <Btn />
-
-    <div class="job-prices" id="parts-cost-anchor">
-      <div class="head_pricing-policy head_pricing-policy_foto">
-        <div class="head_pricing-policy_foto-a">
-          <h2>Commercial Refrigerator Replacement Parts Cost.</h2>
-          <p>
-            The cost of replacement parts may vary depending on the
-            refrigerator. The specific part, make and model. Here is an
-            approximate range for some parts.
-          </p>
-        </div>
-
-        <div class="head_pricing-policy_foto-b">
-          <img
-            loading="lazy"
-            width="500px"
-            height="500px"
-            src="/refrigerator-repair/refrigerator-repair-4.webp"
-            alt="Commercial fridge repair cost"
-          />
-        </div>
+    <div class="pbox">
+      <div class="pbox-lbl">Typical Labor Range</div>
+      <div class="pbox-main">$240–$520</div>
+      <div class="pbox-note">commercial refrigerators · labor only</div>
+      <div class="pitems">
+        <div class="pi"><span class="pi-label">Commercial diagnostic</span><span class="pi-val">$120</span></div>
+        <div class="pi"><span class="pi-label">Not cooling / temp issues</span><span class="pi-val">$240–$460</span></div>
+        <div class="pi"><span class="pi-label">Compressor</span><span class="pi-val">$360–$520</span></div>
+        <div class="pi"><span class="pi-label">Evaporator / defrost</span><span class="pi-val">$240–$420</span></div>
+        <div class="pi"><span class="pi-label">Door gasket</span><span class="pi-val">$180–$320</span></div>
+        <div class="pi"><span class="pi-label">Warranty</span><span class="pi-val">90 days</span></div>
       </div>
-
-      <div class="content_job-prices" id="col-prices">
-        <div class="desk_job-prices">
-          <a href="#"><p>Compressor.</p></a>
-          <p>
-            Vital for the cooling process, varies significantly based on
-            capacity and brand.
-          </p>
-        </div>
-
-        <div class="money_job-prices">
-          <p>400 - 1200$</p>
-        </div>
-      </div>
-
-      <div class="content_job-prices">
-        <div class="desk_job-prices">
-          <a href="#"><p>Refrigerant.</p></a>
-          <p>
-            Necessary for cooling; price varies by type (e.g., R-22 vs. R-410A).
-          </p>
-        </div>
-
-        <div class="money_job-prices">
-          <p>50 - 150$</p>
-        </div>
-      </div>
-
-      <div class="content_job-prices" id="col-prices">
-        <div class="desk_job-prices">
-          <a href="#"><p>Thermostat.</p></a>
-          <p>Regulates the refrigerator's internal temperature.</p>
-        </div>
-
-        <div class="money_job-prices">
-          <p>30 - 100$</p>
-        </div>
-      </div>
-
-      <div class="content_job-prices">
-        <div class="desk_job-prices">
-          <a href="#"><p>Evaporator Fan Motor.</p></a>
-          <p>Circulates air inside the fridge to ensure even cooling.</p>
-        </div>
-
-        <div class="money_job-prices">
-          <p>100 - 300$</p>
-        </div>
-      </div>
-
-      <div class="content_job-prices" id="col-prices">
-        <div class="desk_job-prices">
-          <a href="#"><p>Condenser Fan Motor.</p></a>
-          <p>Helps dissipate heat from the condenser coils.</p>
-        </div>
-
-        <div class="money_job-prices">
-          <p>100 - 300$</p>
-        </div>
-      </div>
-
-      <div class="content_job-prices">
-        <div class="desk_job-prices">
-          <a href="#"><p>Door Seal (Gasket).</p></a>
-          <p>
-            Seals the door to prevent air leaks, maintaining internal
-            temperature.
-          </p>
-        </div>
-
-        <div class="money_job-prices">
-          <p>40 - 150$</p>
-        </div>
-      </div>
-
-      <div class="content_job-prices" id="col-prices">
-        <div class="desk_job-prices">
-          <a href="#"><p>Defrost Heater.</p></a>
-          <p>
-            Prevents excessive frost buildup by heating the evaporator coil at
-            regular intervals.
-          </p>
-        </div>
-
-        <div class="money_job-prices">
-          <p>50 - 200$</p>
-        </div>
-      </div>
-
-      <div class="content_job-prices">
-        <div class="desk_job-prices">
-          <a href="#"><p>Control Board.</p></a>
-          <p>
-            The electronic system controlling various functions of the
-            refrigerator.
-          </p>
-        </div>
-
-        <div class="money_job-prices">
-          <p>150 - 500$</p>
-        </div>
-      </div>
-
-      <div class="content_job-prices" id="col-prices">
-        <div class="desk_job-prices">
-          <a href="#"><p>Start Relay.</p></a>
-          <p>Helps start the compressor.</p>
-        </div>
-
-        <div class="money_job-prices">
-          <p>20 - 100$</p>
-        </div>
-      </div>
-
-      <div class="content_job-prices">
-        <div class="desk_job-prices">
-          <a href="#"><p>Drain Pan.</p></a>
-          <p>Collects water during the defrost cycle.</p>
-        </div>
-
-        <div class="money_job-prices">
-          <p>30 - 150$</p>
-        </div>
-      </div>
-
-      <div class="content_job-prices" id="col-prices">
-        <div class="desk_job-prices">
-          <a href="#"><p>Interior Lighting.</p></a>
-          <p>LED or fluorescent light fixtures for internal illumination.</p>
-        </div>
-
-        <div class="money_job-prices">
-          <p>15 - 100$</p>
-        </div>
-      </div>
-
-      <div class="content_job-prices">
-        <div class="desk_job-prices">
-          <a href="#"><p>Icemaker.</p></a>
-          <p>An additional component for models that produce ice.</p>
-        </div>
-
-        <div class="money_job-prices">
-          <p>100 - 500$</p>
-        </div>
-      </div>
-
-      <div class="content_job-prices" id="col-prices">
-        <div class="desk_job-prices">
-          <a href="#"><p>Shelves and Bins.</p></a>
-          <p>For storage and organization inside the fridge.</p>
-        </div>
-
-        <div class="money_job-prices">
-          <p>50 - 220$</p>
-        </div>
-      </div>
-
-      <div class="content_job-prices">
-        <div class="desk_job-prices">
-          <a href="#"><p>Display Panel.</p></a>
-          <p>Shows temperature and control settings.</p>
-        </div>
-
-        <div class="money_job-prices">
-          <p>100 - 400$</p>
-        </div>
-      </div>
-
-      <div class="content_job-prices" id="col-prices">
-        <div class="desk_job-prices">
-          <a href="#"><p>Coils (Evaporator and Condenser).</p></a>
-          <p>Vital for the heat exchange process.</p>
-        </div>
-
-        <div class="money_job-prices">
-          <p>200 - 600$</p>
-        </div>
-      </div>
-
-      <div class="pros_job-prices">
-        <p>*Free dust cleaning inside the unit is included in the service.</p>
-        <p>
-          Considering a do-it-yourself appliance repair for simpler tasks can be
-          a cost-effective way to save on labor costs. However, it's important
-          to weigh the pros and cons of repairing with your own hands. While you
-          may only need to pay for replacement parts, a do-it-yourself repair
-          may take longer and may not offer the specialized knowledge and safety
-          assurance that professional Technicians provide.
-        </p>
-      </div>
+      <div class="pnote">All prices are <strong>labor only</strong>. Parts quoted separately after diagnosis.</div>
     </div>
-    <Btn />
-
-    <div class="maintenance">
-      <div class="head_pricing-policy head_pricing-policy_foto">
-        <div class="head_pricing-policy_foto-b">
-          <img
-            loading="lazy"
-            width="600px"
-            height="500px"
-            src="/refrigerator-repair/refrigerator-repair-5.webp"
-            alt="Commercial refrigerator repair labor cost"
-          />
-        </div>
-
-        <div class="head_pricing-policy_foto-a">
-          <h2>
-            What is Included Into The Annual/ Semi-Annual Commercial
-            Refrigerator Maintenance
-          </h2>
-        </div>
-      </div>
-
-      <div class="description_maintenance">
-        <p>
-          <b
-            >The key components of annual or semi-annual commercial refrigerator
-            maintenance include:</b
-          >
-        </p>
-        <p>
-          - Cleaning the condenser coils and evaporator coils to remove dirt,
-          dust, and debris that can reduce heat transfer and efficiency.
-        </p>
-        <p>
-          - Inspecting all parts for wear and tear, including drain lines,
-          electrical connections, air filters, evaporator coils, door gaskets,
-          drain pans and tubes, ice maker, fan motor, and refrigeration levels.
-        </p>
-        <p>
-          - Lubricating moving parts like bearings, seals, and gaskets according
-          to the manufacturer's instructions.
-        </p>
-        <p>
-          - Inspecting the refrigerant charge to ensure it is within the
-          manufacturer's specifications and adding refrigerant if necessary
-          (only by trained personnel).
-        </p>
-        <p>
-          - Checking all electrical connections and wiring for damage,
-          corrosion, or loose connections.
-        </p>
-        <p>
-          - Verifying that all equipment is fully operational and there are no
-          abnormal sounds or smells.
-        </p>
-
-        <div class="pros_job-prices">
-          <p>
-            *Having a professional technician handle the annual/semi-annual
-            maintenance is important, as they can identify any issues that could
-            cause future problems.
-          </p>
-        </div>
-      </div>
-      <Btn />
-    </div>
-
-    <div class="faq-full" id="faqs-anchor">
-      <h2>FAQs</h2>
-
-      <div class="FAQ">
-        <div class="fa">
-          <h3>Which Professional Can Help With Refrigerator Repairs?</h3>
-        </div>
-
-        <div class="fa_plus">︾</div>
-
-        <div class="fa_minus">︽</div>
-      </div>
-
-      <div class="questions">
-        <p>
-          Our team of certified and experienced technicians specializes in all
-          aspects of commercial refrigerator repairs and maintenance. Each
-          technician is equipped with the latest tools and knowledge to handle
-          any issue, ensuring your refrigerator operates at peak efficiency.
-        </p>
-      </div>
-
-      <div class="FAQ">
-        <div class="fa">
-          <h3>Hiring Local Professionals?</h3>
-        </div>
-
-        <div class="fa_plus">︾</div>
-
-        <div class="fa_minus">︽</div>
-      </div>
-
-      <div class="questions">
-        <p>
-          Choosing local professionals for your commercial refrigerator repairs
-          means faster response times and personalized service. Our Los
-          Angeles-based technicians understand local regulations and
-          environmental factors that may impact your refrigeration needs,
-          providing tailored solutions that ensure compliance and efficiency.
-        </p>
-      </div>
-
-      <div class="FAQ">
-        <div class="fa">
-          <h3>
-            What Factors Influence the Cost of the Commercial Refrigerator
-            Repair?
-          </h3>
-        </div>
-
-        <div class="fa_plus">︾</div>
-
-        <div class="fa_minus">︽</div>
-      </div>
-
-      <div class="questions">
-        <p>Several factors influence the cost of repairs, including:</p>
-        <p>
-          <b>Type of Repair</b>Simple repairs like replacing fans or cleaning
-          coils are less expensive compared to compressor replacements or
-          refrigerant leaks.
-        </p>
-        <p>
-          <b>Age and Condition of the Refrigerator:</b>Older units may require
-          more frequent and extensive repairs.
-        </p>
-        <p>
-          <b>Brand and Model Specificity:</b>High-end or specialized
-          refrigerators may require specific parts that are more costly.
-        </p>
-        <p>
-          <b>Urgency of the Repair:</b>Emergency repairs can cost more due to
-          the need for immediate service.
-        </p>
-      </div>
-
-      <div class="FAQ">
-        <div class="fa">
-          <h3>What Are The Brands of Commercial Refrigerators We Repair?</h3>
-        </div>
-
-        <div class="fa_plus">︾</div>
-
-        <div class="fa_minus">︽</div>
-      </div>
-
-      <div class="questions">
-        <p>
-          <b
-            >We repair a wide range of commercial refrigerator brands, including
-            but not limited to:</b
-          >
-        </p>
-        <p>True, Turbo Air, Beverage-Air, Hoshizaki, Delfield, Traulsen.</p>
-        <p>
-          Whether your unit is a walk-in cooler or an under-counter
-          refrigerator, our skilled technicians have the expertise to diagnose
-          and fix it promptly.
-        </p>
-      </div>
-
-      <div class="FAQ">
-        <div class="fa">
-          <h3>How much does it cost to repair a commercial refrigerator?</h3>
-        </div>
-
-        <div class="fa_plus">︾</div>
-
-        <div class="fa_minus">︽</div>
-      </div>
-
-      <div class="questions">
-        <p>
-          The cost of repairing a commercial refrigerator can vary widely
-          depending on several factors, including the extent of the damage, the
-          specific parts required, and the geographical location of your
-          business. Typically, minor repairs may start from a few hundred
-          dollars, while more significant issues might cost up to $1,000 or
-          more, influenced by the price of labor and essential parts such as
-          compressors or control boards. Before proceeding with repairs, it's
-          advisable to check if your refrigerator is still under warranty, as
-          this could potentially cover some or all of the repair costs.
-          Additionally, it's prudent to read reviews and seek recommendations
-          for reliable repair services to ensure quality work and fair pricing
-        </p>
-      </div>
-
-      <div class="FAQ">
-        <div class="fa">
-          <h3>
-            How do refrigerator repair costs compare between a standard fridge
-            and a commercial unit?
-          </h3>
-        </div>
-
-        <div class="fa_plus">︾</div>
-
-        <div class="fa_minus">︽</div>
-      </div>
-
-      <div class="questions">
-        <p>
-          Commercial refrigeration repairs can be more expensive than
-          residential refrigerator repairs due to the complexity of the systems,
-          the cost of components like motors and compressors, and the higher
-          labor charges associated with commercial appliance repair.
-        </p>
-      </div>
-
-      <div class="FAQ">
-        <div class="fa">
-          <h3>What are common issues that necessitate refrigerator repairs?</h3>
-        </div>
-
-        <div class="fa_plus">︾</div>
-
-        <div class="fa_minus">︽</div>
-      </div>
-
-      <div class="questions">
-        <p>
-          Common issues include motor failures, leaky door seals, thermostat
-          issues, and problems with the control board. Regular maintenance can
-          help identify these issues before they require expensive repairs.
-        </p>
-
-        <p>
-          <b>Pros:</b>
-        </p>
-
-        <p>
-          1. Expertise: Our trained technicians possess the expertise and
-          experience to accurately diagnose and efficiently repair appliance
-          issues.
-        </p>
-
-        <p>
-          2. Quality Workmanship: We ensure that repairs are completed to the
-          highest standard, minimizing the likelihood of recurring problems and
-          ensuring long-term functionality.
-        </p>
-
-        <p>
-          3. Time-saving: By entrusting your appliance repairs to us, you save
-          valuable time and effort. Our technicians can swiftly identify the
-          issue and perform the necessary repairs, getting your appliance back
-          up and running in no time.
-        </p>
-
-        <p>
-          4. Warranty: We stand behind our work with warranties, providing you
-          with peace of mind and protection against future issues.
-        </p>
-
-        <p>
-          5. Safety: DIY appliance repair can pose significant safety hazards,
-          especially when dealing with complex appliances. Our professionals
-          have the knowledge and tools to perform repairs safely, minimizing the
-          risk of accidents or injuries.
-        </p>
-
-        <p><b>Cons:</b></p>
-        <p>
-          1. Cost: While professional repair services may involve initial costs,
-          they ultimately offer greater value by ensuring quality repairs and
-          preventing further damage.
-        </p>
-        <p>
-          2. Waiting Time: Scheduling an appointment with our repair service
-          ensures prompt attention to your appliance issues, minimizing waiting
-          times and inconvenience.
-        </p>
-        <p>
-          3. Lack of Control: By choosing our professional service, you benefit
-          from our expertise and judgment, ensuring the best possible outcome
-          for your appliance.
-        </p>
-        <p>
-          4. Potential for Overcharging: With our transparent pricing and
-          commitment to customer satisfaction, you can trust that you'll receive
-          fair and competitive pricing for parts and services.
-        </p>
-        <p>
-          5. Limited Availability: Our reputable repair service is committed to
-          serving our customers promptly and efficiently, ensuring that your
-          appliance issues are addressed in a timely manner.
-        </p>
-        <p>
-          In summary, entrusting your appliance to our professional service not
-          only saves you time and effort but also ensures the safety and
-          longevity of your appliances. Avoid the risks and uncertainties of DIY
-          repairs and rely on our expert technicians for all your appliance
-          repair needs.
-        </p>
-      </div>
-
-      <div class="FAQ">
-        <div class="fa">
-          <h3>
-            Is it cost-effective to repair an old commercial refrigerator or
-            should I replace it?
-          </h3>
-        </div>
-
-        <div class="fa_plus">︾</div>
-
-        <div class="fa_minus">︽</div>
-      </div>
-
-      <div class="questions">
-        <p>
-          Deciding whether to repair or replace an old commercial refrigerator
-          depends on several factors, including the cost-effectiveness of the
-          repair versus the price of a new unit. If the refrigerator is broken
-          and constantly experiencing issues, the decision might lean towards
-          replacement, especially considering the average lifespan of such
-          appliances. The cost of repair, which sometimes might be less than the
-          mini fridge repair cost, could seem economically feasible, but you
-          also need to consider the long-term benefits of a new fridge.
-        </p>
-        <p>
-          When evaluating the costs, think about how much it costs to purchase
-          and install a new fridge, including the price of materials needed for
-          installation. Compare this to the repair costs, which might be lower
-          but could add up if future issues arise due to the age of the
-          refrigerator. Like deciding whether to repair an old car or buy a new
-          one, if the cost of keeping the old refrigerator running cold and
-          efficient becomes too high due to frequent repairs, poor performance,
-          and nearing the end of its average lifespan, then investing in a new
-          commercial freezer could be the smarter financial and operational
-          choice.
-        </p>
-        <p>
-          However, if the repair can significantly extend the life of the
-          refrigerator at a reasonable cost, and the materials required for the
-          repair are readily available and affordable, repairing the existing
-          unit might still be a worthwhile consideration.
-        </p>
-      </div>
-
-      <div class="FAQ">
-        <div class="fa">
-          <h3>
-            What does a diagnostic fee cover in commercial refrigeration repair
-            services?
-          </h3>
-        </div>
-
-        <div class="fa_plus">︾</div>
-
-        <div class="fa_minus">︽</div>
-      </div>
-
-      <div class="questions">
-        <p>
-          The diagnostic fee generally covers the initial inspection to identify
-          what's wrong with the unit. This fee can vary but is often credited
-          toward the repair cost if you choose to proceed with the service from
-          the same company.
-        </p>
-      </div>
-
-      <div class="FAQ">
-        <div class="fa">
-          <h3>
-            How often should I schedule maintenance for my commercial
-            refrigeration equipment?
-          </h3>
-        </div>
-
-        <div class="fa_plus">︾</div>
-
-        <div class="fa_minus">︽</div>
-      </div>
-
-      <div class="questions">
-        <p>
-          Regular maintenance is recommended at least once a year, but for units
-          under heavy usage, bi-annual checks might be necessary. This can
-          prevent leaks, ensure efficient cooling, and save on more costly
-          repairs down the line.
-        </p>
-      </div>
-
-      <div class="FAQ">
-        <div class="fa">
-          <h3>
-            What factors influence the labor cost in commercial refrigerator
-            repairs?
-          </h3>
-        </div>
-
-        <div class="fa_plus">︾</div>
-
-        <div class="fa_minus">︽</div>
-      </div>
-
-      <div class="questions">
-        <p>
-          Labor costs can vary based on the professional's expertise, the time
-          required to fix the issue, and your business's location. Emergency
-          repairs outside regular business hours can also increase costs.
-        </p>
-      </div>
-
-      <div class="FAQ">
-        <div class="fa">
-          <h3>
-            What are the signs that my commercial refrigerator needs immediate
-            repair?
-          </h3>
-        </div>
-
-        <div class="fa_plus">︾</div>
-
-        <div class="fa_minus">︽</div>
-      </div>
-
-      <div class="questions">
-        <p>
-          Signs include unusual noises, failure to maintain the required
-          temperature, visible frost buildup, and water leaks around the unit.
-          Immediate attention to these signs can prevent more severe damage and
-          higher repair costs.
-        </p>
-      </div>
-
-      <div class="FAQ">
-        <div class="fa">
-          <h3>
-            Can DIY repair be a cheaper alternative for fixing minor issues in
-            fridges and freezers?
-          </h3>
-        </div>
-
-        <div class="fa_plus">︾</div>
-
-        <div class="fa_minus">︽</div>
-      </div>
-
-      <div class="questions">
-        <p>
-          DIY repair can indeed be a cheaper alternative for fixing minor issues
-          in fridges and freezers, particularly when compared to the costs
-          associated with commercial refrigeration repair. However, it's
-          important to consider several factors before deciding on DIY repair or
-          professional services. For minor problems in a mini fridge, the repair
-          cost might be low enough to make DIY appealing, especially if you have
-          the necessary supplies and materials on hand. You'd need basic tools
-          and perhaps some specific washers or parts that align with the
-          refrigerator's make and model.
-        </p>
-        <p>
-          However, when it comes to more complex systems like commercial
-          refrigeration, the scope of the project typically requires
-          professional refrigerator repair services. Commercial units often
-          involve intricate components that handle higher gas volumes and more
-          intensive cooling requirements, making them fundamentally different
-          from standard fridges or mini fridges. The average price for
-          commercial refrigeration repair can vary significantly, but it often
-          exceeds the national average for basic refrigerator repair due to the
-          specialized skills and equipment needed.
-        </p>
-        <p>Additionally, the cost of DIY repairing a commercial refrigerator might initially seem cheaper, but without the proper expertise, you risk extending the damage, which can lead to even higher costs in terms of both repairs and business downtime. Professional refrigerator repair services ensure that your unit is not only repaired but also adheres to industry standards, with all components, from washers to gas lines, thoroughly checked and serviced.</p>
-      </div>
-
-      <div class="FAQ">
-        <div class="fa">
-          <h3>
-            When should I opt for a repair of my existing refrigerator over
-            purchasing a new one, and how can I ensure the repair is done
-            effectively?
-          </h3>
-        </div>
-
-        <div class="fa_plus">︾</div>
-
-        <div class="fa_minus">︽</div>
-      </div>
-
-      <div class="questions">
-        <p>
-          Deciding whether to repair your existing refrigerator or purchase a
-          new one depends on several factors. First, consider the appliance
-          coverage under the manufacturer's warranty— if your refrigerator is
-          still under warranty, repairs might be covered, which can
-          significantly reduce costs. Evaluate the extent of damage; if your
-          refrigerator has a broken motor or major system failures, the repair
-          costs might be high, making a new refrigerator a more appealing
-          option.
-        </p>
-        <p>
-          However, if the repairs are manageable—such as replacing a pilot light
-          or thermal fuses—then it is usually more cost-effective to repair,
-          especially if the refrigerator is relatively new and otherwise in good
-          condition. Always ensure that repairs are done by a qualified repair
-          person who is experienced with electric appliances. Opting for
-          services like same-day appliance repair can ensure that your
-          refrigerator is fixed quickly and efficiently, minimizing disruption
-          and keeping your food cold without delay.
-        </p>
-        <p>Furthermore, undertaking a commercial refrigeration repair project requires a significant investment in time; professionals can typically complete the work in fewer hours than someone with less experience. This efficiency is crucial in commercial settings where every hour of downtime can mean lost revenue.</p>
-        <p>In summary, while DIY refrigerator repair for minor issues in residential fridges and freezers can be a cost-saving project, commercial refrigeration often demands the expertise, speed, and reliability of professional repair services to ensure that your system is efficiently repaired and remains reliable over time.</p>
-      </div>
-
-      <div class="FAQ_bottom"></div>
-    </div>
-    <Btn />
-
-<div style="background: #f0fdf4; border-left: 4px solid #16a34a; border-radius: 8px; padding: 20px 24px; margin: 32px auto; max-width: 800px;">
-  <p style="margin: 0; font-size: 1.1rem;"><strong>Book your commercial refrigerator repair today</strong> — same day service available in Los Angeles and surrounding areas. <a href="/services/commercial-refrigerator-repair-los-angeles/" style="color: #16a34a; font-weight: 600;">Schedule Service &rarr;</a></p>
+  </div>
+</section>
+<div class="tbar">
+  <div class="tbar-inner">
+    <div class="ti">&#127885; CSLB #1138898</div>
+    <div class="ti">&#128293; Commercial Diagnostic $120</div>
+    <div class="ti">&#9889; Same Day &amp; Emergency</div>
+    <div class="ti">&#128203; Quote On-Site</div>
+    <div class="ti">&#128737; 90-Day Warranty</div>
+  </div>
 </div>
-  </Container>
-  <CTA phone="(323) 870-4790" branch="West Hollywood" zones={["Los Angeles", "Southern California"]} />
- <!-- чаcтые вопроcы -->
-<script defer>
-  document.addEventListener("DOMContentLoaded", function () {
-    let coll = document.getElementsByClassName("FAQ");
-    for (let i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        let content = this.nextElementSibling;
-        if (content.style.maxHeight) {
-          content.style.maxHeight = null;
-        } else {
-          content.style.maxHeight = content.scrollHeight + "px";
-        }
-      });
-    }
-  });
-</script>
+<section class="sec">
+  <div class="con">
+    <p class="sl">How Our Commercial Pricing Works</p>
+    <div class="body-text">
+      <p>Commercial reach-in refrigerators, prep tables, and undercounter units are the backbone of the LA food service kitchen. A unit that stops cooling or can't hold temperature creates immediate health code and inventory risk. We service all major commercial refrigerator brands across Los Angeles with same-day availability.</p><p>Commercial refrigerators share the same diagnosis approach as walk-in coolers — compressor, condenser, evaporator, defrost system, temperature controls — but in a more compact configuration that sometimes makes component access more involved. We quote labor and parts separately after the $120 on-site diagnosis.</p>
+    </div>
+    <div class="tip-block">
+      <div class="tip-lbl">🌡️ Commercial fridge not cooling — check first</div>
+      <p>Before calling: check that condenser coils (usually at the bottom front or rear) are not blocked by grease and debris — this is the #1 cause of commercial refrigerator inefficiency in LA restaurants. Also check that the door gaskets are sealing fully and the door is closing completely. These checks can prevent a service call or help us diagnose faster when we arrive.</p>
+    </div>
+  </div>
+</section>
+<section class="sec sec-gray">
+  <div class="con">
+    <p class="sl">Commercial Labor Rates &mdash; Los Angeles 2026</p>
+    <h2>Commercial Refrigerator Repair Cost in Los Angeles &mdash; labor rates</h2>
+    <p class="lead">All prices are labor only. Parts quoted separately. $120 commercial diagnostic applied to repair total when you approve the work.</p>
+    <div class="ptable-wrap">
+      <table class="ptable">
+        <thead><tr><th>Repair Type</th><th>Labor Range</th><th>What&rsquo;s Typically Involved</th></tr></thead>
+        <tbody>
+        <tr >
+          <td><div class="rt">Not cooling / high temperature <span class="badge-common">MOST COMMON</span></div><div class="rd">Temperature above setpoint, food at risk</div></td>
+          <td><div class="pl">$240–$440</div><div class="pn">+ parts per diagnosis</div></td>
+          <td>Condenser coil cleaning (most common — often no parts), refrigerant check, fan motor, thermostat. Full system assessment before any parts.</td>
+        </tr>
+        <tr >
+          <td><div class="rt">Compressor failure </div><div class="rd">Unit not cooling at all</div></td>
+          <td><div class="pl">$360–$520</div><div class="pn">+ compressor + refrigerant</div></td>
+          <td>Compressor replacement with EPA-certified refrigerant recharge. Repair vs. unit replacement assessment first.</td>
+        </tr>
+        <tr >
+          <td><div class="rt">Evaporator / defrost failure </div><div class="rd">Ice buildup, uneven temperature, excessive frost</div></td>
+          <td><div class="pl">$240–$400</div><div class="pn">+ defrost components</div></td>
+          <td>Defrost heater, thermostat, timer, evaporator fan. Defrost failure causes gradual cooling loss as ice blocks evaporator airflow.</td>
+        </tr>
+        <tr >
+          <td><div class="rt">Condenser fan failure </div><div class="rd">Unit running hot, inefficient cooling</div></td>
+          <td><div class="pl">$220–$380</div><div class="pn">+ fan motor</div></td>
+          <td>Condenser fan motor replacement. Condenser fan failure stresses compressor significantly.</td>
+        </tr>
+        <tr >
+          <td><div class="rt">Temperature controller / thermostat </div><div class="rd">Temperature fluctuating or inaccurate</div></td>
+          <td><div class="pl">$220–$360</div><div class="pn">+ controller</div></td>
+          <td>Temperature controller, thermostat, thermistor replacement.</td>
+        </tr>
+        <tr >
+          <td><div class="rt">Door gasket failure </div><div class="rd">Warm air infiltration, unit running constantly</div></td>
+          <td><div class="pl">$180–$320</div><div class="pn">+ gasket</div></td>
+          <td>Door gasket replacement. Worn gaskets force the compressor to run continuously — shortening compressor life.</td>
+        </tr>
+        <tr >
+          <td><div class="rt">Refrigerant leak </div><div class="rd">Gradual temperature rise over days/weeks</div></td>
+          <td><div class="pl">$280–$440</div><div class="pn">+ refrigerant + leak repair</div></td>
+          <td>Leak detection, repair, EPA-certified recharge.</td>
+        </tr>
+        <tr >
+          <td><div class="rt">Electrical / controls </div><div class="rd">Unit not starting, tripped breakers, dead display</div></td>
+          <td><div class="pl">$200–$360</div><div class="pn">+ components</div></td>
+          <td>Contactor, capacitor, control board, wiring.</td>
+        </tr>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Commercial Refrigerator Repair Cost",
-  "description": "Commercial refrigerator repair costs in Los Angeles. Labor, parts & fees for walk-ins & reach-ins. Call (323) 870-4790 for same day service.",
-  "url": "https://samedayappliance.repair/price-list/commercial-refrigerator-repair-cost/",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "Same Day Appliance Repair",
-    "telephone": "(323) 870-4790",
-    "url": "https://samedayappliance.repair",
-    "priceRange": "$"
-  },
-  "areaServed": {
-    "@type": "City",
-    "name": "Los Angeles"
-  },
-  "serviceType": "Commercial refrigerator repair cost"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://samedayappliance.repair/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Price List",
-      "item": "https://samedayappliance.repair/price-list/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Commercial Refrigerator Repair Cost",
-      "item": "https://samedayappliance.repair/price-list/commercial-refrigerator-repair-cost/"
-    }
-  ]
-}
-</script>
+        </tbody>
+      </table>
+    </div>
+    <p class="tnote"><strong>All prices are labor only.</strong> Parts quoted separately. Commercial diagnostic $120 applied to repair. Quote on-site before starting. 90-day warranty on parts and labor.</p>
+  </div>
+</section>
+<section class="sec sec-gray">
+  <div class="con">
+    <p class="sl">Real Cost Examples</p>
+    <h2>Recent commercial repairs in LA</h2>
+    <div class="ex-grid">
+    <div class="ex-card">
+      <span class="ex-tag">Mid-City Restaurant</span>
+      <div class="ex-title">"Reach-in fridge at 50°F — health inspector coming tomorrow"</div>
+      <p class="ex-body">True T-49 — condenser coils completely blocked with grease. Deep cleaned coils, tested all components. Temperature at 38°F within 2 hours. No parts.</p>
+      <div class="ex-cost">
+        <div class="ex-row"><span class="ex-l">Labor</span><span class="ex-v">$280</span></div>
+        <div class="ex-row"><span class="ex-l">Parts</span><span class="ex-v">None</span></div>
+        <div class="ex-row"><span class="ex-l">Diagnostic (applied)</span><span class="ex-v">&minus;$120</span></div>
+        <div class="ex-total"><span>Total paid</span><span class="ex-tv">$160</span></div>
+      </div>
+    </div>
+    <div class="ex-card">
+      <span class="ex-tag">West Hollywood Café</span>
+      <div class="ex-title">"Prep table not holding temperature — product loss"</div>
+      <p class="ex-body">Turbo Air MST-28 prep table — evaporator fan motor failed. Replaced motor. Confirmed temperature at 36°F throughout unit.</p>
+      <div class="ex-cost">
+        <div class="ex-row"><span class="ex-l">Labor</span><span class="ex-v">$300</span></div>
+        <div class="ex-row"><span class="ex-l">Parts</span><span class="ex-v">Fan motor: $95</span></div>
+        <div class="ex-row"><span class="ex-l">Diagnostic (applied)</span><span class="ex-v">&minus;$120</span></div>
+        <div class="ex-total"><span>Total paid</span><span class="ex-tv">$275</span></div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</section>
+<section class="sec sec-gray">
+  <div class="con">
+    <p class="sl">Related Cost Guides</p>
+    <h2>Other commercial repair cost guides</h2>
+    <div class="nb-grid"><a href="/price-list/commercial-walk-in-cooler-repair-cost/" class="nb">Walk-in Cooler Repair Cost</a> <a href="/commercial/" class="nb">Commercial Appliance Repair</a> <a href="/for-business/restaurants/" class="nb">Restaurant Appliance Repair</a> <a href="/los-angeles/" class="nb">Appliance Repair Los Angeles</a> <a href="/price-list/commercial-walk-in-freezer-repair-cost/" class="nb">Walk-in Freezer Cost</a> <a href="/commercial/refrigerator-repair/" class="nb">Commercial Refrigerator Repair</a></div>
+  </div>
+</section>
+<section class="btm">
+  <div class="con">
+    <h2>Commercial fridge down?</h2>
+    <p>$120 commercial diagnostic, same-day service across Los Angeles. We know your uptime depends on it.</p>
+    <div class="btm-ctas">
+      <a href="tel:+14243250520" class="btn-red">&#9990; Call (424) 325-0520</a>
+      <a href="/contact/" class="btn-out">Request Service</a>
+    </div>
+  </div>
+</section>
+</body>
+</html>
